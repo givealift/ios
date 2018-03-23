@@ -97,12 +97,15 @@
 		C191F0F22065657C008DD972 /* GiveALift */ = {
 			isa = PBXGroup;
 			children = (
-				C191F0F32065657C008DD972 /* AppDelegate.swift */,
-				C191F0F52065657C008DD972 /* ViewController.swift */,
-				C191F0F72065657C008DD972 /* Main.storyboard */,
-				C191F0FA2065657C008DD972 /* Assets.xcassets */,
-				C191F0FC2065657C008DD972 /* LaunchScreen.storyboard */,
-				C191F0FF2065657C008DD972 /* Info.plist */,
+				C191F12920656906008DD972 /* SupportingFiles */,
+				C191F128206568FB008DD972 /* Resources */,
+				C191F127206568EF008DD972 /* Storyboards */,
+				C191F126206568E5008DD972 /* ViewControllers */,
+				C191F125206568D1008DD972 /* Extensions */,
+				C191F124206568C9008DD972 /* Utilities */,
+				C191F123206568C2008DD972 /* Models */,
+				C191F122206568BA008DD972 /* Services */,
+				C191F12120656866008DD972 /* Views */,
 			);
 			path = GiveALift;
 			sourceTree = "<group>";
@@ -123,6 +126,75 @@
 				C191F1152065657D008DD972 /* Info.plist */,
 			);
 			path = GiveALiftUITests;
+			sourceTree = "<group>";
+		};
+		C191F12120656866008DD972 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C191F122206568BA008DD972 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C191F123206568C2008DD972 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C191F124206568C9008DD972 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C191F125206568D1008DD972 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C191F126206568E5008DD972 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C191F0F52065657C008DD972 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C191F127206568EF008DD972 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C191F0F72065657C008DD972 /* Main.storyboard */,
+				C191F0FC2065657C008DD972 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C191F128206568FB008DD972 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C191F0FA2065657C008DD972 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C191F12920656906008DD972 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C191F0F32065657C008DD972 /* AppDelegate.swift */,
+				C191F0FF2065657C008DD972 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,7 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YY346RZE89;
-				INFOPLIST_FILE = GiveALift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GiveALift/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = marcin.GiveALift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,7 +515,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YY346RZE89;
-				INFOPLIST_FILE = GiveALift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GiveALift/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = marcin.GiveALift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
