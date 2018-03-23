@@ -29,10 +29,12 @@ final class FlowCoordinator {
     }
     
     private func presentLoginVC() {
-//        let loginVC = Storyboards.Onboarding.instantiateViewController(withIdentifier: LoginViewController.te)
+        let loginVC = Storyboards.Onboarding.instantiateViewController(withIdentifier: LoginViewController.identifier)
+        window.rootViewController = loginVC
     }
     
     private func presentHomeVC() {
-        
+        let homeVC = Storyboards.Main.instantiateViewController(withIdentifier: HomeViewController.identifier)
+        window.rootViewController = homeVC
     }
 }
