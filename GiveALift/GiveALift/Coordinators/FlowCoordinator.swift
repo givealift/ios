@@ -25,6 +25,7 @@ final class FlowCoordinator {
     }
     
     private func isLoggedIn() -> Bool {
+        //MARK:- TODO sprawdzenie logowania
         return false
     }
     
