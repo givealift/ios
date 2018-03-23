@@ -14,6 +14,9 @@
 		C191F0FE2065657C008DD972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F0FC2065657C008DD972 /* LaunchScreen.storyboard */; };
 		C191F1092065657D008DD972 /* GiveALiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1082065657D008DD972 /* GiveALiftTests.swift */; };
 		C191F1142065657D008DD972 /* GiveALiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1132065657D008DD972 /* GiveALiftUITests.swift */; };
+		C191F12D20656A5D008DD972 /* GLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F12C20656A5D008DD972 /* GLUser.swift */; };
+		C191F12F20656AE6008DD972 /* GLPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F12E20656AE6008DD972 /* GLPreferences.swift */; };
+		C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191F13020656C1E008DD972 /* GiveALift.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		C191F10F2065657D008DD972 /* GiveALiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiveALiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C191F1132065657D008DD972 /* GiveALiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveALiftUITests.swift; sourceTree = "<group>"; };
 		C191F1152065657D008DD972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C191F12C20656A5D008DD972 /* GLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUser.swift; sourceTree = "<group>"; };
+		C191F12E20656AE6008DD972 /* GLPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLPreferences.swift; sourceTree = "<group>"; };
+		C191F13120656C1E008DD972 /* GiveALift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GiveALift.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,8 @@
 		C191F124206568C9008DD972 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C191F12C20656A5D008DD972 /* GLUser.swift */,
+				C191F12E20656AE6008DD972 /* GLPreferences.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 			children = (
 				C191F0F32065657C008DD972 /* AppDelegate.swift */,
 				C191F0FF2065657C008DD972 /* Info.plist */,
+				C191F13020656C1E008DD972 /* GiveALift.xcdatamodeld */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -332,7 +341,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C191F0F62065657C008DD972 /* ViewController.swift in Sources */,
+				C191F12D20656A5D008DD972 /* GLUser.swift in Sources */,
+				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,
 				C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */,
+				C191F12F20656AE6008DD972 /* GLPreferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +642,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C191F13020656C1E008DD972 /* GiveALift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C191F13120656C1E008DD972 /* GiveALift.xcdatamodel */,
+			);
+			currentVersion = C191F13120656C1E008DD972 /* GiveALift.xcdatamodel */;
+			path = GiveALift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C191F0E82065657C008DD972 /* Project object */;
 }
