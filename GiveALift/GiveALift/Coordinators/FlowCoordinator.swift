@@ -25,16 +25,22 @@ final class FlowCoordinator {
     }
     
     private func isLoggedIn() -> Bool {
-        return true
+        return false
     }
     
     private func presentLoginVC() {
-        let loginVC = Storyboards.Onboarding.instantiateViewController(withIdentifier: LoginViewController.identifier)
+        guard let loginVC = Storyboards.Onboarding.instantiateInitialViewController() as? UINavigationController else {
+            assert(false, "MenuView not found!")
+            return
+        }
         window.rootViewController = loginVC
     }
     
     private func presentHomeVC() {
-        let homeVC = Storyboards.Main.instantiateViewController(withIdentifier: HomeViewController.identifier)
+        guard let homeVC = Storyboards.Main.instantiateInitialViewController() as? UINavigationController else {
+            assert(false, "MenuView not found!")
+            return
+        }
         window.rootViewController = homeVC
     }
 }
