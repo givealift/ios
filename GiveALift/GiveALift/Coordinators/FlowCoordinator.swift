@@ -30,16 +30,14 @@ final class FlowCoordinator {
     
     private func presentLoginVC() {
         guard let loginVC = Storyboards.Onboarding.instantiateInitialViewController() as? UINavigationController else {
-            assert(false, "MenuView not found!")
-            return
+            fatalError("Can't load loginVC")
         }
         window.rootViewController = loginVC
     }
     
     private func presentHomeVC() {
         guard let homeVC = Storyboards.Main.instantiateInitialViewController() as? UINavigationController else {
-            assert(false, "MenuView not found!")
-            return
+            fatalError("Can't load homeVc")
         }
         window.rootViewController = homeVC
     }
