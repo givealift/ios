@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C17206966780043DAF7 /* LoginViewController.swift */; };
 		C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C19206966A40043DAF7 /* RegisterViewController.swift */; };
+		C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */; };
+		C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1D20696A390043DAF7 /* UITableViewE.swift */; };
 		C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F0F32065657C008DD972 /* AppDelegate.swift */; };
 		C191F0F62065657C008DD972 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F0F52065657C008DD972 /* HomeViewController.swift */; };
 		C191F0F92065657C008DD972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F0F72065657C008DD972 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		C1813C17206966780043DAF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1813C19206966A40043DAF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellE.swift; sourceTree = "<group>"; };
+		C1813C1D20696A390043DAF7 /* UITableViewE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewE.swift; sourceTree = "<group>"; };
 		C191F0F02065657C008DD972 /* GiveALift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiveALift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C191F0F32065657C008DD972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C191F0F52065657C008DD972 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				C1E1663C2065825100BC36BE /* UIViewControllerE.swift */,
+				C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */,
+				C1813C1D20696A390043DAF7 /* UITableViewE.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -381,11 +387,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */,
+				C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */,
 				C191F0F62065657C008DD972 /* HomeViewController.swift in Sources */,
 				C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */,
 				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,
 				C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */,
 				C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */,
+				C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */,
 				C191F13E20657BB0008DD972 /* PreLoginRegisterViewController.swift in Sources */,
 				C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */,
 				C191F1452065806E008DD972 /* Constants.swift in Sources */,
