@@ -8,11 +8,19 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class PreLoginRegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
     }
 
+
+    @IBAction func registerTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func loginTapped(_ sender: Any) {
+        
+    }
 }

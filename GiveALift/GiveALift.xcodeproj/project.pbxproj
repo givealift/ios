@@ -15,7 +15,7 @@
 		C191F1092065657D008DD972 /* GiveALiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1082065657D008DD972 /* GiveALiftTests.swift */; };
 		C191F1142065657D008DD972 /* GiveALiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1132065657D008DD972 /* GiveALiftUITests.swift */; };
 		C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191F13020656C1E008DD972 /* GiveALift.xcdatamodeld */; };
-		C191F13E20657BB0008DD972 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F13D20657BB0008DD972 /* LoginViewController.swift */; };
+		C191F13E20657BB0008DD972 /* PreLoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */; };
 		C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F13F20657E00008DD972 /* Onboarding.storyboard */; };
 		C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F14220657F13008DD972 /* FlowCoordinator.swift */; };
 		C191F1452065806E008DD972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1442065806E008DD972 /* Constants.swift */; };
@@ -54,7 +54,7 @@
 		C191F1132065657D008DD972 /* GiveALiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveALiftUITests.swift; sourceTree = "<group>"; };
 		C191F1152065657D008DD972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C191F13120656C1E008DD972 /* GiveALift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GiveALift.xcdatamodel; sourceTree = "<group>"; };
-		C191F13D20657BB0008DD972 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginRegisterViewController.swift; sourceTree = "<group>"; };
 		C191F13F20657E00008DD972 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		C191F14220657F13008DD972 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		C191F1442065806E008DD972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -86,6 +86,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C1813C15206964CF0043DAF7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C191F0F52065657C008DD972 /* HomeViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C1813C16206964E00043DAF7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		C191F0E72065657C008DD972 = {
 			isa = PBXGroup;
 			children = (
@@ -180,8 +196,8 @@
 		C191F126206568E5008DD972 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C191F0F52065657C008DD972 /* HomeViewController.swift */,
-				C191F13D20657BB0008DD972 /* LoginViewController.swift */,
+				C1813C16206964E00043DAF7 /* Onboarding */,
+				C1813C15206964CF0043DAF7 /* Main */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -362,7 +378,7 @@
 				C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */,
 				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,
 				C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */,
-				C191F13E20657BB0008DD972 /* LoginViewController.swift in Sources */,
+				C191F13E20657BB0008DD972 /* PreLoginRegisterViewController.swift in Sources */,
 				C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */,
 				C191F1452065806E008DD972 /* Constants.swift in Sources */,
 			);

@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Pre Login Register View Controller-->
         <scene sceneID="4L6-AE-tNI">
             <objects>
-                <viewController id="ANg-lt-n86" customClass="LoginViewController" customModule="GiveALift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ANg-lt-n86" customClass="PreLoginRegisterViewController" customModule="GiveALift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kIt-bG-RVb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,10 +25,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vg-kV-Kzk">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="123.5"/>
                                         <state key="normal" title="Log in"/>
+                                        <connections>
+                                            <action selector="loginTapped:" destination="ANg-lt-n86" eventType="touchUpInside" id="dTb-QR-0RA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-t4-Ktn">
                                         <rect key="frame" x="0.0" y="143.5" width="335" height="123.5"/>
                                         <state key="normal" title="Register"/>
+                                        <connections>
+                                            <action selector="registerTapped:" destination="ANg-lt-n86" eventType="touchUpInside" id="Hoh-YX-O07"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -43,10 +49,44 @@
                         <viewLayoutGuide key="safeArea" id="Mx9-HH-Si7"/>
                     </view>
                     <navigationItem key="navigationItem" id="0TF-ZL-gNP"/>
+                    <connections>
+                        <segue destination="dT0-lB-LTy" kind="show" identifier="goToLogin" id="ato-20-CHR"/>
+                        <segue destination="dDA-T9-3uK" kind="show" identifier="goToRegister" id="Rm0-JX-rN4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2PL-fH-iAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-108" y="39.130434782608695"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RSd-0O-zge">
+            <objects>
+                <viewController id="dDA-T9-3uK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yPC-5u-KTp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fJW-Pl-Rx9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ez4-pY-Q4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="538"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dPP-Y6-cja">
+            <objects>
+                <viewController id="dT0-lB-LTy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ul4-Hz-Wui">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="idR-FA-oph"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCW-L0-r73" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="-338"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y0a-Ti-d3D">

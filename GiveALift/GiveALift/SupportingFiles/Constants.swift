@@ -12,3 +12,8 @@ struct Storyboards {
     static let Main = UIStoryboard(name: "Main", bundle: nil)
     static let Onboarding = UIStoryboard(name: "Onboarding", bundle: nil)
 }
+
+struct Segues {
+    static let goToLogin = "goToLogin"
+    static let goToRegister = "goToRegister"
+}

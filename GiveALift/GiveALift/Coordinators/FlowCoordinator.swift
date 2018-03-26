@@ -20,7 +20,7 @@ final class FlowCoordinator {
         if isLoggedIn() {
             presentHomeVC()
         } else {
-            presentLoginVC()
+            presentPreLoginRegisterVC()
         }
     }
     
@@ -29,11 +29,11 @@ final class FlowCoordinator {
         return false
     }
     
-    private func presentLoginVC() {
-        guard let loginVC = Storyboards.Onboarding.instantiateInitialViewController() as? UINavigationController else {
+    private func presentPreLoginRegisterVC() {
+        guard let preLoginRegisterVC = Storyboards.Onboarding.instantiateInitialViewController() as? UINavigationController else {
             fatalError("Can't load loginVC")
         }
-        window.rootViewController = loginVC
+        window.rootViewController = preLoginRegisterVC
     }
     
     private func presentHomeVC() {
