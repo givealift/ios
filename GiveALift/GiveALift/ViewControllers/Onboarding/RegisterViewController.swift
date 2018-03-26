@@ -16,13 +16,14 @@ final class RegisterViewController: UIViewController {
     //MARK:- VC life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        setupTableView()
     }
     
     //MARK:- Private methods
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(TextfieldLoginTVC.self)
     }
 }
 
@@ -34,6 +35,8 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell: TextfieldLoginTVC = tableView.dequeueReusableCell(for: indexPath)
+        cell.setup()
+        return cell
     }
 }
