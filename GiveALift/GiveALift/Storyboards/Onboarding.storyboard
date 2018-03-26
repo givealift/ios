@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +18,28 @@
                     <view key="view" contentMode="scaleToFill" id="kIt-bG-RVb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Qd-fA-W1F">
+                                <rect key="frame" x="20" y="200" width="335" height="267"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vg-kV-Kzk">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="123.5"/>
+                                        <state key="normal" title="Log in"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-t4-Ktn">
+                                        <rect key="frame" x="0.0" y="143.5" width="335" height="123.5"/>
+                                        <state key="normal" title="Register"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4Qd-fA-W1F" firstAttribute="centerY" secondItem="kIt-bG-RVb" secondAttribute="centerY" id="Acy-nX-TgM"/>
+                            <constraint firstItem="4Qd-fA-W1F" firstAttribute="leading" secondItem="Mx9-HH-Si7" secondAttribute="leading" constant="20" id="Id5-Db-BTk"/>
+                            <constraint firstItem="Mx9-HH-Si7" firstAttribute="trailing" secondItem="4Qd-fA-W1F" secondAttribute="trailing" constant="20" id="NiQ-Mc-ndi"/>
+                            <constraint firstItem="4Qd-fA-W1F" firstAttribute="height" secondItem="kIt-bG-RVb" secondAttribute="height" multiplier="0.4" id="W3N-v3-0eH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Mx9-HH-Si7"/>
                     </view>
                     <navigationItem key="navigationItem" id="0TF-ZL-gNP"/>
@@ -42,7 +64,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J75-Ar-j3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-446.39999999999998" y="39.580209895052477"/>
+            <point key="canvasLocation" x="-881" y="39"/>
         </scene>
     </scenes>
 </document>
