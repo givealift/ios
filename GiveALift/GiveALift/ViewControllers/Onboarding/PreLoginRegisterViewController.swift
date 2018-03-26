@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PreLoginRegisterViewController: UIViewController {
+final class PreLoginRegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
