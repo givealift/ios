@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="-108" y="39.130434782608695"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="RSd-0O-zge">
             <objects>
-                <viewController id="dDA-T9-3uK" sceneMemberID="viewController">
+                <viewController id="dDA-T9-3uK" customClass="RegisterViewController" customModule="GiveALift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yPC-5u-KTp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="1164" y="538"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="dPP-Y6-cja">
             <objects>
-                <viewController id="dT0-lB-LTy" sceneMemberID="viewController">
+                <viewController id="dT0-lB-LTy" customClass="LoginViewController" customModule="GiveALift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ul4-Hz-Wui">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

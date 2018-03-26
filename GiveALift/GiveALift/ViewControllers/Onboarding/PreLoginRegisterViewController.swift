@@ -12,15 +12,14 @@ class PreLoginRegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
     }
 
 
     @IBAction func registerTapped(_ sender: Any) {
-        
+        performSegue(withIdentifier: Segues.goToRegister, sender: nil)
     }
     
     @IBAction func loginTapped(_ sender: Any) {
-        
+        performSegue(withIdentifier: Segues.goToLogin, sender: nil)
     }
 }
