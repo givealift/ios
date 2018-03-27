@@ -28,6 +28,7 @@ enum Result {
 }
 
 typealias ResultBlock = (Result) -> ()
+typealias ResultBlockArray = ([Result]) ->  ()
 
 enum Rule {
     case maximumLength
@@ -68,27 +69,29 @@ extension ValidatorRule {
     }
 }
 
-//final class ValidatorRuleLength: ValidatorRule {
-//    
-//    var errorMessage: String
-//    let value: Int
-//    let rule: Rule
-//    
-//    init(rule: Rule, value: Int) {
-//        self.value = value
-//        self.rule = rule
-//        errorMessage = rule.errorMessage
-//    }
-//    
-//    func check(string: String) -> Result {
-//        switch self.rule {
-//        case .maximumLength:
-//            return string.characters.count > self.value ? Result.invalid(error: errorMessage) : Result.valid
-//        case .minimumLength:
-//            return string.characters.count < self.value ? Result.invalid(error: errorMessage) : Result.valid
-//        }
-//    }
-//}
+final class ValidatorRuleLength: ValidatorRule {
+    
+    var errorMessage: String
+    let value: Int
+    let rule: Rule
+    
+    init(rule: Rule, value: Int) {
+        self.value = value
+        self.rule = rule
+        errorMessage = rule.errorMessage
+    }
+    
+    func check(string: String, completion: @escaping ResultBlock) {
+        var result: Result
+        switch self.rule {
+        case .maximumLength:
+            result = string.characters.count > self.value ? Result.invalid(error: errorMessage) : Result.valid
+        case .minimumLength:
+            result = string.characters.count < self.value ? Result.invalid(error: errorMessage) : Result.valid
+        }
+        completion(result)
+    }
+}
 
 final class ValidatorRulePattern: ValidatorRule {
     
@@ -109,16 +112,20 @@ final class ValidatorRulePattern: ValidatorRule {
 
 extension String {
     
-//    func validated(with rule: ValidatorRule) -> Result {
-//        return rule.check(string: self)
-//    }
-//
-//    func validated(with rules: [ValidatorRule]) -> [Result] {
-//        var results = [Result]()
-//        for rule in rules {
-//            results.append(rule.check(string: self))
-//        }
-//        return results
-//    }
+    func validated(with rule: ValidatorRule, completion: @escaping ResultBlock) {
+        rule.check(string: self) { result in
+            completion(result)
+        }
+    }
+
+    func validated(with rules: [ValidatorRule], completion: @escaping ResultBlockArray) {
+        var results = [Result]()
+        for rule in rules {
+            rule.check(string: self) { result in
+                results.append(result)
+            }
+        }
+        completion(results)
+    }
 }
 

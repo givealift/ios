@@ -26,18 +26,13 @@ class ValidatorTextFiledTVC: UITableViewCell {
     
     func setup(cellType: RegisterCellType) {
         self.cellType = cellType
-        
-        textField.delegate = self
-        textField.textColor = UIColor.lightGray
-        textField.text = cellType.labelText
-        textField.addTarget(self, action: #selector(ValidatorTextFiledTVC.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
-        
+        setupTextField()
         label.isHidden = true
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
-        cellType.validationRule.check(string: text) { result in
+        text.validated(with: cellType.validationRule) { result in
             switch result {
             case .valid:
                 self.label.isHidden = true
@@ -48,11 +43,23 @@ class ValidatorTextFiledTVC: UITableViewCell {
             }
         }
     }
+    
+    private func setupTextField() {
+        textField.delegate = self
+        textField.textColor = UIColor.lightGray
+        textField.text = cellType.labelText
+        textField.addTarget(self, action: #selector(ValidatorTextFiledTVC.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+    }
 }
 
 extension ValidatorTextFiledTVC: UITextFieldDelegate {
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = nil
         textField.textColor = UIColor.black
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        //MARK:- TODO jakiś callback do kontrollera żeby zapisał tekst z textfielda
     }
 }
