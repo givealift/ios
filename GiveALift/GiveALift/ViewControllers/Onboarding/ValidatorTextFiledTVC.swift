@@ -35,14 +35,17 @@ class ValidatorTextFiledTVC: UITableViewCell {
         label.isHidden = true
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        guard let result = textField.text?.validated(with: cellType.validationRule) else { return }
-        switch result {
-        case .valid:
-            <#code#>
-        case .invalid:
-            label.isHidden = false
-            
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        cellType.validationRule.check(string: text) { result in
+            switch result {
+            case .valid:
+                self.label.isHidden = true
+                self.label.text = nil
+            case .invalid(error: let error):
+                self.label.isHidden = false
+                self.label.text = error
+            }
         }
     }
 }

@@ -68,27 +68,27 @@ extension ValidatorRule {
     }
 }
 
-final class ValidatorRuleLength: ValidatorRule {
-    
-    var errorMessage: String
-    let value: Int
-    let rule: Rule
-    
-    init(rule: Rule, value: Int) {
-        self.value = value
-        self.rule = rule
-        errorMessage = rule.errorMessage
-    }
-    
-    func check(string: String) -> Result {
-        switch self.rule {
-        case .maximumLength:
-            return string.characters.count > self.value ? Result.invalid(error: errorMessage) : Result.valid
-        case .minimumLength:
-            return string.characters.count < self.value ? Result.invalid(error: errorMessage) : Result.valid
-        }
-    }
-}
+//final class ValidatorRuleLength: ValidatorRule {
+//    
+//    var errorMessage: String
+//    let value: Int
+//    let rule: Rule
+//    
+//    init(rule: Rule, value: Int) {
+//        self.value = value
+//        self.rule = rule
+//        errorMessage = rule.errorMessage
+//    }
+//    
+//    func check(string: String) -> Result {
+//        switch self.rule {
+//        case .maximumLength:
+//            return string.characters.count > self.value ? Result.invalid(error: errorMessage) : Result.valid
+//        case .minimumLength:
+//            return string.characters.count < self.value ? Result.invalid(error: errorMessage) : Result.valid
+//        }
+//    }
+//}
 
 final class ValidatorRulePattern: ValidatorRule {
     
@@ -103,28 +103,22 @@ final class ValidatorRulePattern: ValidatorRule {
     func check(string: String, completion: @escaping ResultBlock) {
         let pattern = self.pattern.rawValue
         let test = NSPredicate(format:"SELF MATCHES %@", pattern)
-        test.evaluate(with: self) ? completion(Result.valid) : completion(Result.invalid(error: errorMessage))
+        test.evaluate(with: string) ? completion(Result.valid) : completion(Result.invalid(error: errorMessage))
     }
-    
-//    func check(string: String) -> Result {
-//        let pattern = self.pattern.rawValue
-//        let test = NSPredicate(format:"SELF MATCHES %@", pattern)
-//        return test.evaluate(with: self) ? Result.valid : Result.invalid(error: errorMessage)
-//    }
 }
 
 extension String {
     
-    func validated(with rule: ValidatorRule) -> Result {
-        return rule.check(string: self)
-    }
-    
-    func validated(with rules: [ValidatorRule]) -> [Result] {
-        var results = [Result]()
-        for rule in rules {
-            results.append(rule.check(string: self))
-        }
-        return results
-    }
+//    func validated(with rule: ValidatorRule) -> Result {
+//        return rule.check(string: self)
+//    }
+//
+//    func validated(with rules: [ValidatorRule]) -> [Result] {
+//        var results = [Result]()
+//        for rule in rules {
+//            results.append(rule.check(string: self))
+//        }
+//        return results
+//    }
 }
 

@@ -36,7 +36,10 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ValidatorTextFiledTVC = tableView.dequeueReusableCell(for: indexPath)
-        cell.setup()
+        let regCell = EmailCell()
+        print("validation rule")
+        print(regCell.validationRule.errorMessage)
+        cell.setup(cellType: regCell)
         return cell
     }
 }
