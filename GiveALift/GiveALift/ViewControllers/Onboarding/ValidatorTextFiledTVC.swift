@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextfieldLoginTVC: UITableViewCell {
+class ValidatorTextFiledTVC: UITableViewCell {
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!

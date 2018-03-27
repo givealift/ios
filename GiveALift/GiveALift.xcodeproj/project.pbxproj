@@ -11,8 +11,8 @@
 		C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C19206966A40043DAF7 /* RegisterViewController.swift */; };
 		C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */; };
 		C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1D20696A390043DAF7 /* UITableViewE.swift */; };
-		C1813C2120696AAE0043DAF7 /* TextfieldLoginTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1F20696AAE0043DAF7 /* TextfieldLoginTVC.swift */; };
-		C1813C2220696AAE0043DAF7 /* TextfieldLoginTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1813C2020696AAE0043DAF7 /* TextfieldLoginTVC.xib */; };
+		C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */; };
+		C1813C2220696AAE0043DAF7 /* ValidatorTextFiledTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */; };
 		C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F0F32065657C008DD972 /* AppDelegate.swift */; };
 		C191F0F62065657C008DD972 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F0F52065657C008DD972 /* HomeViewController.swift */; };
 		C191F0F92065657C008DD972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F0F72065657C008DD972 /* Main.storyboard */; };
@@ -51,8 +51,8 @@
 		C1813C19206966A40043DAF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellE.swift; sourceTree = "<group>"; };
 		C1813C1D20696A390043DAF7 /* UITableViewE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewE.swift; sourceTree = "<group>"; };
-		C1813C1F20696AAE0043DAF7 /* TextfieldLoginTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldLoginTVC.swift; sourceTree = "<group>"; };
-		C1813C2020696AAE0043DAF7 /* TextfieldLoginTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextfieldLoginTVC.xib; sourceTree = "<group>"; };
+		C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTextFiledTVC.swift; sourceTree = "<group>"; };
+		C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidatorTextFiledTVC.xib; sourceTree = "<group>"; };
 		C191F0F02065657C008DD972 /* GiveALift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiveALift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C191F0F32065657C008DD972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C191F0F52065657C008DD972 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 				C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */,
 				C1813C17206966780043DAF7 /* LoginViewController.swift */,
 				C1813C19206966A40043DAF7 /* RegisterViewController.swift */,
-				C1813C1F20696AAE0043DAF7 /* TextfieldLoginTVC.swift */,
-				C1813C2020696AAE0043DAF7 /* TextfieldLoginTVC.xib */,
+				C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */,
+				C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -371,7 +371,7 @@
 				C191F0FB2065657C008DD972 /* Assets.xcassets in Resources */,
 				C191F0F92065657C008DD972 /* Main.storyboard in Resources */,
 				C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */,
-				C1813C2220696AAE0043DAF7 /* TextfieldLoginTVC.xib in Resources */,
+				C1813C2220696AAE0043DAF7 /* ValidatorTextFiledTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +405,7 @@
 				C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */,
 				C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */,
 				C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */,
-				C1813C2120696AAE0043DAF7 /* TextfieldLoginTVC.swift in Sources */,
+				C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */,
 				C191F13E20657BB0008DD972 /* PreLoginRegisterViewController.swift in Sources */,
 				C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */,
 				C191F1452065806E008DD972 /* Constants.swift in Sources */,

@@ -23,7 +23,7 @@ final class RegisterViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(TextfieldLoginTVC.self)
+        tableView.register(ValidatorTextFiledTVC.self)
     }
 }
 
@@ -35,7 +35,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: TextfieldLoginTVC = tableView.dequeueReusableCell(for: indexPath)
+        let cell: ValidatorTextFiledTVC = tableView.dequeueReusableCell(for: indexPath)
         cell.setup()
         return cell
     }
