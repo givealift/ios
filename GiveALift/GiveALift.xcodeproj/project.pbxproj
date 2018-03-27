@@ -25,6 +25,7 @@
 		C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F13F20657E00008DD972 /* Onboarding.storyboard */; };
 		C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F14220657F13008DD972 /* FlowCoordinator.swift */; };
 		C191F1452065806E008DD972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1442065806E008DD972 /* Constants.swift */; };
+		C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BEA46F206A45F600EE0B4B /* Validator.swift */; };
 		C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E1663C2065825100BC36BE /* UIViewControllerE.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		C191F13F20657E00008DD972 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		C191F14220657F13008DD972 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		C191F1442065806E008DD972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C1BEA46F206A45F600EE0B4B /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = Validator/Validator.swift; sourceTree = "<group>"; };
 		C1E1663C2065825100BC36BE /* UIViewControllerE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerE.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +185,7 @@
 		C191F122206568BA008DD972 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C1BEA46F206A45F600EE0B4B /* Validator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */,
 				C191F0F62065657C008DD972 /* HomeViewController.swift in Sources */,
 				C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */,
+				C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */,
 				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,
 				C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */,
 				C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */,
