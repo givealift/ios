@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10B6D42206A4B790060AF1F /* RegisterCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B6D41206A4B790060AF1F /* RegisterCellType.swift */; };
 		C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C17206966780043DAF7 /* LoginViewController.swift */; };
 		C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C19206966A40043DAF7 /* RegisterViewController.swift */; };
 		C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C10B6D41206A4B790060AF1F /* RegisterCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCellType.swift; sourceTree = "<group>"; };
 		C1813C17206966780043DAF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1813C19206966A40043DAF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellE.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				C1813C19206966A40043DAF7 /* RegisterViewController.swift */,
 				C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */,
 				C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */,
+				C10B6D41206A4B790060AF1F /* RegisterCellType.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */,
 				C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */,
 				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,
+				C10B6D42206A4B790060AF1F /* RegisterCellType.swift in Sources */,
 				C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */,
 				C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */,
 				C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */,

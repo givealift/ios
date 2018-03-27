@@ -27,6 +27,8 @@ enum Result {
     case valid
 }
 
+typealias ResultBlock = (Result) -> ()
+
 enum Rule {
     case maximumLength
     case minimumLength
@@ -57,7 +59,7 @@ enum Pattern: String {
 
 protocol ValidatorRule {
     var errorMessage: String { get set }
-    func check(string: String) -> Result
+    func check(string: String, completion: @escaping ResultBlock)
 }
 
 extension ValidatorRule {
@@ -98,11 +100,17 @@ final class ValidatorRulePattern: ValidatorRule {
         errorMessage = pattern.errorMessage
     }
     
-    func check(string: String) -> Result {
+    func check(string: String, completion: @escaping ResultBlock) {
         let pattern = self.pattern.rawValue
         let test = NSPredicate(format:"SELF MATCHES %@", pattern)
-        return test.evaluate(with: self) ? Result.valid : Result.invalid(error: errorMessage)
+        test.evaluate(with: self) ? completion(Result.valid) : completion(Result.invalid(error: errorMessage))
     }
+    
+//    func check(string: String) -> Result {
+//        let pattern = self.pattern.rawValue
+//        let test = NSPredicate(format:"SELF MATCHES %@", pattern)
+//        return test.evaluate(with: self) ? Result.valid : Result.invalid(error: errorMessage)
+//    }
 }
 
 extension String {

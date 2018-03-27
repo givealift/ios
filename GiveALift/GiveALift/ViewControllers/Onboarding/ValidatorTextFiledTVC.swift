@@ -13,6 +13,8 @@ class ValidatorTextFiledTVC: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     
+    private var cellType: RegisterCellType!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -22,8 +24,32 @@ class ValidatorTextFiledTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setup() {
-        textField.text = "działo"
+    func setup(cellType: RegisterCellType) {
+        self.cellType = cellType
+        
+        textField.delegate = self
+        textField.textColor = UIColor.lightGray
+        textField.text = cellType.labelText
+        textField.addTarget(self, action: #selector(ValidatorTextFiledTVC.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+        
+        label.isHidden = true
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        guard let result = textField.text?.validated(with: cellType.validationRule) else { return }
+        switch result {
+        case .valid:
+            <#code#>
+        case .invalid:
+            label.isHidden = false
+            
+        }
+    }
+}
+
+extension ValidatorTextFiledTVC: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = nil
+        textField.textColor = UIColor.black
+    }
 }
