@@ -27,9 +27,6 @@ enum Result {
     case valid
 }
 
-typealias ResultBlock = (Result) -> ()
-typealias ResultBlockArray = ([Result]) ->  ()
-
 enum Rule {
     case maximumLength
     case minimumLength
@@ -60,7 +57,7 @@ enum Pattern: String {
 
 protocol ValidatorRule {
     var errorMessage: String { get set }
-    func check(string: String, completion: @escaping ResultBlock)
+    func check(string: String) -> Result
 }
 
 extension ValidatorRule {
@@ -81,7 +78,7 @@ final class ValidatorRuleLength: ValidatorRule {
         errorMessage = rule.errorMessage
     }
     
-    func check(string: String, completion: @escaping ResultBlock) {
+    func check(string: String) -> Result {
         var result: Result
         switch self.rule {
         case .maximumLength:
@@ -89,7 +86,7 @@ final class ValidatorRuleLength: ValidatorRule {
         case .minimumLength:
             result = string.characters.count < self.value ? Result.invalid(error: errorMessage) : Result.valid
         }
-        completion(result)
+        return result
     }
 }
 
@@ -103,29 +100,25 @@ final class ValidatorRulePattern: ValidatorRule {
         errorMessage = pattern.errorMessage
     }
     
-    func check(string: String, completion: @escaping ResultBlock) {
+    func check(string: String) -> Result {
         let pattern = self.pattern.rawValue
         let test = NSPredicate(format:"SELF MATCHES %@", pattern)
-        test.evaluate(with: string) ? completion(Result.valid) : completion(Result.invalid(error: errorMessage))
+        return test.evaluate(with: string) ? Result.valid : Result.invalid(error: errorMessage)
     }
 }
 
 extension String {
     
-    func validated(with rule: ValidatorRule, completion: @escaping ResultBlock) {
-        rule.check(string: self) { result in
-            completion(result)
-        }
+    func validated(with rule: ValidatorRule) -> Result {
+        return rule.check(string: self)
     }
-
-    func validated(with rules: [ValidatorRule], completion: @escaping ResultBlockArray) {
+    
+    func validated(with rules: [ValidatorRule]) -> [Result] {
         var results = [Result]()
         for rule in rules {
-            rule.check(string: self) { result in
-                results.append(result)
-            }
+            results.append(rule.check(string: self))
         }
-        completion(results)
+        return results
     }
 }
 
