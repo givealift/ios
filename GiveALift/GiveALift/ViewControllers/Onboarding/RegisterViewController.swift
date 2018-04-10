@@ -10,6 +10,9 @@ import UIKit
 
 final class RegisterViewController: UIViewController {
 
+    //MARK:- Constants
+    let cellsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), PhoneNumberCell()]
+    
     //MARK:- IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,13 +34,12 @@ final class RegisterViewController: UIViewController {
 extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return cellsData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ValidatorTextFiledTVC = tableView.dequeueReusableCell(for: indexPath)
-        let regCell = EmailCell()
-        cell.setup(cellType: regCell)
+        cell.setup(cellType: cellsData[indexPath.row])
         return cell
     }
 }
