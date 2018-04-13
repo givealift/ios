@@ -29,6 +29,9 @@
 		C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BEA46F206A45F600EE0B4B /* Validator.swift */; };
 		C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */; };
 		C1D910DD2080AC8100AD0AC4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DC2080AC8100AD0AC4 /* LoginPresenter.swift */; };
+		C1D910E02080B2D600AD0AC4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */; };
+		C1D910E32080B2F800AD0AC4 /* RequestBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */; };
+		C1D910E52080B33F00AD0AC4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910E42080B33F00AD0AC4 /* Result.swift */; };
 		C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E1663C2065825100BC36BE /* UIViewControllerE.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,9 @@
 		C1BEA46F206A45F600EE0B4B /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = Validator/Validator.swift; sourceTree = "<group>"; };
 		C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		C1D910DC2080AC8100AD0AC4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderType.swift; sourceTree = "<group>"; };
+		C1D910E42080B33F00AD0AC4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		C1E1663C2065825100BC36BE /* UIViewControllerE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerE.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +214,7 @@
 		C191F124206568C9008DD972 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C1D910DE2080B22900AD0AC4 /* Networking */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -275,6 +282,24 @@
 				C1D910DC2080AC8100AD0AC4 /* LoginPresenter.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C1D910DE2080B22900AD0AC4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C1D910E12080B2E600AD0AC4 /* Protocols */,
+				C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */,
+				C1D910E42080B33F00AD0AC4 /* Result.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C1D910E12080B2E600AD0AC4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +440,7 @@
 			files = (
 				C1D910DD2080AC8100AD0AC4 /* LoginPresenter.swift in Sources */,
 				C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */,
+				C1D910E52080B33F00AD0AC4 /* Result.swift in Sources */,
 				C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */,
 				C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */,
 				C191F0F62065657C008DD972 /* HomeViewController.swift in Sources */,
@@ -428,7 +454,9 @@
 				C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */,
 				C191F13E20657BB0008DD972 /* PreLoginRegisterViewController.swift in Sources */,
 				C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */,
+				C1D910E32080B2F800AD0AC4 /* RequestBuilderType.swift in Sources */,
 				C191F1452065806E008DD972 /* Constants.swift in Sources */,
+				C1D910E02080B2D600AD0AC4 /* RequestBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
