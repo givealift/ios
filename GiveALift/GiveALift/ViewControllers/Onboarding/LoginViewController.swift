@@ -19,6 +19,14 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: Any) {
-        //MARK:-TODO próba logowania
+        guard validCredentials() else { return }
+        
+    }
+    
+    private func validCredentials() -> Bool {
+        if passwordTextField.text == nil || emailTextField.text == nil {
+            return false
+        }
+        return true
     }
 }

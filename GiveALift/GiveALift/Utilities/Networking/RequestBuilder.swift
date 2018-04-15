@@ -38,9 +38,7 @@ final class RequestBuilder: RequestBuilderType {
         
         let sessionConfiguration = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfiguration)
-        
         var request = URLRequest(url: url)
-        
         
         if let authToken = authToken {
             let header = "Authorization"

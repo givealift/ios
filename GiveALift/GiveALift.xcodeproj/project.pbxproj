@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C10B6D42206A4B790060AF1F /* RegisterCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B6D41206A4B790060AF1F /* RegisterCellType.swift */; };
+		C1233D5E2083CD1900BD0A56 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D5D2083CD1900BD0A56 /* APIManager.swift */; };
+		C1233D602083CDFF00BD0A56 /* APIManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D5F2083CDFF00BD0A56 /* APIManagerType.swift */; };
+		C1233D622083CE5300BD0A56 /* URLBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D612083CE5300BD0A56 /* URLBuilderType.swift */; };
+		C1233D642083CE7E00BD0A56 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D632083CE7E00BD0A56 /* URLBuilder.swift */; };
 		C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C17206966780043DAF7 /* LoginViewController.swift */; };
 		C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C19206966A40043DAF7 /* RegisterViewController.swift */; };
 		C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */; };
@@ -54,6 +58,10 @@
 
 /* Begin PBXFileReference section */
 		C10B6D41206A4B790060AF1F /* RegisterCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCellType.swift; sourceTree = "<group>"; };
+		C1233D5D2083CD1900BD0A56 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		C1233D5F2083CDFF00BD0A56 /* APIManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerType.swift; sourceTree = "<group>"; };
+		C1233D612083CE5300BD0A56 /* URLBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilderType.swift; sourceTree = "<group>"; };
+		C1233D632083CE7E00BD0A56 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		C1813C17206966780043DAF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1813C19206966A40043DAF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellE.swift; sourceTree = "<group>"; };
@@ -290,6 +298,8 @@
 				C1D910E12080B2E600AD0AC4 /* Protocols */,
 				C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */,
 				C1D910E42080B33F00AD0AC4 /* Result.swift */,
+				C1233D5D2083CD1900BD0A56 /* APIManager.swift */,
+				C1233D632083CE7E00BD0A56 /* URLBuilder.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -298,6 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */,
+				C1233D5F2083CDFF00BD0A56 /* APIManagerType.swift */,
+				C1233D612083CE5300BD0A56 /* URLBuilderType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -439,17 +451,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1D910DD2080AC8100AD0AC4 /* LoginPresenter.swift in Sources */,
+				C1233D622083CE5300BD0A56 /* URLBuilderType.swift in Sources */,
 				C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */,
 				C1D910E52080B33F00AD0AC4 /* Result.swift in Sources */,
 				C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */,
 				C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */,
+				C1233D642083CE7E00BD0A56 /* URLBuilder.swift in Sources */,
 				C191F0F62065657C008DD972 /* HomeViewController.swift in Sources */,
 				C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */,
 				C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */,
 				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,
+				C1233D602083CDFF00BD0A56 /* APIManagerType.swift in Sources */,
 				C10B6D42206A4B790060AF1F /* RegisterCellType.swift in Sources */,
 				C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */,
 				C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */,
+				C1233D5E2083CD1900BD0A56 /* APIManager.swift in Sources */,
 				C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */,
 				C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */,
 				C191F13E20657BB0008DD972 /* PreLoginRegisterViewController.swift in Sources */,
