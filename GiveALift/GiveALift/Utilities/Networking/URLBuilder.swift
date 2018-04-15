@@ -9,10 +9,10 @@
 import Foundation
 
 final class URLBuilder: URLBuilderType {
-    private let mainURL = "https://mysterious-lowlands-82501.herokuapp.com"
+    private let mainURL = "http://mysterious-lowlands-82501.herokuapp.com"
     
     func loginURL() -> URL {
-        let urlString = mainURL + "api/authenticate"
+        let urlString = mainURL + "/api/authenticate"
         return URL(string: urlString)!
     }
 }

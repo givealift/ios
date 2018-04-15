@@ -9,5 +9,5 @@
 import Foundation
 
 protocol APIManagerType: class {
-    func login(email: String, password: String, completion: @escaping APIResultBlock<Data>)
+    func login(email: String, password: String, completion: @escaping APIResultBlock<Response>)
 }

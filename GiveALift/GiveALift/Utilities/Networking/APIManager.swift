@@ -21,7 +21,25 @@ final class APIManager: APIManagerType {
         self.requestBuilder = requestBuilder
     }
     
-    func login(email: String, password: String, completion: @escaping APIResultBlock<Data>) {
-        
+    func login(email: String, password: String, completion: @escaping APIResultBlock<Response>) {
+        let body = ["username": email, "password": password]
+        requestBuilder.POSTRequest(withURL: urlBuilder.loginURL(), withData: body, authToken: nil) { (result) in
+            switch result {
+            case .Success(result: let result):
+                    do  {
+                        let decoder = JSONDecoder()
+                        let galUserResponse = try decoder.decode(Response.self, from: result)
+                        DispatchQueue.main.async {
+                            completion(APIResult.Success(result: galUserResponse))
+                        }
+                    } catch {
+                        print(error)
+                }
+            case .Error(error: let error):
+                    DispatchQueue.main.async {
+                        completion(APIResult.Error(error: error))
+                }
+            }
+        }
     }
 }

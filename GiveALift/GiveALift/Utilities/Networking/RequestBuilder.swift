@@ -18,7 +18,8 @@ final class RequestBuilder: RequestBuilderType {
     
     private func startDataTask(for session: URLSession, with request: URLRequest, completion: @escaping APIResultBlock<Data>) {
         session.dataTask(with: request) { (data, response, error) in
-            if let _ = error {
+            if let error = error {
+                print(error)
                 completion(APIResult.Error(error: APIError.unexpectedError))
                 return
             }

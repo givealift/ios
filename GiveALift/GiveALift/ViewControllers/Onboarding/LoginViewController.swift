@@ -20,7 +20,9 @@ final class LoginViewController: UIViewController {
     
     @IBAction func loginTapped(_ sender: Any) {
         guard validCredentials() else { return }
-        
+        APIManager.shared.login(email: emailTextField.text!, password: passwordTextField.text!) { (reuslt) in
+            
+        }
     }
     
     private func validCredentials() -> Bool {

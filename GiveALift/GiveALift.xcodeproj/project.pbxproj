@@ -12,6 +12,7 @@
 		C1233D602083CDFF00BD0A56 /* APIManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D5F2083CDFF00BD0A56 /* APIManagerType.swift */; };
 		C1233D622083CE5300BD0A56 /* URLBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D612083CE5300BD0A56 /* URLBuilderType.swift */; };
 		C1233D642083CE7E00BD0A56 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D632083CE7E00BD0A56 /* URLBuilder.swift */; };
+		C1233D672083E26800BD0A56 /* GALUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D662083E26800BD0A56 /* GALUserResponse.swift */; };
 		C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C17206966780043DAF7 /* LoginViewController.swift */; };
 		C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C19206966A40043DAF7 /* RegisterViewController.swift */; };
 		C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */; };
@@ -62,6 +63,7 @@
 		C1233D5F2083CDFF00BD0A56 /* APIManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerType.swift; sourceTree = "<group>"; };
 		C1233D612083CE5300BD0A56 /* URLBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilderType.swift; sourceTree = "<group>"; };
 		C1233D632083CE7E00BD0A56 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		C1233D662083E26800BD0A56 /* GALUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALUserResponse.swift; sourceTree = "<group>"; };
 		C1813C17206966780043DAF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1813C19206966A40043DAF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellE.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C1233D652083E03800BD0A56 /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				C1233D662083E26800BD0A56 /* GALUserResponse.swift */,
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
 		C1813C15206964CF0043DAF7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 		C191F123206568C2008DD972 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C1233D652083E03800BD0A56 /* APIModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -468,6 +479,7 @@
 				C1233D5E2083CD1900BD0A56 /* APIManager.swift in Sources */,
 				C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */,
 				C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */,
+				C1233D672083E26800BD0A56 /* GALUserResponse.swift in Sources */,
 				C191F13E20657BB0008DD972 /* PreLoginRegisterViewController.swift in Sources */,
 				C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */,
 				C1D910E32080B2F800AD0AC4 /* RequestBuilderType.swift in Sources */,
