@@ -19,6 +19,21 @@ protocol RegisterCellType {
     var value: String? { get set }
 }
 
+extension RegisterCellType {
+    func isValid() -> Bool {
+        if let value = value {
+            let result = value.validated(with: validationRule)
+            switch result {
+            case .invalid(error: _):
+                return false
+            case .valid:
+                return true
+            }
+        }
+        return false
+    }
+}
+
 class EmailCell: RegisterCellType {
     var labelText: String = "Podaj emial"
     var validationRule: ValidatorRule {

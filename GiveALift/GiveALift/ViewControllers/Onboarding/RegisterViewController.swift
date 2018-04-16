@@ -28,13 +28,22 @@ final class RegisterViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(ValidatorTextFiledTVC.self)
     }
+    
+    //MARK:- IBActions
+    @IBAction func registerTapped(_ sender: Any) {
+        let result = cellsData.filter{$0.isValid()}
+        if result.isEmpty {
+            //MARk:- TODO register
+            print("wysztkie dobrze")
+        } else {
+            //MARK:- TODO bład
+            print("bład")
+        }
+    }
 }
 
 //MARK:- UITableView
 extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
-    func updateReference(cellType: RegisterCellType, index: Int) {
-        cellsData[index] = cellType
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellsData.count
@@ -45,8 +54,6 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setup(cellType: cellsData[indexPath.row])
         return cell
     }
-    
-    
 }
 
 
