@@ -31,6 +31,7 @@ class ValidatorTextFiledTVC: UITableViewCell {
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
+        cellType.value = text
         let result = text.validated(with: cellType.validationRule)
         switch result {
         case .valid:
@@ -44,20 +45,37 @@ class ValidatorTextFiledTVC: UITableViewCell {
     
     private func setupTextField() {
         textField.delegate = self
-        textField.textColor = UIColor.lightGray
-        textField.text = cellType.labelText
         textField.addTarget(self, action: #selector(ValidatorTextFiledTVC.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+        if let text = cellType.value {
+            setupBlackTextfield(withText: text)
+        } else {
+            setupGrayTextfield(withText: cellType.labelText)
+        }
+    }
+    
+    private func setupGrayTextfield(withText text: String) {
+        textField.textColor = UIColor.lightGray
+        textField.text = text
+    }
+    
+    private func setupBlackTextfield(withText text: String?) {
+        textField.textColor = UIColor.black
+        textField.text = text
     }
 }
 
 extension ValidatorTextFiledTVC: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text = nil
-        textField.textColor = UIColor.black
+        setupBlackTextfield(withText: cellType.value)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //MARK:- TODO jakiś callback do kontrollera żeby zapisał tekst z textfielda
+        cellType.value = textField.text
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 final class RegisterViewController: UIViewController {
 
     //MARK:- Constants
-    let cellsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), PhoneNumberCell()]
+    private let cellsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), PhoneNumberCell()]
     
     //MARK:- IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +19,7 @@ final class RegisterViewController: UIViewController {
     //MARK:- VC life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         setupTableView()
     }
     
@@ -27,6 +28,18 @@ final class RegisterViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ValidatorTextFiledTVC.self)
+    }
+    
+    //MARK:- IBActions
+    @IBAction func registerTapped(_ sender: Any) {
+        let result = cellsData.filter{$0.isValid()}
+        if result.isEmpty {
+            //MARk:- TODO register
+            print("wysztkie dobrze")
+        } else {
+            //MARK:- TODO bład
+            print("bład")
+        }
     }
 }
 
@@ -43,3 +56,5 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+
+

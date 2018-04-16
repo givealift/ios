@@ -16,9 +16,25 @@ protocol RegisterCellType {
     var labelText: String { get }
     var validationRule: ValidatorRule { get }
     var type: CellType { get }
+    var value: String? { get set }
 }
 
-struct EmailCell: RegisterCellType {
+extension RegisterCellType {
+    func isValid() -> Bool {
+        if let value = value {
+            let result = value.validated(with: validationRule)
+            switch result {
+            case .invalid(error: _):
+                return false
+            case .valid:
+                return true
+            }
+        }
+        return false
+    }
+}
+
+class EmailCell: RegisterCellType {
     var labelText: String = "Podaj emial"
     var validationRule: ValidatorRule {
         var rule = ValidatorRulePattern(pattern: .email)
@@ -26,9 +42,10 @@ struct EmailCell: RegisterCellType {
         return rule
     }
     var type: CellType = .textfield
+    var value: String? = nil
 }
 
-struct PasswordCell: RegisterCellType {
+class PasswordCell: RegisterCellType {
     var labelText: String = "Podaj hasło"
     var validationRule: ValidatorRule {
         var rule = ValidatorRuleLength(rule: .minimumLength, value: 8)
@@ -36,10 +53,11 @@ struct PasswordCell: RegisterCellType {
         return rule
     }
     var type: CellType = .textfield
+    var value: String? = nil
 }
 
 //MARK:- TODO validation rule do takich samych haseł
-struct CompatibilePasswordCell: RegisterCellType {
+class CompatibilePasswordCell: RegisterCellType {
     var labelText: String = "Powtórz hasło"
     var validationRule: ValidatorRule {
         var rule = ValidatorRuleLength(rule: .minimumLength, value: 8)
@@ -47,9 +65,11 @@ struct CompatibilePasswordCell: RegisterCellType {
         return rule
     }
     var type: CellType = .textfield
+    var password: String?
+    var value: String? = nil
 }
 
-struct NameCell: RegisterCellType {
+class NameCell: RegisterCellType {
     var labelText: String = "Podaj imię"
     var validationRule: ValidatorRule {
         var rule = ValidatorRuleLength(rule: .maximumLength, value: 25)
@@ -57,9 +77,10 @@ struct NameCell: RegisterCellType {
         return rule
     }
     var type: CellType = .textfield
+    var value: String? = nil
 }
 
-struct SurnameCell: RegisterCellType {
+class SurnameCell: RegisterCellType {
     var labelText: String = "Podaj nazwisko"
     var validationRule: ValidatorRule {
         var rule = ValidatorRuleLength(rule: .maximumLength, value: 25)
@@ -67,9 +88,10 @@ struct SurnameCell: RegisterCellType {
         return rule
     }
     var type: CellType = .textfield
+    var value: String? = nil
 }
 
-struct PhoneNumberCell: RegisterCellType {
+class PhoneNumberCell: RegisterCellType {
     var labelText: String = "Podaj numer telefonu"
     var validationRule: ValidatorRule {
         var rule = ValidatorRulePattern(pattern: .phoneNumber)
@@ -77,4 +99,5 @@ struct PhoneNumberCell: RegisterCellType {
         return rule
     }
     var type: CellType = .textfield
+    var value: String? = nil
 }
