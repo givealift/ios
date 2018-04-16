@@ -11,7 +11,7 @@ import UIKit
 final class RegisterViewController: UIViewController {
 
     //MARK:- Constants
-    var cellsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), PhoneNumberCell()]
+    private let cellsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), PhoneNumberCell()]
     
     //MARK:- IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +19,7 @@ final class RegisterViewController: UIViewController {
     //MARK:- VC life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         setupTableView()
     }
     

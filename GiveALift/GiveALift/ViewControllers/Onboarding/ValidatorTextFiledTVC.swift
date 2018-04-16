@@ -74,4 +74,9 @@ extension ValidatorTextFiledTVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         cellType.value = textField.text
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
