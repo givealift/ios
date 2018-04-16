@@ -11,7 +11,7 @@ import UIKit
 final class RegisterViewController: UIViewController {
 
     //MARK:- Constants
-    let cellsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), PhoneNumberCell()]
+    var cellsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), PhoneNumberCell()]
     
     //MARK:- IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -32,6 +32,9 @@ final class RegisterViewController: UIViewController {
 
 //MARK:- UITableView
 extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
+    func updateReference(cellType: RegisterCellType, index: Int) {
+        cellsData[index] = cellType
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellsData.count
@@ -42,4 +45,8 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setup(cellType: cellsData[indexPath.row])
         return cell
     }
+    
+    
 }
+
+
