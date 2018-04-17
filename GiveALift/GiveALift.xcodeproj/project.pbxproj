@@ -40,6 +40,7 @@
 		C1CFBD83208655E800253375 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD82208655E800253375 /* HomePresenter.swift */; };
 		C1CFBD8820865D6200253375 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD8620865D6200253375 /* HomeViewController.swift */; };
 		C1CFBD8920865D6200253375 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD8720865D6200253375 /* HomeViewController.xib */; };
+		C1CFBD8B20866EC100253375 /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD8A20866EC100253375 /* Cities.json */; };
 		C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */; };
 		C1D910E02080B2D600AD0AC4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */; };
 		C1D910E32080B2F800AD0AC4 /* RequestBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */; };
@@ -104,6 +105,7 @@
 		C1CFBD82208655E800253375 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		C1CFBD8620865D6200253375 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C1CFBD8720865D6200253375 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		C1CFBD8A20866EC100253375 /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
 		C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderType.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				C191F0FF2065657C008DD972 /* Info.plist */,
 				C191F13020656C1E008DD972 /* GiveALift.xcdatamodeld */,
 				C191F1442065806E008DD972 /* Constants.swift */,
+				C1CFBD8A20866EC100253375 /* Cities.json */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C191F0FE2065657C008DD972 /* LaunchScreen.storyboard in Resources */,
+				C1CFBD8B20866EC100253375 /* Cities.json in Resources */,
 				C191F0FB2065657C008DD972 /* Assets.xcassets in Resources */,
 				C191F0F92065657C008DD972 /* Main.storyboard in Resources */,
 				C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */,
