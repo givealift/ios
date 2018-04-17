@@ -9,6 +9,7 @@
 import Foundation
 
 final class URLBuilder: URLBuilderType {
+    
     private let mainURL = "http://mysterious-lowlands-82501.herokuapp.com"
     
     func loginURL() -> URL {
@@ -18,6 +19,12 @@ final class URLBuilder: URLBuilderType {
     
     func registerURL() -> URL {
         let urlString = mainURL + "/api/user/signup"
+        return URL(string: urlString)!
+    }
+    
+    func searchRouteURL(from: Int, to: Int, date: Date) -> URL {
+        let urlString = mainURL + "/route/search?from=\(from)&to=\(to)&date=\(date)"
+        print(urlString)
         return URL(string: urlString)!
     }
 }
