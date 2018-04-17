@@ -26,8 +26,19 @@ final class SearchPresenter: BasePresenter {
             case .Error(error: let error):
                 print(error)
             case .Success(result: let result):
-                print(result)
+                let decoder = JSONDecoder()
+                do {
+                    let routes = try decoder.decode([Route].self, from: result)
+                    self.displayRoutesView(routes: routes)
+                } catch {
+                    print(error)
+                }
             }
         }
+    }
+    
+    func displayRoutesView(routes: [Route]) {
+        let presenter = RoutesPresenter(routes: routes)
+        let routesVC = RoutesViewController(presenter: presenter)
     }
 }
