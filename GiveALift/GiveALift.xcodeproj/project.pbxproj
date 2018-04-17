@@ -39,8 +39,8 @@
 		C1CFBD7B20864D3600253375 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7A20864D3600253375 /* User.swift */; };
 		C1CFBD7E2086524600253375 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD7D2086524600253375 /* HomeViewController.xib */; };
 		C1CFBD812086528B00253375 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD802086528B00253375 /* BaseViewController.swift */; };
+		C1CFBD83208655E800253375 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD82208655E800253375 /* HomePresenter.swift */; };
 		C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */; };
-		C1D910DD2080AC8100AD0AC4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DC2080AC8100AD0AC4 /* LoginPresenter.swift */; };
 		C1D910E02080B2D600AD0AC4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */; };
 		C1D910E32080B2F800AD0AC4 /* RequestBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */; };
 		C1D910E52080B33F00AD0AC4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910E42080B33F00AD0AC4 /* Result.swift */; };
@@ -103,8 +103,8 @@
 		C1CFBD7A20864D3600253375 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C1CFBD7D2086524600253375 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		C1CFBD802086528B00253375 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C1CFBD82208655E800253375 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
-		C1D910DC2080AC8100AD0AC4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderType.swift; sourceTree = "<group>"; };
 		C1D910E42080B33F00AD0AC4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -343,7 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */,
-				C1D910DC2080AC8100AD0AC4 /* LoginPresenter.swift */,
+				C1CFBD82208655E800253375 /* HomePresenter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -508,9 +508,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1CFBD7720864B1B00253375 /* LocalStorage.swift in Sources */,
-				C1D910DD2080AC8100AD0AC4 /* LoginPresenter.swift in Sources */,
 				C1233D622083CE5300BD0A56 /* URLBuilderType.swift in Sources */,
 				C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */,
+				C1CFBD83208655E800253375 /* HomePresenter.swift in Sources */,
 				C1D910E52080B33F00AD0AC4 /* Result.swift in Sources */,
 				C1CFBD812086528B00253375 /* BaseViewController.swift in Sources */,
 				C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */,

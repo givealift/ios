@@ -17,16 +17,15 @@ final class FlowCoordinator {
     }
     
     func start() {
-        if isLoggedIn() {
+        if isLogIn() {
             presentHomeVC()
         } else {
             presentPreLoginRegisterVC()
         }
     }
     
-    private func isLoggedIn() -> Bool {
-        //MARK:- TODO sprawdzenie logowania
-        return false
+    func isLogIn() -> Bool {
+        return true
     }
     
     private func presentPreLoginRegisterVC() {
@@ -37,9 +36,13 @@ final class FlowCoordinator {
     }
     
     private func presentHomeVC() {
-        guard let homeVC = Storyboards.Main.instantiateInitialViewController() as? UINavigationController else {
-            fatalError("Can't load homeVc")
-        }
-        window.rootViewController = homeVC
+//        guard let homeVC = Storyboards.Main.instantiateInitialViewController() as? UINavigationController else {
+//            fatalError("Can't load homeVc")
+//        }
+        let presenter = HomePresenter()
+        let homeVC = HomeViewController(presenter: presenter)
+        let nav = UINavigationController()
+        window.rootViewController = nav
+        nav.pushViewController(homeVC, animated: true)
     }
 }
