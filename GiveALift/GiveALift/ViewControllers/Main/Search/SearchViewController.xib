@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="GiveALift" customModuleProvider="target">
             <connections>
+                <outlet property="dateTextField" destination="yz9-f7-E17" id="AJQ-9h-1tg"/>
+                <outlet property="fromTextField" destination="1WD-kS-yio" id="MlV-zj-RNC"/>
+                <outlet property="toTextField" destination="HYr-qb-O0W" id="mOW-AR-Xze"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,30 +23,39 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-d5-w4W">
-                    <rect key="frame" x="87" y="183.5" width="200" height="300"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-d5-w4W">
+                    <rect key="frame" x="37" y="183.5" width="300" height="300"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1WD-kS-yio" customClass="SugestiveTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="33.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="52.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYr-qb-O0W" customClass="SugestiveTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="133.5" width="200" height="33"/>
+                            <rect key="frame" x="0.0" y="82.5" width="300" height="52.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yz9-f7-E17">
+                            <rect key="frame" x="0.0" y="165" width="300" height="52.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fet-dv-wJw">
-                            <rect key="frame" x="0.0" y="266.5" width="200" height="33.5"/>
+                            <rect key="frame" x="0.0" y="247.5" width="300" height="52.5"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <state key="normal" title="Search"/>
+                            <connections>
+                                <action selector="searchTapped:" destination="-1" eventType="touchUpInside" id="hM1-Sh-ecM"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="NXC-2Y-BnT"/>
-                        <constraint firstAttribute="width" constant="200" id="sHU-j8-GpH"/>
+                        <constraint firstAttribute="width" constant="300" id="sHU-j8-GpH"/>
                     </constraints>
                 </stackView>
             </subviews>

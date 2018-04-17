@@ -10,4 +10,17 @@ import Foundation
 
 final class SearchPresenter: BasePresenter {
     
+    fileprivate let requestBuilder: RequestBuilderType
+    fileprivate let urlBuilder: URLBuilderType
+    
+    // MARK: Initializers
+    
+    init(urlBuilder: URLBuilderType = URLBuilder(), requestBuilder: RequestBuilderType = RequestBuilder()) {
+        self.urlBuilder = urlBuilder
+        self.requestBuilder = requestBuilder
+    }
+    
+    func findRoutesFor(start: Int, finish: Int, date: Date) {
+        
+    }
 }

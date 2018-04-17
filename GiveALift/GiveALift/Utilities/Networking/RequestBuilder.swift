@@ -9,6 +9,15 @@
 import Foundation
 
 final class RequestBuilder: RequestBuilderType {
+    
+    func GETRequest(withURL url: URL, authToken: String?, completion: @escaping (APIResult<Data>) -> ()) {
+        let (request, session) = configuration(forURL: url, parameters: nil, httpMethod: "GET", authToken: authToken)
+        print(request)
+        startDataTask(for: session, with: request) { (result) in
+            completion(result)
+        }
+    }
+    
     func POSTRequest(withURL url: URL, withData body: [String : Any]?, authToken: String?, completion: @escaping APIResultBlock<Data>) {
         let (request, session) = configuration(forURL: url, parameters: body, httpMethod: "POST", authToken: authToken)
         print(request)

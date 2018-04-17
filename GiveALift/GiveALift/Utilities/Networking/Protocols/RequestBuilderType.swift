@@ -10,4 +10,5 @@ import Foundation
 
 protocol RequestBuilderType {
     func POSTRequest(withURL url: URL, withData body: [String: Any]?, authToken: String?, completion: @escaping APIResultBlock<Data>)
+    func GETRequest(withURL url: URL, authToken: String?, completion: @escaping APIResultBlock<Data>)
 }
