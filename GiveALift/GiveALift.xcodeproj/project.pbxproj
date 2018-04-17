@@ -21,7 +21,6 @@
 		C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */; };
 		C1813C2220696AAE0043DAF7 /* ValidatorTextFiledTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */; };
 		C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F0F32065657C008DD972 /* AppDelegate.swift */; };
-		C191F0F62065657C008DD972 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F0F52065657C008DD972 /* HomeViewController.swift */; };
 		C191F0F92065657C008DD972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F0F72065657C008DD972 /* Main.storyboard */; };
 		C191F0FB2065657C008DD972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C191F0FA2065657C008DD972 /* Assets.xcassets */; };
 		C191F0FE2065657C008DD972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F0FC2065657C008DD972 /* LaunchScreen.storyboard */; };
@@ -37,9 +36,10 @@
 		C1CFBD7720864B1B00253375 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7620864B1B00253375 /* LocalStorage.swift */; };
 		C1CFBD7920864BF000253375 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7820864BF000253375 /* LocalStorageManager.swift */; };
 		C1CFBD7B20864D3600253375 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7A20864D3600253375 /* User.swift */; };
-		C1CFBD7E2086524600253375 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD7D2086524600253375 /* HomeViewController.xib */; };
 		C1CFBD812086528B00253375 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD802086528B00253375 /* BaseViewController.swift */; };
 		C1CFBD83208655E800253375 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD82208655E800253375 /* HomePresenter.swift */; };
+		C1CFBD8820865D6200253375 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD8620865D6200253375 /* HomeViewController.swift */; };
+		C1CFBD8920865D6200253375 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD8720865D6200253375 /* HomeViewController.xib */; };
 		C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */; };
 		C1D910E02080B2D600AD0AC4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */; };
 		C1D910E32080B2F800AD0AC4 /* RequestBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */; };
@@ -80,7 +80,6 @@
 		C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidatorTextFiledTVC.xib; sourceTree = "<group>"; };
 		C191F0F02065657C008DD972 /* GiveALift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiveALift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C191F0F32065657C008DD972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C191F0F52065657C008DD972 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C191F0F82065657C008DD972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C191F0FA2065657C008DD972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C191F0FD2065657C008DD972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,9 +100,10 @@
 		C1CFBD7620864B1B00253375 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		C1CFBD7820864BF000253375 /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 		C1CFBD7A20864D3600253375 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C1CFBD7D2086524600253375 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		C1CFBD802086528B00253375 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C1CFBD82208655E800253375 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		C1CFBD8620865D6200253375 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C1CFBD8720865D6200253375 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderType.swift; sourceTree = "<group>"; };
@@ -325,8 +325,8 @@
 		C1CFBD7C208651C700253375 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C191F0F52065657C008DD972 /* HomeViewController.swift */,
-				C1CFBD7D2086524600253375 /* HomeViewController.xib */,
+				C1CFBD8620865D6200253375 /* HomeViewController.swift */,
+				C1CFBD8720865D6200253375 /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 				C191F0F92065657C008DD972 /* Main.storyboard in Resources */,
 				C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */,
 				C1813C2220696AAE0043DAF7 /* ValidatorTextFiledTVC.xib in Resources */,
-				C1CFBD7E2086524600253375 /* HomeViewController.xib in Resources */,
+				C1CFBD8920865D6200253375 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,12 +512,12 @@
 				C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */,
 				C1CFBD83208655E800253375 /* HomePresenter.swift in Sources */,
 				C1D910E52080B33F00AD0AC4 /* Result.swift in Sources */,
+				C1CFBD8820865D6200253375 /* HomeViewController.swift in Sources */,
 				C1CFBD812086528B00253375 /* BaseViewController.swift in Sources */,
 				C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */,
 				C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */,
 				C1233D642083CE7E00BD0A56 /* URLBuilder.swift in Sources */,
 				C1CFBD7B20864D3600253375 /* User.swift in Sources */,
-				C191F0F62065657C008DD972 /* HomeViewController.swift in Sources */,
 				C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */,
 				C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */,
 				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,

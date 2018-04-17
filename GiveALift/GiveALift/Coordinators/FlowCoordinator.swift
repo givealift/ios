@@ -36,9 +36,6 @@ final class FlowCoordinator {
     }
     
     private func presentHomeVC() {
-//        guard let homeVC = Storyboards.Main.instantiateInitialViewController() as? UINavigationController else {
-//            fatalError("Can't load homeVc")
-//        }
         let presenter = HomePresenter()
         let homeVC = HomeViewController(presenter: presenter)
         let nav = UINavigationController()

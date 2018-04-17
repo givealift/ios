@@ -18,8 +18,7 @@ class BaseViewController<Presenter>: UIViewController where Presenter: BasePrese
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-//        fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented")
     }
     
     
