@@ -21,7 +21,9 @@ final class SugestiveTextField: SearchTextField {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        self.cities = loadCities()
+        self.filterStrings(cities.map({$0.name}))
     }
     
     func selectedCityId() -> Int? {
