@@ -37,6 +37,8 @@
 		C1CFBD7720864B1B00253375 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7620864B1B00253375 /* LocalStorage.swift */; };
 		C1CFBD7920864BF000253375 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7820864BF000253375 /* LocalStorageManager.swift */; };
 		C1CFBD7B20864D3600253375 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7A20864D3600253375 /* User.swift */; };
+		C1CFBD7E2086524600253375 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD7D2086524600253375 /* HomeViewController.xib */; };
+		C1CFBD812086528B00253375 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD802086528B00253375 /* BaseViewController.swift */; };
 		C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */; };
 		C1D910DD2080AC8100AD0AC4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DC2080AC8100AD0AC4 /* LoginPresenter.swift */; };
 		C1D910E02080B2D600AD0AC4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */; };
@@ -99,6 +101,8 @@
 		C1CFBD7620864B1B00253375 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		C1CFBD7820864BF000253375 /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 		C1CFBD7A20864D3600253375 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C1CFBD7D2086524600253375 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		C1CFBD802086528B00253375 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		C1D910DC2080AC8100AD0AC4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
@@ -144,7 +148,7 @@
 		C1813C15206964CF0043DAF7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				C191F0F52065657C008DD972 /* HomeViewController.swift */,
+				C1CFBD7C208651C700253375 /* Home */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -264,6 +268,7 @@
 		C191F126206568E5008DD972 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C1CFBD7F2086526900253375 /* Base */,
 				C1813C16206964E00043DAF7 /* Onboarding */,
 				C1813C15206964CF0043DAF7 /* Main */,
 			);
@@ -315,6 +320,23 @@
 				C1CFBD7A20864D3600253375 /* User.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		C1CFBD7C208651C700253375 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C191F0F52065657C008DD972 /* HomeViewController.swift */,
+				C1CFBD7D2086524600253375 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C1CFBD7F2086526900253375 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C1CFBD802086528B00253375 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		C1D910D82080AC3C00AD0AC4 /* Presentation */ = {
@@ -460,6 +482,7 @@
 				C191F0F92065657C008DD972 /* Main.storyboard in Resources */,
 				C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */,
 				C1813C2220696AAE0043DAF7 /* ValidatorTextFiledTVC.xib in Resources */,
+				C1CFBD7E2086524600253375 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +512,7 @@
 				C1233D622083CE5300BD0A56 /* URLBuilderType.swift in Sources */,
 				C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */,
 				C1D910E52080B33F00AD0AC4 /* Result.swift in Sources */,
+				C1CFBD812086528B00253375 /* BaseViewController.swift in Sources */,
 				C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */,
 				C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */,
 				C1233D642083CE7E00BD0A56 /* URLBuilder.swift in Sources */,
