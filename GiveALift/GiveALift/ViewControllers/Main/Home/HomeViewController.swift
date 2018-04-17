@@ -15,4 +15,12 @@ class HomeViewController: BaseViewController<HomePresenter> {
         view.backgroundColor = UIColor.yellow
     }
 
+    @IBAction func searchTapped(_ sender: Any) {
+        let prester = SearchPresenter()
+        let searchVC = SearchViewController(presenter: prester)
+        navigationController?.pushViewController(searchVC, animated: true)
+    }
+    
+    @IBAction func addTapped(_ sender: Any) {
+    }
 }
