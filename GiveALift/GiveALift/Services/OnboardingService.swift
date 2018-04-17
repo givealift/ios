@@ -38,9 +38,22 @@ final class OnboardingService {
         }
     }
     
-    func register(email: String, password: String, completion: @escaping APIResultBlock<Response>) {
+    func register(email: String, password: String, completion: @escaping APIResultBlock<GALRegisterResponse>) {
         let body = ["username": email, "password": password]
-        
+        requestBuilder.POSTRequest(withURL: urlBuilder.registerURL(), withData: body, authToken: nil) { (result) in
+            switch result {
+            case .Success(result: let result):
+                do  {
+                    let decoder = JSONDecoder()
+                    let galRegisterResponse = try decoder.decode(GALRegisterResponse.self, from: result)
+                    completion(APIResult.Success(result: galRegisterResponse))
+                } catch {
+                    print(error)
+                }
+            case .Error(error: let error):
+                completion(APIResult.Error(error: error))
+            }
+        }
         
     }
 }

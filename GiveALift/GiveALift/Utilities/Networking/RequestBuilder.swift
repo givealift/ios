@@ -11,6 +11,7 @@ import Foundation
 final class RequestBuilder: RequestBuilderType {
     func POSTRequest(withURL url: URL, withData body: [String : Any]?, authToken: String?, completion: @escaping APIResultBlock<Data>) {
         let (request, session) = configuration(forURL: url, parameters: body, httpMethod: "POST", authToken: authToken)
+        print(request)
         startDataTask(for: session, with: request) { (result) in
             completion(result)
         }
@@ -18,7 +19,7 @@ final class RequestBuilder: RequestBuilderType {
     
     private func startDataTask(for session: URLSession, with request: URLRequest, completion: @escaping APIResultBlock<Data>) {
         session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
+            if let _ = error {
                 completion(APIResult.Error(error: APIError.unexpectedError))
                 return
             }

@@ -44,6 +44,7 @@ enum Rule {
 enum Pattern: String {
     case email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     case phoneNumber = "[0-9]{9}"
+    case customString
     
     var errorMessage: String {
         switch self {
@@ -51,6 +52,8 @@ enum Pattern: String {
             return "Incorrect email"
         case .phoneNumber:
             return "Incorrect phone number"
+        case .customString:
+            return "Strings don't match"
         }
     }
 }
@@ -94,13 +97,24 @@ final class ValidatorRulePattern: ValidatorRule {
     
     var errorMessage: String
     let pattern: Pattern
+    let dynamicString: (() -> String)?
     
     init(pattern: Pattern) {
         self.pattern = pattern
-        errorMessage = pattern.errorMessage
+        self.errorMessage = pattern.errorMessage
+        self.dynamicString = nil
+    }
+    
+    init(dynamicString: @escaping () -> String) {
+        self.pattern = .customString
+        self.errorMessage = pattern.errorMessage
+        self.dynamicString = dynamicString
     }
     
     func check(string: String) -> Result {
+        if let dynamicString = dynamicString {
+            return string == dynamicString() ? Result.valid : Result.invalid(error: errorMessage)
+        }
         let pattern = self.pattern.rawValue
         let test = NSPredicate(format:"SELF MATCHES %@", pattern)
         return test.evaluate(with: string) ? Result.valid : Result.invalid(error: errorMessage)

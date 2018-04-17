@@ -12,6 +12,7 @@ final class RegisterViewController: UIViewController {
 
     //MARK:- Constants
     private let cellsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), PhoneNumberCell()]
+    private let onboardingService = OnboardingService()
     
     //MARK:- IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +22,7 @@ final class RegisterViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         setupTableView()
+        setObserverForPasswordCell()
     }
     
     //MARK:- Private methods
@@ -30,16 +32,29 @@ final class RegisterViewController: UIViewController {
         tableView.register(ValidatorTextFiledTVC.self)
     }
     
+    private func setObserverForPasswordCell() {
+        let passwordCell = cellsData[3] as! PasswordCell
+        let compatibileCell = cellsData[4] as! CompatibilePasswordCell
+        compatibileCell.passwordCell = passwordCell
+    }
+    
     //MARK:- IBActions
     @IBAction func registerTapped(_ sender: Any) {
         let result = cellsData.filter{$0.isValid()}
-        if result.isEmpty {
-            //MARk:- TODO register
-            print("wysztkie dobrze")
-        } else {
-            //MARK:- TODO bład
-            print("bład")
-        }
+//        if result.count == cellsData.count {
+            onboardingService.register(email: cellsData[2].value!, password: cellsData[3].value!) { (result) in
+                switch result {
+                case .Error(error: let error):
+                    print(error)
+                case .Success(result: let result):
+                    //MARK:-TODO cos z resultatem
+                    print(result)
+                }
+            }
+//        } else {
+//            //MARK:- TODO bład
+//            print("bład")
+//        }
     }
 }
 

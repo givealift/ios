@@ -60,12 +60,12 @@ class PasswordCell: RegisterCellType {
 class CompatibilePasswordCell: RegisterCellType {
     var labelText: String = "Powtórz hasło"
     var validationRule: ValidatorRule {
-        var rule = ValidatorRuleLength(rule: .minimumLength, value: 8)
-        rule.set(errorMessage: "Hasło musi zawierać co najmniej 8 znaków")
+        var rule = ValidatorRulePattern(dynamicString: { return self.passwordCell?.value ?? ""})
+        rule.set(errorMessage: "Hasła muszą być zgodne")
         return rule
     }
+    var passwordCell: PasswordCell?
     var type: CellType = .textfield
-    var password: String?
     var value: String? = nil
 }
 
