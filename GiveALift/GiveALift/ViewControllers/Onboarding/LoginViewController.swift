@@ -15,13 +15,18 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
     }
     
     @IBAction func loginTapped(_ sender: Any) {
         guard validCredentials() else { return }
         APIManager.shared.login(email: emailTextField.text!, password: passwordTextField.text!) { (result) in
-            
+            switch result {
+            case .Error(error: let error):
+                print(error)
+            case .Success(result: let result):
+                User.shared.logIn(user: result)
+                print(User.shared.token)
+            }
         }
     }
     
