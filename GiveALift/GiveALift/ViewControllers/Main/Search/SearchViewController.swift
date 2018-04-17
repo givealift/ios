@@ -26,17 +26,11 @@ class SearchViewController: BaseViewController<SearchPresenter> {
     }
     
     @IBAction func searchTapped(_ sender: Any) {
-        if isValid() {
-        presenter.findRoutesFor(start: fromTextField.selectedCityId()!, finish: toTextField.selectedCityId()!, date: APIDateFormatter.date(from: dateTextField.text!)!)
+        if let to = toTextField.selectedCityId(), let from = fromTextField.selectedCityId(), let dateString = dateTextField.text {
+            presenter.findRoutesFor(from: from, to: to, date: APIDateFormatter.date(from: dateString)!)
         }
     }
-    
-    private func isValid() -> Bool {
-        if let _ = toTextField.selectedCityId(), let _ = fromTextField.selectedCityId(), let _ = dateTextField.text {
-            return true
-        }
-        return false
-    }
+
     
     private func createDatePicker() {
         datePicker.datePickerMode = .date

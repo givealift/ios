@@ -20,7 +20,14 @@ final class SearchPresenter: BasePresenter {
         self.requestBuilder = requestBuilder
     }
     
-    func findRoutesFor(start: Int, finish: Int, date: Date) {
-//        requestBuilder.GETRequest(withURL: <#T##URL#>, authToken: <#T##String?#>, completion: <#T##(APIResult<Data>) -> ()#>)
+    func findRoutesFor(from: Int, to: Int, date: Date) {
+        requestBuilder.GETRequest(withURL: urlBuilder.searchRouteURL(from: from, to: to, date: date), authToken: User.shared.token) { (result) in
+            switch result {
+            case .Error(error: let error):
+                print(error)
+            case .Success(result: let result):
+                print(result)
+            }
+        }
     }
 }

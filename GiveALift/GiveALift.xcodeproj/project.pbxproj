@@ -49,6 +49,7 @@
 		C1CFBD952086826100253375 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD932086826100253375 /* SearchViewController.swift */; };
 		C1CFBD962086826100253375 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD942086826100253375 /* SearchViewController.xib */; };
 		C1CFBD982086828000253375 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD972086828000253375 /* SearchPresenter.swift */; };
+		C1CFBD9A2086A78700253375 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD992086A78700253375 /* Route.swift */; };
 		C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */; };
 		C1D910E02080B2D600AD0AC4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */; };
 		C1D910E32080B2F800AD0AC4 /* RequestBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */; };
@@ -128,6 +129,7 @@
 		C1CFBD932086826100253375 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = GiveALift/ViewControllers/Main/Search/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		C1CFBD942086826100253375 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchViewController.xib; path = GiveALift/ViewControllers/Main/Search/SearchViewController.xib; sourceTree = SOURCE_ROOT; };
 		C1CFBD972086828000253375 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		C1CFBD992086A78700253375 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderType.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				C1233D662083E26800BD0A56 /* GALUserResponse.swift */,
 				C1CFBD6F2085F48900253375 /* GALRegisterResponse.swift */,
+				C1CFBD992086A78700253375 /* Route.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				C1233D6A2083E7BD00BD0A56 /* OnboardingService.swift in Sources */,
 				C1CFBD8D2086728E00253375 /* SugestiveTextField.swift in Sources */,
 				C1CFBD902086798500253375 /* City.swift in Sources */,
+				C1CFBD9A2086A78700253375 /* Route.swift in Sources */,
 				C1CFBD7920864BF000253375 /* LocalStorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

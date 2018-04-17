@@ -52,7 +52,7 @@ final class RequestBuilder: RequestBuilderType {
         
         if let authToken = authToken {
             let header = "Authorization"
-            request.addValue(authToken, forHTTPHeaderField: header)
+            request.addValue("Bearer " + authToken, forHTTPHeaderField: header)
         }
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

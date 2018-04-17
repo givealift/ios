@@ -23,7 +23,7 @@ final class URLBuilder: URLBuilderType {
     }
     
     func searchRouteURL(from: Int, to: Int, date: Date) -> URL {
-        let urlString = mainURL + "/route/search?from=\(from)&to=\(to)&date=\(date)"
+        let urlString = mainURL + "/api/route?from=\(from)&to=\(to)&date=\(date)"
         print(urlString)
         return URL(string: urlString)!
     }
