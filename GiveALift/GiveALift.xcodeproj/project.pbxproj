@@ -36,6 +36,7 @@
 		C1CFBD702085F48900253375 /* GALRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD6F2085F48900253375 /* GALRegisterResponse.swift */; };
 		C1CFBD7720864B1B00253375 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7620864B1B00253375 /* LocalStorage.swift */; };
 		C1CFBD7920864BF000253375 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7820864BF000253375 /* LocalStorageManager.swift */; };
+		C1CFBD7B20864D3600253375 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7A20864D3600253375 /* User.swift */; };
 		C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */; };
 		C1D910DD2080AC8100AD0AC4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DC2080AC8100AD0AC4 /* LoginPresenter.swift */; };
 		C1D910E02080B2D600AD0AC4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */; };
@@ -97,6 +98,7 @@
 		C1CFBD6F2085F48900253375 /* GALRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALRegisterResponse.swift; sourceTree = "<group>"; };
 		C1CFBD7620864B1B00253375 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		C1CFBD7820864BF000253375 /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
+		C1CFBD7A20864D3600253375 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		C1D910DC2080AC8100AD0AC4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			children = (
 				C1CFBD7620864B1B00253375 /* LocalStorage.swift */,
 				C1CFBD7820864BF000253375 /* LocalStorageManager.swift */,
+				C1CFBD7A20864D3600253375 /* User.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */,
 				C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */,
 				C1233D642083CE7E00BD0A56 /* URLBuilder.swift in Sources */,
+				C1CFBD7B20864D3600253375 /* User.swift in Sources */,
 				C191F0F62065657C008DD972 /* HomeViewController.swift in Sources */,
 				C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */,
 				C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */,
