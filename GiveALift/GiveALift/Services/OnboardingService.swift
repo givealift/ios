@@ -37,4 +37,10 @@ final class OnboardingService {
             }
         }
     }
+    
+    func register(email: String, password: String, completion: @escaping APIResultBlock<Response>) {
+        let body = ["username": email, "password": password]
+        
+        
+    }
 }

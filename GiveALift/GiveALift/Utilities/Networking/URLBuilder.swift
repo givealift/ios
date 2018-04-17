@@ -15,4 +15,9 @@ final class URLBuilder: URLBuilderType {
         let urlString = mainURL + "/api/authenticate"
         return URL(string: urlString)!
     }
+    
+    func registerURL() -> URL {
+        let urlString = mainURL + "/api/authenticate"
+        return URL(string: urlString)!
+    }
 }
