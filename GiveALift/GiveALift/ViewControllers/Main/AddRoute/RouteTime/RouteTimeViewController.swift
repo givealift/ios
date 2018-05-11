@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RouteTimeViewController: BaseViewController<RouteTimePresenter> {
+class RouteTimeViewController: BaseViewController<RouteTimePresenter>, UITextFieldDelegate {
 
     //MARK:- IBOutlets
     @IBOutlet weak var dateTextField: UITextField!
@@ -33,6 +33,7 @@ class RouteTimeViewController: BaseViewController<RouteTimePresenter> {
         self.hideKeyboardWhenTappedAround()
         setupDatePicker()
         setupTimePicker()
+        setupTextFields()
     }
     
     //MARK:- IBActions
@@ -42,6 +43,13 @@ class RouteTimeViewController: BaseViewController<RouteTimePresenter> {
     }
     
     //MARK:- Main
+    
+    private func setupTextFields() {
+        dateTextField.setPlaceholder(with: presenter.datePlaceholder)
+        timeTextField.setPlaceholder(with: presenter.timePlaceholder)
+        dateTextField.delegate = self
+        timeTextField.delegate = self
+    }
     
     private func setupDatePicker() {
         datePicker.datePickerMode = .date
@@ -71,5 +79,10 @@ class RouteTimeViewController: BaseViewController<RouteTimePresenter> {
     @objc private func timePickerDoneTapped() {
         timeTextField.text = "\(timeFormatter.string(from: timePicker.date))"
         self.view.endEditing(true)
+    }
+    
+    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.textColor = UIColor.black
+        textField.text = nil
     }
 }

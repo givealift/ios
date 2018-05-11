@@ -10,6 +10,9 @@ import Foundation
 
 final class RouteTimePresenter: BasePresenter {
     
+    let datePlaceholder = "Wybierz datę odjazdu"
+    let timePlaceholder = "Wybierz godzinę odjazdu"
+    
     private weak var connector: AddRouteConnector?
     
     init(connector: AddRouteConnector) {
