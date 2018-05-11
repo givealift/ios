@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteTimeViewController" customModule="GiveALift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteInfoViewController" customModule="GiveALift" customModuleProvider="target">
             <connections>
-                <outlet property="dateTextField" destination="ucL-it-MOG" id="hk3-II-dkW"/>
-                <outlet property="timeTextField" destination="ijr-Vy-gOV" id="hHM-gw-jxR"/>
+                <outlet property="numberOfSeatsTextField" destination="nLe-RQ-OZU" id="Jea-gN-fny"/>
+                <outlet property="priceTextField" destination="6D5-mT-mbY" id="T5A-tJ-uBt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,40 +22,40 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jbp-ia-iWP">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ddc-uP-exW">
                     <rect key="frame" x="50" y="233.5" width="275" height="200"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucL-it-MOG">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6D5-mT-mbY">
                             <rect key="frame" x="0.0" y="0.0" width="275" height="53.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ijr-Vy-gOV">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLe-RQ-OZU">
                             <rect key="frame" x="0.0" y="73.5" width="275" height="53"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlh-Ag-srN">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7i-K7-9UX">
                             <rect key="frame" x="0.0" y="146.5" width="275" height="53.5"/>
                             <state key="normal" title="Dalej"/>
                             <connections>
-                                <action selector="nextTapped:" destination="-1" eventType="touchUpInside" id="zjb-bi-zrs"/>
+                                <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="rWQ-Ow-W5O"/>
                             </connections>
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="wCa-jC-xBc"/>
+                        <constraint firstAttribute="height" constant="200" id="74b-MF-SK3"/>
                     </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jbp-ia-iWP" secondAttribute="trailing" constant="50" id="Nvn-LW-j7z"/>
-                <constraint firstItem="jbp-ia-iWP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Pox-L2-Cib"/>
-                <constraint firstItem="jbp-ia-iWP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eZa-7W-tKK"/>
-                <constraint firstItem="jbp-ia-iWP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="i2b-GR-XnK"/>
+                <constraint firstItem="Ddc-uP-exW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="0KQ-gj-3IM"/>
+                <constraint firstItem="Ddc-uP-exW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Bhq-gd-LBJ"/>
+                <constraint firstItem="Ddc-uP-exW" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ZFE-bd-Y3q"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ddc-uP-exW" secondAttribute="trailing" constant="50" id="k0D-Me-Uee"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

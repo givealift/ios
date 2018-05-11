@@ -27,6 +27,9 @@
 		C1725B3C20A5BFF300F64747 /* RouteTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1725B3A20A5BFF300F64747 /* RouteTimeViewController.xib */; };
 		C1725B3E20A5C74500F64747 /* BaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B3D20A5C74500F64747 /* BaseConnector.swift */; };
 		C1725B4020A5C79500F64747 /* RootConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B3F20A5C79500F64747 /* RootConnector.swift */; };
+		C1725B4320A5FAED00F64747 /* RouteInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B4220A5FAED00F64747 /* RouteInfoPresenter.swift */; };
+		C1725B4620A5FB6600F64747 /* RouteInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B4420A5FB6600F64747 /* RouteInfoViewController.swift */; };
+		C1725B4720A5FB6600F64747 /* RouteInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1725B4520A5FB6600F64747 /* RouteInfoViewController.xib */; };
 		C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C17206966780043DAF7 /* LoginViewController.swift */; };
 		C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C19206966A40043DAF7 /* RegisterViewController.swift */; };
 		C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */; };
@@ -116,6 +119,9 @@
 		C1725B3A20A5BFF300F64747 /* RouteTimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteTimeViewController.xib; sourceTree = "<group>"; };
 		C1725B3D20A5C74500F64747 /* BaseConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConnector.swift; sourceTree = "<group>"; };
 		C1725B3F20A5C79500F64747 /* RootConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootConnector.swift; sourceTree = "<group>"; };
+		C1725B4220A5FAED00F64747 /* RouteInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfoPresenter.swift; sourceTree = "<group>"; };
+		C1725B4420A5FB6600F64747 /* RouteInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfoViewController.swift; sourceTree = "<group>"; };
+		C1725B4520A5FB6600F64747 /* RouteInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteInfoViewController.xib; sourceTree = "<group>"; };
 		C1813C17206966780043DAF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1813C19206966A40043DAF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellE.swift; sourceTree = "<group>"; };
@@ -232,6 +238,7 @@
 		C1725B2F20A5AAD700F64747 /* AddRoute */ = {
 			isa = PBXGroup;
 			children = (
+				C1725B4120A5FACF00F64747 /* RouteInfo */,
 				C1725B3820A5BFDF00F64747 /* RouteTime */,
 				C1725B3220A5AB0300F64747 /* AddRouteViewController.swift */,
 				C1725B3320A5AB0300F64747 /* AddRouteViewController.xib */,
@@ -246,6 +253,15 @@
 				C1725B3A20A5BFF300F64747 /* RouteTimeViewController.xib */,
 			);
 			path = RouteTime;
+			sourceTree = "<group>";
+		};
+		C1725B4120A5FACF00F64747 /* RouteInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C1725B4420A5FB6600F64747 /* RouteInfoViewController.swift */,
+				C1725B4520A5FB6600F64747 /* RouteInfoViewController.xib */,
+			);
+			path = RouteInfo;
 			sourceTree = "<group>";
 		};
 		C1813C15206964CF0043DAF7 /* Main */ = {
@@ -489,6 +505,7 @@
 				C1CFBDA02086AC6500253375 /* RoutesPresenter.swift */,
 				C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */,
 				C1725B3620A5BF9F00F64747 /* RouteTimePresenter.swift */,
+				C1725B4220A5FAED00F64747 /* RouteInfoPresenter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -642,6 +659,7 @@
 				C191F0F92065657C008DD972 /* Main.storyboard in Resources */,
 				C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */,
 				C1725B3C20A5BFF300F64747 /* RouteTimeViewController.xib in Resources */,
+				C1725B4720A5FB6600F64747 /* RouteInfoViewController.xib in Resources */,
 				C1CFBD9F2086AC4A00253375 /* RoutesViewController.xib in Resources */,
 				C1813C2220696AAE0043DAF7 /* ValidatorTextFiledTVC.xib in Resources */,
 				C1725B3520A5AB0300F64747 /* AddRouteViewController.xib in Resources */,
@@ -772,6 +790,7 @@
 				C1CFBD982086828000253375 /* SearchPresenter.swift in Sources */,
 				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,
 				C1233D602083CDFF00BD0A56 /* APIManagerType.swift in Sources */,
+				C1725B4320A5FAED00F64747 /* RouteInfoPresenter.swift in Sources */,
 				C10B6D42206A4B790060AF1F /* RegisterCellType.swift in Sources */,
 				C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */,
 				C1725B3420A5AB0300F64747 /* AddRouteViewController.swift in Sources */,
@@ -780,6 +799,7 @@
 				C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */,
 				C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */,
 				C1725B4020A5C79500F64747 /* RootConnector.swift in Sources */,
+				C1725B4620A5FB6600F64747 /* RouteInfoViewController.swift in Sources */,
 				C1233D672083E26800BD0A56 /* GALUserResponse.swift in Sources */,
 				C1725B2C20A5A95F00F64747 /* AddRouteConnector.swift in Sources */,
 				C191F13E20657BB0008DD972 /* PreLoginRegisterViewController.swift in Sources */,

@@ -35,6 +35,14 @@ class RouteTimeViewController: BaseViewController<RouteTimePresenter> {
         setupTimePicker()
     }
     
+    //MARK:- IBActions
+    
+    @IBAction func nextTapped(_ sender: Any) {
+        presenter.showRouteInfoView()
+    }
+    
+    //MARK:- Main
+    
     private func setupDatePicker() {
         datePicker.datePickerMode = .date
         let toolbar = UIToolbar()

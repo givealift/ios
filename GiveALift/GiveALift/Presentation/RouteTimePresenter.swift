@@ -15,4 +15,8 @@ final class RouteTimePresenter: BasePresenter {
     init(connector: AddRouteConnector) {
         self.connector = connector
     }
+    
+    func showRouteInfoView() {
+        connector?.showRouteInfoView()
+    }
 }
