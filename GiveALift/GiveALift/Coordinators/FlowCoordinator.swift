@@ -10,10 +10,10 @@ import UIKit
 
 final class FlowCoordinator {
     
-    private let window: UIWindow
+    private weak var connector: RootConnectorDelegate?
     
-    init(window: UIWindow) {
-        self.window = window
+    init(connector: RootConnectorDelegate) {
+        self.connector = connector
     }
     
     func start() {
@@ -32,12 +32,10 @@ final class FlowCoordinator {
         guard let preLoginRegisterVC = Storyboards.Onboarding.instantiateInitialViewController() as? UINavigationController else {
             fatalError("Can't load loginVC")
         }
-        window.rootViewController = preLoginRegisterVC
+        //window.rootViewController = preLoginRegisterVC
     }
     
     private func presentHomeVC() {
-        let nav = UINavigationController()
-        window.rootViewController = nav
-        let homeConnector = HomeConnector(navigationController: nav)
+        connector?.showHomeView()
     }
 }

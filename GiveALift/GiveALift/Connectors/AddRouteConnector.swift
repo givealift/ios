@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol AddRouteConnectorDelegate {
-    
+protocol AddRouteConnectorDelegate: class {
+    func showRouteTimeView()
 }
 
 final class AddRouteConnector {
     
-    private let navigationController: UINavigationController
+    private unowned let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -24,6 +24,19 @@ final class AddRouteConnector {
     private func showAddRouteView() {
         let presenter = AddRoutePresenter(connector: self)
         let view = AddRouteViewController(presenter: presenter)
+        navigationController.pushViewController(view, animated: true)
+    }
+    
+    deinit {
+        print("tersaz")
+    }
+}
+
+extension AddRouteConnector: AddRouteConnectorDelegate {
+    
+    func showRouteTimeView() {
+        let presenter = RouteTimePresenter(connector: self)
+        let view = RouteTimeViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
 }

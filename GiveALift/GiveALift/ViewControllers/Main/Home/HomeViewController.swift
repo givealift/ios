@@ -16,10 +16,10 @@ class HomeViewController: BaseViewController<HomePresenter> {
     }
 
     @IBAction func searchTapped(_ sender: Any) {
-        let _ = SearchConnector(navigationController: self.navigationController!)
+        presenter.showSearchView()
     }
     
     @IBAction func addTapped(_ sender: Any) {
-        let _ = AddRouteConnector(navigationController: self.navigationController!)
+        presenter.showAddRouteView()
     }
 }

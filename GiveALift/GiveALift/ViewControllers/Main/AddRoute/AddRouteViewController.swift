@@ -10,7 +10,7 @@ import UIKit
 
 final class AddRouteViewController: BaseViewController<AddRoutePresenter> {
     
-    //private let in
+    private var indirectCitiesTextfield: [SugestiveTextField] = []
 
     //MARK:- IBOutlets
     @IBOutlet weak var fromTextfield: SugestiveTextField!
@@ -32,6 +32,12 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter> {
         stackView.insertArrangedSubview(textField, at: 1)
         stackViewHeightConstraint.constant += 40
         view.layoutSubviews()
+        indirectCitiesTextfield.append(textField)
+    }
+    
+    @IBAction func next(_ sender: Any) {
+        //MARK:- TODO sprawdzanie czy wpisano dane
+        presenter.showRouteTimeView()
     }
     
     //MARK:- Main

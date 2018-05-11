@@ -10,13 +10,17 @@ import UIKit
 
 final class HomePresenter: BasePresenter {
     
-    private weak var connectorDelegate: HomeConnectorDelegate?
+    private weak var connectorDelegate: RootConnectorDelegate?
     
-    init(connectorDelegate: HomeConnectorDelegate) {
+    init(connectorDelegate: RootConnectorDelegate) {
         self.connectorDelegate = connectorDelegate
     }
     
     func showSearchView() {
         connectorDelegate?.showSearchView()
+    }
+    
+    func showAddRouteView() {
+        connectorDelegate?.showAddRouteView()
     }
 }

@@ -13,12 +13,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var rootConnector: RootConnector?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         guard let window = window else { return true }
-        let appCoordinator = FlowCoordinator(window: window)
+        rootConnector = RootConnector(window: window)
+        let appCoordinator = FlowCoordinator(connector: rootConnector!)
         appCoordinator.start()
         
         return true

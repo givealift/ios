@@ -11,7 +11,7 @@ import SearchTextField
 
 final class SugestiveTextField: SearchTextField {
     
-    var cities: [City]!
+    private var cities: [City]!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

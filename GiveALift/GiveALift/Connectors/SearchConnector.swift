@@ -14,7 +14,7 @@ protocol SearchConnectorDelegate: class {
 
 final class SearchConnector {
     
-    private let navigationController: UINavigationController
+    private unowned let navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
