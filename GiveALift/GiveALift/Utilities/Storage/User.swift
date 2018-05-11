@@ -11,7 +11,7 @@ import Foundation
 final class User {
     
     static let shared = User()
-    var isLogIn = false
+    var isLogIn = false 
     var token: String? {
         return storage.getToken()
     }

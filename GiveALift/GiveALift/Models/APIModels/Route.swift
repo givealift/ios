@@ -9,28 +9,25 @@
 import Foundation
 
 struct Route: Codable {
-    let ownerID: Int
+    let routeId, ownerId: Int
     let from, to: Location
     let departureTime: String
-    let numberOfSeats, numberOfOccupiedSeats: Int
-    let price: Double
-    
-    enum CodingKeys: String, CodingKey {
-        case ownerID = "ownerId"
-        case from, to, departureTime, numberOfSeats, numberOfOccupiedSeats, price
-    }
+    let numberOfSeats, numberOfOccupiedSeats, price: Int
 }
 
 struct Location: Codable {
-    let city: RouteCity
+    let localizationId: Int
+    let city: City
     let street: String
     let buildingNumber: Int
 }
 
 struct RouteCity: Codable {
-    let cityID: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case cityID = "cityId"
-    }
+    let cityId: Int
+    let name, country, province: String
+    let cityInfo: RouteCityInfo
+}
+
+struct RouteCityInfo: Codable {
+    let cityInfoId, population, citySize: Int
 }

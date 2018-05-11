@@ -10,7 +10,7 @@ import Foundation
 
 final class RoutesPresenter: BasePresenter {
     
-    private let routes: [Route]
+    let routes: [Route]
     
     init(routes: [Route]) {
         self.routes = routes

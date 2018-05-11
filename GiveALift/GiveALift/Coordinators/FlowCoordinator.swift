@@ -17,7 +17,7 @@ final class FlowCoordinator {
     }
     
     func start() {
-        if isLogIn() {
+        if User.shared.token != nil {
             presentHomeVC()
         } else {
             presentPreLoginRegisterVC()

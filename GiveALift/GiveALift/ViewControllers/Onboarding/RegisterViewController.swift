@@ -41,7 +41,7 @@ final class RegisterViewController: UIViewController {
     //MARK:- IBActions
     @IBAction func registerTapped(_ sender: Any) {
         let result = cellsData.filter{$0.isValid()}
-//        if result.count == cellsData.count {
+        if result.count == cellsData.count {
             onboardingService.register(email: cellsData[2].value!, password: cellsData[3].value!) { (result) in
                 switch result {
                 case .Error(error: let error):
@@ -55,6 +55,7 @@ final class RegisterViewController: UIViewController {
 //            //MARK:- TODO bład
 //            print("bład")
 //        }
+        }
     }
 }
 

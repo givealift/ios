@@ -11,5 +11,5 @@ import Foundation
 protocol URLBuilderType {
     func loginURL() -> URL
     func registerURL() -> URL
-    func searchRouteURL(from: Int, to: Int, date: Date) -> URL
+    func searchRouteURL(from: Int, to: Int, date: String) -> URL
 }

@@ -8,10 +8,31 @@
 
 import UIKit
 
-class RoutesViewController: BaseViewController<RoutesPresenter> {
-
+class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
+        setupTableView()
     }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(RouteTableViewCell.self)
+    }
+
+ 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.routes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: RouteTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.setupCell(route: presenter.routes[indexPath.row])
+        return cell
+    }
+
 }

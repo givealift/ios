@@ -17,6 +17,7 @@
 		C1233D642083CE7E00BD0A56 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D632083CE7E00BD0A56 /* URLBuilder.swift */; };
 		C1233D672083E26800BD0A56 /* GALUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D662083E26800BD0A56 /* GALUserResponse.swift */; };
 		C1233D6A2083E7BD00BD0A56 /* OnboardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D692083E7BD00BD0A56 /* OnboardingService.swift */; };
+		C1255E9A209CE41F00502750 /* HomeViewConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1255E99209CE41F00502750 /* HomeViewConnector.swift */; };
 		C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C17206966780043DAF7 /* LoginViewController.swift */; };
 		C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C19206966A40043DAF7 /* RegisterViewController.swift */; };
 		C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */; };
@@ -53,6 +54,8 @@
 		C1CFBD9E2086AC4A00253375 /* RoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD9C2086AC4A00253375 /* RoutesViewController.swift */; };
 		C1CFBD9F2086AC4A00253375 /* RoutesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD9D2086AC4A00253375 /* RoutesViewController.xib */; };
 		C1CFBDA12086AC6500253375 /* RoutesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBDA02086AC6500253375 /* RoutesPresenter.swift */; };
+		C1CFBDA620874BD700253375 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBDA420874BD700253375 /* RouteTableViewCell.swift */; };
+		C1CFBDA720874BD700253375 /* RouteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBDA520874BD700253375 /* RouteTableViewCell.xib */; };
 		C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */; };
 		C1D910E02080B2D600AD0AC4 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */; };
 		C1D910E32080B2F800AD0AC4 /* RequestBuilderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */; };
@@ -94,6 +97,7 @@
 		C1233D632083CE7E00BD0A56 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		C1233D662083E26800BD0A56 /* GALUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALUserResponse.swift; sourceTree = "<group>"; };
 		C1233D692083E7BD00BD0A56 /* OnboardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingService.swift; sourceTree = "<group>"; };
+		C1255E99209CE41F00502750 /* HomeViewConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewConnector.swift; sourceTree = "<group>"; };
 		C1813C17206966780043DAF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1813C19206966A40043DAF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellE.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 		C1CFBD9C2086AC4A00253375 /* RoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesViewController.swift; sourceTree = "<group>"; };
 		C1CFBD9D2086AC4A00253375 /* RoutesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutesViewController.xib; sourceTree = "<group>"; };
 		C1CFBDA02086AC6500253375 /* RoutesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesPresenter.swift; sourceTree = "<group>"; };
+		C1CFBDA420874BD700253375 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
+		C1CFBDA520874BD700253375 /* RouteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteTableViewCell.xib; sourceTree = "<group>"; };
 		C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		C1D910DF2080B2D600AD0AC4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		C1D910E22080B2F800AD0AC4 /* RequestBuilderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderType.swift; sourceTree = "<group>"; };
@@ -194,6 +200,14 @@
 			path = APIModels;
 			sourceTree = "<group>";
 		};
+		C1255E98209CE40700502750 /* Connectors */ = {
+			isa = PBXGroup;
+			children = (
+				C1255E99209CE41F00502750 /* HomeViewConnector.swift */,
+			);
+			path = Connectors;
+			sourceTree = "<group>";
+		};
 		C1813C15206964CF0043DAF7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +256,7 @@
 		C191F0F22065657C008DD972 /* GiveALift */ = {
 			isa = PBXGroup;
 			children = (
+				C1255E98209CE40700502750 /* Connectors */,
 				C1D910D82080AC3C00AD0AC4 /* Presentation */,
 				C191F14120657E6D008DD972 /* Coordinators */,
 				C191F12920656906008DD972 /* SupportingFiles */,
@@ -418,6 +433,8 @@
 			children = (
 				C1CFBD9C2086AC4A00253375 /* RoutesViewController.swift */,
 				C1CFBD9D2086AC4A00253375 /* RoutesViewController.xib */,
+				C1CFBDA420874BD700253375 /* RouteTableViewCell.swift */,
+				C1CFBDA520874BD700253375 /* RouteTableViewCell.xib */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -585,6 +602,7 @@
 				C1813C2220696AAE0043DAF7 /* ValidatorTextFiledTVC.xib in Resources */,
 				C1CFBD962086826100253375 /* SearchViewController.xib in Resources */,
 				C1CFBD8920865D6200253375 /* HomeViewController.xib in Resources */,
+				C1CFBDA720874BD700253375 /* RouteTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +711,7 @@
 				C1CFBDA12086AC6500253375 /* RoutesPresenter.swift in Sources */,
 				C1CFBD812086528B00253375 /* BaseViewController.swift in Sources */,
 				C1D910DA2080AC5300AD0AC4 /* BasePresenter.swift in Sources */,
+				C1CFBDA620874BD700253375 /* RouteTableViewCell.swift in Sources */,
 				C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */,
 				C1233D642083CE7E00BD0A56 /* URLBuilder.swift in Sources */,
 				C1CFBD9E2086AC4A00253375 /* RoutesViewController.swift in Sources */,
@@ -700,6 +719,7 @@
 				C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */,
 				C1CFBD952086826100253375 /* SearchViewController.swift in Sources */,
 				C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */,
+				C1255E9A209CE41F00502750 /* HomeViewConnector.swift in Sources */,
 				C1CFBD982086828000253375 /* SearchPresenter.swift in Sources */,
 				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,
 				C1233D602083CDFF00BD0A56 /* APIManagerType.swift in Sources */,

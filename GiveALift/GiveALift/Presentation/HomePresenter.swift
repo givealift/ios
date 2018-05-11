@@ -6,15 +6,17 @@
 //  Copyright © 2018 Marcin Włoczko. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class HomePresenter: BasePresenter {
     
-    override init() {
-        print("home")
+    private weak var connectorDelegate: HomeConnectorDelegate?
+    
+    init(connectorDelegate: HomeConnectorDelegate) {
+        self.connectorDelegate = connectorDelegate
     }
     
-//    func showSearchView() {
-//        
-//    }
+    func showSearchView() {
+        connectorDelegate?.showSearchView()
+    }
 }

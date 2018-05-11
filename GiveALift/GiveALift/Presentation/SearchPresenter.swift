@@ -6,21 +6,23 @@
 //  Copyright © 2018 Marcin Włoczko. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class SearchPresenter: BasePresenter {
     
     fileprivate let requestBuilder: RequestBuilderType
     fileprivate let urlBuilder: URLBuilderType
+    fileprivate let navigationController: UINavigationController
     
     // MARK: Initializers
     
-    init(urlBuilder: URLBuilderType = URLBuilder(), requestBuilder: RequestBuilderType = RequestBuilder()) {
+    init(urlBuilder: URLBuilderType = URLBuilder(), requestBuilder: RequestBuilderType = RequestBuilder(), navigationController: UINavigationController) {
         self.urlBuilder = urlBuilder
         self.requestBuilder = requestBuilder
+        self.navigationController = navigationController
     }
     
-    func findRoutesFor(from: Int, to: Int, date: Date) {
+    func findRoutesFor(from: Int, to: Int, date: String) {
         requestBuilder.GETRequest(withURL: urlBuilder.searchRouteURL(from: from, to: to, date: date), authToken: User.shared.token) { (result) in
             switch result {
             case .Error(error: let error):
@@ -29,7 +31,8 @@ final class SearchPresenter: BasePresenter {
                 let decoder = JSONDecoder()
                 do {
                     let routes = try decoder.decode([Route].self, from: result)
-                    self.displayRoutesView(routes: routes)
+                    print(routes)
+                    self.displayRoutesView(routes: routes, delegate: delegate)
                 } catch {
                     print(error)
                 }
@@ -37,8 +40,9 @@ final class SearchPresenter: BasePresenter {
         }
     }
     
-    func displayRoutesView(routes: [Route]) {
+    func displayRoutesView(routes: [Route], delegate: SearchViewController) {
         let presenter = RoutesPresenter(routes: routes)
         let routesVC = RoutesViewController(presenter: presenter)
+        delegate.navigationController!.pushViewController(routesVC, animated: true)
     }
 }

@@ -27,10 +27,9 @@ class SearchViewController: BaseViewController<SearchPresenter> {
     
     @IBAction func searchTapped(_ sender: Any) {
         if let to = toTextField.selectedCityId(), let from = fromTextField.selectedCityId(), let dateString = dateTextField.text {
-            presenter.findRoutesFor(from: from, to: to, date: APIDateFormatter.date(from: dateString)!)
+            presenter.findRoutesFor(from: from, to: to, date: dateString, delegate: self)
         }
     }
-
     
     private func createDatePicker() {
         datePicker.datePickerMode = .date
