@@ -18,6 +18,7 @@ final class AddRouteConnector {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        showAddRouteView()
     }
     
     private func showAddRouteView() {

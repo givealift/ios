@@ -35,6 +35,20 @@ final class SugestiveTextField: SearchTextField {
         return nil
     }
     
+    func setPlaceholder(with text: String) {
+        setupGrayTextfield(withText: text)
+    }
+    
+    private func setupGrayTextfield(withText text: String) {
+        self.textColor = UIColor.lightGray
+        self.text = text
+    }
+    
+    private func setupBlackTextfield(withText text: String?) {
+        self.textColor = UIColor.black
+        self.text = text
+    }
+    
     private func loadCities() -> [City] {
         if let path = Bundle.main.path(forResource: "Cities", ofType: "json") {
             do {
@@ -47,5 +61,9 @@ final class SugestiveTextField: SearchTextField {
             }
         }
         return []
+    }
+    
+    override func textFieldDidBeginEditing() {
+        setupBlackTextfield(withText: nil)
     }
 }

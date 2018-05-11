@@ -8,10 +8,15 @@
 
 import UIKit
 
-class AddRouteViewController: BaseViewController<AddRoutePresenter> {
+final class AddRouteViewController: BaseViewController<AddRoutePresenter> {
 
+    @IBOutlet weak var fromTextfield: SugestiveTextField!
+    
+    @IBOutlet weak var toTextField: SugestiveTextField!
     override func viewDidLoad() {
         self.view.backgroundColor = .red
+        fromTextfield.setPlaceholder(with: "Podaj miasto startowe")
+        toTextField.setPlaceholder(with: "Podaj miasto końcowe")
     }
 
 }
