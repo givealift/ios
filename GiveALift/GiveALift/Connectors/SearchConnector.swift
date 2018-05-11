@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SearchConnectorDelegate:class {
+protocol SearchConnectorDelegate: class {
     func showRoutesView(routes: [Route])
 }
 

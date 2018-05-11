@@ -12,7 +12,7 @@ final class SearchPresenter: BasePresenter {
     
     fileprivate let requestBuilder: RequestBuilderType
     fileprivate let urlBuilder: URLBuilderType
-    fileprivate let connector: SearchConnectorDelegate
+    fileprivate weak var connector: SearchConnectorDelegate?
     
     // MARK: Initializers
     
@@ -43,6 +43,6 @@ final class SearchPresenter: BasePresenter {
     }
     
     func displayRoutesView(routes: [Route]) {
-        connector.showRoutesView(routes: routes)
+        connector?.showRoutesView(routes: routes)
     }
 }
