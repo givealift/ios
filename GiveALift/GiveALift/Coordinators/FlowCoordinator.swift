@@ -32,6 +32,7 @@ final class FlowCoordinator {
         guard let preLoginRegisterVC = Storyboards.Onboarding.instantiateInitialViewController() as? UINavigationController else {
             fatalError("Can't load loginVC")
         }
+        //MARK:- TOOD login view
         //window.rootViewController = preLoginRegisterVC
     }
     
