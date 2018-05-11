@@ -12,18 +12,18 @@ final class SearchPresenter: BasePresenter {
     
     fileprivate let requestBuilder: RequestBuilderType
     fileprivate let urlBuilder: URLBuilderType
-    fileprivate let navigationController: UINavigationController
+    fileprivate let connector: SearchConnectorDelegate
     
     // MARK: Initializers
     
-    init(urlBuilder: URLBuilderType = URLBuilder(), requestBuilder: RequestBuilderType = RequestBuilder(), navigationController: UINavigationController) {
+    init(urlBuilder: URLBuilderType = URLBuilder(), requestBuilder: RequestBuilderType = RequestBuilder(), connector: SearchConnectorDelegate) {
         self.urlBuilder = urlBuilder
         self.requestBuilder = requestBuilder
-        self.navigationController = navigationController
+        self.connector = connector
     }
     
     func findRoutesFor(from: Int, to: Int, date: String) {
-        requestBuilder.GETRequest(withURL: urlBuilder.searchRouteURL(from: from, to: to, date: date), authToken: User.shared.token) { (result) in
+        requestBuilder.GETRequest(withURL: urlBuilder.searchRouteURL(from: from, to: to, date: date), authToken: User.shared.token) { [weak self] (result) in
             switch result {
             case .Error(error: let error):
                 print(error)
@@ -32,7 +32,9 @@ final class SearchPresenter: BasePresenter {
                 do {
                     let routes = try decoder.decode([Route].self, from: result)
                     print(routes)
-                    self.displayRoutesView(routes: routes, delegate: delegate)
+                    DispatchQueue.main.async {
+                        self?.displayRoutesView(routes: routes)
+                    }
                 } catch {
                     print(error)
                 }
@@ -40,9 +42,7 @@ final class SearchPresenter: BasePresenter {
         }
     }
     
-    func displayRoutesView(routes: [Route], delegate: SearchViewController) {
-        let presenter = RoutesPresenter(routes: routes)
-        let routesVC = RoutesViewController(presenter: presenter)
-        delegate.navigationController!.pushViewController(routesVC, animated: true)
+    func displayRoutesView(routes: [Route]) {
+        connector.showRoutesView(routes: routes)
     }
 }

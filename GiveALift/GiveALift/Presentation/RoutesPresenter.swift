@@ -10,9 +10,11 @@ import Foundation
 
 final class RoutesPresenter: BasePresenter {
     
+    private let connector: SearchConnectorDelegate
     let routes: [Route]
     
-    init(routes: [Route]) {
+    init(connector: SearchConnectorDelegate, routes: [Route]) {
         self.routes = routes
+        self.connector = connector
     }
 }

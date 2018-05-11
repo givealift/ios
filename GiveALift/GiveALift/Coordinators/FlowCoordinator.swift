@@ -36,10 +36,8 @@ final class FlowCoordinator {
     }
     
     private func presentHomeVC() {
-        let presenter = HomePresenter()
-        let homeVC = HomeViewController(presenter: presenter)
         let nav = UINavigationController()
         window.rootViewController = nav
-        nav.pushViewController(homeVC, animated: true)
+        let homeConnector = HomeConnector(navigationController: nav)
     }
 }

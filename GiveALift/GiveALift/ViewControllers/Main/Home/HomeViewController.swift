@@ -16,9 +16,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
     }
 
     @IBAction func searchTapped(_ sender: Any) {
-        let prester = SearchPresenter()
-        let searchVC = SearchViewController(presenter: prester)
-        navigationController?.pushViewController(searchVC, animated: true)
+        let connector = SearchConnector(navigationController: self.navigationController!)
     }
     
     @IBAction func addTapped(_ sender: Any) {

@@ -26,9 +26,7 @@ final class LoginViewController: UIViewController {
             case .Success(result: let result):
                 User.shared.logIn(user: result)
                 print(User.shared.token)
-                let presenter = HomePresenter()
-                let homeVC = HomeViewController(presenter: presenter)
-                self.navigationController?.pushViewController(homeVC, animated: true)
+                let _ = HomeConnector(navigationController: self.navigationController!)
             }
         }
     }
