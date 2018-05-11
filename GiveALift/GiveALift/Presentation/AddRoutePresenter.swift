@@ -12,6 +12,10 @@ final class AddRoutePresenter: BasePresenter {
     
     private weak var connector: AddRouteConnector?
     
+    let fromTextFieldPlaceholder = "Wprowadź miasto startowe"
+    let toTextFieldPlaceholder = "Wproawdź miasto docelowe"
+    let indirectTextFieldPlaceHolder = "Wprowadź miasto pośrednie"
+    
     init(connector: AddRouteConnector) {
         self.connector = connector
     }
