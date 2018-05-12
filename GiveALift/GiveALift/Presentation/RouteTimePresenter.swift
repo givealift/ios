@@ -27,9 +27,9 @@ final class RouteTimePresenter: BasePresenter {
     }
     
     private func updateModel(departureDate: String, departureTime: String, indirectDates: [String]) {
-        addRoute.from.departureTime = departureDate + departureTime
+        addRoute.from.date = departureDate + departureTime
         for i in 0 ..< indirectDates.count {
-            addRoute.indirections[i].departureTime = departureDate + indirectDates[i]
+            addRoute.stops[i].date = departureDate + indirectDates[i]
         }
     }
 }

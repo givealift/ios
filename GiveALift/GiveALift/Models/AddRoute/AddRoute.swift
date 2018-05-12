@@ -8,16 +8,26 @@
 
 import Foundation
 
-final class AddRoute {
+final class AddRoute: Codable {
     var from: RouteLocation!
     var to: RouteLocation!
-    var indirections = [RouteLocation]()
+    var stops = [RouteLocation]()
     var price: Int!
     var numberOfSeats: Int!
+    var numberOfOccupiedSeats = 0
+    var ownerId = 0
+    var description: String?
 }
 
-final class RouteLocation {
-    var cityId: Int!
-    var location: String!
-    var departureTime: String!
+final class RouteLocation: Codable {
+    var city: AddRouteCity!
+    var placeOfMeeting: String!
+    var date: String!
+
 }
+
+final class AddRouteCity: Codable {
+    var cityId: Int!
+}
+
+

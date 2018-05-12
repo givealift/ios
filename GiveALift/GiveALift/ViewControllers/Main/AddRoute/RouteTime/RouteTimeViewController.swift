@@ -51,7 +51,7 @@ class RouteTimeViewController: BaseViewController<RouteTimePresenter>, UITextFie
     //MARK:- Main
     
     private func addTextFieldsIfNeeded() {
-        for _ in presenter.addRoute.indirections {
+        for _ in presenter.addRoute.stops {
             addInditectionTextfield()
             stackViewHeightConstraint.constant += 30
         }

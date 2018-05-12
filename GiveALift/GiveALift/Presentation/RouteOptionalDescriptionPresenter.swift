@@ -17,4 +17,18 @@ final class RouteOptionalDescriptionPresenter: BasePresenter {
         self.addRoute = addRoute
         self.connector = connector
     }
+    
+    func showHomeView(description: String?) {
+        updateModel(description: description)
+        addRouteToServer()
+        connector?.showHomeView()
+    }
+    
+    private func updateModel(description: String?) {
+        addRoute.description = description
+    }
+    
+    private func addRouteToServer() {
+        
+    }
 }

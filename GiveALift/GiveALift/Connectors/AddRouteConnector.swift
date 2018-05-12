@@ -13,6 +13,7 @@ protocol AddRouteConnectorDelegate: class {
     func showIndirectionsView(addRoute: AddRoute)
     func showRouteInfoView(addRoute: AddRoute)
     func showRouteOptionalDescriptionView(addRoute: AddRoute)
+    func showHomeView()
 }
 
 final class AddRouteConnector {
@@ -36,6 +37,10 @@ final class AddRouteConnector {
 }
 
 extension AddRouteConnector: AddRouteConnectorDelegate {
+    func showHomeView() {
+        navigationController.popToRootViewController(animated: true)
+    }
+    
     func showRouteOptionalDescriptionView(addRoute: AddRoute) {
         let presenter = RouteOptionalDescriptionPresenter(connector: self, addRoute: addRoute)
         let view = RouteOptionalDescriptionViewController(presenter: presenter)
