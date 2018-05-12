@@ -30,38 +30,31 @@
                     <rect key="frame" x="50" y="233.5" width="275" height="200"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KI9-DI-mMe" customClass="SugestiveTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="275" height="16.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="24"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWm-aW-VJy">
-                            <rect key="frame" x="0.0" y="36.5" width="275" height="17"/>
+                            <rect key="frame" x="0.0" y="44" width="275" height="24"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="msr-tx-RFo" customClass="SugestiveTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="73.5" width="275" height="16.5"/>
+                            <rect key="frame" x="0.0" y="88" width="275" height="24"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i91-NC-GYq">
-                            <rect key="frame" x="0.0" y="110" width="275" height="16.5"/>
+                            <rect key="frame" x="0.0" y="132" width="275" height="24"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1T-eQ-pld">
-                            <rect key="frame" x="0.0" y="146.5" width="275" height="17"/>
-                            <state key="normal" title="Dodaj miasto pośrednie"/>
-                            <connections>
-                                <action selector="addIndirectCity:" destination="-1" eventType="touchUpInside" id="EmU-R8-d6n"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9H-KD-RrJ">
-                            <rect key="frame" x="0.0" y="183.5" width="275" height="16.5"/>
+                            <rect key="frame" x="0.0" y="176" width="275" height="24"/>
                             <state key="normal" title="Dalej"/>
                             <connections>
                                 <action selector="next:" destination="-1" eventType="touchUpInside" id="Rsu-QY-9cD"/>

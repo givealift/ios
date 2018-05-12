@@ -16,13 +16,12 @@ final class AddRoutePresenter: BasePresenter {
     let fromLocationPlaceholder = "Podaj miejsce spotkania"
     let toTextFieldPlaceholder = "Wproawdź miasto docelowe"
     let toLocationPlaceholder = "Podaj miejsce docelowe"
-    let indirectTextFieldPlaceHolder = "Wprowadź miasto pośrednie"
     
     init(connector: AddRouteConnectorDelegate) {
         self.connector = connector
     }
     
-    func showRouteTimeView(routeLocation: RouteLocation) {
-        connector?.showRouteTimeView(routeLocation: routeLocation)
+    func showIndirectionView(routeLocation: AddRoute) {
+        connector?.showIndirectionsView(routeLocation: routeLocation)
     }
 }

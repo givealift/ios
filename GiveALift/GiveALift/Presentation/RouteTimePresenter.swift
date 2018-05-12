@@ -14,9 +14,9 @@ final class RouteTimePresenter: BasePresenter {
     let timePlaceholder = "Wybierz godzinę odjazdu"
     
     private weak var connector: AddRouteConnector?
-    let routeLocation: RouteLocation
+    let routeLocation: AddRoute
     
-    init(connector: AddRouteConnector, routeLocation: RouteLocation) {
+    init(connector: AddRouteConnector, routeLocation: AddRoute) {
         self.connector = connector
         self.routeLocation = routeLocation
     }

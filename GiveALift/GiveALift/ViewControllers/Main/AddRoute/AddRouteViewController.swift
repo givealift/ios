@@ -9,8 +9,6 @@
 import UIKit
 
 final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITextFieldDelegate {
-    
-    private var indirectCitiesTextfield: [SugestiveTextField] = []
 
     //MARK:- IBOutlets
     @IBOutlet weak var fromTextfield: SugestiveTextField!
@@ -27,20 +25,15 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
     }
 
     //MARK:- IBActions
-    @IBAction func addIndirectCity(_ sender: Any) {
-        let textField = SugestiveTextField(frame: CGRect(x: 0, y: 0, width: stackView.frame.width, height: 40))
-        textField.backgroundColor = UIColor.white
-        textField.setPlaceholder(with: presenter.indirectTextFieldPlaceHolder)
-        stackView.insertArrangedSubview(textField, at: 1)
-        stackViewHeightConstraint.constant += 40
-        view.layoutSubviews()
-        indirectCitiesTextfield.append(textField)
-    }
     
     @IBAction func next(_ sender: Any) {
-        if let fromCityId = fromTextfield.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text {
-                presenter.showRouteTimeView(routeLocation: RouteLocation(fromCityId: fromCityId, toCityId: toCityId, from: from, to: to))
-        }
+        //MARK:- TODO odkomentować
+//        if let fromCityId = fromTextfield.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text {
+//                presenter.showIndirectionView(routeLocation: RouteLocation(fromCityId: fromCityId, toCityId: toCityId, from: from, to: to))
+//        }
+        let addRoute = AddRoute()
+        presenter.showIndirectionView(routeLocation: addRoute)
+        
         //MARK:- TODO info o niepodanych danych
     }
     
