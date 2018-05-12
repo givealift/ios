@@ -10,12 +10,28 @@ import Foundation
 
 final class IndirectionsPresenter: BasePresenter {
     
-    private let routeLocation: AddRoute
+    private let addRoute: AddRoute
+    private weak var connector: AddRouteConnectorDelegate?
     
     let indirectTextFieldPlaceHolder = "Wprowadź miasto pośrednie"
     let indirectLocationPlaceholder = "Wprowadź miejsce odbioru"
     
-    init(routeLocation: AddRoute) {
-        self.routeLocation = routeLocation
+    init(connector: AddRouteConnectorDelegate, addRoute: AddRoute) {
+        self.addRoute = addRoute
+        self.connector = connector
+    }
+    
+    func showRouteTimeView(indirectCitys: [Int], indirectLocations: [String]) {
+        updateModel(indirectCitys: indirectCitys, indirectLocations: indirectLocations)
+        connector?.showRouteTimeView(addRoute: addRoute)
+    }
+    
+    private func updateModel(indirectCitys: [Int], indirectLocations: [String]) {
+        for i in 0..<indirectCitys.count {
+            let routeLocation = RouteLocation()
+            routeLocation.cityId = indirectCitys[i]
+            routeLocation.location = indirectLocations[i]
+            addRoute.indirections.append(routeLocation)
+        }
     }
 }

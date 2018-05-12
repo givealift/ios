@@ -14,14 +14,22 @@ final class RouteTimePresenter: BasePresenter {
     let timePlaceholder = "Wybierz godzinę odjazdu"
     
     private weak var connector: AddRouteConnector?
-    let routeLocation: AddRoute
+    let addRoute: AddRoute
     
-    init(connector: AddRouteConnector, routeLocation: AddRoute) {
+    init(connector: AddRouteConnector, addRoute: AddRoute) {
         self.connector = connector
-        self.routeLocation = routeLocation
+        self.addRoute = addRoute
     }
     
-    func showRouteInfoView() {
-        connector?.showRouteInfoView()
+    func showRouteInfoView(departureDate: String, departureTime: String ,indirectDates: [String]) {
+        updateModel(departureDate: departureDate, departureTime: departureTime, indirectDates: indirectDates)
+        connector?.showRouteInfoView(addRoute: addRoute)
+    }
+    
+    private func updateModel(departureDate: String, departureTime: String, indirectDates: [String]) {
+        addRoute.from.departureTime = departureDate + departureTime
+        for i in 0 ..< indirectDates.count {
+            addRoute.indirections[i].departureTime = departureDate + indirectDates[i]
+        }
     }
 }

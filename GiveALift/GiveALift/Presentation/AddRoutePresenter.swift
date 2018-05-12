@@ -21,7 +21,7 @@ final class AddRoutePresenter: BasePresenter {
         self.connector = connector
     }
     
-    func showIndirectionView(routeLocation: AddRoute) {
-        connector?.showIndirectionsView(routeLocation: routeLocation)
+    func showIndirectionView(addRoute: AddRoute) {
+        connector?.showIndirectionsView(addRoute: addRoute)
     }
 }

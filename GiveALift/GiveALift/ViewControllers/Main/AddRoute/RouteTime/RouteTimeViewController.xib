@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteTimeViewController" customModule="GiveALift" customModuleProvider="target">
             <connections>
                 <outlet property="dateTextField" destination="ucL-it-MOG" id="hk3-II-dkW"/>
+                <outlet property="stackView" destination="jbp-ia-iWP" id="jdr-H1-JYU"/>
+                <outlet property="stackViewHeightConstraint" destination="wCa-jC-xBc" id="cJI-px-Kg8"/>
                 <outlet property="timeTextField" destination="ijr-Vy-gOV" id="hHM-gw-jxR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -15,9 +15,11 @@ final class RouteInfoPresenter: BasePresenter {
     let numberOfSeatsPlaceholder = "Wpisz ilość wolnych miejsc"
     
     private weak var connector: AddRouteConnectorDelegate?
+    private let addRoute: AddRoute
     
-    init(connector: AddRouteConnectorDelegate) {
+    init(connector: AddRouteConnectorDelegate, addRoute: AddRoute) {
         self.connector = connector
+        self.addRoute = addRoute
     }
     
     

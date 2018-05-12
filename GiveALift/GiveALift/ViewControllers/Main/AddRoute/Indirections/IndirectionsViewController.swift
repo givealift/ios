@@ -49,6 +49,11 @@ class IndirectionsViewController: BaseViewController<IndirectionsPresenter> {
     }
     
     @IBAction func nextTapped(_ sender: Any) {
-        
+//        if let _ = indirextCitiesLocations.first(where: { $0.text == nil }),
+//            let _ = indirectCitiesTextfield.first(where: { $0.text == nil }) {
+//
+//        }
+        //MARK:- TODO zmienić
+        presenter.showRouteTimeView(indirectCitys: [1], indirectLocations: [""])
     }
 }

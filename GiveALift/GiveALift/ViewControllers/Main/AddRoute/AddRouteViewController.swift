@@ -32,7 +32,7 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
 //                presenter.showIndirectionView(routeLocation: RouteLocation(fromCityId: fromCityId, toCityId: toCityId, from: from, to: to))
 //        }
         let addRoute = AddRoute()
-        presenter.showIndirectionView(routeLocation: addRoute)
+        presenter.showIndirectionView(addRoute: addRoute)
         
         //MARK:- TODO info o niepodanych danych
     }

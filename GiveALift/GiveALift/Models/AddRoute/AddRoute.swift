@@ -17,5 +17,5 @@ final class AddRoute {
 final class RouteLocation {
     var cityId: Int!
     var location: String!
-    var date: String!
+    var departureTime: String!
 }
