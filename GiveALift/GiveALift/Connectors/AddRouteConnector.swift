@@ -12,6 +12,7 @@ protocol AddRouteConnectorDelegate: class {
     func showRouteTimeView(addRoute: AddRoute)
     func showIndirectionsView(addRoute: AddRoute)
     func showRouteInfoView(addRoute: AddRoute)
+    func showRouteOptionalDescriptionView(addRoute: AddRoute)
 }
 
 final class AddRouteConnector {
@@ -35,13 +36,17 @@ final class AddRouteConnector {
 }
 
 extension AddRouteConnector: AddRouteConnectorDelegate {
+    func showRouteOptionalDescriptionView(addRoute: AddRoute) {
+        let presenter = RouteOptionalDescriptionPresenter(connector: self, addRoute: addRoute)
+        let view = RouteOptionalDescriptionViewController(presenter: presenter)
+        navigationController.pushViewController(view, animated: true)
+    }
     
     func showIndirectionsView(addRoute: AddRoute) {
         let presenter = IndirectionsPresenter(connector: self, addRoute: addRoute)
         let view = IndirectionsViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
-    
     
     func showRouteTimeView(addRoute: AddRoute) {
         let presenter = RouteTimePresenter(connector: self, addRoute: addRoute)

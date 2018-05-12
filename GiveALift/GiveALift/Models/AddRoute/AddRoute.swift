@@ -12,6 +12,8 @@ final class AddRoute {
     var from: RouteLocation!
     var to: RouteLocation!
     var indirections = [RouteLocation]()
+    var price: Int!
+    var numberOfSeats: Int!
 }
 
 final class RouteLocation {
