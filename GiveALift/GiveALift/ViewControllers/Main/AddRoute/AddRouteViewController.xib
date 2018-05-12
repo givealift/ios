@@ -12,9 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddRouteViewController" customModule="GiveALift" customModuleProvider="target">
             <connections>
+                <outlet property="fromLocationTextField" destination="XWm-aW-VJy" id="djd-4T-QMQ"/>
                 <outlet property="fromTextfield" destination="KI9-DI-mMe" id="Mxl-eS-HB9"/>
                 <outlet property="stackView" destination="BAQ-UL-xIj" id="8Mp-nf-FBy"/>
                 <outlet property="stackViewHeightConstraint" destination="xly-Zb-tcP" id="Alv-Vr-y5l"/>
+                <outlet property="toLocationTextField" destination="i91-NC-GYq" id="BFa-NV-g2n"/>
                 <outlet property="toTextField" destination="msr-tx-RFo" id="mMF-4d-WVg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,26 +30,38 @@
                     <rect key="frame" x="50" y="233.5" width="275" height="200"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KI9-DI-mMe" customClass="SugestiveTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="275" height="35"/>
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="16.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWm-aW-VJy">
+                            <rect key="frame" x="0.0" y="36.5" width="275" height="17"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="msr-tx-RFo" customClass="SugestiveTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="55" width="275" height="35"/>
+                            <rect key="frame" x="0.0" y="73.5" width="275" height="16.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i91-NC-GYq">
+                            <rect key="frame" x="0.0" y="110" width="275" height="16.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1T-eQ-pld">
-                            <rect key="frame" x="0.0" y="110" width="275" height="35"/>
+                            <rect key="frame" x="0.0" y="146.5" width="275" height="17"/>
                             <state key="normal" title="Dodaj miasto pośrednie"/>
                             <connections>
                                 <action selector="addIndirectCity:" destination="-1" eventType="touchUpInside" id="EmU-R8-d6n"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9H-KD-RrJ">
-                            <rect key="frame" x="0.0" y="165" width="275" height="35"/>
+                            <rect key="frame" x="0.0" y="183.5" width="275" height="16.5"/>
                             <state key="normal" title="Dalej"/>
                             <connections>
                                 <action selector="next:" destination="-1" eventType="touchUpInside" id="Rsu-QY-9cD"/>

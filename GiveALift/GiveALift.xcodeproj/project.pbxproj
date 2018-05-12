@@ -17,6 +17,7 @@
 		C1233D642083CE7E00BD0A56 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D632083CE7E00BD0A56 /* URLBuilder.swift */; };
 		C1233D672083E26800BD0A56 /* GALUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D662083E26800BD0A56 /* GALUserResponse.swift */; };
 		C1233D6A2083E7BD00BD0A56 /* OnboardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1233D692083E7BD00BD0A56 /* OnboardingService.swift */; };
+		C124DA3220A7417A00391A71 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124DA3120A7417A00391A71 /* Location.swift */; };
 		C1725B2A20A59E8800F64747 /* SearchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2920A59E8800F64747 /* SearchConnector.swift */; };
 		C1725B2C20A5A95F00F64747 /* AddRouteConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */; };
 		C1725B2E20A5AA8D00F64747 /* AddRoutePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */; };
@@ -110,6 +111,7 @@
 		C1233D632083CE7E00BD0A56 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		C1233D662083E26800BD0A56 /* GALUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALUserResponse.swift; sourceTree = "<group>"; };
 		C1233D692083E7BD00BD0A56 /* OnboardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingService.swift; sourceTree = "<group>"; };
+		C124DA3120A7417A00391A71 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C1725B2920A59E8800F64747 /* SearchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConnector.swift; sourceTree = "<group>"; };
 		C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteConnector.swift; sourceTree = "<group>"; };
 		C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutePresenter.swift; sourceTree = "<group>"; };
@@ -224,6 +226,14 @@
 				C1CFBD992086A78700253375 /* Route.swift */,
 			);
 			path = APIModels;
+			sourceTree = "<group>";
+		};
+		C124DA3020A7415B00391A71 /* AddRoute */ = {
+			isa = PBXGroup;
+			children = (
+				C124DA3120A7417A00391A71 /* Location.swift */,
+			);
+			path = AddRoute;
 			sourceTree = "<group>";
 		};
 		C1255E98209CE40700502750 /* Connectors */ = {
@@ -369,6 +379,7 @@
 		C191F123206568C2008DD972 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C124DA3020A7415B00391A71 /* AddRoute */,
 				C1CFBD8E2086796800253375 /* Local */,
 				C1233D652083E03800BD0A56 /* APIModels */,
 			);
@@ -800,6 +811,7 @@
 				C1725B3420A5AB0300F64747 /* AddRouteViewController.swift in Sources */,
 				C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */,
 				C1233D5E2083CD1900BD0A56 /* APIManager.swift in Sources */,
+				C124DA3220A7417A00391A71 /* Location.swift in Sources */,
 				C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */,
 				C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */,
 				C1725B4020A5C79500F64747 /* RootConnector.swift in Sources */,

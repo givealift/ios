@@ -13,14 +13,16 @@ final class AddRoutePresenter: BasePresenter {
     private weak var connector: AddRouteConnectorDelegate?
     
     let fromTextFieldPlaceholder = "Wprowadź miasto startowe"
+    let fromLocationPlaceholder = "Podaj miejsce spotkania"
     let toTextFieldPlaceholder = "Wproawdź miasto docelowe"
+    let toLocationPlaceholder = "Podaj miejsce docelowe"
     let indirectTextFieldPlaceHolder = "Wprowadź miasto pośrednie"
     
     init(connector: AddRouteConnectorDelegate) {
         self.connector = connector
     }
     
-    func showRouteTimeView() {
-        connector?.showRouteTimeView()
+    func showRouteTimeView(routeLocation: RouteLocation) {
+        connector?.showRouteTimeView(routeLocation: routeLocation)
     }
 }

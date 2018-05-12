@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddRouteConnectorDelegate: class {
-    func showRouteTimeView()
+    func showRouteTimeView(routeLocation: RouteLocation)
     func showRouteInfoView()
 }
 
@@ -35,8 +35,8 @@ final class AddRouteConnector {
 
 extension AddRouteConnector: AddRouteConnectorDelegate {
     
-    func showRouteTimeView() {
-        let presenter = RouteTimePresenter(connector: self)
+    func showRouteTimeView(routeLocation: RouteLocation) {
+        let presenter = RouteTimePresenter(connector: self, routeLocation: routeLocation)
         let view = RouteTimeViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }

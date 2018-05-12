@@ -8,13 +8,15 @@
 
 import UIKit
 
-final class AddRouteViewController: BaseViewController<AddRoutePresenter> {
+final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITextFieldDelegate {
     
     private var indirectCitiesTextfield: [SugestiveTextField] = []
 
     //MARK:- IBOutlets
     @IBOutlet weak var fromTextfield: SugestiveTextField!
+    @IBOutlet weak var fromLocationTextField: UITextField!
     @IBOutlet weak var toTextField: SugestiveTextField!
+    @IBOutlet weak var toLocationTextField: UITextField!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewHeightConstraint: NSLayoutConstraint!
     
@@ -36,13 +38,22 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter> {
     }
     
     @IBAction func next(_ sender: Any) {
-        //MARK:- TODO sprawdzanie czy wpisano dane
-        presenter.showRouteTimeView()
+        if let fromCityId = fromTextfield.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text {
+                presenter.showRouteTimeView(routeLocation: RouteLocation(fromCityId: fromCityId, toCityId: toCityId, from: from, to: to))
+        }
+        //MARK:- TODO info o niepodanych danych
     }
     
     //MARK:- Main
     private func setupTextFields() {
         fromTextfield.setPlaceholder(with: presenter.fromTextFieldPlaceholder)
         toTextField.setPlaceholder(with: presenter.toTextFieldPlaceholder)
+        toLocationTextField.setPlaceholder(with: presenter.toLocationPlaceholder)
+        fromLocationTextField.setPlaceholder(with: presenter.fromLocationPlaceholder)
+    }
+    
+    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.textColor = UIColor.black
+        textField.text = nil
     }
 }
