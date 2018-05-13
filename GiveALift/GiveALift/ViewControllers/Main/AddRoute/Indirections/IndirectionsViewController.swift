@@ -36,10 +36,10 @@ class IndirectionsViewController: BaseViewController<IndirectionsPresenter> {
     @IBAction func addIndirectionTapped(_ sender: Any) {
         let sugestivetextField = SugestiveTextField(frame: CGRect(x: 0, y: 0, width: stackView.frame.width, height: 40))
         sugestivetextField.backgroundColor = UIColor.white
-        sugestivetextField.setPlaceholder(with: presenter.indirectTextFieldPlaceHolder)
+        sugestivetextField.placeholder = presenter.indirectTextFieldPlaceHolder
         let textField = UITextField(frame: CGRect(x: 0, y: 0, width: stackView.frame.width, height: 40))
         textField.backgroundColor = UIColor.white
-        textField.setPlaceholder(with: presenter.indirectLocationPlaceholder)
+        textField.placeholder = presenter.indirectLocationPlaceholder
         stackView.insertArrangedSubview(sugestivetextField, at: stackView.subviews.count - 2)
         stackView.insertArrangedSubview(textField, at: stackView.subviews.count - 2)
         stackViewHeightConstraint.constant += 40
@@ -49,11 +49,12 @@ class IndirectionsViewController: BaseViewController<IndirectionsPresenter> {
     }
     
     @IBAction func nextTapped(_ sender: Any) {
-//        if let _ = indirextCitiesLocations.first(where: { $0.text == nil }),
-//            let _ = indirectCitiesTextfield.first(where: { $0.text == nil }) {
-//
-//        }
-        //MARK:- TODO zmienić
-        presenter.showRouteTimeView(indirectCitys: [], indirectLocations: [])
+        let indirectCitys = indirectCitiesTextfield.filter({$0.selectedCityId() != nil}).map({$0.selectedCityId()!})
+        let indirectLocations = indirextCitiesLocations.filter({!(($0.text == nil)||($0.text == ""))}).map({$0.text!})
+        if indirectLocations.count == indirextCitiesLocations.count && indirectCitys.count == indirectCitiesTextfield.count {
+            presenter.showRouteTimeView(indirectCitys: indirectCitys, indirectLocations: indirectLocations)
+        } else {
+            //MARK:- TODO
+        }
     }
 }

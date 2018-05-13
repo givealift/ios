@@ -21,5 +21,4 @@ class BaseViewController<Presenter>: UIViewController where Presenter: BasePrese
         fatalError("init(coder:) has not been implemented")
     }
     
-    
 }

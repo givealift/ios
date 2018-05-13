@@ -21,6 +21,6 @@ class RouteTableViewCell: UITableViewCell {
     }
     
     func setupCell(route: Route) {
-        label.text = route.from.city.name + " -> " + route.to.city.name + " " + route.departureTime
+        label.text = route.from.city.name + " -> " + route.to.city.name + " " + route.from.date
     }
 }

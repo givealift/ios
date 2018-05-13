@@ -45,7 +45,10 @@ class RouteTimeViewController: BaseViewController<RouteTimePresenter>, UITextFie
     //MARK:- IBActions
     
     @IBAction func nextTapped(_ sender: Any) {
-        presenter.showRouteInfoView(departureDate: "2018-05-08", departureTime: "21:15", indirectDates: [])
+        let indirectDates = indirectionsTextField.filter({!(($0.text == nil)||($0.text == ""))}).map({$0.text!})
+        if let date = dateTextField.text, date != "", let time = timeTextField.text, time != "", indirectDates.count == indirectionsTextField.count {
+            presenter.showRouteInfoView(departureDate: "2018-05-08", departureTime: "21:15", indirectDates: indirectDates)
+        }
     }
     
     //MARK:- Main
@@ -59,8 +62,8 @@ class RouteTimeViewController: BaseViewController<RouteTimePresenter>, UITextFie
     }
     
     private func setupTextFields() {
-        dateTextField.setPlaceholder(with: presenter.datePlaceholder)
-        timeTextField.setPlaceholder(with: presenter.timePlaceholder)
+        dateTextField.placeholder = presenter.datePlaceholder
+        timeTextField.placeholder = presenter.timePlaceholder
         dateTextField.delegate = self
         timeTextField.delegate = self
     }
@@ -111,7 +114,5 @@ class RouteTimeViewController: BaseViewController<RouteTimePresenter>, UITextFie
     
     @objc func textFieldDidBeginEditing(_ textField: UITextField) {
         selectedTextField = textField
-        textField.textColor = UIColor.black
-        textField.text = nil
     }
 }

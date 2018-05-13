@@ -21,29 +21,27 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
     //MARK:- VC's life cycle
     override func viewDidLoad() {
         self.view.backgroundColor = .red
+        self.hideKeyboardWhenTappedAround()
         setupTextFields()
     }
 
     //MARK:- IBActions
     
     @IBAction func next(_ sender: Any) {
-        if let fromCityId = fromTextfield.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text {
-            presenter.showIndirectionView(fromCityId: fromCityId, fromLocation: from, toCityId: toCityId, toLocation: to)
+        if let fromCityId = fromTextfield.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text, from != "", to != "" {
+    
+            presenter.showIndirectionView(fromCityId: fromCityId + 400, fromLocation: from, toCityId: toCityId + 400, toLocation: to)
         } else {
             //MARK:- TODO info o niepodanych danych
+            presenter.showIndirectionView(fromCityId: 1, fromLocation: "dsa", toCityId: 3, toLocation: "23")
         }
     }
     
     //MARK:- Main
     private func setupTextFields() {
-        fromTextfield.setPlaceholder(with: presenter.fromTextFieldPlaceholder)
-        toTextField.setPlaceholder(with: presenter.toTextFieldPlaceholder)
-        toLocationTextField.setPlaceholder(with: presenter.toLocationPlaceholder)
-        fromLocationTextField.setPlaceholder(with: presenter.fromLocationPlaceholder)
-    }
-    
-    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.textColor = UIColor.black
-        textField.text = nil
+        fromTextfield.placeholder = presenter.fromTextFieldPlaceholder
+        toTextField.placeholder = presenter.toTextFieldPlaceholder
+        toLocationTextField.placeholder = presenter.toLocationPlaceholder
+        fromLocationTextField.placeholder = presenter.fromLocationPlaceholder
     }
 }

@@ -26,8 +26,15 @@ final class RootConnector {
     init(window: UIWindow) {
         self.window = window
         self.navigationController = UINavigationController()
+        setupNavigationController()
         self.window.backgroundColor = .white
         self.window.rootViewController = navigationController
+    }
+    
+    private func setupNavigationController() {
+        self.navigationController.navigationBar.barTintColor = UIColor.GALBlue
+        self.navigationController.navigationBar.isTranslucent = false
+        self.navigationController.navigationItem.backBarButtonItem?.tintColor = UIColor.white
     }
 }
 

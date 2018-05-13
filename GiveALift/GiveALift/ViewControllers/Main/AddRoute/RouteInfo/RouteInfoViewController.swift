@@ -30,26 +30,25 @@ class RouteInfoViewController: BaseViewController<RouteInfoPresenter>, UITextFie
     //MARK:- IBActions
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        presenter.showRouteOptionalDescriptionView(price: 10, numberOfSeats: 5)
+        if let price = priceTextField.text, let numberOfSeats = numberOfSeatsTextField.text, price != "", numberOfSeats != "" {
+            print(priceTextField.text)
+            presenter.showRouteOptionalDescriptionView(price: Int(price)! , numberOfSeats: Int(numberOfSeats)!)
+        } else {
+            //MARK:- TODO error
+            print("podaj dane")
+        }
     }
     
     
     //MARK:- Main
     
     private func setupTextFields() {
-        priceTextField.setPlaceholder(with: presenter.pricePlaceholder)
-        numberOfSeatsTextField.setPlaceholder(with: presenter.numberOfSeatsPlaceholder)
-        priceTextField.delegate = self
-        numberOfSeatsTextField.delegate = self
+        priceTextField.placeholder = presenter.pricePlaceholder
+        numberOfSeatsTextField.placeholder = presenter.numberOfSeatsPlaceholder
     }
     
     private func setupKeyboards() {
         priceTextField.keyboardType = .numberPad
         numberOfSeatsTextField.keyboardType = .numberPad
-    }
-
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.textColor = UIColor.black
-        textField.text = nil
     }
 }
