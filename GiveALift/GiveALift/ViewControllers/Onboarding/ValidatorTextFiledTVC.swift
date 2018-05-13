@@ -45,6 +45,13 @@ class ValidatorTextFiledTVC: UITableViewCell {
     
     private func setupTextField() {
         textField.delegate = self
+        textField.isSecureTextEntry = cellType.secure
+        if let _ = cellType as? PhoneNumberCell {
+            textField.keyboardType = .phonePad
+        }
+        if let _ = cellType as? EmailCell {
+            textField.keyboardType = .emailAddress
+        }
         textField.addTarget(self, action: #selector(ValidatorTextFiledTVC.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
         if let text = cellType.value {
             setupBlackTextfield(withText: text)

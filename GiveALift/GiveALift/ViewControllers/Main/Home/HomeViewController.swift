@@ -13,6 +13,7 @@ class HomeViewController: BaseViewController<HomePresenter> {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.yellow
+        setupUserInfoButton()
     }
 
     @IBAction func searchTapped(_ sender: Any) {
@@ -21,5 +22,10 @@ class HomeViewController: BaseViewController<HomePresenter> {
     
     @IBAction func addTapped(_ sender: Any) {
         presenter.showAddRouteView()
+    }
+    
+    //MARK:- Main
+    private func setupUserInfoButton() {
+        
     }
 }

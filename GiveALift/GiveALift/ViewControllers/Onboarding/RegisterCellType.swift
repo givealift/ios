@@ -10,6 +10,7 @@ import Foundation
 
 enum CellType {
     case textfield
+    case segController
 }
 
 protocol RegisterCellType {
@@ -17,6 +18,7 @@ protocol RegisterCellType {
     var validationRule: ValidatorRule { get }
     var type: CellType { get }
     var value: String? { get set }
+    var secure: Bool { get }
 }
 
 extension RegisterCellType {
@@ -35,6 +37,8 @@ extension RegisterCellType {
 }
 
 class EmailCell: RegisterCellType {
+    var secure: Bool = false
+    
     var labelText: String = "Podaj emial"
     var validationRule: ValidatorRule {
         var rule = ValidatorRulePattern(pattern: .email)
@@ -46,6 +50,7 @@ class EmailCell: RegisterCellType {
 }
 
 class PasswordCell: RegisterCellType {
+    var secure: Bool = true
     var labelText: String = "Podaj hasło"
     var validationRule: ValidatorRule {
         var rule = ValidatorRuleLength(rule: .minimumLength, value: 8)
@@ -58,6 +63,7 @@ class PasswordCell: RegisterCellType {
 
 //MARK:- TODO validation rule do takich samych haseł
 class CompatibilePasswordCell: RegisterCellType {
+    var secure: Bool = true
     var labelText: String = "Powtórz hasło"
     var validationRule: ValidatorRule {
         var rule = ValidatorRulePattern(dynamicString: { return self.passwordCell?.value ?? ""})
@@ -70,6 +76,7 @@ class CompatibilePasswordCell: RegisterCellType {
 }
 
 class NameCell: RegisterCellType {
+    var secure: Bool = false
     var labelText: String = "Podaj imię"
     var validationRule: ValidatorRule {
         var rule = ValidatorRuleLength(rule: .maximumLength, value: 25)
@@ -81,6 +88,7 @@ class NameCell: RegisterCellType {
 }
 
 class SurnameCell: RegisterCellType {
+    var secure: Bool = false
     var labelText: String = "Podaj nazwisko"
     var validationRule: ValidatorRule {
         var rule = ValidatorRuleLength(rule: .maximumLength, value: 25)
@@ -92,6 +100,7 @@ class SurnameCell: RegisterCellType {
 }
 
 class PhoneNumberCell: RegisterCellType {
+    var secure: Bool = false
     var labelText: String = "Podaj numer telefonu"
     var validationRule: ValidatorRule {
         var rule = ValidatorRulePattern(pattern: .phoneNumber)
@@ -100,4 +109,20 @@ class PhoneNumberCell: RegisterCellType {
     }
     var type: CellType = .textfield
     var value: String? = nil
+}
+
+enum Gender: String {
+    case man = "male"
+    case woman = "female"
+}
+
+class GenderCell: RegisterCellType {
+    var secure: Bool = false
+    var labelText: String = ""
+    var validationRule: ValidatorRule {
+        return ValidatorRulePattern(pattern: .phoneNumber)
+    }
+    var type: CellType = .segController
+    var value: String?
+    var gender: Gender = .woman
 }

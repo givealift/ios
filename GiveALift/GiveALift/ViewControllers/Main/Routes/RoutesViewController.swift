@@ -23,8 +23,7 @@ class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDele
         tableView.dataSource = self
         tableView.register(RouteTableViewCell.self)
     }
-
- 
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.routes.count
     }
@@ -33,6 +32,10 @@ class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDele
         let cell: RouteTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         cell.setupCell(route: presenter.routes[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //presenter.showRouteDetailsView(route: Route())
     }
 
 }

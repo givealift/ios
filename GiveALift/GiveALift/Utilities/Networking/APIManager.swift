@@ -43,6 +43,17 @@ final class APIManager: APIManagerType {
         }
     }
     
+    func register(request: RegisterRequest, completion: @escaping APIResultBlock<Data>) {
+        requestBuilder.POSTRequest(withURL: urlBuilder.registerURL(), withData: request, authToken: nil) { (result) in
+            switch result {
+            case .Error(error: let error):
+                completion(APIResult.Error(error: error))
+            case .Success(result: let result):
+                completion(APIResult.Success(result: result))
+            }
+        }
+    }
+    
     func addRoute(route: AddRoute) {
         let stop1 = RouteLocation()
         stop1.city = AddRouteCity()

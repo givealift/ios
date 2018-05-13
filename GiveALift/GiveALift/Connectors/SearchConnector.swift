@@ -10,6 +10,7 @@ import UIKit
 
 protocol SearchConnectorDelegate: class {
     func showRoutesView(routes: [Route])
+    func showRouteDetailsView(route: Route)
 }
 
 final class SearchConnector {
@@ -32,6 +33,12 @@ extension SearchConnector: SearchConnectorDelegate {
     func showRoutesView(routes: [Route]) {
         let presenter = RoutesPresenter(connector: self, routes: routes)
         let view = RoutesViewController(presenter: presenter)
+        navigationController.pushViewController(view, animated: true)
+    }
+    
+    func showRouteDetailsView(route: Route) {
+        let presenter = RouteDetailsPresenter(connector: self, route: route)
+        let view = RouteDetailsViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
 }
