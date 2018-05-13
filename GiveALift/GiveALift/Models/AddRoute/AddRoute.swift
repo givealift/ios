@@ -14,8 +14,10 @@ final class AddRoute: Codable {
     var stops = [RouteLocation]()
     var price: Int!
     var numberOfSeats: Int!
-    var numberOfOccupiedSeats = 0
-    var ownerId = User.shared.userID
+    var numberOfOccupiedSeats = 2
+//    var ownerId = User.shared.userID
+    var ownerId = 1
+    var routeId = 610
     var description: String?
 }
 
@@ -23,7 +25,6 @@ final class RouteLocation: Codable {
     var city: AddRouteCity!
     var placeOfMeeting: String!
     var date: String!
-    var localizationId = 0
 }
 
 final class AddRouteCity: Codable {

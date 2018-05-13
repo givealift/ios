@@ -10,7 +10,13 @@ import Foundation
 
 final class URLBuilder: URLBuilderType {
     
+    
     private let mainURL = "http://mysterious-lowlands-82501.herokuapp.com"
+    
+    func addRouteURL() -> URL {
+        let urlString = mainURL + "/api/route"
+        return URL(string: urlString)!
+    }
     
     func loginURL() -> URL {
         let urlString = mainURL + "/api/authenticate"

@@ -33,10 +33,12 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
 //        }
         let addRoute = AddRoute()
         addRoute.from = RouteLocation()
-        addRoute.from.city.cityId = 1
+        addRoute.from.city = AddRouteCity()
+        addRoute.from.city.cityId = 401
         addRoute.from.placeOfMeeting = "siusiaczek"
         addRoute.to = RouteLocation()
-        addRoute.to.city.cityId = 2
+        addRoute.to.city = AddRouteCity()
+        addRoute.to.city.cityId = 403
         addRoute.to.placeOfMeeting = "pizdeczka"
         presenter.showIndirectionView(addRoute: addRoute)
         

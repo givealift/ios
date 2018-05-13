@@ -45,7 +45,7 @@ class RouteTimeViewController: BaseViewController<RouteTimePresenter>, UITextFie
     //MARK:- IBActions
     
     @IBAction func nextTapped(_ sender: Any) {
-        presenter.showRouteInfoView(departureDate: "2018-05-13", departureTime: "17:00", indirectDates: [])
+        presenter.showRouteInfoView(departureDate: "2018-05-08", departureTime: "21:15", indirectDates: [])
     }
     
     //MARK:- Main

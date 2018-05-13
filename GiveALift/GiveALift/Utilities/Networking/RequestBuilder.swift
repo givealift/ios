@@ -28,7 +28,8 @@ final class RequestBuilder: RequestBuilderType {
     
     func POSTRequest<T: Encodable>(withURL url: URL, withData body: T, authToken: String?, completion: @escaping APIResultBlock<Data>) {
         let (request, session) = configuration(forURL: url, parameters: body, httpMethod: "POST", authToken: authToken)
-        print(request)
+        print(request.allHTTPHeaderFields)
+        print(request.httpBody)
         startDataTask(for: session, with: request) { (result) in
             completion(result)
         }

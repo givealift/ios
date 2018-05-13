@@ -10,4 +10,5 @@ import Foundation
 
 protocol APIManagerType: class {
     func login(email: String, password: String, completion: @escaping APIResultBlock<GALUserLogin>)
+    func addRoute(route: AddRoute)
 }

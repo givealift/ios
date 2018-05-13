@@ -42,4 +42,28 @@ final class APIManager: APIManagerType {
             }
         }
     }
+    
+    func addRoute(route: AddRoute) {
+        let stop1 = RouteLocation()
+        stop1.city = AddRouteCity()
+        stop1.city.cityId = 405
+        stop1.placeOfMeeting = "siusiaczek"
+        stop1.date = "2018-05-08 22:45"
+        let stop2 = RouteLocation()
+        stop2.city = AddRouteCity()
+        stop2.city.cityId = 407
+        stop2.placeOfMeeting = "siusiaczek"
+        stop2.date = "2018-05-08 22:55"
+        route.stops.append(stop2)
+        route.stops.append(stop1)
+        requestBuilder.POSTRequest(withURL: urlBuilder.addRouteURL(), withData: route, authToken: User.shared.token) { (result) in
+            switch result {
+            case .Error(error: let error):
+                print(error)
+                print(error.localizedDescription)
+            case .Success(result: let result):
+                print(result)
+            }
+        }
+    }
 }
