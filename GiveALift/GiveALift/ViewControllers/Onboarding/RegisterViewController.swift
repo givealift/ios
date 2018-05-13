@@ -44,13 +44,13 @@ final class RegisterViewController: UIViewController {
         if result.count == 1 {
             if let email = cellsData[2].value, let firstName = cellsData[0].value, let lastName = cellsData[1].value, let password = cellsData[4].value, let phoneNumber = cellsData[5].value, let gender = cellsData[6] as? GenderCell {
                 let registeRequest = RegisterRequest(address: "", birthYear: 1960, email: email, firstName: firstName, gender: gender.gender.rawValue, lastName: lastName, password: password, phone: phoneNumber, rate: 0)
-                APIManager.shared.register(request: registeRequest) { [weak self] (result) in
+                APIManager.shared.register(request: registeRequest) { (result) in
                     switch result {
                     case .Error(error: let error):
-                        print(error)
+                        print(error.localizedDescription)
                     case .Success(result: let result):
                         print(result)
-                        self?.navigationController?.popViewController(animated: true)
+                        self.navigationController?.popViewController(animated: true)
                     }
                 }
             }

@@ -27,22 +27,11 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
     //MARK:- IBActions
     
     @IBAction func next(_ sender: Any) {
-        //MARK:- TODO odkomentować
-//        if let fromCityId = fromTextfield.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text {
-//                presenter.showIndirectionView(routeLocation: RouteLocation(fromCityId: fromCityId, toCityId: toCityId, from: from, to: to))
-//        }
-        let addRoute = AddRoute()
-        addRoute.from = RouteLocation()
-        addRoute.from.city = AddRouteCity()
-        addRoute.from.city.cityId = 401
-        addRoute.from.placeOfMeeting = "siusiaczek"
-        addRoute.to = RouteLocation()
-        addRoute.to.city = AddRouteCity()
-        addRoute.to.city.cityId = 403
-        addRoute.to.placeOfMeeting = "pizdeczka"
-        presenter.showIndirectionView(addRoute: addRoute)
-        
-        //MARK:- TODO info o niepodanych danych
+        if let fromCityId = fromTextfield.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text {
+            presenter.showIndirectionView(fromCityId: fromCityId, fromLocation: from, toCityId: toCityId, toLocation: to)
+        } else {
+            //MARK:- TODO info o niepodanych danych
+        }
     }
     
     //MARK:- Main

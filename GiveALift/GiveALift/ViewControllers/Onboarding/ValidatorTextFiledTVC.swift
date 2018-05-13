@@ -45,7 +45,6 @@ class ValidatorTextFiledTVC: UITableViewCell {
     
     private func setupTextField() {
         textField.delegate = self
-        textField.isSecureTextEntry = cellType.secure
         if let _ = cellType as? PhoneNumberCell {
             textField.keyboardType = .phonePad
         }
@@ -61,11 +60,13 @@ class ValidatorTextFiledTVC: UITableViewCell {
     }
     
     private func setupGrayTextfield(withText text: String) {
+        textField.isSecureTextEntry = false
         textField.textColor = UIColor.lightGray
         textField.text = text
     }
     
     private func setupBlackTextfield(withText text: String?) {
+        textField.isSecureTextEntry = cellType.secure
         textField.textColor = UIColor.black
         textField.text = text
     }
