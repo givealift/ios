@@ -9,17 +9,22 @@
 import UIKit
 
 final class PreLoginRegisterViewController: UIViewController {
+    
+    weak var connector: RootConnectorDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 
     @IBAction func registerTapped(_ sender: Any) {
         performSegue(withIdentifier: Segues.goToRegister, sender: nil)
     }
     
     @IBAction func loginTapped(_ sender: Any) {
-        performSegue(withIdentifier: Segues.goToLogin, sender: nil)
+        let mainStoryboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
+        let vc : LoginViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        vc.connector = connector
+        self.navigationController?.pushViewController(vc, animated: true)
+        //performSegue(withIdentifier: Segues.goToLogin, sender: nil)
     }
 }

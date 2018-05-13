@@ -15,11 +15,15 @@ final class User {
     var token: String? {
         return storage.getToken()
     }
+    var userID: Int? {
+        return storage.getUserID()
+    }
     
     private let storage = LocalStorageManager(userDefaults: UserDefaults.standard)
     
-    func logIn(user: Response) {
-        storage.setToken(user.authToken.token)
+    func logIn(user: GALUserLogin) {
+        storage.setToken(user.token)
+        storage.setUserID(user.userID)
         isLogIn = true
     }
 }

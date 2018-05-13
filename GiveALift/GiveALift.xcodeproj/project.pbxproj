@@ -24,6 +24,7 @@
 		C124DA3D20A75E5B00391A71 /* RouteOptionalDescriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124DA3C20A75E5B00391A71 /* RouteOptionalDescriptionPresenter.swift */; };
 		C124DA4120A75EB900391A71 /* RouteOptionalDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124DA3F20A75EB900391A71 /* RouteOptionalDescriptionViewController.swift */; };
 		C124DA4220A75EB900391A71 /* RouteOptionalDescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C124DA4020A75EB900391A71 /* RouteOptionalDescriptionViewController.xib */; };
+		C124DA4420A841D300391A71 /* GALUserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124DA4320A841D300391A71 /* GALUserLogin.swift */; };
 		C1725B2A20A59E8800F64747 /* SearchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2920A59E8800F64747 /* SearchConnector.swift */; };
 		C1725B2C20A5A95F00F64747 /* AddRouteConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */; };
 		C1725B2E20A5AA8D00F64747 /* AddRoutePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */; };
@@ -124,6 +125,7 @@
 		C124DA3C20A75E5B00391A71 /* RouteOptionalDescriptionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteOptionalDescriptionPresenter.swift; sourceTree = "<group>"; };
 		C124DA3F20A75EB900391A71 /* RouteOptionalDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteOptionalDescriptionViewController.swift; sourceTree = "<group>"; };
 		C124DA4020A75EB900391A71 /* RouteOptionalDescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteOptionalDescriptionViewController.xib; sourceTree = "<group>"; };
+		C124DA4320A841D300391A71 /* GALUserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALUserLogin.swift; sourceTree = "<group>"; };
 		C1725B2920A59E8800F64747 /* SearchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConnector.swift; sourceTree = "<group>"; };
 		C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteConnector.swift; sourceTree = "<group>"; };
 		C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutePresenter.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				C1233D662083E26800BD0A56 /* GALUserResponse.swift */,
 				C1CFBD6F2085F48900253375 /* GALRegisterResponse.swift */,
 				C1CFBD992086A78700253375 /* Route.swift */,
+				C124DA4320A841D300391A71 /* GALUserLogin.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -849,6 +852,7 @@
 				C10B6D42206A4B790060AF1F /* RegisterCellType.swift in Sources */,
 				C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */,
 				C1725B3420A5AB0300F64747 /* AddRouteViewController.swift in Sources */,
+				C124DA4420A841D300391A71 /* GALUserLogin.swift in Sources */,
 				C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */,
 				C1233D5E2083CD1900BD0A56 /* APIManager.swift in Sources */,
 				C124DA3220A7417A00391A71 /* AddRoute.swift in Sources */,

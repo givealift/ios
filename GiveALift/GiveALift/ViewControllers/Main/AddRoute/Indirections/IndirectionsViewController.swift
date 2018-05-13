@@ -54,6 +54,6 @@ class IndirectionsViewController: BaseViewController<IndirectionsPresenter> {
 //
 //        }
         //MARK:- TODO zmienić
-        presenter.showRouteTimeView(indirectCitys: [1], indirectLocations: [""])
+        presenter.showRouteTimeView(indirectCitys: [], indirectLocations: [])
     }
 }

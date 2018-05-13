@@ -12,6 +12,7 @@ protocol RootConnectorDelegate: class {
     func showAddRouteView()
     func showSearchView()
     func showHomeView()
+    func showPreLoginView()
 }
 
 final class RootConnector {
@@ -27,11 +28,16 @@ final class RootConnector {
         self.navigationController = UINavigationController()
         self.window.backgroundColor = .white
         self.window.rootViewController = navigationController
-        showHomeView()
     }
 }
 
 extension RootConnector: RootConnectorDelegate {
+    func showPreLoginView() {
+        let mainStoryboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
+        let vc : PreLoginRegisterViewController = mainStoryboard.instantiateViewController(withIdentifier: "PreLoginRegisterViewController") as! PreLoginRegisterViewController
+        vc.connector = self
+        navigationController.pushViewController(vc, animated: true)
+    }
     
     func showHomeView() {
         let presenter = HomePresenter(connectorDelegate: self)

@@ -14,7 +14,7 @@
         <!--Pre Login Register View Controller-->
         <scene sceneID="4L6-AE-tNI">
             <objects>
-                <viewController id="ANg-lt-n86" customClass="PreLoginRegisterViewController" customModule="GiveALift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreLoginRegisterViewController" id="ANg-lt-n86" customClass="PreLoginRegisterViewController" customModule="GiveALift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kIt-bG-RVb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,7 @@
         <!--Login View Controller-->
         <scene sceneID="dPP-Y6-cja">
             <objects>
-                <viewController id="dT0-lB-LTy" customClass="LoginViewController" customModule="GiveALift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="dT0-lB-LTy" customClass="LoginViewController" customModule="GiveALift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ul4-Hz-Wui">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

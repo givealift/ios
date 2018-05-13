@@ -30,7 +30,7 @@ class RouteInfoViewController: BaseViewController<RouteInfoPresenter>, UITextFie
     //MARK:- IBActions
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        presenter.showRouteOptionalDescriptionView(price: 1, numberOfSeats: 1)
+        presenter.showRouteOptionalDescriptionView(price: 20, numberOfSeats: 1)
     }
     
     

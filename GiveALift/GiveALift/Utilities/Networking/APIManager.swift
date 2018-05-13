@@ -21,16 +21,16 @@ final class APIManager: APIManagerType {
         self.requestBuilder = requestBuilder
     }
     
-    func login(email: String, password: String, completion: @escaping APIResultBlock<Response>) {
+    func login(email: String, password: String, completion: @escaping APIResultBlock<GALUserLogin>) {
         let body = ["username": email, "password": password]
         requestBuilder.POSTRequest(withURL: urlBuilder.loginURL(), withData: body, authToken: nil) { (result) in
             switch result {
             case .Success(result: let result):
                     do  {
                         let decoder = JSONDecoder()
-                        let galUserResponse = try decoder.decode(Response.self, from: result)
+                        let galUserLogin = try decoder.decode(GALUserLogin.self, from: result)
                         DispatchQueue.main.async {
-                            completion(APIResult.Success(result: galUserResponse))
+                            completion(APIResult.Success(result: galUserLogin))
                         }
                     } catch {
                         print(error)

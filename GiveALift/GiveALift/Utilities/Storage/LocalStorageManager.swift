@@ -13,6 +13,7 @@ final class LocalStorageManager: LocalStorage {
     private let userDefaults: UserDefaults
     private enum LocalStorageKeys {
         static let token = "token"
+        static let userID = "userID"
     }
     
     init(userDefaults: UserDefaults) {
@@ -25,6 +26,14 @@ final class LocalStorageManager: LocalStorage {
     
     func getToken() -> String? {
         return userDefaults.value(forKey: LocalStorageKeys.token) as? String
+    }
+    
+    func setUserID(_ value: Int) {
+        userDefaults.set(value, forKey: LocalStorageKeys.userID)
+    }
+    
+    func getUserID() -> Int? {
+        return userDefaults.value(forKey: LocalStorageKeys.userID) as? Int
     }
     
     
