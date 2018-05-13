@@ -26,6 +26,14 @@ final class RequestBuilder: RequestBuilderType {
         }
     }
     
+    func POSTRequest<T: Encodable>(withURL url: URL, withData body: T, authToken: String?, completion: @escaping APIResultBlock<Data>) {
+        let (request, session) = configuration(forURL: url, parameters: body, httpMethod: "POST", authToken: authToken)
+        print(request)
+        startDataTask(for: session, with: request) { (result) in
+            completion(result)
+        }
+    }
+    
     private func startDataTask(for session: URLSession, with request: URLRequest, completion: @escaping APIResultBlock<Data>) {
         session.dataTask(with: request) { (data, response, error) in
             if let _ = error {
@@ -42,6 +50,32 @@ final class RequestBuilder: RequestBuilderType {
             }
             completion(APIResult.Success(result: data))
             }.resume()
+    }
+    
+    private func configuration<T:Encodable>(forURL url: URL, parameters: T, httpMethod: String, authToken: String?) -> (request: URLRequest, session: URLSession) {
+        
+        let sessionConfiguration = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfiguration)
+        var request = URLRequest(url: url)
+        
+        if let authToken = authToken {
+            let header = "Authorization"
+            request.addValue("Bearer " + authToken, forHTTPHeaderField: header)
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = httpMethod
+        let encoder = JSONEncoder()
+        do {
+            let jsonData = try encoder.encode(parameters)
+            request.httpBody = jsonData
+            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+        } catch {
+            fatalError("Parsing error")
+        }
+        
+        return (request, session)
     }
     
     private func configuration(forURL url: URL, parameters: Dictionary<String, Any>? = nil, httpMethod: String, authToken: String?) -> (request: URLRequest, session: URLSession) {

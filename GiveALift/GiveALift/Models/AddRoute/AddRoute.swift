@@ -23,7 +23,7 @@ final class RouteLocation: Codable {
     var city: AddRouteCity!
     var placeOfMeeting: String!
     var date: String!
-
+    var localizationId = 0
 }
 
 final class AddRouteCity: Codable {
