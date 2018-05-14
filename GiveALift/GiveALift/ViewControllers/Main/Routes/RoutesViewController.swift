@@ -35,7 +35,7 @@ class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //presenter.showRouteDetailsView(route: Route())
+        presenter.showRouteDetailsView(route: presenter.routes[indexPath.row])
     }
 
 }

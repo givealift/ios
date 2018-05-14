@@ -45,6 +45,7 @@ extension LoginViewController: OnboardingServiceDelegate {
     func onboardingService(user: GALUserLogin, result: GALUserInfo) {
         print(result)
         User.shared.logIn(user: user, userInfo: result)
+        print("user id \(user.userID)")
         self.connector?.showHomeView()
     }
     

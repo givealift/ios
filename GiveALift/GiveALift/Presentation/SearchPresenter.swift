@@ -53,7 +53,7 @@ final class SearchPresenter: BasePresenter {
     }
     
     func getUserInfo(route: Route) {
-        requestBuilder.GETRequest(withURL: urlBuilder.userPublicInfoURL(id: route.ownerId), authToken: User.shared.token) { [weak self] (result) in
+        requestBuilder.GETRequest(withURL: urlBuilder.userInfoURL(id: route.ownerId), authToken: User.shared.token) { [weak self] (result) in
             switch result {
             case .Error(error: let error):
                 print(error)
@@ -72,6 +72,10 @@ final class SearchPresenter: BasePresenter {
     }
     
     func displayRoutesView() {
-        connector?.showRoutesView(routes: cellRouteData)
+        let userInfo = GALUserInfo(address: "", birthYear: 1960, email: "mwloczko@gmail.com", firstName: "Marcin", gender: "male", lastName: "Włoczko", phone: "12312415", rate: 5)
+        let location = Location(city: City(cityID: 1, name: "wa", country: "Pols", province: "dsa", cityInfo: CityInfo(cityInfoID: 1, population: 1, citySize: 1)), placeOfMeeting: "Kabanos", date: "2018-05-14 17:00", localizationId: 1)
+        let routeInfo = Route(routeId: 14, ownerId: 13, from: location, to: location, stops: [], numberOfSeats: 4, numberOfOccupiedSeats: 1, price: 20)
+        let cellRoutesssData = CellRouteData(userInfo: userInfo, routeInfo: routeInfo)
+        connector?.showRoutesView(routes: [cellRoutesssData])
     }
 }
