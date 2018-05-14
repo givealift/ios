@@ -16,6 +16,11 @@ final class URLBuilder: URLBuilderType {
         return URL(string: urlString)!
     }
     
+    func userPublicInfoURL(id: Int) -> URL {
+        let urlString = mainURL + "/api/user/public/\(id)"
+        return URL(string: urlString)!
+    }
+    
     func addRouteURL() -> URL {
         let urlString = mainURL + "/api/route"
         return URL(string: urlString)!

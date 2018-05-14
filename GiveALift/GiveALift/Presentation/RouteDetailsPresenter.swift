@@ -11,9 +11,9 @@ import Foundation
 final class RouteDetailsPresenter: BasePresenter {
     
     private weak var connector: SearchConnectorDelegate?
-    let route: Route
+    let route: CellRouteData
     
-    init(connector: SearchConnectorDelegate, route: Route) {
+    init(connector: SearchConnectorDelegate, route: CellRouteData) {
         self.connector = connector
         self.route = route
     }

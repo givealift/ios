@@ -14,4 +14,5 @@ protocol URLBuilderType {
     func searchRouteURL(from: Int, to: Int, date: String) -> URL
     func addRouteURL() -> URL
     func userInfoURL(id: Int) -> URL
+    func userPublicInfoURL(id: Int) -> URL
 }

@@ -13,6 +13,8 @@ final class SearchPresenter: BasePresenter {
     fileprivate let requestBuilder: RequestBuilderType
     fileprivate let urlBuilder: URLBuilderType
     fileprivate weak var connector: SearchConnectorDelegate?
+    private var cellRouteData = [CellRouteData]()
+    private var routes = [Route]()
     
     // MARK: Initializers
     
@@ -30,10 +32,37 @@ final class SearchPresenter: BasePresenter {
             case .Success(result: let result):
                 let decoder = JSONDecoder()
                 do {
-                    let routes = try decoder.decode([Route].self, from: result)
-                    print(routes)
+                    self?.routes = try decoder.decode([Route].self, from: result)
+                    self?.getUsersInfo()
+                } catch {
+                    print(error)
+                    fatalError("Faild to parse Route")
+                }
+            }
+        }
+    }
+    
+    func checkProgress() {
+        if routes.count == cellRouteData.count {
+            displayRoutesView()
+        }
+    }
+    
+    func getUsersInfo() {
+        routes.forEach({getUserInfo(route: $0)})
+    }
+    
+    func getUserInfo(route: Route) {
+        requestBuilder.GETRequest(withURL: urlBuilder.userPublicInfoURL(id: route.ownerId), authToken: User.shared.token) { [weak self] (result) in
+            switch result {
+            case .Error(error: let error):
+                print(error)
+            case .Success(result: let result):
+                let decoder = JSONDecoder()
+                do {
+                    let userInfo = try decoder.decode(GALUserInfo.self, from: result)
                     DispatchQueue.main.async {
-                        self?.displayRoutesView(routes: routes)
+                        self?.cellRouteData.append(CellRouteData(userInfo: userInfo, routeInfo: route))
                     }
                 } catch {
                     print(error)
@@ -42,7 +71,7 @@ final class SearchPresenter: BasePresenter {
         }
     }
     
-    func displayRoutesView(routes: [Route]) {
-        connector?.showRoutesView(routes: routes)
+    func displayRoutesView() {
+        connector?.showRoutesView(routes: cellRouteData)
     }
 }

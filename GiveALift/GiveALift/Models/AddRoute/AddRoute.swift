@@ -15,8 +15,7 @@ final class AddRoute: Codable {
     var price: Int!
     var numberOfSeats: Int!
     var numberOfOccupiedSeats = 2
-//    var ownerId = User.shared.userID
-    var ownerId = 1
+    var ownerId = User.shared.userID
     var routeId = 610
     var description: String?
 }

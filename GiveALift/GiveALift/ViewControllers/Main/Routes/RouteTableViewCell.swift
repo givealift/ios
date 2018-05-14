@@ -20,7 +20,7 @@ class RouteTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupCell(route: Route) {
-        label.text = route.from.city.name + " -> " + route.to.city.name + " " + route.from.date
+    func setupCell(route: CellRouteData) {
+        //label.text = route.from.city.name + " -> " + route.to.city.name + " " + route.from.date
     }
 }

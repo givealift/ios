@@ -11,14 +11,14 @@ import Foundation
 final class RoutesPresenter: BasePresenter {
     
     private weak var connector: SearchConnectorDelegate?
-    let routes: [Route]
+    let routes: [CellRouteData]
     
-    init(connector: SearchConnectorDelegate, routes: [Route]) {
+    init(connector: SearchConnectorDelegate, routes: [CellRouteData]) {
         self.routes = routes
         self.connector = connector
     }
     
-    func showRouteDetailsView(route: Route) {
+    func showRouteDetailsView(route: CellRouteData) {
         connector?.showRouteDetailsView(route: route)
     }
 }
