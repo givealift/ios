@@ -42,6 +42,6 @@ class HomeViewController: BaseViewController<HomePresenter> {
     }
     
     @objc private func userInfoTapped() {
-        
+        presenter.showUserInfoView()
     }
 }

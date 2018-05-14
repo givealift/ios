@@ -1,13 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserInfoViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserInfoViewController" customModule="GiveALift" customModuleProvider="target">
             <connections>
+                <outlet property="compatibilePasswordTextField" destination="yKB-Y9-Yko" id="p9V-5b-mxp"/>
+                <outlet property="emailTextField" destination="jmV-7d-1Lq" id="30r-Vb-A4z"/>
+                <outlet property="firstNameTextField" destination="302-u2-Z3i" id="nMv-L9-3Wk"/>
+                <outlet property="passwordTextField" destination="akk-r2-lUi" id="8rb-zN-BOZ"/>
+                <outlet property="phoneNumberTextField" destination="MRH-zq-YkI" id="GL7-2u-r1f"/>
+                <outlet property="secondNameTextField" destination="JQo-lr-OrA" id="TeH-LD-Cd2"/>
+                <outlet property="stackView" destination="fgX-Cy-h6J" id="Rrr-06-hCE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,7 +26,74 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goC-qy-R5M">
+                    <rect key="frame" x="15" y="35" width="54" height="30"/>
+                    <state key="normal" title="Zamknij"/>
+                    <connections>
+                        <action selector="dissmisTapped:" destination="-1" eventType="touchUpInside" id="DVs-N5-R9k"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fgX-Cy-h6J">
+                    <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                    <subviews>
+                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="302-u2-Z3i">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="150.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQo-lr-OrA">
+                            <rect key="frame" x="0.0" y="150.5" width="375" height="150.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jmV-7d-1Lq">
+                            <rect key="frame" x="0.0" y="301" width="375" height="0.0"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akk-r2-lUi">
+                            <rect key="frame" x="0.0" y="301" width="375" height="0.0"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yKB-Y9-Yko">
+                            <rect key="frame" x="0.0" y="301" width="375" height="150.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MRH-zq-YkI">
+                            <rect key="frame" x="0.0" y="451.5" width="375" height="150.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynQ-hQ-iMJ">
+                    <rect key="frame" x="315" y="35" width="45" height="30"/>
+                    <state key="normal" title="Edycja"/>
+                    <connections>
+                        <action selector="editTapped:" destination="-1" eventType="touchUpInside" id="36U-We-5hN"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fgX-Cy-h6J" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="45" id="8WO-R4-aWJ"/>
+                <constraint firstItem="goC-qy-R5M" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="OJG-jy-Iu9"/>
+                <constraint firstItem="fgX-Cy-h6J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TVM-Kg-sJG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ynQ-hQ-iMJ" secondAttribute="trailing" constant="15" id="aJQ-8C-TuN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fgX-Cy-h6J" secondAttribute="bottom" id="cUB-fo-fA8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fgX-Cy-h6J" secondAttribute="trailing" id="d8D-cb-ss2"/>
+                <constraint firstItem="ynQ-hQ-iMJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="few-OO-W1Y"/>
+                <constraint firstItem="goC-qy-R5M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="yzP-WY-Qh1"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>

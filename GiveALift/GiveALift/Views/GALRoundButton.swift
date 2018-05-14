@@ -24,7 +24,6 @@ class GALRoundButton: UIButton {
         self.layer.cornerRadius = 10
         self.tintColor = UIColor.white
         self.backgroundColor = UIColor.GALPink
-        //self.titleLabel?.font = UIFont(name: <#T##String#>, size: <#T##CGFloat#>)
     }
     
 }

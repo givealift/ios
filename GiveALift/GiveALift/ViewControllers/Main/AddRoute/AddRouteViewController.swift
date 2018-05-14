@@ -24,6 +24,10 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
         self.hideKeyboardWhenTappedAround()
         setupTextFields()
     }
+    
+    override func viewDidLayoutSubviews() {
+       // fromTextfield.setBottomLine()
+    }
 
     //MARK:- IBActions
     

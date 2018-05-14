@@ -9,7 +9,6 @@
 import UIKit
 
 protocol UserInfoConnectorDelegate: class {
-
 }
 
 final class UserInfoConnector {
@@ -22,11 +21,12 @@ final class UserInfoConnector {
     }
     
     private func showUserInfoView() {
-        
+        let presenter = UserInfoPresenter(connector: self)
+        let view = UserInfoViewController(presenter: presenter)
+        navigationController.present(view, animated: true, completion: nil)
     }
 }
 
 
 extension UserInfoConnector: UserInfoConnectorDelegate {
-    
 }

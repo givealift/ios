@@ -17,6 +17,7 @@ final class SugestiveTextField: SearchTextField {
         super.init(frame: frame)
         self.cities = loadCities()
         self.filterStrings(cities.map({$0.name}))
+        setBottomLine(borderColor: .black)
         
     }
     
@@ -24,6 +25,7 @@ final class SugestiveTextField: SearchTextField {
         super.init(coder: aDecoder)
         self.cities = loadCities()
         self.filterStrings(cities.map({$0.name}))
+        setBottomLine(borderColor: .black)
     }
     
     func selectedCityId() -> Int? {
@@ -52,6 +54,17 @@ final class SugestiveTextField: SearchTextField {
             }
         }
         return []
+    }
+    
+    func setBottomLine(borderColor: UIColor) {
+        self.borderStyle = .none
+        self.backgroundColor = .clear
+        let borderLine = UIView()
+        let height = 1.0
+        let textFieldHeight = Double(self.frame.height)
+        borderLine.frame = CGRect(x: 0, y: textFieldHeight*0.85, width: Double(self.frame.width), height: height)
+        borderLine.backgroundColor = borderColor
+        self.addSubview(borderLine)
     }
     
     override func textFieldDidBeginEditing() {
