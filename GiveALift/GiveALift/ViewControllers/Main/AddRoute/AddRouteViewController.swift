@@ -34,7 +34,7 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
     @IBAction func next(_ sender: Any) {
         if let fromCityId = fromTextfield.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text, from != "", to != "" {
     
-            presenter.showIndirectionView(fromCityId: fromCityId + 400, fromLocation: from, toCityId: toCityId + 400, toLocation: to)
+            presenter.showIndirectionView(fromCityId: fromCityId, fromLocation: from, toCityId: toCityId, toLocation: to)
         } else {
             //MARK:- TODO info o niepodanych danych
             presenter.showIndirectionView(fromCityId: 1, fromLocation: "dsa", toCityId: 3, toLocation: "23")

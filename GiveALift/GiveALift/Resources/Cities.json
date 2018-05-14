@@ -1,1102 +1,1102 @@
-[
-   {
-      "cityId":1,
-      "name":"Warszawa",
-      "country":"powiat Warszawa",
-      "province":"mazowieckie",
-      "cityInfo":{
-         "cityInfoId":2,
-         "population":1724404,
-         "citySize":517
-      }
-   },
-   {
-      "cityId":3,
-      "name":"Kraków",
-      "country":"powiat Kraków",
-      "province":"małopolskie",
-      "cityInfo":{
-         "cityInfoId":4,
-         "population":758992,
-         "citySize":327
-      }
-   },
-   {
-      "cityId":5,
-      "name":"Łódź",
-      "country":"powiat Łódź",
-      "province":"łódzkie",
-      "cityInfo":{
-         "cityInfoId":6,
-         "population":711332,
-         "citySize":293
-      }
-   },
-   {
-      "cityId":7,
-      "name":"Wrocław",
-      "country":"powiat Wrocław",
-      "province":"dolnośląskie",
-      "cityInfo":{
-         "cityInfoId":8,
-         "population":632067,
-         "citySize":293
-      }
-   },
-   {
-      "cityId":9,
-      "name":"Poznań",
-      "country":"powiat Poznań",
-      "province":"wielkopolskie",
-      "cityInfo":{
-         "cityInfoId":10,
-         "population":548028,
-         "citySize":262
-      }
-   },
-   {
-      "cityId":11,
-      "name":"Gdańsk",
-      "country":"powiat Gdańsk",
-      "province":"pomorskie",
-      "cityInfo":{
-         "cityInfoId":12,
-         "population":461531,
-         "citySize":262
-      }
-   },
-   {
-      "cityId":13,
-      "name":"Szczecin",
-      "country":"powiat Szczecin",
-      "province":"zachodniopomorskie",
-      "cityInfo":{
-         "cityInfoId":14,
-         "population":408172,
-         "citySize":301
-      }
-   },
-   {
-      "cityId":15,
-      "name":"Bydgoszcz",
-      "country":"powiat Bydgoszcz",
-      "province":"kujawsko-pomorskie",
-      "cityInfo":{
-         "cityInfoId":16,
-         "population":359428,
-         "citySize":176
-      }
-   },
-   {
-      "cityId":17,
-      "name":"Lublin",
-      "country":"powiat Lublin",
-      "province":"lubelskie",
-      "cityInfo":{
-         "cityInfoId":18,
-         "population":343598,
-         "citySize":147
-      }
-   },
-   {
-      "cityId":19,
-      "name":"Katowice",
-      "country":"powiat Katowice",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":20,
-         "population":304362,
-         "citySize":165
-      }
-   },
-   {
-      "cityId":21,
-      "name":"Białystok",
-      "country":"powiat Białystok",
-      "province":"podlaskie",
-      "cityInfo":{
-         "cityInfoId":22,
-         "population":295282,
-         "citySize":102
-      }
-   },
-   {
-      "cityId":23,
-      "name":"Gdynia",
-      "country":"powiat Gdynia",
-      "province":"pomorskie",
-      "cityInfo":{
-         "cityInfoId":24,
-         "population":248042,
-         "citySize":135
-      }
-   },
-   {
-      "cityId":25,
-      "name":"Częstochowa",
-      "country":"powiat Częstochowa",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":26,
-         "population":232318,
-         "citySize":160
-      }
-   },
-   {
-      "cityId":27,
-      "name":"Radom",
-      "country":"powiat Radom",
-      "province":"mazowieckie",
-      "cityInfo":{
-         "cityInfoId":28,
-         "population":218466,
-         "citySize":112
-      }
-   },
-   {
-      "cityId":29,
-      "name":"Sosnowiec",
-      "country":"powiat Sosnowiec",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":30,
-         "population":211275,
-         "citySize":91
-      }
-   },
-   {
-      "cityId":31,
-      "name":"Toruń",
-      "country":"powiat Toruń",
-      "province":"kujawsko-pomorskie",
-      "cityInfo":{
-         "cityInfoId":32,
-         "population":203447,
-         "citySize":116
-      }
-   },
-   {
-      "cityId":33,
-      "name":"Kielce",
-      "country":"powiat Kielce",
-      "province":"świętokrzyskie",
-      "cityInfo":{
-         "cityInfoId":34,
-         "population":199870,
-         "citySize":110
-      }
-   },
-   {
-      "cityId":35,
-      "name":"Gliwice",
-      "country":"powiat Gliwice",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":36,
-         "population":185450,
-         "citySize":134
-      }
-   },
-   {
-      "cityId":37,
-      "name":"Rzeszów",
-      "country":"powiat Rzeszów",
-      "province":"podkarpackie",
-      "cityInfo":{
-         "cityInfoId":38,
-         "population":183108,
-         "citySize":117
-      }
-   },
-   {
-      "cityId":39,
-      "name":"Zabrze",
-      "country":"powiat Zabrze",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":40,
-         "population":178357,
-         "citySize":80
-      }
-   },
-   {
-      "cityId":41,
-      "name":"Olsztyn",
-      "country":"powiat Olsztyn",
-      "province":"warmińsko-mazurskie",
-      "cityInfo":{
-         "cityInfoId":42,
-         "population":174675,
-         "citySize":88
-      }
-   },
-   {
-      "cityId":43,
-      "name":"Bielsko-Biała",
-      "country":"powiat Bielsko-Biała",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":44,
-         "population":173699,
-         "citySize":125
-      }
-   },
-   {
-      "cityId":45,
-      "name":"Bytom",
-      "country":"powiat Bytom",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":46,
-         "population":173439,
-         "citySize":69
-      }
-   },
-   {
-      "cityId":47,
-      "name":"Ruda Śląska",
-      "country":"powiat Ruda Śląska",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":48,
-         "population":141521,
-         "citySize":78
-      }
-   },
-   {
-      "cityId":49,
-      "name":"Rybnik",
-      "country":"powiat Rybnik",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":50,
-         "population":140173,
-         "citySize":148
-      }
-   },
-   {
-      "cityId":51,
-      "name":"Tychy",
-      "country":"powiat Tychy",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":52,
-         "population":128799,
-         "citySize":82
-      }
-   },
-   {
-      "cityId":53,
-      "name":"Gorzów Wielkopolski",
-      "country":"powiat Gorzów Wielkopolski",
-      "province":"lubuskie",
-      "cityInfo":{
-         "cityInfoId":54,
-         "population":124344,
-         "citySize":86
-      }
-   },
-   {
-      "cityId":55,
-      "name":"Dąbrowa Górnicza",
-      "country":"powiat Dąbrowa Górnicza",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":56,
-         "population":123994,
-         "citySize":189
-      }
-   },
-   {
-      "cityId":57,
-      "name":"Elbląg",
-      "country":"powiat Elbląg",
-      "province":"warmińsko-mazurskie",
-      "cityInfo":{
-         "cityInfoId":58,
-         "population":122899,
-         "citySize":80
-      }
-   },
-   {
-      "cityId":59,
-      "name":"Płock",
-      "country":"powiat Płock",
-      "province":"mazowieckie",
-      "cityInfo":{
-         "cityInfoId":60,
-         "population":122815,
-         "citySize":88
-      }
-   },
-   {
-      "cityId":61,
-      "name":"Opole",
-      "country":"powiat Opole",
-      "province":"opolskie",
-      "cityInfo":{
-         "cityInfoId":62,
-         "population":120146,
-         "citySize":97
-      }
-   },
-   {
-      "cityId":63,
-      "name":"Zielona Góra",
-      "country":"powiat Zielona Góra",
-      "province":"lubuskie",
-      "cityInfo":{
-         "cityInfoId":64,
-         "population":118405,
-         "citySize":58
-      }
-   },
-   {
-      "cityId":65,
-      "name":"Wałbrzych",
-      "country":"powiat Wałbrzych",
-      "province":"dolnośląskie",
-      "cityInfo":{
-         "cityInfoId":66,
-         "population":117926,
-         "citySize":85
-      }
-   },
-   {
-      "cityId":67,
-      "name":"Włocławek",
-      "country":"powiat Włocławek",
-      "province":"kujawsko-pomorskie",
-      "cityInfo":{
-         "cityInfoId":68,
-         "population":114885,
-         "citySize":84
-      }
-   },
-   {
-      "cityId":69,
-      "name":"Tarnów",
-      "country":"powiat Tarnów",
-      "province":"małopolskie",
-      "cityInfo":{
-         "cityInfoId":70,
-         "population":112120,
-         "citySize":72
-      }
-   },
-   {
-      "cityId":71,
-      "name":"Chorzów",
-      "country":"powiat Chorzów",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":72,
-         "population":110761,
-         "citySize":33
-      }
-   },
-   {
-      "cityId":73,
-      "name":"Koszalin",
-      "country":"powiat Koszalin",
-      "province":"zachodniopomorskie",
-      "cityInfo":{
-         "cityInfoId":74,
-         "population":109170,
-         "citySize":98
-      }
-   },
-   {
-      "cityId":75,
-      "name":"Kalisz",
-      "country":"powiat Kalisz",
-      "province":"wielkopolskie",
-      "cityInfo":{
-         "cityInfoId":76,
-         "population":103997,
-         "citySize":69
-      }
-   },
-   {
-      "cityId":77,
-      "name":"Legnica",
-      "country":"powiat Legnica",
-      "province":"dolnośląskie",
-      "cityInfo":{
-         "cityInfoId":78,
-         "population":101992,
-         "citySize":56
-      }
-   },
-   {
-      "cityId":79,
-      "name":"Grudziądz",
-      "country":"powiat Grudziądz",
-      "province":"kujawsko-pomorskie",
-      "cityInfo":{
-         "cityInfoId":80,
-         "population":97676,
-         "citySize":58
-      }
-   },
-   {
-      "cityId":81,
-      "name":"Słupsk",
-      "country":"powiat Słupsk",
-      "province":"pomorskie",
-      "cityInfo":{
-         "cityInfoId":82,
-         "population":93936,
-         "citySize":43
-      }
-   },
-   {
-      "cityId":83,
-      "name":"Jaworzno",
-      "country":"powiat Jaworzno",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":84,
-         "population":93708,
-         "citySize":153
-      }
-   },
-   {
-      "cityId":85,
-      "name":"Jastrzębie-Zdrój",
-      "country":"powiat Jastrzębie-Zdrój",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":86,
-         "population":91235,
-         "citySize":85
-      }
-   },
-   {
-      "cityId":87,
-      "name":"Nowy Sącz",
-      "country":"powiat Nowy Sącz",
-      "province":"małopolskie",
-      "cityInfo":{
-         "cityInfoId":88,
-         "population":83943,
-         "citySize":58
-      }
-   },
-   {
-      "cityId":89,
-      "name":"Jelenia Góra",
-      "country":"powiat Jelenia Góra",
-      "province":"dolnośląskie",
-      "cityInfo":{
-         "cityInfoId":90,
-         "population":81985,
-         "citySize":109
-      }
-   },
-   {
-      "cityId":91,
-      "name":"Konin",
-      "country":"powiat Konin",
-      "province":"wielkopolskie",
-      "cityInfo":{
-         "cityInfoId":92,
-         "population":77224,
-         "citySize":82
-      }
-   },
-   {
-      "cityId":93,
-      "name":"Siedlce",
-      "country":"powiat Siedlce",
-      "province":"mazowieckie",
-      "cityInfo":{
-         "cityInfoId":94,
-         "population":76347,
-         "citySize":32
-      }
-   },
-   {
-      "cityId":95,
-      "name":"Piotrków Trybunalski",
-      "country":"powiat Piotrków Trybunalski",
-      "province":"łódzkie",
-      "cityInfo":{
-         "cityInfoId":96,
-         "population":75903,
-         "citySize":67
-      }
-   },
-   {
-      "cityId":97,
-      "name":"Mysłowice",
-      "country":"powiat Mysłowice",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":98,
-         "population":75129,
-         "citySize":66
-      }
-   },
-   {
-      "cityId":99,
-      "name":"Inowrocław",
-      "country":"powiat inowrocławski",
-      "province":"kujawsko-pomorskie",
-      "cityInfo":{
-         "cityInfoId":100,
-         "population":75001,
-         "citySize":30
-      }
-   },
-   {
-      "cityId":101,
-      "name":"Piła",
-      "country":"powiat pilski",
-      "province":"wielkopolskie",
-      "cityInfo":{
-         "cityInfoId":102,
-         "population":74609,
-         "citySize":103
-      }
-   },
-   {
-      "cityId":103,
-      "name":"Lubin",
-      "country":"powiat lubiński",
-      "province":"dolnośląskie",
-      "cityInfo":{
-         "cityInfoId":104,
-         "population":74053,
-         "citySize":41
-      }
-   },
-   {
-      "cityId":105,
-      "name":"Ostrów Wielkopolski",
-      "country":"powiat ostrowski",
-      "province":"wielkopolskie",
-      "cityInfo":{
-         "cityInfoId":106,
-         "population":72890,
-         "citySize":42
-      }
-   },
-   {
-      "cityId":107,
-      "name":"Ostrowiec Świętokrzyski",
-      "country":"powiat ostrowiecki",
-      "province":"świętokrzyskie",
-      "cityInfo":{
-         "cityInfoId":108,
-         "population":72277,
-         "citySize":46
-      }
-   },
-   {
-      "cityId":109,
-      "name":"Gniezno",
-      "country":"powiat gnieźnieński",
-      "province":"wielkopolskie",
-      "cityInfo":{
-         "cityInfoId":110,
-         "population":69883,
-         "citySize":41
-      }
-   },
-   {
-      "cityId":111,
-      "name":"Stargard",
-      "country":"powiat stargardzki",
-      "province":"zachodniopomorskie",
-      "cityInfo":{
-         "cityInfoId":112,
-         "population":69328,
-         "citySize":48
-      }
-   },
-   {
-      "cityId":113,
-      "name":"Suwałki",
-      "country":"powiat Suwałki",
-      "province":"podlaskie",
-      "cityInfo":{
-         "cityInfoId":114,
-         "population":69317,
-         "citySize":66
-      }
-   },
-   {
-      "cityId":115,
-      "name":"Głogów",
-      "country":"powiat głogowski",
-      "province":"dolnośląskie",
-      "cityInfo":{
-         "cityInfoId":116,
-         "population":68997,
-         "citySize":35
-      }
-   },
-   {
-      "cityId":117,
-      "name":"Siemianowice Śląskie",
-      "country":"powiat Siemianowice Śląskie",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":118,
-         "population":68844,
-         "citySize":25
-      }
-   },
-   {
-      "cityId":119,
-      "name":"Pabianice",
-      "country":"powiat pabianicki",
-      "province":"łódzkie",
-      "cityInfo":{
-         "cityInfoId":120,
-         "population":67688,
-         "citySize":33
-      }
-   },
-   {
-      "cityId":121,
-      "name":"Chełm",
-      "country":"powiat Chełm",
-      "province":"lubelskie",
-      "cityInfo":{
-         "cityInfoId":122,
-         "population":65481,
-         "citySize":35
-      }
-   },
-   {
-      "cityId":123,
-      "name":"Zamość",
-      "country":"powiat Zamość",
-      "province":"lubelskie",
-      "cityInfo":{
-         "cityInfoId":124,
-         "population":65255,
-         "citySize":30
-      }
-   },
-   {
-      "cityId":125,
-      "name":"Tomaszów Mazowiecki",
-      "country":"powiat tomaszowski",
-      "province":"łódzkie",
-      "cityInfo":{
-         "cityInfoId":126,
-         "population":64893,
-         "citySize":42
-      }
-   },
-   {
-      "cityId":127,
-      "name":"Leszno",
-      "country":"powiat Leszno",
-      "province":"wielkopolskie",
-      "cityInfo":{
-         "cityInfoId":128,
-         "population":64589,
-         "citySize":32
-      }
-   },
-   {
-      "cityId":129,
-      "name":"Stalowa Wola",
-      "country":"powiat stalowowolski",
-      "province":"podkarpackie",
-      "cityInfo":{
-         "cityInfoId":130,
-         "population":63692,
-         "citySize":83
-      }
-   },
-   {
-      "cityId":131,
-      "name":"Przemyśl",
-      "country":"powiat Przemyśl",
-      "province":"podkarpackie",
-      "cityInfo":{
-         "cityInfoId":132,
-         "population":63638,
-         "citySize":46
-      }
-   },
-   {
-      "cityId":133,
-      "name":"Kędzierzyn-Koźle",
-      "country":"powiat kędzierzyńsko-kozielski",
-      "province":"opolskie",
-      "cityInfo":{
-         "cityInfoId":134,
-         "population":63194,
-         "citySize":124
-      }
-   },
-   {
-      "cityId":135,
-      "name":"Łomża",
-      "country":"powiat Łomża",
-      "province":"podlaskie",
-      "cityInfo":{
-         "cityInfoId":136,
-         "population":62711,
-         "citySize":33
-      }
-   },
-   {
-      "cityId":137,
-      "name":"Żory",
-      "country":"powiat Żory",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":138,
-         "population":62038,
-         "citySize":65
-      }
-   },
-   {
-      "cityId":139,
-      "name":"Mielec",
-      "country":"powiat mielecki",
-      "province":"podkarpackie",
-      "cityInfo":{
-         "cityInfoId":140,
-         "population":61096,
-         "citySize":47
-      }
-   },
-   {
-      "cityId":141,
-      "name":"Tarnowskie Góry",
-      "country":"powiat tarnogórski",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":142,
-         "population":60957,
-         "citySize":84
-      }
-   },
-   {
-      "cityId":143,
-      "name":"Tczew",
-      "country":"powiat tczewski",
-      "province":"pomorskie",
-      "cityInfo":{
-         "cityInfoId":144,
-         "population":60610,
-         "citySize":22
-      }
-   },
-   {
-      "cityId":145,
-      "name":"Ełk",
-      "country":"powiat ełcki",
-      "province":"warmińsko-mazurskie",
-      "cityInfo":{
-         "cityInfoId":146,
-         "population":59790,
-         "citySize":21
-      }
-   },
-   {
-      "cityId":147,
-      "name":"Pruszków",
-      "country":"powiat pruszkowski",
-      "province":"mazowieckie",
-      "cityInfo":{
-         "cityInfoId":148,
-         "population":59570,
-         "citySize":19
-      }
-   },
-   {
-      "cityId":149,
-      "name":"Bełchatów",
-      "country":"powiat bełchatowski",
-      "province":"łódzkie",
-      "cityInfo":{
-         "cityInfoId":150,
-         "population":59565,
-         "citySize":35
-      }
-   },
-   {
-      "cityId":151,
-      "name":"Świdnica",
-      "country":"powiat świdnicki",
-      "province":"dolnośląskie",
-      "cityInfo":{
-         "cityInfoId":152,
-         "population":59182,
-         "citySize":22
-      }
-   },
-   {
-      "cityId":153,
-      "name":"Będzin",
-      "country":"powiat będziński",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":154,
-         "population":58425,
-         "citySize":37
-      }
-   },
-   {
-      "cityId":155,
-      "name":"Biała Podlaska",
-      "country":"powiat Biała Podlaska",
-      "province":"lubelskie",
-      "cityInfo":{
-         "cityInfoId":156,
-         "population":57658,
-         "citySize":49
-      }
-   },
-   {
-      "cityId":157,
-      "name":"Zgierz",
-      "country":"powiat zgierski",
-      "province":"łódzkie",
-      "cityInfo":{
-         "cityInfoId":158,
-         "population":57503,
-         "citySize":42
-      }
-   },
-   {
-      "cityId":159,
-      "name":"Piekary Śląskie",
-      "country":"powiat Piekary Śląskie",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":160,
-         "population":57148,
-         "citySize":40
-      }
-   },
-   {
-      "cityId":161,
-      "name":"Racibórz",
-      "country":"powiat raciborski",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":162,
-         "population":55930,
-         "citySize":75
-      }
-   },
-   {
-      "cityId":163,
-      "name":"Legionowo",
-      "country":"powiat legionowski",
-      "province":"mazowieckie",
-      "cityInfo":{
-         "cityInfoId":164,
-         "population":54231,
-         "citySize":14
-      }
-   },
-   {
-      "cityId":165,
-      "name":"Ostrołęka",
-      "country":"powiat Ostrołęka",
-      "province":"mazowieckie",
-      "cityInfo":{
-         "cityInfoId":166,
-         "population":52917,
-         "citySize":29
-      }
-   },
-   {
-      "cityId":167,
-      "name":"Świętochłowice",
-      "country":"powiat Świętochłowice",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":168,
-         "population":51824,
-         "citySize":13
-      }
-   },
-   {
-      "cityId":169,
-      "name":"Zawiercie",
-      "country":"powiat zawierciański",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":170,
-         "population":51258,
-         "citySize":85
-      }
-   },
-   {
-      "cityId":171,
-      "name":"Starachowice",
-      "country":"powiat starachowicki",
-      "province":"świętokrzyskie",
-      "cityInfo":{
-         "cityInfoId":172,
-         "population":51158,
-         "citySize":32
-      }
-   },
-   {
-      "cityId":173,
-      "name":"Wejherowo",
-      "country":"powiat wejherowski",
-      "province":"pomorskie",
-      "cityInfo":{
-         "cityInfoId":174,
-         "population":50340,
-         "citySize":27
-      }
-   },
-   {
-      "cityId":175,
-      "name":"Puławy",
-      "country":"powiat puławski",
-      "province":"lubelskie",
-      "cityInfo":{
-         "cityInfoId":176,
-         "population":49100,
-         "citySize":50
-      }
-   },
-   {
-      "cityId":177,
-      "name":"Wodzisław Śląski",
-      "country":"powiat wodzisławski",
-      "province":"śląskie",
-      "cityInfo":{
-         "cityInfoId":178,
-         "population":48731,
-         "citySize":50
-      }
-   },
-   {
-      "cityId":179,
-      "name":"Skierniewice",
-      "country":"powiat Skierniewice",
-      "province":"łódzkie",
-      "cityInfo":{
-         "cityInfoId":180,
-         "population":48634,
-         "citySize":35
-      }
-   },
-   {
-      "cityId":181,
-      "name":"Starogard Gdański",
-      "country":"powiat starogardzki",
-      "province":"pomorskie",
-      "cityInfo":{
-         "cityInfoId":182,
-         "population":48621,
-         "citySize":25
-      }
-   },
-   {
-      "cityId":183,
-      "name":"Tarnobrzeg",
-      "country":"powiat Tarnobrzeg",
-      "province":"podkarpackie",
-      "cityInfo":{
-         "cityInfoId":184,
-         "population":48217,
-         "citySize":85
-      }
-   },
-   {
-      "cityId":185,
-      "name":"Radomsko",
-      "country":"powiat radomszczański",
-      "province":"łódzkie",
-      "cityInfo":{
-         "cityInfoId":186,
-         "population":47643,
-         "citySize":51
-      }
-   },
-   {
-      "cityId":187,
-      "name":"Skarżysko-Kamienna",
-      "country":"powiat skarżyski",
-      "province":"świętokrzyskie",
-      "cityInfo":{
-         "cityInfoId":188,
-         "population":47538,
-         "citySize":64
-      }
-   },
-   {
-      "cityId":189,
-      "name":"Rumia",
-      "country":"powiat wejherowski",
-      "province":"pomorskie",
-      "cityInfo":{
-         "cityInfoId":190,
-         "population":47374,
-         "citySize":30
-      }
-   },
-   {
-      "cityId":191,
-      "name":"Krosno",
-      "country":"powiat Krosno",
-      "province":"podkarpackie",
-      "cityInfo":{
-         "cityInfoId":192,
-         "population":47223,
-         "citySize":44
-      }
-   },
-   {
-      "cityId":193,
-      "name":"Kołobrzeg",
-      "country":"powiat kołobrzeski",
-      "province":"zachodniopomorskie",
-      "cityInfo":{
-         "cityInfoId":194,
-         "population":46897,
-         "citySize":26
-      }
-   },
-   {
-      "cityId":195,
-      "name":"Dębica",
-      "country":"powiat dębicki",
-      "province":"podkarpackie",
-      "cityInfo":{
-         "cityInfoId":196,
-         "population":46854,
-         "citySize":34
-      }
-   },
-   {
-      "cityId":197,
-      "name":"Kutno",
-      "country":"powiat kutnowski",
-      "province":"łódzkie",
-      "cityInfo":{
-         "cityInfoId":198,
-         "population":45657,
-         "citySize":34
-      }
-   },
-   {
-      "cityId":199,
-      "name":"Otwock",
-      "country":"powiat otwocki",
-      "province":"mazowieckie",
-      "cityInfo":{
-         "cityInfoId":200,
-         "population":45044,
-         "citySize":47
-      }
-   }
-]
+ [
+  {
+  "cityId": 1,
+  "name": "Warszawa",
+  "country": "powiat Warszawa",
+  "province": "mazowieckie",
+  "cityInfo": {
+  "cityInfoId": 1,
+  "population": 1724404,
+  "citySize": 517
+  }
+  },
+  {
+  "cityId": 4,
+  "name": "Wrocław",
+  "country": "powiat Wrocław",
+  "province": "dolnośląskie",
+  "cityInfo": {
+  "cityInfoId": 4,
+  "population": 632067,
+  "citySize": 293
+  }
+  },
+  {
+  "cityId": 5,
+  "name": "Poznań",
+  "country": "powiat Poznań",
+  "province": "wielkopolskie",
+  "cityInfo": {
+  "cityInfoId": 5,
+  "population": 548028,
+  "citySize": 262
+  }
+  },
+  {
+  "cityId": 6,
+  "name": "Gdańsk",
+  "country": "powiat Gdańsk",
+  "province": "pomorskie",
+  "cityInfo": {
+  "cityInfoId": 6,
+  "population": 461531,
+  "citySize": 262
+  }
+  },
+  {
+  "cityId": 7,
+  "name": "Szczecin",
+  "country": "powiat Szczecin",
+  "province": "zachodniopomorskie",
+  "cityInfo": {
+  "cityInfoId": 7,
+  "population": 408172,
+  "citySize": 301
+  }
+  },
+  {
+  "cityId": 8,
+  "name": "Bydgoszcz",
+  "country": "powiat Bydgoszcz",
+  "province": "kujawsko-pomorskie",
+  "cityInfo": {
+  "cityInfoId": 8,
+  "population": 359428,
+  "citySize": 176
+  }
+  },
+  {
+  "cityId": 9,
+  "name": "Lublin",
+  "country": "powiat Lublin",
+  "province": "lubelskie",
+  "cityInfo": {
+  "cityInfoId": 9,
+  "population": 343598,
+  "citySize": 147
+  }
+  },
+  {
+  "cityId": 10,
+  "name": "Katowice",
+  "country": "powiat Katowice",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 10,
+  "population": 304362,
+  "citySize": 165
+  }
+  },
+  {
+  "cityId": 11,
+  "name": "Białystok",
+  "country": "powiat Białystok",
+  "province": "podlaskie",
+  "cityInfo": {
+  "cityInfoId": 11,
+  "population": 295282,
+  "citySize": 102
+  }
+  },
+  {
+  "cityId": 12,
+  "name": "Gdynia",
+  "country": "powiat Gdynia",
+  "province": "pomorskie",
+  "cityInfo": {
+  "cityInfoId": 12,
+  "population": 248042,
+  "citySize": 135
+  }
+  },
+  {
+  "cityId": 13,
+  "name": "Częstochowa",
+  "country": "powiat Częstochowa",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 13,
+  "population": 232318,
+  "citySize": 160
+  }
+  },
+  {
+  "cityId": 14,
+  "name": "Radom",
+  "country": "powiat Radom",
+  "province": "mazowieckie",
+  "cityInfo": {
+  "cityInfoId": 14,
+  "population": 218466,
+  "citySize": 112
+  }
+  },
+  {
+  "cityId": 15,
+  "name": "Sosnowiec",
+  "country": "powiat Sosnowiec",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 15,
+  "population": 211275,
+  "citySize": 91
+  }
+  },
+  {
+  "cityId": 16,
+  "name": "Toruń",
+  "country": "powiat Toruń",
+  "province": "kujawsko-pomorskie",
+  "cityInfo": {
+  "cityInfoId": 16,
+  "population": 203447,
+  "citySize": 116
+  }
+  },
+  {
+  "cityId": 17,
+  "name": "Kielce",
+  "country": "powiat Kielce",
+  "province": "świętokrzyskie",
+  "cityInfo": {
+  "cityInfoId": 17,
+  "population": 199870,
+  "citySize": 110
+  }
+  },
+  {
+  "cityId": 18,
+  "name": "Gliwice",
+  "country": "powiat Gliwice",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 18,
+  "population": 185450,
+  "citySize": 134
+  }
+  },
+  {
+  "cityId": 19,
+  "name": "Rzeszów",
+  "country": "powiat Rzeszów",
+  "province": "podkarpackie",
+  "cityInfo": {
+  "cityInfoId": 19,
+  "population": 183108,
+  "citySize": 117
+  }
+  },
+  {
+  "cityId": 20,
+  "name": "Zabrze",
+  "country": "powiat Zabrze",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 20,
+  "population": 178357,
+  "citySize": 80
+  }
+  },
+  {
+  "cityId": 21,
+  "name": "Olsztyn",
+  "country": "powiat Olsztyn",
+  "province": "warmińsko-mazurskie",
+  "cityInfo": {
+  "cityInfoId": 21,
+  "population": 174675,
+  "citySize": 88
+  }
+  },
+  {
+  "cityId": 22,
+  "name": "Bielsko-Biała",
+  "country": "powiat Bielsko-Biała",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 22,
+  "population": 173699,
+  "citySize": 125
+  }
+  },
+  {
+  "cityId": 23,
+  "name": "Bytom",
+  "country": "powiat Bytom",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 23,
+  "population": 173439,
+  "citySize": 69
+  }
+  },
+  {
+  "cityId": 24,
+  "name": "Ruda Śląska",
+  "country": "powiat Ruda Śląska",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 24,
+  "population": 141521,
+  "citySize": 78
+  }
+  },
+  {
+  "cityId": 25,
+  "name": "Rybnik",
+  "country": "powiat Rybnik",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 25,
+  "population": 140173,
+  "citySize": 148
+  }
+  },
+  {
+  "cityId": 26,
+  "name": "Tychy",
+  "country": "powiat Tychy",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 26,
+  "population": 128799,
+  "citySize": 82
+  }
+  },
+  {
+  "cityId": 27,
+  "name": "Gorzów Wielkopolski",
+  "country": "powiat Gorzów Wielkopolski",
+  "province": "lubuskie",
+  "cityInfo": {
+  "cityInfoId": 27,
+  "population": 124344,
+  "citySize": 86
+  }
+  },
+  {
+  "cityId": 28,
+  "name": "Dąbrowa Górnicza",
+  "country": "powiat Dąbrowa Górnicza",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 28,
+  "population": 123994,
+  "citySize": 189
+  }
+  },
+  {
+  "cityId": 29,
+  "name": "Elbląg",
+  "country": "powiat Elbląg",
+  "province": "warmińsko-mazurskie",
+  "cityInfo": {
+  "cityInfoId": 29,
+  "population": 122899,
+  "citySize": 80
+  }
+  },
+  {
+  "cityId": 30,
+  "name": "Płock",
+  "country": "powiat Płock",
+  "province": "mazowieckie",
+  "cityInfo": {
+  "cityInfoId": 30,
+  "population": 122815,
+  "citySize": 88
+  }
+  },
+  {
+  "cityId": 31,
+  "name": "Opole",
+  "country": "powiat Opole",
+  "province": "opolskie",
+  "cityInfo": {
+  "cityInfoId": 31,
+  "population": 120146,
+  "citySize": 97
+  }
+  },
+  {
+  "cityId": 32,
+  "name": "Zielona Góra",
+  "country": "powiat Zielona Góra",
+  "province": "lubuskie",
+  "cityInfo": {
+  "cityInfoId": 32,
+  "population": 118405,
+  "citySize": 58
+  }
+  },
+  {
+  "cityId": 33,
+  "name": "Wałbrzych",
+  "country": "powiat Wałbrzych",
+  "province": "dolnośląskie",
+  "cityInfo": {
+  "cityInfoId": 33,
+  "population": 117926,
+  "citySize": 85
+  }
+  },
+  {
+  "cityId": 34,
+  "name": "Włocławek",
+  "country": "powiat Włocławek",
+  "province": "kujawsko-pomorskie",
+  "cityInfo": {
+  "cityInfoId": 34,
+  "population": 114885,
+  "citySize": 84
+  }
+  },
+  {
+  "cityId": 35,
+  "name": "Tarnów",
+  "country": "powiat Tarnów",
+  "province": "małopolskie",
+  "cityInfo": {
+  "cityInfoId": 35,
+  "population": 112120,
+  "citySize": 72
+  }
+  },
+  {
+  "cityId": 36,
+  "name": "Chorzów",
+  "country": "powiat Chorzów",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 36,
+  "population": 110761,
+  "citySize": 33
+  }
+  },
+  {
+  "cityId": 37,
+  "name": "Koszalin",
+  "country": "powiat Koszalin",
+  "province": "zachodniopomorskie",
+  "cityInfo": {
+  "cityInfoId": 37,
+  "population": 109170,
+  "citySize": 98
+  }
+  },
+  {
+  "cityId": 38,
+  "name": "Kalisz",
+  "country": "powiat Kalisz",
+  "province": "wielkopolskie",
+  "cityInfo": {
+  "cityInfoId": 38,
+  "population": 103997,
+  "citySize": 69
+  }
+  },
+  {
+  "cityId": 39,
+  "name": "Legnica",
+  "country": "powiat Legnica",
+  "province": "dolnośląskie",
+  "cityInfo": {
+  "cityInfoId": 39,
+  "population": 101992,
+  "citySize": 56
+  }
+  },
+  {
+  "cityId": 40,
+  "name": "Grudziądz",
+  "country": "powiat Grudziądz",
+  "province": "kujawsko-pomorskie",
+  "cityInfo": {
+  "cityInfoId": 40,
+  "population": 97676,
+  "citySize": 58
+  }
+  },
+  {
+  "cityId": 41,
+  "name": "Słupsk",
+  "country": "powiat Słupsk",
+  "province": "pomorskie",
+  "cityInfo": {
+  "cityInfoId": 41,
+  "population": 93936,
+  "citySize": 43
+  }
+  },
+  {
+  "cityId": 42,
+  "name": "Jaworzno",
+  "country": "powiat Jaworzno",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 42,
+  "population": 93708,
+  "citySize": 153
+  }
+  },
+  {
+  "cityId": 43,
+  "name": "Jastrzębie-Zdrój",
+  "country": "powiat Jastrzębie-Zdrój",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 43,
+  "population": 91235,
+  "citySize": 85
+  }
+  },
+  {
+  "cityId": 44,
+  "name": "Nowy Sącz",
+  "country": "powiat Nowy Sącz",
+  "province": "małopolskie",
+  "cityInfo": {
+  "cityInfoId": 44,
+  "population": 83943,
+  "citySize": 58
+  }
+  },
+  {
+  "cityId": 45,
+  "name": "Jelenia Góra",
+  "country": "powiat Jelenia Góra",
+  "province": "dolnośląskie",
+  "cityInfo": {
+  "cityInfoId": 45,
+  "population": 81985,
+  "citySize": 109
+  }
+  },
+  {
+  "cityId": 46,
+  "name": "Konin",
+  "country": "powiat Konin",
+  "province": "wielkopolskie",
+  "cityInfo": {
+  "cityInfoId": 46,
+  "population": 77224,
+  "citySize": 82
+  }
+  },
+  {
+  "cityId": 47,
+  "name": "Siedlce",
+  "country": "powiat Siedlce",
+  "province": "mazowieckie",
+  "cityInfo": {
+  "cityInfoId": 47,
+  "population": 76347,
+  "citySize": 32
+  }
+  },
+  {
+  "cityId": 48,
+  "name": "Piotrków Trybunalski",
+  "country": "powiat Piotrków Trybunalski",
+  "province": "łódzkie",
+  "cityInfo": {
+  "cityInfoId": 48,
+  "population": 75903,
+  "citySize": 67
+  }
+  },
+  {
+  "cityId": 49,
+  "name": "Mysłowice",
+  "country": "powiat Mysłowice",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 49,
+  "population": 75129,
+  "citySize": 66
+  }
+  },
+  {
+  "cityId": 50,
+  "name": "Inowrocław",
+  "country": "powiat inowrocławski",
+  "province": "kujawsko-pomorskie",
+  "cityInfo": {
+  "cityInfoId": 50,
+  "population": 75001,
+  "citySize": 30
+  }
+  },
+  {
+  "cityId": 51,
+  "name": "Piła",
+  "country": "powiat pilski",
+  "province": "wielkopolskie",
+  "cityInfo": {
+  "cityInfoId": 51,
+  "population": 74609,
+  "citySize": 103
+  }
+  },
+  {
+  "cityId": 52,
+  "name": "Lubin",
+  "country": "powiat lubiński",
+  "province": "dolnośląskie",
+  "cityInfo": {
+  "cityInfoId": 52,
+  "population": 74053,
+  "citySize": 41
+  }
+  },
+  {
+  "cityId": 53,
+  "name": "Ostrów Wielkopolski",
+  "country": "powiat ostrowski",
+  "province": "wielkopolskie",
+  "cityInfo": {
+  "cityInfoId": 53,
+  "population": 72890,
+  "citySize": 42
+  }
+  },
+  {
+  "cityId": 54,
+  "name": "Ostrowiec Świętokrzyski",
+  "country": "powiat ostrowiecki",
+  "province": "świętokrzyskie",
+  "cityInfo": {
+  "cityInfoId": 54,
+  "population": 72277,
+  "citySize": 46
+  }
+  },
+  {
+  "cityId": 55,
+  "name": "Gniezno",
+  "country": "powiat gnieźnieński",
+  "province": "wielkopolskie",
+  "cityInfo": {
+  "cityInfoId": 55,
+  "population": 69883,
+  "citySize": 41
+  }
+  },
+  {
+  "cityId": 56,
+  "name": "Stargard",
+  "country": "powiat stargardzki",
+  "province": "zachodniopomorskie",
+  "cityInfo": {
+  "cityInfoId": 56,
+  "population": 69328,
+  "citySize": 48
+  }
+  },
+  {
+  "cityId": 57,
+  "name": "Suwałki",
+  "country": "powiat Suwałki",
+  "province": "podlaskie",
+  "cityInfo": {
+  "cityInfoId": 57,
+  "population": 69317,
+  "citySize": 66
+  }
+  },
+  {
+  "cityId": 58,
+  "name": "Głogów",
+  "country": "powiat głogowski",
+  "province": "dolnośląskie",
+  "cityInfo": {
+  "cityInfoId": 58,
+  "population": 68997,
+  "citySize": 35
+  }
+  },
+  {
+  "cityId": 59,
+  "name": "Siemianowice Śląskie",
+  "country": "powiat Siemianowice Śląskie",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 59,
+  "population": 68844,
+  "citySize": 25
+  }
+  },
+  {
+  "cityId": 60,
+  "name": "Pabianice",
+  "country": "powiat pabianicki",
+  "province": "łódzkie",
+  "cityInfo": {
+  "cityInfoId": 60,
+  "population": 67688,
+  "citySize": 33
+  }
+  },
+  {
+  "cityId": 61,
+  "name": "Chełm",
+  "country": "powiat Chełm",
+  "province": "lubelskie",
+  "cityInfo": {
+  "cityInfoId": 61,
+  "population": 65481,
+  "citySize": 35
+  }
+  },
+  {
+  "cityId": 62,
+  "name": "Zamość",
+  "country": "powiat Zamość",
+  "province": "lubelskie",
+  "cityInfo": {
+  "cityInfoId": 62,
+  "population": 65255,
+  "citySize": 30
+  }
+  },
+  {
+  "cityId": 63,
+  "name": "Tomaszów Mazowiecki",
+  "country": "powiat tomaszowski",
+  "province": "łódzkie",
+  "cityInfo": {
+  "cityInfoId": 63,
+  "population": 64893,
+  "citySize": 42
+  }
+  },
+  {
+  "cityId": 64,
+  "name": "Leszno",
+  "country": "powiat Leszno",
+  "province": "wielkopolskie",
+  "cityInfo": {
+  "cityInfoId": 64,
+  "population": 64589,
+  "citySize": 32
+  }
+  },
+  {
+  "cityId": 65,
+  "name": "Stalowa Wola",
+  "country": "powiat stalowowolski",
+  "province": "podkarpackie",
+  "cityInfo": {
+  "cityInfoId": 65,
+  "population": 63692,
+  "citySize": 83
+  }
+  },
+  {
+  "cityId": 66,
+  "name": "Przemyśl",
+  "country": "powiat Przemyśl",
+  "province": "podkarpackie",
+  "cityInfo": {
+  "cityInfoId": 66,
+  "population": 63638,
+  "citySize": 46
+  }
+  },
+  {
+  "cityId": 67,
+  "name": "Kędzierzyn-Koźle",
+  "country": "powiat kędzierzyńsko-kozielski",
+  "province": "opolskie",
+  "cityInfo": {
+  "cityInfoId": 67,
+  "population": 63194,
+  "citySize": 124
+  }
+  },
+  {
+  "cityId": 68,
+  "name": "Łomża",
+  "country": "powiat Łomża",
+  "province": "podlaskie",
+  "cityInfo": {
+  "cityInfoId": 68,
+  "population": 62711,
+  "citySize": 33
+  }
+  },
+  {
+  "cityId": 69,
+  "name": "Żory",
+  "country": "powiat Żory",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 69,
+  "population": 62038,
+  "citySize": 65
+  }
+  },
+  {
+  "cityId": 70,
+  "name": "Mielec",
+  "country": "powiat mielecki",
+  "province": "podkarpackie",
+  "cityInfo": {
+  "cityInfoId": 70,
+  "population": 61096,
+  "citySize": 47
+  }
+  },
+  {
+  "cityId": 71,
+  "name": "Tarnowskie Góry",
+  "country": "powiat tarnogórski",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 71,
+  "population": 60957,
+  "citySize": 84
+  }
+  },
+  {
+  "cityId": 72,
+  "name": "Tczew",
+  "country": "powiat tczewski",
+  "province": "pomorskie",
+  "cityInfo": {
+  "cityInfoId": 72,
+  "population": 60610,
+  "citySize": 22
+  }
+  },
+  {
+  "cityId": 73,
+  "name": "Ełk",
+  "country": "powiat ełcki",
+  "province": "warmińsko-mazurskie",
+  "cityInfo": {
+  "cityInfoId": 73,
+  "population": 59790,
+  "citySize": 21
+  }
+  },
+  {
+  "cityId": 74,
+  "name": "Pruszków",
+  "country": "powiat pruszkowski",
+  "province": "mazowieckie",
+  "cityInfo": {
+  "cityInfoId": 74,
+  "population": 59570,
+  "citySize": 19
+  }
+  },
+  {
+  "cityId": 75,
+  "name": "Bełchatów",
+  "country": "powiat bełchatowski",
+  "province": "łódzkie",
+  "cityInfo": {
+  "cityInfoId": 75,
+  "population": 59565,
+  "citySize": 35
+  }
+  },
+  {
+  "cityId": 76,
+  "name": "Świdnica",
+  "country": "powiat świdnicki",
+  "province": "dolnośląskie",
+  "cityInfo": {
+  "cityInfoId": 76,
+  "population": 59182,
+  "citySize": 22
+  }
+  },
+  {
+  "cityId": 77,
+  "name": "Będzin",
+  "country": "powiat będziński",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 77,
+  "population": 58425,
+  "citySize": 37
+  }
+  },
+  {
+  "cityId": 78,
+  "name": "Biała Podlaska",
+  "country": "powiat Biała Podlaska",
+  "province": "lubelskie",
+  "cityInfo": {
+  "cityInfoId": 78,
+  "population": 57658,
+  "citySize": 49
+  }
+  },
+  {
+  "cityId": 79,
+  "name": "Zgierz",
+  "country": "powiat zgierski",
+  "province": "łódzkie",
+  "cityInfo": {
+  "cityInfoId": 79,
+  "population": 57503,
+  "citySize": 42
+  }
+  },
+  {
+  "cityId": 80,
+  "name": "Piekary Śląskie",
+  "country": "powiat Piekary Śląskie",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 80,
+  "population": 57148,
+  "citySize": 40
+  }
+  },
+  {
+  "cityId": 81,
+  "name": "Racibórz",
+  "country": "powiat raciborski",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 81,
+  "population": 55930,
+  "citySize": 75
+  }
+  },
+  {
+  "cityId": 82,
+  "name": "Legionowo",
+  "country": "powiat legionowski",
+  "province": "mazowieckie",
+  "cityInfo": {
+  "cityInfoId": 82,
+  "population": 54231,
+  "citySize": 14
+  }
+  },
+  {
+  "cityId": 83,
+  "name": "Ostrołęka",
+  "country": "powiat Ostrołęka",
+  "province": "mazowieckie",
+  "cityInfo": {
+  "cityInfoId": 83,
+  "population": 52917,
+  "citySize": 29
+  }
+  },
+  {
+  "cityId": 84,
+  "name": "Świętochłowice",
+  "country": "powiat Świętochłowice",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 84,
+  "population": 51824,
+  "citySize": 13
+  }
+  },
+  {
+  "cityId": 85,
+  "name": "Zawiercie",
+  "country": "powiat zawierciański",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 85,
+  "population": 51258,
+  "citySize": 85
+  }
+  },
+  {
+  "cityId": 86,
+  "name": "Starachowice",
+  "country": "powiat starachowicki",
+  "province": "świętokrzyskie",
+  "cityInfo": {
+  "cityInfoId": 86,
+  "population": 51158,
+  "citySize": 32
+  }
+  },
+  {
+  "cityId": 87,
+  "name": "Wejherowo",
+  "country": "powiat wejherowski",
+  "province": "pomorskie",
+  "cityInfo": {
+  "cityInfoId": 87,
+  "population": 50340,
+  "citySize": 27
+  }
+  },
+  {
+  "cityId": 88,
+  "name": "Puławy",
+  "country": "powiat puławski",
+  "province": "lubelskie",
+  "cityInfo": {
+  "cityInfoId": 88,
+  "population": 49100,
+  "citySize": 50
+  }
+  },
+  {
+  "cityId": 89,
+  "name": "Wodzisław Śląski",
+  "country": "powiat wodzisławski",
+  "province": "śląskie",
+  "cityInfo": {
+  "cityInfoId": 89,
+  "population": 48731,
+  "citySize": 50
+  }
+  },
+  {
+  "cityId": 90,
+  "name": "Skierniewice",
+  "country": "powiat Skierniewice",
+  "province": "łódzkie",
+  "cityInfo": {
+  "cityInfoId": 90,
+  "population": 48634,
+  "citySize": 35
+  }
+  },
+  {
+  "cityId": 91,
+  "name": "Starogard Gdański",
+  "country": "powiat starogardzki",
+  "province": "pomorskie",
+  "cityInfo": {
+  "cityInfoId": 91,
+  "population": 48621,
+  "citySize": 25
+  }
+  },
+  {
+  "cityId": 92,
+  "name": "Tarnobrzeg",
+  "country": "powiat Tarnobrzeg",
+  "province": "podkarpackie",
+  "cityInfo": {
+  "cityInfoId": 92,
+  "population": 48217,
+  "citySize": 85
+  }
+  },
+  {
+  "cityId": 93,
+  "name": "Radomsko",
+  "country": "powiat radomszczański",
+  "province": "łódzkie",
+  "cityInfo": {
+  "cityInfoId": 93,
+  "population": 47643,
+  "citySize": 51
+  }
+  },
+  {
+  "cityId": 94,
+  "name": "Skarżysko-Kamienna",
+  "country": "powiat skarżyski",
+  "province": "świętokrzyskie",
+  "cityInfo": {
+  "cityInfoId": 94,
+  "population": 47538,
+  "citySize": 64
+  }
+  },
+  {
+  "cityId": 95,
+  "name": "Rumia",
+  "country": "powiat wejherowski",
+  "province": "pomorskie",
+  "cityInfo": {
+  "cityInfoId": 95,
+  "population": 47374,
+  "citySize": 30
+  }
+  },
+  {
+  "cityId": 96,
+  "name": "Krosno",
+  "country": "powiat Krosno",
+  "province": "podkarpackie",
+  "cityInfo": {
+  "cityInfoId": 96,
+  "population": 47223,
+  "citySize": 44
+  }
+  },
+  {
+  "cityId": 97,
+  "name": "Kołobrzeg",
+  "country": "powiat kołobrzeski",
+  "province": "zachodniopomorskie",
+  "cityInfo": {
+  "cityInfoId": 97,
+  "population": 46897,
+  "citySize": 26
+  }
+  },
+  {
+  "cityId": 98,
+  "name": "Dębica",
+  "country": "powiat dębicki",
+  "province": "podkarpackie",
+  "cityInfo": {
+  "cityInfoId": 98,
+  "population": 46854,
+  "citySize": 34
+  }
+  },
+  {
+  "cityId": 99,
+  "name": "Kutno",
+  "country": "powiat kutnowski",
+  "province": "łódzkie",
+  "cityInfo": {
+  "cityInfoId": 99,
+  "population": 45657,
+  "citySize": 34
+  }
+  },
+  {
+  "cityId": 100,
+  "name": "Otwock",
+  "country": "powiat otwocki",
+  "province": "mazowieckie",
+  "cityInfo": {
+  "cityInfoId": 100,
+  "population": 45044,
+  "citySize": 47
+  }
+  },
+  {
+  "cityId": 2,
+  "name": "Kraków",
+  "country": "powiat Kraków",
+  "province": "małopolskie",
+  "cityInfo": {
+  "cityInfoId": 106,
+  "population": 758992,
+  "citySize": 327
+  }
+  },
+  {
+  "cityId": 3,
+  "name": "Łódź",
+  "country": "powiat Łódź",
+  "province": "łódzkie",
+  "cityInfo": {
+  "cityInfoId": 108,
+  "population": 711332,
+  "citySize": 293
+  }
+  }
+  ]
