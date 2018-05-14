@@ -36,7 +36,7 @@ final class User {
     
     private let storage = LocalStorageManager(userDefaults: UserDefaults.standard)
     
-    func logIn(user: GALUserLogin) {
+    func logIn(user: GALUserLogin, userInfo: RegisterRequest) {
         storage.setToken(user.token)
         storage.setUserID(user.userID)
         isLogIn = true

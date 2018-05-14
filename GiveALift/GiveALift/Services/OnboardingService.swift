@@ -10,21 +10,20 @@ import Foundation
 
 protocol OnboardingServiceDelegate: class {
     func onboardingService(error: APIError)
-    func onboardingService(result: RegisterRequest)
+    func onboardingService(user: GALUserLogin, result: RegisterRequest)
 }
 
 final class OnboardingService {
     
     fileprivate let requestBuilder: RequestBuilderType
     fileprivate let urlBuilder: URLBuilderType
-    private weak var delegate: OnboardingServiceDelegate?
+    weak var delegate: OnboardingServiceDelegate?
     
     // MARK: Initializers
     
-    init(urlBuilder: URLBuilderType = URLBuilder(), requestBuilder: RequestBuilderType = RequestBuilder(), delegate: OnboardingServiceDelegate) {
+    init(urlBuilder: URLBuilderType = URLBuilder(), requestBuilder: RequestBuilderType = RequestBuilder()) {
         self.urlBuilder = urlBuilder
         self.requestBuilder = requestBuilder
-        self.delegate = delegate
     }
     
     func login(email: String, password: String) {
@@ -59,7 +58,7 @@ final class OnboardingService {
                     let decoder = JSONDecoder()
                     let userInfo = try decoder.decode(RegisterRequest.self, from: result)
                     DispatchQueue.main.async {
-                        self?.delegate?.onboardingService(result: userInfo)
+                        self?.delegate?.onboardingService(user: user, result: userInfo)
                     }
                 } catch {
                     fatalError("Decoding  failed")

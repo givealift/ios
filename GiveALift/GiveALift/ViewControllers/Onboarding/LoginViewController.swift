@@ -14,24 +14,16 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     weak var connector: RootConnectorDelegate?
+    private let onboardingService = OnboardingService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        onboardingService.delegate = self
     }
     
     @IBAction func loginTapped(_ sender: Any) {
         guard validCredentials() else { return }
-        APIManager.shared.login(email: emailTextField.text!, password: passwordTextField.text!) { [weak self] (result) in
-            switch result {
-            case .Error(error: let error):
-                print(error)
-            case .Success(result: let result):
-                User.shared.logIn(user: result)
-                print(User.shared.userID)
-                //let _ = HomeConnector(navigationController: self.navigationController!)
-                self?.connector?.showHomeView()
-            }
-        }
+        onboardingService.login(email: emailTextField.text!, password: passwordTextField.text!)
     }
     
     private func validCredentials() -> Bool {
@@ -40,4 +32,18 @@ final class LoginViewController: UIViewController {
         }
         return true
     }
+}
+
+extension LoginViewController: OnboardingServiceDelegate {
+    func onboardingService(error: APIError) {
+        print(error)
+    }
+    
+    func onboardingService(user: GALUserLogin, result: RegisterRequest) {
+        print(result)
+        User.shared.logIn(user: user, userInfo: result)
+        self.connector?.showHomeView()
+    }
+    
+    
 }
