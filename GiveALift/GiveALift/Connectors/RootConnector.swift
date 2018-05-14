@@ -12,6 +12,7 @@ protocol RootConnectorDelegate: class {
     func showAddRouteView()
     func showSearchView()
     func showHomeView()
+    func showUserInfoView()
     func showPreLoginView()
 }
 
@@ -22,6 +23,7 @@ final class RootConnector {
     
     private var searchConnector: SearchConnectorDelegate?
     private var addRouteConnector: AddRouteConnectorDelegate?
+    private var userInfoConnector: UserInfoConnectorDelegate?
     
     init(window: UIWindow) {
         self.window = window
@@ -39,6 +41,10 @@ final class RootConnector {
 }
 
 extension RootConnector: RootConnectorDelegate {
+    func showUserInfoView() {
+        self.userInfoConnector = UserInfoConnector(navigationController: self.navigationController)
+    }
+    
     func showPreLoginView() {
         let mainStoryboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
         let vc : PreLoginRegisterViewController = mainStoryboard.instantiateViewController(withIdentifier: "PreLoginRegisterViewController") as! PreLoginRegisterViewController

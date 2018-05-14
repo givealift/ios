@@ -39,6 +39,7 @@
 		C130E2B920A99D8200DC221C /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2B720A99D8200DC221C /* UserInfoViewController.swift */; };
 		C130E2BA20A99D8200DC221C /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C130E2B820A99D8200DC221C /* UserInfoViewController.xib */; };
 		C130E2BC20A9A0B700DC221C /* OnboardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2BB20A9A0B700DC221C /* OnboardingService.swift */; };
+		C130E2BE20A9A89500DC221C /* GALUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2BD20A9A89500DC221C /* GALUserInfo.swift */; };
 		C1725B2A20A59E8800F64747 /* SearchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2920A59E8800F64747 /* SearchConnector.swift */; };
 		C1725B2C20A5A95F00F64747 /* AddRouteConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */; };
 		C1725B2E20A5AA8D00F64747 /* AddRoutePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */; };
@@ -153,6 +154,7 @@
 		C130E2B720A99D8200DC221C /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		C130E2B820A99D8200DC221C /* UserInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
 		C130E2BB20A9A0B700DC221C /* OnboardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingService.swift; sourceTree = "<group>"; };
+		C130E2BD20A9A89500DC221C /* GALUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALUserInfo.swift; sourceTree = "<group>"; };
 		C1725B2920A59E8800F64747 /* SearchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConnector.swift; sourceTree = "<group>"; };
 		C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteConnector.swift; sourceTree = "<group>"; };
 		C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutePresenter.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				C1CFBD992086A78700253375 /* Route.swift */,
 				C124DA4320A841D300391A71 /* GALUserLogin.swift */,
 				C124DA5020A8958D00391A71 /* RegisterRequest.swift */,
+				C130E2BD20A9A89500DC221C /* GALUserInfo.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				C1CFBD8820865D6200253375 /* HomeViewController.swift in Sources */,
 				C124DA4B20A872F900391A71 /* RouteDetailsPresenter.swift in Sources */,
 				C124DA4E20A8916500391A71 /* SegControllerTableViewCell.swift in Sources */,
+				C130E2BE20A9A89500DC221C /* GALUserInfo.swift in Sources */,
 				C1CFBDA12086AC6500253375 /* RoutesPresenter.swift in Sources */,
 				C1CFBD812086528B00253375 /* BaseViewController.swift in Sources */,
 				C1725B2E20A5AA8D00F64747 /* AddRoutePresenter.swift in Sources */,

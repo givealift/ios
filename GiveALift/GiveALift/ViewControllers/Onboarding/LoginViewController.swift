@@ -19,9 +19,12 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         onboardingService.delegate = self
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func loginTapped(_ sender: Any) {
+        
+        
         guard validCredentials() else { return }
         onboardingService.login(email: emailTextField.text!, password: passwordTextField.text!)
     }
@@ -39,7 +42,7 @@ extension LoginViewController: OnboardingServiceDelegate {
         print(error)
     }
     
-    func onboardingService(user: GALUserLogin, result: RegisterRequest) {
+    func onboardingService(user: GALUserLogin, result: GALUserInfo) {
         print(result)
         User.shared.logIn(user: user, userInfo: result)
         self.connector?.showHomeView()

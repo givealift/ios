@@ -36,9 +36,14 @@ final class User {
     
     private let storage = LocalStorageManager(userDefaults: UserDefaults.standard)
     
-    func logIn(user: GALUserLogin, userInfo: RegisterRequest) {
+    func logIn(user: GALUserLogin, userInfo: GALUserInfo) {
         storage.setToken(user.token)
         storage.setUserID(user.userID)
+        storage.setEmail(userInfo.email)
+        storage.setPhoneNumber(userInfo.phone)
+        storage.setUserLastName(userInfo.lastName)
+        storage.setUserFirstName(userInfo.firstName)
+        storage.setGender(userInfo.gender)
         isLogIn = true
     }
 }

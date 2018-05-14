@@ -10,7 +10,7 @@ import Foundation
 
 protocol OnboardingServiceDelegate: class {
     func onboardingService(error: APIError)
-    func onboardingService(user: GALUserLogin, result: RegisterRequest)
+    func onboardingService(user: GALUserLogin, result: GALUserInfo)
 }
 
 final class OnboardingService {
@@ -55,12 +55,14 @@ final class OnboardingService {
                 }
             case .Success(result: let result):
                 do  {
+                    print(String(data: result, encoding: String.Encoding.utf8))
                     let decoder = JSONDecoder()
-                    let userInfo = try decoder.decode(RegisterRequest.self, from: result)
+                    let userInfo = try decoder.decode(GALUserInfo.self, from: result)
                     DispatchQueue.main.async {
                         self?.delegate?.onboardingService(user: user, result: userInfo)
                     }
                 } catch {
+                    print(error)
                     fatalError("Decoding  failed")
                 }
             }
