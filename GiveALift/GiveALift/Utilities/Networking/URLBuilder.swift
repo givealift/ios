@@ -9,9 +9,12 @@
 import Foundation
 
 final class URLBuilder: URLBuilderType {
-    
-    
     private let mainURL = "http://mysterious-lowlands-82501.herokuapp.com"
+    
+    func userInfoURL(id: Int) -> URL {
+        let urlString = mainURL + "/api/user/\(id)"
+        return URL(string: urlString)!
+    }
     
     func addRouteURL() -> URL {
         let urlString = mainURL + "/api/route"

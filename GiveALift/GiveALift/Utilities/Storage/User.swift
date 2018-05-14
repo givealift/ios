@@ -18,6 +18,21 @@ final class User {
     var userID: Int? {
         return storage.getUserID()
     }
+    var gender: String? {
+        return storage.getGender()
+    }
+    var firstName: String? {
+        return storage.getFirstName()
+    }
+    var lastName: String? {
+        return storage.getLastName()
+    }
+    var phoneNumber: String? {
+        return storage.getPhoneNumber()
+    }
+    var email: String? {
+        return storage.getEmail()
+    }
     
     private let storage = LocalStorageManager(userDefaults: UserDefaults.standard)
     

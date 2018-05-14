@@ -38,6 +38,10 @@ class HomeViewController: BaseViewController<HomePresenter> {
     
     //MARK:- Main
     private func setupUserInfoButton() {
+        self.navigationItem.setLeftBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "background1").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(userInfoTapped)), animated: true)
+    }
+    
+    @objc private func userInfoTapped() {
         
     }
 }

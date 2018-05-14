@@ -14,6 +14,11 @@ final class LocalStorageManager: LocalStorage {
     private enum LocalStorageKeys {
         static let token = "token"
         static let userID = "userID"
+        static let firstName = "firstName"
+        static let lastName = "lastName"
+        static let phoneNumber = "phoneNumber"
+        static let gender = "gender"
+        static let email = "email"
     }
     
     init(userDefaults: UserDefaults) {
@@ -36,5 +41,44 @@ final class LocalStorageManager: LocalStorage {
         return userDefaults.value(forKey: LocalStorageKeys.userID) as? Int
     }
     
+    func setUserFirstName(_ value: String) {
+        userDefaults.set(value, forKey: LocalStorageKeys.firstName)
+    }
+    
+    func getFirstName() -> String? {
+        return userDefaults.value(forKey: LocalStorageKeys.firstName) as? String
+    }
+    
+    func setUserLastName(_ value: String) {
+        userDefaults.set(value, forKey: LocalStorageKeys.lastName)
+    }
+    
+    func getLastName() -> String? {
+        return userDefaults.value(forKey: LocalStorageKeys.lastName) as? String
+    }
+    
+    func setPhoneNumber(_ value: String) {
+        userDefaults.set(value, forKey: LocalStorageKeys.phoneNumber)
+    }
+    
+    func getPhoneNumber() -> String? {
+        return userDefaults.value(forKey: LocalStorageKeys.phoneNumber) as? String
+    }
+    
+    func setGender(_ value: String) {
+        userDefaults.set(value, forKey: LocalStorageKeys.gender)
+    }
+    
+    func getGender() -> String? {
+        return userDefaults.value(forKey: LocalStorageKeys.gender) as? String
+    }
+    
+    func setEmail(_ value: String) {
+        userDefaults.set(value, forKey: LocalStorageKeys.email)
+    }
+    
+    func getEmail() -> String? {
+        return userDefaults.value(forKey: LocalStorageKeys.email) as? String
+    }
     
 }
