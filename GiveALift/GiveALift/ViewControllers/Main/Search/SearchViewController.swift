@@ -22,7 +22,6 @@ class SearchViewController: BaseViewController<SearchPresenter> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        view.backgroundColor = UIColor.brown
         createDatePicker()
     }
     

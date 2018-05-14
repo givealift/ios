@@ -23,18 +23,19 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s1z-AD-n1o">
                     <rect key="frame" x="87" y="283" width="200" height="100"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEW-2Z-HlE">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEW-2Z-HlE" customClass="GALRoundButton" customModule="GiveALift" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            <state key="normal" title="Search"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                            <state key="normal" title="Szukaj przejazdu"/>
                             <connections>
                                 <action selector="searchTapped:" destination="-1" eventType="touchUpInside" id="mGe-oD-yce"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CO-bI-4Zj">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CO-bI-4Zj" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="55" width="200" height="45"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            <state key="normal" title="Add"/>
+                            <state key="normal" title="Dodaj przejazd"/>
                             <connections>
                                 <action selector="addTapped:" destination="-1" eventType="touchUpInside" id="Znf-TQ-QLs"/>
                             </connections>

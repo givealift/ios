@@ -20,5 +20,6 @@ class BaseViewController<Presenter>: UIViewController where Presenter: BasePrese
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     
 }
