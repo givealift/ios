@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="fromLocationTextField" destination="XWm-aW-VJy" id="djd-4T-QMQ"/>
                 <outlet property="fromTextfield" destination="KI9-DI-mMe" id="Mxl-eS-HB9"/>
+                <outlet property="nextButton" destination="v9H-KD-RrJ" id="Fao-Co-z0j"/>
                 <outlet property="stackView" destination="BAQ-UL-xIj" id="8Mp-nf-FBy"/>
                 <outlet property="stackViewHeightConstraint" destination="xly-Zb-tcP" id="Alv-Vr-y5l"/>
                 <outlet property="toLocationTextField" destination="i91-NC-GYq" id="BFa-NV-g2n"/>

@@ -1,18 +1,23 @@
 //
-//  AddRoutePresenter.swift
+//  MainRoutePresenter.swift
 //  GiveALift
 //
-//  Created by Marcin Włoczko on 11.05.2018.
+//  Created by Marcin Włoczko on 15.05.2018.
 //  Copyright © 2018 Marcin Włoczko. All rights reserved.
 //
 
 import Foundation
 
-final class AddRoutePresenter: BasePresenter {
+final class MainRoutePresenter {
     
     private weak var connector: AddRouteConnectorDelegate?
     var route: Route
     var isUpdating: Bool
+    
+    let fromTextFieldPlaceholder = "Wprowadź miasto startowe"
+    let fromLocationPlaceholder = "Podaj miejsce spotkania"
+    let toTextFieldPlaceholder = "Wproawdź miasto docelowe"
+    let toLocationPlaceholder = "Podaj miejsce docelowe"
     
     init(connector: AddRouteConnectorDelegate, route: Route, isUpdating: Bool) {
         self.connector = connector
@@ -30,7 +35,7 @@ final class AddRoutePresenter: BasePresenter {
         }
     }
     
-     private func updateModel(fromCityId: Int, fromLocation: String, toCityId: Int, toLocation: String) {
+    private func updateModel(fromCityId: Int, fromLocation: String, toCityId: Int, toLocation: String) {
         route.from = Location()
         route.from.city = City()
         route.from.city.cityID = fromCityId

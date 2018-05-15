@@ -16,20 +16,29 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
     @IBOutlet weak var toTextField: SugestiveTextField!
     @IBOutlet weak var toLocationTextField: UITextField!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var stackViewHeightConstraint: NSLayoutConstraint!
     
     //MARK:- VC's life cycle
     override func viewDidLoad() {
         self.view.backgroundColor = .red
         self.hideKeyboardWhenTappedAround()
-        presenter.isUpdating ? setPlaceholderWithOldValues()() : setDefaultPlaceholder()()
+        presenter.isUpdating ? setPlaceholderWithOldValues() : setDefaultPlaceholder()
+        nextButton.titleLabel?.text = presenter.isUpdating ? "Gotowe" : "Dalej"
     }
 
     //MARK:- IBActions
     
     @IBAction func next(_ sender: Any) {
-        if let fromCityId = fromTextfield.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text, from != "", to != "" {
+        presenter.isUpdating ? updateData() : classicWay()
+    }
     
+    
+    //MARK:- Main
+    
+    private func classicWay() {
+        if let fromCityId = fromTextfield.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text, from != "", to != "" {
+            
             presenter.showIndirectionView(fromCityId: fromCityId, fromLocation: from, toCityId: toCityId, toLocation: to)
         } else {
             //MARK:- TODO info o niepodanych danych
@@ -37,7 +46,18 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
         }
     }
     
-    //MARK:- Main
+    private func updateData() {
+        let fromText = fromTextfield.text == "" ? presenter.route.from.city.cityID : fromTextfield.selectedCityId()
+        let toText = toTextField.text == "" ? presenter.route.to.city.cityID : toTextField.selectedCityId()
+        let from = fromLocationTextField.text == "" ? presenter.route.from.placeOfMeeting : fromLocationTextField.text
+        let to = toLocationTextField.text == "" ? presenter.route.from.placeOfMeeting : toLocationTextField.text
+        if let fromCityID = fromText, let toCityID = toText, let fromLocation = from, let toLocation = to {
+            presenter.showIndirectionView(fromCityId: fromCityID, fromLocation: fromLocation, toCityId: toCityID, toLocation: toLocation)
+        } else {
+            //MARK:- TODO wyświetlić błąd
+        }
+    }
+    
     private func setDefaultPlaceholder() {
         fromTextfield.placeholder = presenter.fromTextFieldPlaceholder
         toTextField.placeholder = presenter.toTextFieldPlaceholder
@@ -46,6 +66,9 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
     }
     
     private func setPlaceholderWithOldValues() {
-        
+        fromTextfield.placeholder = presenter.route.from.city.name
+        toTextField.placeholder = presenter.route.to.city.name
+        toLocationTextField.placeholder = presenter.route.to.placeOfMeeting
+        fromLocationTextField.placeholder = presenter.route.from.placeOfMeeting
     }
 }
