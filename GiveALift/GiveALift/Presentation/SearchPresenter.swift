@@ -61,7 +61,7 @@ final class SearchPresenter: BasePresenter {
     }
     
     func getUserInfo(route: Route) {
-        requestBuilder.GETRequest(withURL: urlBuilder.userPublicInfoURL(id: route.ownerId), authToken: nil) { [weak self] (result) in
+        requestBuilder.GETRequest(withURL: urlBuilder.userPublicInfoURL(id: route.galUserPublicResponse!.ownerId), authToken: nil) { [weak self] (result) in
             switch result {
             case .Error(error: let error):
                 print(error)

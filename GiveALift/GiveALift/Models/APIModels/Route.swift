@@ -9,11 +9,17 @@
 import Foundation
 
 struct Route: Codable {
-    var routeId, ownerId: Int!
+    var routeId: Int!
     var from, to: Location!
     var stops: [Location]!
     var numberOfSeats, numberOfOccupiedSeats, price: Int!
     var description: String?
+    var ownerId: Int?
+    var galUserPublicResponse: GalUserPublicResponse?
+}
+
+struct GalUserPublicResponse: Codable {
+    var ownerId: Int!
 }
 
 struct Location: Codable {
