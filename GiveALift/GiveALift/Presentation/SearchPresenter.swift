@@ -74,7 +74,7 @@ final class SearchPresenter: BasePresenter {
     func displayRoutesView() {
         let userInfo = GALUserInfo(address: "", birthYear: 1960, email: "mwloczko@gmail.com", firstName: "Marcin", gender: "male", lastName: "Włoczko", phone: "12312415", rate: 5)
         let location = Location(city: City(cityID: 1, name: "wa", country: "Pols", province: "dsa", cityInfo: CityInfo(cityInfoID: 1, population: 1, citySize: 1)), placeOfMeeting: "Kabanos", date: "2018-05-14 17:00", localizationId: 1)
-        let routeInfo = Route(routeId: 14, ownerId: 13, from: location, to: location, stops: [], numberOfSeats: 4, numberOfOccupiedSeats: 1, price: 20)
+        let routeInfo = Route(routeId: 13, ownerId: 23, from: location, to: location, stops: [], numberOfSeats: 4, numberOfOccupiedSeats: 1, price: 20, description: nil)
         let cellRoutesssData = CellRouteData(userInfo: userInfo, routeInfo: routeInfo)
         connector?.showRoutesView(routes: [cellRoutesssData])
     }

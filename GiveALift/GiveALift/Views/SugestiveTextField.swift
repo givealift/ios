@@ -16,7 +16,7 @@ final class SugestiveTextField: SearchTextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.cities = loadCities()
-        self.filterStrings(cities.map({$0.name}))
+        self.filterStrings(cities.map({$0.name!}))
         setBottomLine(borderColor: .black)
         
     }
@@ -24,7 +24,7 @@ final class SugestiveTextField: SearchTextField {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.cities = loadCities()
-        self.filterStrings(cities.map({$0.name}))
+        self.filterStrings(cities.map({$0.name!}))
         setBottomLine(borderColor: .black)
     }
     

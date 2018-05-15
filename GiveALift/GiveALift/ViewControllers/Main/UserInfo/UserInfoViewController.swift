@@ -56,11 +56,11 @@ class UserInfoViewController: BaseViewController<UserInfoPresenter> {
     
     @IBAction func editTapped(_ sender: Any) {
         editState(true)
-        firstNameTextField.placeholder = User.shared.firstName
-        secondNameTextField.placeholder = User.shared.lastName
-        emailTextField.placeholder = User.shared.email
-        phoneNumberTextField.placeholder = User.shared.phoneNumber
-        gender.placeholder = User.shared.gender
+        firstNameTextField.placeholder = presenter.userData.firstName
+        secondNameTextField.placeholder = presenter.userData.lastName
+        emailTextField.placeholder = presenter.userData.email
+        phoneNumberTextField.placeholder = presenter.userData.phone
+        gender.placeholder = presenter.userData.gender
     }
     
     private func editState(_ value: Bool) {
@@ -73,10 +73,10 @@ class UserInfoViewController: BaseViewController<UserInfoPresenter> {
     }
     
     private func setupTextFields() {
-        firstNameTextField.text = User.shared.firstName
-        secondNameTextField.text = User.shared.lastName
-        emailTextField.text = User.shared.email
-        phoneNumberTextField.text = User.shared.phoneNumber
-        gender.text = User.shared.gender
+        firstNameTextField.text = presenter.userData.firstName
+        secondNameTextField.text = presenter.userData.lastName
+        emailTextField.text = presenter.userData.email
+        phoneNumberTextField.text = presenter.userData.phone
+        gender.text = presenter.userData.gender
     }
 }

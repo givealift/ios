@@ -9,27 +9,36 @@
 import Foundation
 
 struct Route: Codable {
-    let routeId, ownerId: Int
-    let from, to: Location
-    let stops: [Location]?
-    let numberOfSeats, numberOfOccupiedSeats, price: Int
+    var routeId, ownerId: Int!
+    var from, to: Location!
+    var stops: [Location]?
+    var numberOfSeats, numberOfOccupiedSeats, price: Int!
+    var description: String?
 }
 
 struct Location: Codable {
-    let city: City
-    let placeOfMeeting: String
-    let date: String
-    let localizationId: Int
+    var city: City!
+    var placeOfMeeting: String!
+    var date: String!
+    var localizationId: Int?
 }
 
-struct RouteCity: Codable {
-    let cityId: Int
-    let name: String?
-    let country: String?
-    let province: String?
-    let cityInfo: RouteCityInfo?
+struct City: Codable {
+    var cityID: Int!
+    var name, country, province: String?
+    var cityInfo: CityInfo?
+    
+    enum CodingKeys: String, CodingKey {
+        case cityID = "cityId"
+        case name, country, province, cityInfo
+    }
 }
 
-struct RouteCityInfo: Codable {
-    let cityInfoId, population, citySize: Int
+struct CityInfo: Codable {
+    var cityInfoID, population, citySize: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case cityInfoID = "cityInfoId"
+        case population, citySize
+    }
 }

@@ -12,6 +12,7 @@ protocol SearchConnectorDelegate: class {
     func showRoutesView(routes: [CellRouteData])
     func showRouteDetailsView(route: CellRouteData)
     func showUserInfoView(userData: GALUserInfo)
+    func showEditRouteInfoView(route: Route)
 }
 
 final class SearchConnector {
@@ -31,6 +32,12 @@ final class SearchConnector {
 }
 
 extension SearchConnector: SearchConnectorDelegate {
+    func showEditRouteInfoView(route: Route) {
+        let presenter = EditRouteInfoPresenter(connector: self, route: route)
+        let view = EditRouteInfoViewController(presenter: presenter)
+        navigationController.pushViewController(view, animated: true)
+    }
+    
     func showRoutesView(routes: [CellRouteData]) {
         let presenter = RoutesPresenter(connector: self, routes: routes)
         let view = RoutesViewController(presenter: presenter)

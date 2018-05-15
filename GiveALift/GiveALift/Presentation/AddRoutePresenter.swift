@@ -11,7 +11,7 @@ import Foundation
 final class AddRoutePresenter: BasePresenter {
     
     private weak var connector: AddRouteConnectorDelegate?
-    private let addRoute: AddRoute
+    private var route: Route
     
     let fromTextFieldPlaceholder = "Wprowadź miasto startowe"
     let fromLocationPlaceholder = "Podaj miejsce spotkania"
@@ -20,22 +20,22 @@ final class AddRoutePresenter: BasePresenter {
     
     init(connector: AddRouteConnectorDelegate) {
         self.connector = connector
-        self.addRoute = AddRoute()
+        self.route = Route()
     }
     
     func showIndirectionView(fromCityId: Int, fromLocation: String, toCityId: Int, toLocation: String) {
         updateModel(fromCityId: fromCityId, fromLocation: fromLocation, toCityId: toCityId, toLocation: toLocation)
-        connector?.showIndirectionsView(addRoute: addRoute)
+        connector?.showIndirectionsView(route: route)
     }
     
     private func updateModel(fromCityId: Int, fromLocation: String, toCityId: Int, toLocation: String) {
-        addRoute.from = RouteLocation()
-        addRoute.from.city = AddRouteCity()
-        addRoute.from.city.cityId = fromCityId
-        addRoute.from.placeOfMeeting = fromLocation
-        addRoute.to = RouteLocation()
-        addRoute.to.city = AddRouteCity()
-        addRoute.to.city.cityId = toCityId
-        addRoute.to.placeOfMeeting = toLocation
+        route.from = Location()
+        route.from.city = City()
+        route.from.city.cityID = fromCityId
+        route.from.placeOfMeeting = fromLocation
+        route.to = Location()
+        route.to.city = City()
+        route.to.city.cityID = toCityId
+        route.to.placeOfMeeting = toLocation
     }
 }

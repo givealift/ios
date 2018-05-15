@@ -15,20 +15,20 @@ final class RouteInfoPresenter: BasePresenter {
     let numberOfSeatsPlaceholder = "Wpisz ilość wolnych miejsc"
     
     private weak var connector: AddRouteConnectorDelegate?
-    private let addRoute: AddRoute
+    private var route: Route
     
-    init(connector: AddRouteConnectorDelegate, addRoute: AddRoute) {
+    init(connector: AddRouteConnectorDelegate, route: Route) {
         self.connector = connector
-        self.addRoute = addRoute
+        self.route = route
     }
     
     func showRouteOptionalDescriptionView(price: Int, numberOfSeats: Int) {
         updateModel(price: price, numberOfSeats: numberOfSeats)
-        connector?.showRouteOptionalDescriptionView(addRoute: addRoute)
+        connector?.showRouteOptionalDescriptionView(route: route)
     }
     
     private func updateModel(price: Int, numberOfSeats: Int) {
-        addRoute.price = price
-        addRoute.numberOfSeats = numberOfSeats
+        route.price = price
+        route.numberOfSeats = numberOfSeats
     }
 }

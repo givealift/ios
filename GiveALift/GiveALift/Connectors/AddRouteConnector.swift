@@ -9,10 +9,10 @@
 import UIKit
 
 protocol AddRouteConnectorDelegate: class {
-    func showRouteTimeView(addRoute: AddRoute)
-    func showIndirectionsView(addRoute: AddRoute)
-    func showRouteInfoView(addRoute: AddRoute)
-    func showRouteOptionalDescriptionView(addRoute: AddRoute)
+    func showRouteTimeView(route: Route)
+    func showIndirectionsView(route: Route)
+    func showRouteInfoView(route: Route)
+    func showRouteOptionalDescriptionView(route: Route)
     func showHomeView()
 }
 
@@ -41,26 +41,26 @@ extension AddRouteConnector: AddRouteConnectorDelegate {
         navigationController.popToRootViewController(animated: true)
     }
     
-    func showRouteOptionalDescriptionView(addRoute: AddRoute) {
-        let presenter = RouteOptionalDescriptionPresenter(connector: self, addRoute: addRoute)
+    func showRouteOptionalDescriptionView(route: Route) {
+        let presenter = RouteOptionalDescriptionPresenter(connector: self, route: route)
         let view = RouteOptionalDescriptionViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
     
-    func showIndirectionsView(addRoute: AddRoute) {
-        let presenter = IndirectionsPresenter(connector: self, addRoute: addRoute)
+    func showIndirectionsView(route: Route) {
+        let presenter = IndirectionsPresenter(connector: self, route: route)
         let view = IndirectionsViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
     
-    func showRouteTimeView(addRoute: AddRoute) {
-        let presenter = RouteTimePresenter(connector: self, addRoute: addRoute)
+    func showRouteTimeView(route: Route) {
+        let presenter = RouteTimePresenter(connector: self, route: route)
         let view = RouteTimeViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
     
-    func showRouteInfoView(addRoute: AddRoute) {
-        let presenter = RouteInfoPresenter(connector: self, addRoute: addRoute)
+    func showRouteInfoView(route: Route) {
+        let presenter = RouteInfoPresenter(connector: self, route: route)
         let view = RouteInfoViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }

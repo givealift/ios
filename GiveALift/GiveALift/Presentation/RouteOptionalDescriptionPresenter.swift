@@ -10,11 +10,11 @@ import Foundation
 
 final class RouteOptionalDescriptionPresenter: BasePresenter {
     
-    private let addRoute: AddRoute
+    private var route: Route
     private weak var connector: AddRouteConnectorDelegate?
     
-    init(connector: AddRouteConnectorDelegate, addRoute: AddRoute) {
-        self.addRoute = addRoute
+    init(connector: AddRouteConnectorDelegate, route: Route) {
+        self.route = route
         self.connector = connector
     }
     
@@ -25,10 +25,22 @@ final class RouteOptionalDescriptionPresenter: BasePresenter {
     }
     
     private func updateModel(description: String?) {
-        addRoute.description = description
+        route.description = description
     }
     
     private func addRouteToServer() {
-        APIManager.shared.addRoute(route: addRoute)
+        var stop1 = Location()
+        stop1.city = City()
+        stop1.city.cityID = 405
+        stop1.placeOfMeeting = "siusiaczek"
+        stop1.date = "2018-05-08 22:45"
+        var stop2 = Location()
+        stop2.city = City()
+        stop2.city.cityID = 407
+        stop2.placeOfMeeting = "siusiaczek"
+        stop2.date = "2018-05-08 22:55"
+        route.stops?.append(stop2)
+        route.stops?.append(stop1)
+        APIManager.shared.addRoute(route: route)
     }
 }

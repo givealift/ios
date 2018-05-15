@@ -10,6 +10,6 @@ import Foundation
 
 protocol APIManagerType: class {
     func login(email: String, password: String, completion: @escaping APIResultBlock<GALUserLogin>)
-    func addRoute(route: AddRoute)
+    func addRoute(route: Route)
     func register(request: RegisterRequest, completion: @escaping APIResultBlock<Data>)
 }
