@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RouteOptionalDescriptionViewController: BaseViewController<RouteOptionalDescriptionPresenter> {
+class RouteOptionalDescriptionViewController: AddRouteViewController<RouteOptionalDescriptionPresenter> {
 
     //MARK:- IBOutlets
     @IBOutlet weak var textView: UITextView!

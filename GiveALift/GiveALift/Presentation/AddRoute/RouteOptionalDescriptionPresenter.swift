@@ -8,15 +8,7 @@
 
 import Foundation
 
-final class RouteOptionalDescriptionPresenter: BasePresenter {
-    
-    private var route: Route
-    private weak var connector: AddRouteConnectorDelegate?
-    
-    init(connector: AddRouteConnectorDelegate, route: Route, isUpdating: Bool) {
-        self.route = route
-        self.connector = connector
-    }
+final class RouteOptionalDescriptionPresenter: AddRoutePresenter {
     
     func showHomeView(description: String?) {
         updateModel(description: description)

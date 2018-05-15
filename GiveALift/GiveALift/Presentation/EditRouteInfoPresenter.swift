@@ -18,7 +18,23 @@ final class EditRouteInfoPresenter: BasePresenter {
         self.route = route
     }
     
-    func showAddRouteView() {
-        connector?.addRouteConnector?.showAddRouteView(route: route, isUpdating: true)
+    func showMainRouteView() {
+        connector?.addRouteConnector?.showMainRouteView(route: route, isUpdating: true)
+    }
+    
+    func showIndirectsView() {
+        connector?.addRouteConnector?.showIndirectionsView(route: route, isUpdating: true)
+    }
+    
+    func showRouteTimeView() {
+        connector?.addRouteConnector?.showRouteTimeView(route: route, isUpdating: true)
+    }
+    
+    func showRouteInfoView() {
+        connector?.addRouteConnector?.showRouteInfoView(route: route, isUpdating: true)
+    }
+    
+    func showOptionalDescriotionView() {
+        connector?.addRouteConnector?.showRouteOptionalDescriptionView(route: route, isUpdating: true)
     }
 }

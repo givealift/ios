@@ -13,7 +13,7 @@ protocol SearchConnectorDelegate: class {
     func showRouteDetailsView(route: CellRouteData)
     func showUserInfoView(userData: GALUserInfo)
     func showEditRouteInfoView(route: Route)
-    var addRouteConnector: AddRouteConnectorDelegate? { get set }
+    var  addRouteConnector: AddRouteConnectorDelegate? { get set }
 }
 
 final class SearchConnector {

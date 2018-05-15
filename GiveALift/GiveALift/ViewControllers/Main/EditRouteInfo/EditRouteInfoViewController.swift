@@ -16,7 +16,7 @@ class EditRouteInfoViewController: BaseViewController<EditRouteInfoPresenter> {
     }
 
     @IBAction func indirectsTapped(_ sender: Any) {
-        
+        presenter.showIndirectsView()
     }
     
     @IBAction func dateTapped(_ sender: Any) {
@@ -36,6 +36,6 @@ class EditRouteInfoViewController: BaseViewController<EditRouteInfoPresenter> {
     }
     
     @IBAction func mainRouteTapped(_ sender: Any) {
-        presenter.showAddRouteView()
+        presenter.showMainRouteView()
     }
 }

@@ -8,19 +8,11 @@
 
 import Foundation
 
-final class RouteInfoPresenter: BasePresenter {
+final class RouteInfoPresenter: AddRoutePresenter {
     
     //MARK:- Constants
     let pricePlaceholder = "Wpisz cenę przejazdu"
     let numberOfSeatsPlaceholder = "Wpisz ilość wolnych miejsc"
-    
-    private weak var connector: AddRouteConnectorDelegate?
-    private var route: Route
-    
-    init(connector: AddRouteConnectorDelegate, route: Route, isUpdating: Bool) {
-        self.connector = connector
-        self.route = route
-    }
     
     func showRouteOptionalDescriptionView(price: Int, numberOfSeats: Int) {
         updateModel(price: price, numberOfSeats: numberOfSeats)

@@ -14,7 +14,7 @@ protocol AddRouteConnectorDelegate: class {
     func showRouteInfoView(route: Route, isUpdating: Bool)
     func showRouteOptionalDescriptionView(route: Route, isUpdating: Bool)
     func showHomeView()
-    func showAddRouteView(route: Route, isUpdating: Bool)
+    func showMainRouteView(route: Route, isUpdating: Bool)
     func showPreviuosView()
 }
 
@@ -32,7 +32,7 @@ extension AddRouteConnector: AddRouteConnectorDelegate {
         navigationController.popViewController(animated: true)
     }
     
-    func showAddRouteView(route: Route, isUpdating: Bool) {
+    func showMainRouteView(route: Route, isUpdating: Bool) {
         let presenter = MainRoutePresenter(connector: self, route: route, isUpdating: isUpdating)
         let view = MainRouteViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)

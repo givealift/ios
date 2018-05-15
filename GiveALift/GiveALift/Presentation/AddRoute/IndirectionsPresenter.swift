@@ -8,17 +8,14 @@
 
 import Foundation
 
-final class IndirectionsPresenter: BasePresenter {
-    
-    private var route: Route
-    private weak var connector: AddRouteConnectorDelegate?
+final class IndirectionsPresenter: AddRoutePresenter {
     
     let indirectTextFieldPlaceHolder = "Wprowadź miasto pośrednie"
     let indirectLocationPlaceholder = "Wprowadź miejsce odbioru"
     
-    init(connector: AddRouteConnectorDelegate, route: Route, isUpdating: Bool) {
-        self.route = route
-        self.connector = connector
+    func showEditRouteInfo(indirects: [Indirect]) {
+        updateOldModel(indirects: indirects)
+        connector?.showPreviuosView()
     }
     
     func showRouteTimeView(indirectCitys: [Int], indirectLocations: [String]) {
@@ -35,5 +32,22 @@ final class IndirectionsPresenter: BasePresenter {
             routeLocation.placeOfMeeting = indirectLocations[i]
             route.stops?.append(routeLocation)
         }
+    }
+    
+    private func updateOldModel(indirects: [Indirect]) {
+        route.stops = indirects.map({ $0.toLocation() })
+    }
+}
+
+struct Indirect {
+    let cityID: Int
+    let location: String
+    
+    func toLocation() -> Location {
+        var location = Location()
+        location.city = City()
+        location.city.cityID = self.cityID
+        location.placeOfMeeting = self.location
+        return location
     }
 }

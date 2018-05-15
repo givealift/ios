@@ -61,7 +61,7 @@ extension RootConnector: RootConnectorDelegate {
     
     func showAddRouteView() {
         self.addRouteConnector = AddRouteConnector(navigationController: self.navigationController)
-        addRouteConnector?.showAddRouteView(route: Route(), isUpdating: false)
+        addRouteConnector?.showMainRouteView(route: Route(), isUpdating: false)
     }
     
     func showSearchView() {
