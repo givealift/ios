@@ -20,29 +20,46 @@ class RouteInfoViewController: AddRouteViewController<RouteInfoPresenter>, UITex
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.magenta
         self.hideKeyboardWhenTappedAround()
         setupKeyboards()
-        setupTextFields()
+        presenter.isUpdating ? setupPlaceholderWithOldValues() : setupDefaultPlaceholder()
     }
 
     
     //MARK:- IBActions
     
     @IBAction func nextButtonTapped(_ sender: Any) {
+        presenter.isUpdating ? updateData() : classicWay()
+    }
+    
+    
+    //MARK:- Main
+    
+    private func updateData() {
+        let priceText = priceTextField.text == "" ? presenter.route.price : Int(priceTextField.text!)!
+        let numberOfSeatsText = numberOfSeatsTextField.text == "" ? presenter.route.numberOfSeats : Int(numberOfSeatsTextField.text!)!
+        if let price = priceText, let numberOfSeats = numberOfSeatsText {
+            presenter.showEditRouteInfoView(price: price, numberOfSeats: numberOfSeats)
+        } else {
+            //MARK:- TODO info błąd
+        }
+    }
+    
+    private func classicWay() {
         if let price = priceTextField.text, let numberOfSeats = numberOfSeatsTextField.text, price != "", numberOfSeats != "" {
-            print(priceTextField.text)
-            presenter.showRouteOptionalDescriptionView(price: Int(price)! , numberOfSeats: Int(numberOfSeats)!)
+            presenter.showEditRouteInfoView(price: Int(price)! , numberOfSeats: Int(numberOfSeats)!)
         } else {
             //MARK:- TODO error
             print("podaj dane")
         }
     }
     
+    private func setupPlaceholderWithOldValues() {
+        priceTextField.placeholder = String(describing: presenter.route.price)
+        numberOfSeatsTextField.placeholder = String(describing: presenter.route.numberOfSeats)
+    }
     
-    //MARK:- Main
-    
-    private func setupTextFields() {
+    private func setupDefaultPlaceholder() {
         priceTextField.placeholder = presenter.pricePlaceholder
         numberOfSeatsTextField.placeholder = presenter.numberOfSeatsPlaceholder
     }

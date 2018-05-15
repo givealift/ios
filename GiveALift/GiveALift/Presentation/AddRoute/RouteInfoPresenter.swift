@@ -19,6 +19,11 @@ final class RouteInfoPresenter: AddRoutePresenter {
         connector?.showRouteOptionalDescriptionView(route: route, isUpdating: false)
     }
     
+    func showEditRouteInfoView(price: Int, numberOfSeats: Int) {
+        updateModel(price: price, numberOfSeats: numberOfSeats)
+        connector?.showPreviuosView()
+    }
+    
     private func updateModel(price: Int, numberOfSeats: Int) {
         route.price = price
         route.numberOfSeats = numberOfSeats

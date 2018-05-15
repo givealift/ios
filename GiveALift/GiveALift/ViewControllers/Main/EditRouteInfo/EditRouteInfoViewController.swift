@@ -24,7 +24,7 @@ class EditRouteInfoViewController: BaseViewController<EditRouteInfoPresenter> {
     }
     
     @IBAction func detalisTapped(_ sender: Any) {
-        
+        presenter.showRouteInfoView()
     }
     
     @IBAction func descriptionTapped(_ sender: Any) {
