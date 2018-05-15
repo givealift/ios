@@ -8,18 +8,10 @@
 
 import Foundation
 
-final class RouteTimePresenter: BasePresenter {
+final class RouteTimePresenter: AddRoutePresenter {
     
     let datePlaceholder = "Wybierz datę odjazdu"
     let timePlaceholder = "Wybierz godzinę odjazdu"
-    
-    private weak var connector: AddRouteConnector?
-    var route: Route
-    
-    init(connector: AddRouteConnector, route: Route, isUpdating: Bool) {
-        self.connector = connector
-        self.route = route
-    }
     
     func showRouteInfoView(departureDate: String, departureTime: String ,indirectDates: [String]) {
         updateModel(departureDate: departureDate, departureTime: departureTime, indirectDates: indirectDates)

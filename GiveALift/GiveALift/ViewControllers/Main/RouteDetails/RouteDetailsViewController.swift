@@ -23,6 +23,8 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var userStackView: UIStackView!
     @IBOutlet weak var reserveButton: GALPinkButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsOwner()

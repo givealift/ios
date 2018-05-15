@@ -33,8 +33,8 @@ extension AddRouteConnector: AddRouteConnectorDelegate {
     }
     
     func showAddRouteView(route: Route, isUpdating: Bool) {
-        let presenter = AddRoutePresenter(connector: self, route: route, isUpdating: isUpdating)
-        let view = AddRouteViewController(presenter: presenter)
+        let presenter = MainRoutePresenter(connector: self, route: route, isUpdating: isUpdating)
+        let view = MainRouteViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
     

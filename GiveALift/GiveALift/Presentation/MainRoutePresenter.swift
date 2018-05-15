@@ -8,22 +8,12 @@
 
 import Foundation
 
-final class MainRoutePresenter {
-    
-    private weak var connector: AddRouteConnectorDelegate?
-    var route: Route
-    var isUpdating: Bool
+final class MainRoutePresenter: AddRoutePresenter {
     
     let fromTextFieldPlaceholder = "Wprowadź miasto startowe"
     let fromLocationPlaceholder = "Podaj miejsce spotkania"
     let toTextFieldPlaceholder = "Wproawdź miasto docelowe"
     let toLocationPlaceholder = "Podaj miejsce docelowe"
-    
-    init(connector: AddRouteConnectorDelegate, route: Route, isUpdating: Bool) {
-        self.connector = connector
-        self.route = route
-        self.isUpdating = isUpdating
-    }
     
     func showIndirectionView(fromCityId: Int, fromLocation: String, toCityId: Int, toLocation: String) {
         if isUpdating {
