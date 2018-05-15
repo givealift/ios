@@ -11,7 +11,7 @@ import Foundation
 struct Route: Codable {
     var routeId, ownerId: Int!
     var from, to: Location!
-    var stops: [Location]?
+    var stops: [Location]!
     var numberOfSeats, numberOfOccupiedSeats, price: Int!
     var description: String?
 }

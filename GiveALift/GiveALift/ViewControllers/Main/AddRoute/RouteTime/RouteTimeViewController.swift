@@ -15,6 +15,7 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter>, UITex
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var stackViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var finishTime: UITextField!
     
     //MARK:- Constants
     private let datePicker = UIDatePicker()
@@ -37,7 +38,8 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter>, UITex
         self.view.backgroundColor = UIColor.cyan
         self.hideKeyboardWhenTappedAround()
         setupDatePicker()
-        setupTimePicker()
+        setupTimePicker(textField: timeTextField)
+        setupTimePicker(textField: finishTime)
         setupTextFields()
         addTextFieldsIfNeeded()
     }
@@ -47,8 +49,10 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter>, UITex
     
     @IBAction func nextTapped(_ sender: Any) {
         let indirectDates = indirectionsTextField.filter({!(($0.text == nil)||($0.text == ""))}).map({$0.text!})
-        if let date = dateTextField.text, date != "", let time = timeTextField.text, time != "", indirectDates.count == indirectionsTextField.count {
-            presenter.showRouteInfoView(departureDate: "2018-05-08", departureTime: "21:15", indirectDates: indirectDates)
+        if let date = dateTextField.text, date != "", let time = timeTextField.text, time != "", indirectDates.count == indirectionsTextField.count, let finishTime = finishTime.text, finishTime != "" {
+            presenter.showRouteInfoView(departureDate: date, departureTime: time, finishTime: finishTime, indirectDates: indirectDates)
+        } else {
+            //MARK:- TODO wyśietlić błąd
         }
     }
     
@@ -66,8 +70,10 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter>, UITex
     private func setupTextFields() {
         dateTextField.placeholder = presenter.datePlaceholder
         timeTextField.placeholder = presenter.timePlaceholder
+        finishTime.placeholder = presenter.finishPlaceholder
         dateTextField.delegate = self
         timeTextField.delegate = self
+        finishTime.delegate = self
     }
     
     private func setupDatePicker() {
@@ -80,14 +86,14 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter>, UITex
         dateTextField.inputView = datePicker
     }
     
-    private func setupTimePicker() {
+    private func setupTimePicker(textField: UITextField) {
         timePicker.datePickerMode = .time
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(timePickerDoneTapped))
         toolbar.setItems([doneButton], animated: false)
-        timeTextField.inputAccessoryView = toolbar
-        timeTextField.inputView = timePicker
+        textField.inputAccessoryView = toolbar
+        textField.inputView = timePicker
     }
     
     private func addInditectionTextfield() {

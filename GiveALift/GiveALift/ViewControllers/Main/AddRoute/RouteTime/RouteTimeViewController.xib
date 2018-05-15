@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteTimeViewController" customModule="GiveALift" customModuleProvider="target">
             <connections>
                 <outlet property="dateTextField" destination="ucL-it-MOG" id="hk3-II-dkW"/>
+                <outlet property="finishTime" destination="2dz-EJ-ygj" id="gH5-Xx-flx"/>
                 <outlet property="stackView" destination="jbp-ia-iWP" id="jdr-H1-JYU"/>
                 <outlet property="stackViewHeightConstraint" destination="wCa-jC-xBc" id="cJI-px-Kg8"/>
                 <outlet property="timeTextField" destination="ijr-Vy-gOV" id="hHM-gw-jxR"/>
@@ -28,19 +29,25 @@
                     <rect key="frame" x="50" y="233.5" width="275" height="200"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucL-it-MOG" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="275" height="53.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="35"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ijr-Vy-gOV" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="73.5" width="275" height="53"/>
+                            <rect key="frame" x="0.0" y="55" width="275" height="35"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2dz-EJ-ygj">
+                            <rect key="frame" x="0.0" y="110" width="275" height="35"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlh-Ag-srN">
-                            <rect key="frame" x="0.0" y="146.5" width="275" height="53.5"/>
+                            <rect key="frame" x="0.0" y="165" width="275" height="35"/>
                             <state key="normal" title="Dalej"/>
                             <connections>
                                 <action selector="nextTapped:" destination="-1" eventType="touchUpInside" id="zjb-bi-zrs"/>

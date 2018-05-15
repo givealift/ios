@@ -24,6 +24,7 @@ final class IndirectionsPresenter: AddRoutePresenter {
     }
     
     private func updateModel(indirectCitys: [Int], indirectLocations: [String]) {
+        if indirectCitys.count == 0 { route.stops = [] }
         for i in 0..<indirectCitys.count {
             var route = Route()
             var routeLocation = Location()

@@ -81,4 +81,9 @@ final class LocalStorageManager: LocalStorage {
         return userDefaults.value(forKey: LocalStorageKeys.email) as? String
     }
     
+    func removeAllData() {
+        guard let appDomain = Bundle.main.bundleIdentifier else { return }
+        userDefaults.removePersistentDomain(forName: appDomain)
+    }
+    
 }

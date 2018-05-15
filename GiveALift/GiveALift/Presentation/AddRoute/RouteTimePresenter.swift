@@ -12,19 +12,18 @@ final class RouteTimePresenter: AddRoutePresenter {
     
     let datePlaceholder = "Wybierz datę odjazdu"
     let timePlaceholder = "Wybierz godzinę odjazdu"
+    let finishPlaceholder = "Wybierz godzinę przyjazdu"
     
-    
-    
-    func showRouteInfoView(departureDate: String, departureTime: String ,indirectDates: [String]) {
-        updateModel(departureDate: departureDate, departureTime: departureTime, indirectDates: indirectDates)
+    func showRouteInfoView(departureDate: String, departureTime: String, finishTime: String ,indirectDates: [String]) {
+        updateModel(departureDate: departureDate, departureTime: departureTime, finishTime: finishTime, indirectDates: indirectDates)
         connector?.showRouteInfoView(route: route, isUpdating: false)
     }
     
-    private func updateModel(departureDate: String, departureTime: String, indirectDates: [String]) {
+    private func updateModel(departureDate: String, departureTime: String,finishTime: String ,indirectDates: [String]) {
         route.from.date = departureDate + " " + departureTime
-        route.to.date = "2018-05-08 23:15"
+        route.to.date = departureDate + " " + finishTime
         for i in 0 ..< indirectDates.count {
-            route.stops?[i].date = departureDate + indirectDates[i]
+            route.stops[i].date = departureDate + indirectDates[i]
         }
     }
 }

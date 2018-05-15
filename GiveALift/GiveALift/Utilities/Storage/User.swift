@@ -46,4 +46,9 @@ final class User {
         storage.setGender(userInfo.gender)
         isLogIn = true
     }
+    
+    func logOut() {
+        storage.removeAllData()
+        isLogIn = false
+    }
 }

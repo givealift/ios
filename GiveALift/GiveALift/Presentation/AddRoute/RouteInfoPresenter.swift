@@ -27,5 +27,6 @@ final class RouteInfoPresenter: AddRoutePresenter {
     private func updateModel(price: Int, numberOfSeats: Int) {
         route.price = price
         route.numberOfSeats = numberOfSeats
+        route.numberOfOccupiedSeats = 0
     }
 }

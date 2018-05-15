@@ -21,7 +21,7 @@ class MainRouteViewController: AddRouteViewController<MainRoutePresenter> {
     override func viewDidLoad() {
         self.hideKeyboardWhenTappedAround()
         presenter.isUpdating ? setPlaceholderWithOldValues() : setDefaultPlaceholder()
-        nextButton.titleLabel?.text = presenter.isUpdating ? "Gotowe" : "Dalej"
+        presenter.isUpdating ? nextButton.setTitle("Gotowe",for: .normal) : nextButton.setTitle("Dalej",for: .normal)
     }
     
     @IBAction func nextTapped(_ sender: Any) {
@@ -36,7 +36,6 @@ class MainRouteViewController: AddRouteViewController<MainRoutePresenter> {
             presenter.showIndirectionView(fromCityId: fromCityId, fromLocation: from, toCityId: toCityId, toLocation: to)
         } else {
             //MARK:- TODO info o niepodanych danych
-            presenter.showIndirectionView(fromCityId: 1, fromLocation: "dsa", toCityId: 3, toLocation: "23")
         }
     }
     

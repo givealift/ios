@@ -14,6 +14,7 @@ class RouteInfoViewController: AddRouteViewController<RouteInfoPresenter>, UITex
     
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var numberOfSeatsTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     
     //MARK:- VC's life cycle
@@ -23,6 +24,7 @@ class RouteInfoViewController: AddRouteViewController<RouteInfoPresenter>, UITex
         self.hideKeyboardWhenTappedAround()
         setupKeyboards()
         presenter.isUpdating ? setupPlaceholderWithOldValues() : setupDefaultPlaceholder()
+        presenter.isUpdating ? nextButton.setTitle("Gotowe",for: .normal) : nextButton.setTitle("Dalej",for: .normal)
     }
 
     
@@ -47,7 +49,7 @@ class RouteInfoViewController: AddRouteViewController<RouteInfoPresenter>, UITex
     
     private func classicWay() {
         if let price = priceTextField.text, let numberOfSeats = numberOfSeatsTextField.text, price != "", numberOfSeats != "" {
-            presenter.showEditRouteInfoView(price: Int(price)! , numberOfSeats: Int(numberOfSeats)!)
+            presenter.showRouteOptionalDescriptionView(price: Int(price)! , numberOfSeats: Int(numberOfSeats)!)
         } else {
             //MARK:- TODO error
             print("podaj dane")
