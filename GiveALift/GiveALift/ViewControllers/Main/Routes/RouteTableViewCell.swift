@@ -19,7 +19,12 @@ class RouteTableViewCell: UITableViewCell {
     @IBOutlet weak var toHour: UILabel!
     @IBOutlet weak var numberOfSeats: UILabel!
     @IBOutlet weak var price: UILabel!
-    
+    @IBOutlet weak var fromIndirectStackView: UIStackView!
+    @IBOutlet weak var fromIndirectCity: UILabel!
+    @IBOutlet weak var fromIndirectHour: UILabel!
+    @IBOutlet weak var toIndirectStackView: UIStackView!
+    @IBOutlet weak var toIndirectCity: UILabel!
+    @IBOutlet weak var toIndirectHour: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,15 +34,31 @@ class RouteTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupCell(route: CellRouteData) {
+    func setupCell(route: CellRouteData, fromCityID: Int, toCityID: Int) {
         userName.text = route.userInfo.firstName
-        rate.text = "Ocena: \(String(describing: route.userInfo.rate!)).0/5.0"
-        from.text = "Warszawa"
+        rate.text = "Ocena: \(String(describing: route.userInfo.rate)).0/5.0"
         fromHour.text = "\(route.routeInfo.from.date.extractHourString())"
-        userProfileImage.image = #imageLiteral(resourceName: "background1")
-        to.text = "Kraków"
+        userProfileImage.image = #imageLiteral(resourceName: "logo-2")
         toHour.text = "\(route.routeInfo.to.date.extractHourString())"
-        price.text = String(describing: route.routeInfo.price) + " zł"
+        price.text = String(describing: route.routeInfo.price!) + " zł"
         numberOfSeats.text = "Miejsca: " +  String(describing: route.routeInfo.numberOfSeats - route.routeInfo.numberOfOccupiedSeats)
+        checkIfStopIsMainRoute(route: route, fromCityID: fromCityID, toCityID: toCityID)
+    }
+    
+    private func checkIfStopIsMainRoute(route: CellRouteData, fromCityID: Int, toCityID: Int) {
+        from.text = route.routeInfo.from.city.cityID.name()
+        if route.routeInfo.from.city.cityID != fromCityID {
+            let stop = route.routeInfo.stops.first(where: {$0.city.cityID == fromCityID})
+            fromIndirectStackView.isHidden = false
+            fromIndirectCity.text = stop?.city.cityID.name()
+            fromIndirectHour.text = stop?.date.extractHourString()
+        }
+        to.text = route.routeInfo.to.city.cityID.name()
+        if route.routeInfo.to.city.cityID != toCityID {
+            let stop = route.routeInfo.stops.first(where: {$0.city.cityID == toCityID})
+            toIndirectStackView.isHidden = false
+            toIndirectCity.text = stop?.city.cityID.name()
+            toIndirectHour.text = stop?.date.extractHourString()
+        }
     }
 }

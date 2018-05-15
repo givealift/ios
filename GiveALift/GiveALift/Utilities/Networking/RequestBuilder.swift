@@ -62,6 +62,8 @@ final class RequestBuilder: RequestBuilderType {
         if let authToken = authToken {
             let header = "Authorization"
             request.addValue("Bearer " + authToken, forHTTPHeaderField: header)
+            print("*******************")
+            print("Bearer " + authToken)
         }
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -88,6 +90,8 @@ final class RequestBuilder: RequestBuilderType {
         if let authToken = authToken {
             let header = "Authorization"
             request.addValue("Bearer " + authToken, forHTTPHeaderField: header)
+            print("*******************")
+            print("Bearer " + authToken)
         }
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

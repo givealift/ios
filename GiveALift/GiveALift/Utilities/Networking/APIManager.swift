@@ -6,7 +6,7 @@
 //  Copyright © 2018 Marcin Włoczko. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class APIManager: APIManagerType {
     

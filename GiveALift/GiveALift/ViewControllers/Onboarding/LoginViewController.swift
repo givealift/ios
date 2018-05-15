@@ -10,8 +10,8 @@ import UIKit
 
 final class LoginViewController: UIViewController {
 
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: GALTextField!
+    @IBOutlet weak var emailTextField: GALTextField!
     
     weak var connector: RootConnectorDelegate?
     private let onboardingService = OnboardingService()

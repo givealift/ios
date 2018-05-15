@@ -29,6 +29,6 @@ final class HomePresenter: BasePresenter {
     }
     
     private func prepareUserInfo() -> GALUserInfo {
-        return GALUserInfo(address: "", birthYear: 19, email: User.shared.email!, firstName: User.shared.firstName!, gender: User.shared.gender!, lastName: User.shared.lastName!, phone: User.shared.phoneNumber!, rate: 0)
+        return GALUserInfo(address: "", birthYear: Date(), email: User.shared.email!, firstName: User.shared.firstName!, lastName: User.shared.lastName!, gender: User.shared.gender!, phone: User.shared.phoneNumber!, rate: 0)
     }
 }

@@ -57,6 +57,7 @@ final class OnboardingService {
                 do  {
                     print(String(data: result, encoding: String.Encoding.utf8))
                     let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
                     let userInfo = try decoder.decode(GALUserInfo.self, from: result)
                     DispatchQueue.main.async {
                         self?.delegate?.onboardingService(user: user, result: userInfo)

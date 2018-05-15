@@ -30,8 +30,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQy-MB-C85">
-                    <rect key="frame" x="158" y="419" width="59" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQy-MB-C85" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
+                    <rect key="frame" x="157.5" y="419" width="60" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZsN-K5-TcZ"/>
+                        <constraint firstAttribute="width" constant="60" id="paq-af-Zn2"/>
+                    </constraints>
                     <state key="normal" title="Zakończ"/>
                     <connections>
                         <action selector="finishTapped:" destination="-1" eventType="touchUpInside" id="SJZ-Dc-E3x"/>

@@ -25,14 +25,14 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gRf-sx-PjK">
                     <rect key="frame" x="50" y="233.5" width="275" height="200"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdN-fF-A7t">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdN-fF-A7t" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="275" height="100"/>
                             <state key="normal" title="Dodaj przystanek"/>
                             <connections>
                                 <action selector="addIndirectionTapped:" destination="-1" eventType="touchUpInside" id="faI-AL-6vp"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gob-oD-T5j">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gob-oD-T5j" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="100" width="275" height="100"/>
                             <state key="normal" title="Dalej"/>
                             <connections>

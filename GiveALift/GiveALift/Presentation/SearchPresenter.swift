@@ -13,7 +13,13 @@ final class SearchPresenter: BasePresenter {
     fileprivate let requestBuilder: RequestBuilderType
     fileprivate let urlBuilder: URLBuilderType
     fileprivate weak var connector: SearchConnectorDelegate?
-    private var cellRouteData = [CellRouteData]()
+    private var from: Int!
+    private var to: Int!
+    private var cellRouteData = [CellRouteData]() {
+        didSet {
+            self.checkProgress()
+        }
+    }
     private var routes = [Route]()
     
     // MARK: Initializers
@@ -25,7 +31,9 @@ final class SearchPresenter: BasePresenter {
     }
     
     func findRoutesFor(from: Int, to: Int, date: String) {
-        requestBuilder.GETRequest(withURL: urlBuilder.searchRouteURL(from: from, to: to, date: date), authToken: User.shared.token) { [weak self] (result) in
+        self.from = from
+        self.to = to
+        requestBuilder.GETRequest(withURL: urlBuilder.searchRouteURL(from: from, to: to, date: date), authToken: nil) { [weak self] (result) in
             switch result {
             case .Error(error: let error):
                 print(error)
@@ -53,12 +61,13 @@ final class SearchPresenter: BasePresenter {
     }
     
     func getUserInfo(route: Route) {
-        requestBuilder.GETRequest(withURL: urlBuilder.userInfoURL(id: route.ownerId), authToken: User.shared.token) { [weak self] (result) in
+        requestBuilder.GETRequest(withURL: urlBuilder.userPublicInfoURL(id: route.ownerId), authToken: nil) { [weak self] (result) in
             switch result {
             case .Error(error: let error):
                 print(error)
             case .Success(result: let result):
                 let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
                 do {
                     let userInfo = try decoder.decode(GALUserInfo.self, from: result)
                     DispatchQueue.main.async {
@@ -66,16 +75,13 @@ final class SearchPresenter: BasePresenter {
                     }
                 } catch {
                     print(error)
+                    fatalError("Decoding  failed")
                 }
             }
         }
     }
     
     func displayRoutesView() {
-        let userInfo = GALUserInfo(address: "", birthYear: 1960, email: "mwloczko@gmail.com", firstName: "Marcin", gender: "male", lastName: "Włoczko", phone: "12312415", rate: 5)
-        let location = Location(city: City(cityID: 1, name: "wa", country: "Pols", province: "dsa", cityInfo: CityInfo(cityInfoID: 1, population: 1, citySize: 1)), placeOfMeeting: "Kabanos", date: "2018-05-14 17:00", localizationId: 1)
-        let routeInfo = Route(routeId: 13, ownerId: 23, from: location, to: location, stops: [], numberOfSeats: 4, numberOfOccupiedSeats: 1, price: 20, description: nil)
-        let cellRoutesssData = CellRouteData(userInfo: userInfo, routeInfo: routeInfo)
-        connector?.showRoutesView(routes: [cellRoutesssData])
+        connector?.showRoutesView(routes: cellRouteData, fromCityID: from, toCityID: to)
     }
 }

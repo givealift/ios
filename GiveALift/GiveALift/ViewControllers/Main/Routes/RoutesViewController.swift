@@ -30,7 +30,7 @@ class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RouteTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.setupCell(route: presenter.routes[indexPath.row])
+        cell.setupCell(route: presenter.routes[indexPath.row], fromCityID: presenter.fromCityID, toCityID: presenter.toCityID)
         return cell
     }
     

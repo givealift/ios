@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,31 +19,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Qd-fA-W1F">
-                                <rect key="frame" x="20" y="200" width="335" height="267"/>
+                                <rect key="frame" x="40" y="278.5" width="295" height="110"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vg-kV-Kzk">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="123.5"/>
-                                        <state key="normal" title="Log in"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vg-kV-Kzk" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="45"/>
+                                        <state key="normal" title="Logowanie"/>
                                         <connections>
                                             <action selector="loginTapped:" destination="ANg-lt-n86" eventType="touchUpInside" id="dTb-QR-0RA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-t4-Ktn">
-                                        <rect key="frame" x="0.0" y="143.5" width="335" height="123.5"/>
-                                        <state key="normal" title="Register"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-t4-Ktn" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="65" width="295" height="45"/>
+                                        <state key="normal" title="Rejestracja"/>
                                         <connections>
                                             <action selector="registerTapped:" destination="ANg-lt-n86" eventType="touchUpInside" id="Hoh-YX-O07"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="q2u-jo-Wgn"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4Qd-fA-W1F" firstAttribute="centerY" secondItem="kIt-bG-RVb" secondAttribute="centerY" id="Acy-nX-TgM"/>
-                            <constraint firstItem="4Qd-fA-W1F" firstAttribute="leading" secondItem="Mx9-HH-Si7" secondAttribute="leading" constant="20" id="Id5-Db-BTk"/>
-                            <constraint firstItem="Mx9-HH-Si7" firstAttribute="trailing" secondItem="4Qd-fA-W1F" secondAttribute="trailing" constant="20" id="NiQ-Mc-ndi"/>
-                            <constraint firstItem="4Qd-fA-W1F" firstAttribute="height" secondItem="kIt-bG-RVb" secondAttribute="height" multiplier="0.4" id="W3N-v3-0eH"/>
+                            <constraint firstItem="4Qd-fA-W1F" firstAttribute="leading" secondItem="Mx9-HH-Si7" secondAttribute="leading" constant="40" id="Id5-Db-BTk"/>
+                            <constraint firstItem="Mx9-HH-Si7" firstAttribute="trailing" secondItem="4Qd-fA-W1F" secondAttribute="trailing" constant="40" id="NiQ-Mc-ndi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mx9-HH-Si7"/>
                     </view>
@@ -70,7 +71,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfS-r0-50B">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfS-r0-50B" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="xSU-Lz-TYt"/>
@@ -109,29 +110,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xMs-LZ-D4u">
-                                <rect key="frame" x="20" y="278" width="335" height="110"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xMs-LZ-D4u">
+                                <rect key="frame" x="20" y="258" width="335" height="150"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eTh-KR-a7s">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eTh-KR-a7s" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35m-DY-0EV">
-                                        <rect key="frame" x="0.0" y="40" width="335" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35m-DY-0EV" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55" width="335" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-I4-Eun">
-                                        <rect key="frame" x="0.0" y="80" width="335" height="30"/>
-                                        <state key="normal" title="Login"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-I4-Eun" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="110" width="335" height="40"/>
+                                        <state key="normal" title="Zaloguj się"/>
                                         <connections>
                                             <action selector="loginTapped:" destination="dT0-lB-LTy" eventType="touchUpInside" id="JAb-kt-1tE"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="eFU-JW-Rmg"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
