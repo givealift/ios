@@ -11,21 +11,23 @@ import Foundation
 final class AddRoutePresenter: BasePresenter {
     
     private weak var connector: AddRouteConnectorDelegate?
-    private var route: Route
+    var route: Route
+    var isUpdating: Bool
     
     let fromTextFieldPlaceholder = "Wprowadź miasto startowe"
     let fromLocationPlaceholder = "Podaj miejsce spotkania"
     let toTextFieldPlaceholder = "Wproawdź miasto docelowe"
     let toLocationPlaceholder = "Podaj miejsce docelowe"
     
-    init(connector: AddRouteConnectorDelegate) {
+    init(connector: AddRouteConnectorDelegate, route: Route, isUpdating: Bool) {
         self.connector = connector
-        self.route = Route()
+        self.route = route
+        self.isUpdating = isUpdating
     }
     
     func showIndirectionView(fromCityId: Int, fromLocation: String, toCityId: Int, toLocation: String) {
         updateModel(fromCityId: fromCityId, fromLocation: fromLocation, toCityId: toCityId, toLocation: toLocation)
-        connector?.showIndirectionsView(route: route)
+        connector?.showIndirectionsView(route: route, isUpdating: false)
     }
     
     private func updateModel(fromCityId: Int, fromLocation: String, toCityId: Int, toLocation: String) {

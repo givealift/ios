@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditRouteInfoViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditRouteInfoViewController" customModule="GiveALift" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -15,7 +19,76 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wybierz co chcesz edytować" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pni-rm-Pij">
+                    <rect key="frame" x="15" y="35" width="345" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="2bm-q8-who"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PAo-zJ-WHP">
+                    <rect key="frame" x="15" y="100" width="345" height="280"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kml-9D-emB">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="46.5"/>
+                            <state key="normal" title="Główną trasę"/>
+                            <connections>
+                                <action selector="mainRouteTapped:" destination="-1" eventType="touchUpInside" id="ofO-t3-G8a"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncP-gA-1Kg">
+                            <rect key="frame" x="0.0" y="46.5" width="345" height="47"/>
+                            <state key="normal" title="Przystanki "/>
+                            <connections>
+                                <action selector="indirectsTapped:" destination="-1" eventType="touchUpInside" id="yGx-Dx-9KV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oig-14-IOt">
+                            <rect key="frame" x="0.0" y="93.5" width="345" height="46.5"/>
+                            <state key="normal" title="Datę i godzinę"/>
+                            <connections>
+                                <action selector="dateTapped:" destination="-1" eventType="touchUpInside" id="vL9-cM-v8V"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEj-Oy-IQZ">
+                            <rect key="frame" x="0.0" y="140" width="345" height="46.5"/>
+                            <state key="normal" title="Cenę i ilość miejsc "/>
+                            <connections>
+                                <action selector="detalisTapped:" destination="-1" eventType="touchUpInside" id="T5W-Vk-aBA"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlh-LV-gJH">
+                            <rect key="frame" x="0.0" y="186.5" width="345" height="47"/>
+                            <state key="normal" title="Opis"/>
+                            <connections>
+                                <action selector="descriptionTapped:" destination="-1" eventType="touchUpInside" id="Aoo-pN-ZtB"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtP-zm-de2">
+                            <rect key="frame" x="0.0" y="233.5" width="345" height="46.5"/>
+                            <state key="normal" title="Usuń przejazd"/>
+                            <connections>
+                                <action selector="deleteTapped:" destination="-1" eventType="touchUpInside" id="C9N-69-ggl"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="280" id="Rto-Se-rSK"/>
+                    </constraints>
+                </stackView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pni-rm-Pij" secondAttribute="trailing" constant="15" id="3D2-Mr-io7"/>
+                <constraint firstItem="pni-rm-Pij" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="GMl-KR-gCI"/>
+                <constraint firstItem="PAo-zJ-WHP" firstAttribute="top" secondItem="pni-rm-Pij" secondAttribute="bottom" constant="15" id="OuX-Lg-Ye9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PAo-zJ-WHP" secondAttribute="trailing" constant="15" id="qlq-J8-ARs"/>
+                <constraint firstItem="PAo-zJ-WHP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="rvW-6e-kv8"/>
+                <constraint firstItem="pni-rm-Pij" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="xOQ-g0-YFj"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>

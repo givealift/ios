@@ -17,14 +17,14 @@ final class RouteInfoPresenter: BasePresenter {
     private weak var connector: AddRouteConnectorDelegate?
     private var route: Route
     
-    init(connector: AddRouteConnectorDelegate, route: Route) {
+    init(connector: AddRouteConnectorDelegate, route: Route, isUpdating: Bool) {
         self.connector = connector
         self.route = route
     }
     
     func showRouteOptionalDescriptionView(price: Int, numberOfSeats: Int) {
         updateModel(price: price, numberOfSeats: numberOfSeats)
-        connector?.showRouteOptionalDescriptionView(route: route)
+        connector?.showRouteOptionalDescriptionView(route: route, isUpdating: false)
     }
     
     private func updateModel(price: Int, numberOfSeats: Int) {

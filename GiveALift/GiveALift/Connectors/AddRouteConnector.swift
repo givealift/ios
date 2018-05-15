@@ -9,11 +9,12 @@
 import UIKit
 
 protocol AddRouteConnectorDelegate: class {
-    func showRouteTimeView(route: Route)
-    func showIndirectionsView(route: Route)
-    func showRouteInfoView(route: Route)
-    func showRouteOptionalDescriptionView(route: Route)
+    func showRouteTimeView(route: Route, isUpdating: Bool)
+    func showIndirectionsView(route: Route, isUpdating: Bool)
+    func showRouteInfoView(route: Route, isUpdating: Bool)
+    func showRouteOptionalDescriptionView(route: Route, isUpdating: Bool)
     func showHomeView()
+    func showAddRouteView(route: Route, isUpdating: Bool)
 }
 
 final class AddRouteConnector {
@@ -22,45 +23,41 @@ final class AddRouteConnector {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        showAddRouteView()
-    }
-    
-    private func showAddRouteView() {
-        let presenter = AddRoutePresenter(connector: self)
-        let view = AddRouteViewController(presenter: presenter)
-        navigationController.pushViewController(view, animated: true)
-    }
-    
-    deinit {
-        print("tersaz")
     }
 }
 
 extension AddRouteConnector: AddRouteConnectorDelegate {
+    
+    func showAddRouteView(route: Route, isUpdating: Bool) {
+        let presenter = AddRoutePresenter(connector: self, route: route, isUpdating: isUpdating)
+        let view = AddRouteViewController(presenter: presenter)
+        navigationController.pushViewController(view, animated: true)
+    }
+    
     func showHomeView() {
         navigationController.popToRootViewController(animated: true)
     }
     
-    func showRouteOptionalDescriptionView(route: Route) {
-        let presenter = RouteOptionalDescriptionPresenter(connector: self, route: route)
+    func showRouteOptionalDescriptionView(route: Route, isUpdating: Bool) {
+        let presenter = RouteOptionalDescriptionPresenter(connector: self, route: route, isUpdating: isUpdating)
         let view = RouteOptionalDescriptionViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
     
-    func showIndirectionsView(route: Route) {
-        let presenter = IndirectionsPresenter(connector: self, route: route)
+    func showIndirectionsView(route: Route, isUpdating: Bool) {
+        let presenter = IndirectionsPresenter(connector: self, route: route, isUpdating: isUpdating)
         let view = IndirectionsViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
     
-    func showRouteTimeView(route: Route) {
-        let presenter = RouteTimePresenter(connector: self, route: route)
+    func showRouteTimeView(route: Route, isUpdating: Bool) {
+        let presenter = RouteTimePresenter(connector: self, route: route, isUpdating: isUpdating)
         let view = RouteTimeViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
     
-    func showRouteInfoView(route: Route) {
-        let presenter = RouteInfoPresenter(connector: self, route: route)
+    func showRouteInfoView(route: Route, isUpdating: Bool) {
+        let presenter = RouteInfoPresenter(connector: self, route: route, isUpdating: isUpdating)
         let view = RouteInfoViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }

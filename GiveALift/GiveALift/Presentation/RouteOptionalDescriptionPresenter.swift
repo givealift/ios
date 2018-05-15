@@ -13,7 +13,7 @@ final class RouteOptionalDescriptionPresenter: BasePresenter {
     private var route: Route
     private weak var connector: AddRouteConnectorDelegate?
     
-    init(connector: AddRouteConnectorDelegate, route: Route) {
+    init(connector: AddRouteConnectorDelegate, route: Route, isUpdating: Bool) {
         self.route = route
         self.connector = connector
     }

@@ -13,7 +13,29 @@ class EditRouteInfoViewController: BaseViewController<EditRouteInfoPresenter> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
+    @IBAction func indirectsTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func dateTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func detalisTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func descriptionTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func deleteTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func mainRouteTapped(_ sender: Any) {
+        presenter.showAddRouteView()
+    }
 }

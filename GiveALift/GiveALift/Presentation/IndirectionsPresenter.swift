@@ -16,14 +16,14 @@ final class IndirectionsPresenter: BasePresenter {
     let indirectTextFieldPlaceHolder = "Wprowadź miasto pośrednie"
     let indirectLocationPlaceholder = "Wprowadź miejsce odbioru"
     
-    init(connector: AddRouteConnectorDelegate, route: Route) {
+    init(connector: AddRouteConnectorDelegate, route: Route, isUpdating: Bool) {
         self.route = route
         self.connector = connector
     }
     
     func showRouteTimeView(indirectCitys: [Int], indirectLocations: [String]) {
         updateModel(indirectCitys: indirectCitys, indirectLocations: indirectLocations)
-        connector?.showRouteTimeView(route: route)
+        connector?.showRouteTimeView(route: route, isUpdating: false)
     }
     
     private func updateModel(indirectCitys: [Int], indirectLocations: [String]) {

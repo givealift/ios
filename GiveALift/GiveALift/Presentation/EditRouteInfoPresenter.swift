@@ -17,4 +17,8 @@ final class EditRouteInfoPresenter: BasePresenter {
         self.connector = connector
         self.route = route
     }
+    
+    func showAddRouteView() {
+        connector?.addRouteConnector?.showAddRouteView(route: route, isUpdating: true)
+    }
 }

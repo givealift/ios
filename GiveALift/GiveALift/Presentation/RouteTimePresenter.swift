@@ -16,14 +16,14 @@ final class RouteTimePresenter: BasePresenter {
     private weak var connector: AddRouteConnector?
     var route: Route
     
-    init(connector: AddRouteConnector, route: Route) {
+    init(connector: AddRouteConnector, route: Route, isUpdating: Bool) {
         self.connector = connector
         self.route = route
     }
     
     func showRouteInfoView(departureDate: String, departureTime: String ,indirectDates: [String]) {
         updateModel(departureDate: departureDate, departureTime: departureTime, indirectDates: indirectDates)
-        connector?.showRouteInfoView(route: route)
+        connector?.showRouteInfoView(route: route, isUpdating: false)
     }
     
     private func updateModel(departureDate: String, departureTime: String, indirectDates: [String]) {

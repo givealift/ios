@@ -22,11 +22,7 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
     override func viewDidLoad() {
         self.view.backgroundColor = .red
         self.hideKeyboardWhenTappedAround()
-        setupTextFields()
-    }
-    
-    override func viewDidLayoutSubviews() {
-       // fromTextfield.setBottomLine()
+        presenter.isUpdating ? setPlaceholderWithOldValues()() : setDefaultPlaceholder()()
     }
 
     //MARK:- IBActions
@@ -42,10 +38,14 @@ final class AddRouteViewController: BaseViewController<AddRoutePresenter>, UITex
     }
     
     //MARK:- Main
-    private func setupTextFields() {
+    private func setDefaultPlaceholder() {
         fromTextfield.placeholder = presenter.fromTextFieldPlaceholder
         toTextField.placeholder = presenter.toTextFieldPlaceholder
         toLocationTextField.placeholder = presenter.toLocationPlaceholder
         fromLocationTextField.placeholder = presenter.fromLocationPlaceholder
+    }
+    
+    private func setPlaceholderWithOldValues() {
+        
     }
 }
