@@ -17,4 +17,8 @@ final class RouteDetailsPresenter: BasePresenter {
         self.connector = connector
         self.route = route
     }
+    
+    func showUserInfoView() {
+        connector?.showUserInfoView(userData: route.userInfo)
+    }
 }

@@ -12,7 +12,7 @@ protocol RootConnectorDelegate: class {
     func showAddRouteView()
     func showSearchView()
     func showHomeView()
-    func showUserInfoView()
+    func showUserInfoView(userData: GALUserInfo)
     func showPreLoginView()
 }
 
@@ -41,8 +41,9 @@ final class RootConnector {
 }
 
 extension RootConnector: RootConnectorDelegate {
-    func showUserInfoView() {
+    func showUserInfoView(userData: GALUserInfo) {
         self.userInfoConnector = UserInfoConnector(navigationController: self.navigationController)
+        userInfoConnector?.showUserInfoView(userData: userData, editModeEnabled: true)
     }
     
     func showPreLoginView() {

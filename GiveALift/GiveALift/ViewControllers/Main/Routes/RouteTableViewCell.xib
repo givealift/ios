@@ -35,7 +35,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jv6-Fj-PnP">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo-2" translatesAutoresizingMaskIntoConstraints="NO" id="Jv6-Fj-PnP">
                                                 <rect key="frame" x="0.0" y="44" width="43.5" height="44.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Jv6-Fj-PnP" secondAttribute="height" multiplier="1:1" id="Tvy-X0-Oqq"/>
@@ -126,4 +126,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="logo-2" width="543" height="543"/>
+    </resources>
 </document>

@@ -25,6 +25,10 @@ final class HomePresenter: BasePresenter {
     }
     
     func showUserInfoView() {
-        connectorDelegate?.showUserInfoView()
+        connectorDelegate?.showUserInfoView(userData: prepareUserInfo())
+    }
+    
+    private func prepareUserInfo() -> GALUserInfo {
+        return GALUserInfo(address: "", birthYear: 19, email: User.shared.email!, firstName: User.shared.firstName!, gender: User.shared.gender!, lastName: User.shared.lastName!, phone: User.shared.phoneNumber!, rate: 0)
     }
 }

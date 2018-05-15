@@ -11,8 +11,12 @@ import Foundation
 final class UserInfoPresenter: BasePresenter {
  
     private weak var connector: UserInfoConnectorDelegate?
+    let editModeEnabled: Bool
+    let userData: GALUserInfo
     
-    init(connector: UserInfoConnectorDelegate) {
+    init(connector: UserInfoConnectorDelegate, userData: GALUserInfo, editModeEnabled: Bool) {
         self.connector = connector
+        self.editModeEnabled = editModeEnabled
+        self.userData = userData
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 protocol SearchConnectorDelegate: class {
     func showRoutesView(routes: [CellRouteData])
     func showRouteDetailsView(route: CellRouteData)
+    func showUserInfoView(userData: GALUserInfo)
 }
 
 final class SearchConnector {
@@ -40,5 +41,10 @@ extension SearchConnector: SearchConnectorDelegate {
         let presenter = RouteDetailsPresenter(connector: self, route: route)
         let view = RouteDetailsViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
+    }
+    
+    func showUserInfoView(userData: GALUserInfo) {
+        let connector = UserInfoConnector(navigationController: self.navigationController)
+        connector.showUserInfoView(userData: userData, editModeEnabled: false)
     }
 }

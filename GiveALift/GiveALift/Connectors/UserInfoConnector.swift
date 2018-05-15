@@ -9,6 +9,7 @@
 import UIKit
 
 protocol UserInfoConnectorDelegate: class {
+    func showUserInfoView(userData: GALUserInfo ,editModeEnabled: Bool)
 }
 
 final class UserInfoConnector {
@@ -17,16 +18,14 @@ final class UserInfoConnector {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        showUserInfoView()
-    }
-    
-    private func showUserInfoView() {
-        let presenter = UserInfoPresenter(connector: self)
-        let view = UserInfoViewController(presenter: presenter)
-        navigationController.present(view, animated: true, completion: nil)
     }
 }
 
 
 extension UserInfoConnector: UserInfoConnectorDelegate {
+    func showUserInfoView(userData: GALUserInfo ,editModeEnabled: Bool) {
+        let presenter = UserInfoPresenter(connector: self,userData: userData ,editModeEnabled: editModeEnabled)
+        let view = UserInfoViewController(presenter: presenter)
+        navigationController.present(view, animated: true, completion: nil)
+    }
 }

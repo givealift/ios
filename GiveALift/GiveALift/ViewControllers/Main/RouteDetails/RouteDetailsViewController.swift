@@ -21,6 +21,6 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
     }
     
     @IBAction func reserveTapped(_ sender: Any) {
-        
+        presenter.showUserInfoView()
     }
 }
