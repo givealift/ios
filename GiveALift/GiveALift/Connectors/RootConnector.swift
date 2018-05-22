@@ -9,11 +9,8 @@
 import UIKit
 
 protocol RootConnectorDelegate: class {
-    func showAddRouteView()
-    func showSearchView()
+    func startOnboardingConnector()
     func showHomeView()
-    func showUserInfoView(userData: GALUserInfo)
-    func showPreLoginView()
 }
 
 final class RootConnector {
@@ -24,6 +21,7 @@ final class RootConnector {
     private var searchConnector: SearchConnectorDelegate?
     private var addRouteConnector: AddRouteConnectorDelegate?
     private var userInfoConnector: UserInfoConnectorDelegate?
+    private var onboardingConnector: OnboardingConnectorDelegate?
     
     init(window: UIWindow) {
         self.window = window
@@ -41,6 +39,10 @@ final class RootConnector {
 }
 
 extension RootConnector: RootConnectorDelegate {
+    func startOnboardingConnector() {
+        self.onboardingConnector = OnboardingConnector(navigationController: self.navigationController)
+    }
+    
     func showUserInfoView(userData: GALUserInfo) {
         self.userInfoConnector = UserInfoConnector(navigationController: self.navigationController)
         userInfoConnector?.showUserInfoView(userData: userData, editModeEnabled: true)

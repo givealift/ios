@@ -31,5 +31,4 @@ class GALTextField: UITextField {
         borderLine.backgroundColor = borderColor
         self.addSubview(borderLine)
     }
-    
 }

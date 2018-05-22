@@ -55,6 +55,8 @@
 		C15CF90220B46518005C1EF7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90120B46518005C1EF7 /* LoginPresenter.swift */; };
 		C15CF90620B46575005C1EF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90420B46575005C1EF7 /* LoginViewController.swift */; };
 		C15CF90720B46575005C1EF7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15CF90520B46575005C1EF7 /* LoginViewController.xib */; };
+		C15CF90920B467FE005C1EF7 /* OnboardingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90820B467FE005C1EF7 /* OnboardingConnector.swift */; };
+		C15CF90B20B4763B005C1EF7 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90A20B4763B005C1EF7 /* TextFieldViewController.swift */; };
 		C1725B2A20A59E8800F64747 /* SearchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2920A59E8800F64747 /* SearchConnector.swift */; };
 		C1725B2C20A5A95F00F64747 /* AddRouteConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */; };
 		C1725B2E20A5AA8D00F64747 /* AddRoutePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */; };
@@ -66,7 +68,6 @@
 		C1725B4320A5FAED00F64747 /* RouteInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B4220A5FAED00F64747 /* RouteInfoPresenter.swift */; };
 		C1725B4620A5FB6600F64747 /* RouteInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B4420A5FB6600F64747 /* RouteInfoViewController.swift */; };
 		C1725B4720A5FB6600F64747 /* RouteInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1725B4520A5FB6600F64747 /* RouteInfoViewController.xib */; };
-		C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C17206966780043DAF7 /* LoginViewController.swift */; };
 		C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C19206966A40043DAF7 /* RegisterViewController.swift */; };
 		C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */; };
 		C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1D20696A390043DAF7 /* UITableViewE.swift */; };
@@ -182,6 +183,8 @@
 		C15CF90120B46518005C1EF7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C15CF90420B46575005C1EF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C15CF90520B46575005C1EF7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		C15CF90820B467FE005C1EF7 /* OnboardingConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingConnector.swift; sourceTree = "<group>"; };
+		C15CF90A20B4763B005C1EF7 /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		C1725B2920A59E8800F64747 /* SearchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConnector.swift; sourceTree = "<group>"; };
 		C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteConnector.swift; sourceTree = "<group>"; };
 		C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutePresenter.swift; sourceTree = "<group>"; };
@@ -193,7 +196,6 @@
 		C1725B4220A5FAED00F64747 /* RouteInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfoPresenter.swift; sourceTree = "<group>"; };
 		C1725B4420A5FB6600F64747 /* RouteInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfoViewController.swift; sourceTree = "<group>"; };
 		C1725B4520A5FB6600F64747 /* RouteInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteInfoViewController.xib; sourceTree = "<group>"; };
-		C1813C17206966780043DAF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1813C19206966A40043DAF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellE.swift; sourceTree = "<group>"; };
 		C1813C1D20696A390043DAF7 /* UITableViewE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewE.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				C1725B3D20A5C74500F64747 /* BaseConnector.swift */,
 				C1725B3F20A5C79500F64747 /* RootConnector.swift */,
 				C130E2B220A99C7F00DC221C /* UserInfoConnector.swift */,
+				C15CF90820B467FE005C1EF7 /* OnboardingConnector.swift */,
 			);
 			path = Connectors;
 			sourceTree = "<group>";
@@ -450,7 +453,6 @@
 			children = (
 				C15CF90320B46562005C1EF7 /* Login */,
 				C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */,
-				C1813C17206966780043DAF7 /* LoginViewController.swift */,
 				C1813C19206966A40043DAF7 /* RegisterViewController.swift */,
 				C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */,
 				C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */,
@@ -646,6 +648,7 @@
 			isa = PBXGroup;
 			children = (
 				C1CFBD802086528B00253375 /* BaseViewController.swift */,
+				C15CF90A20B4763B005C1EF7 /* TextFieldViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -990,6 +993,7 @@
 				C1CFBD9E2086AC4A00253375 /* RoutesViewController.swift in Sources */,
 				C130E2CF20AB331000DC221C /* MainRoutePresenter.swift in Sources */,
 				C1CFBD7B20864D3600253375 /* User.swift in Sources */,
+				C15CF90920B467FE005C1EF7 /* OnboardingConnector.swift in Sources */,
 				C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */,
 				C1CFBD952086826100253375 /* SearchViewController.swift in Sources */,
 				C130E2C620AA2AB800DC221C /* StringE.swift in Sources */,
@@ -1007,9 +1011,9 @@
 				C1725B4320A5FAED00F64747 /* RouteInfoPresenter.swift in Sources */,
 				C10B6D42206A4B790060AF1F /* RegisterCellType.swift in Sources */,
 				C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */,
+				C15CF90B20B4763B005C1EF7 /* TextFieldViewController.swift in Sources */,
 				C130E2C020A9BC2200DC221C /* GALTextField.swift in Sources */,
 				C124DA4420A841D300391A71 /* GALUserLogin.swift in Sources */,
-				C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */,
 				C130E2B320A99C7F00DC221C /* UserInfoConnector.swift in Sources */,
 				C1233D5E2083CD1900BD0A56 /* APIManager.swift in Sources */,
 				C15CF90220B46518005C1EF7 /* LoginPresenter.swift in Sources */,

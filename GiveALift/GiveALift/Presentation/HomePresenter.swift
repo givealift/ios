@@ -17,15 +17,15 @@ final class HomePresenter: BasePresenter {
     }
     
     func showSearchView() {
-        connectorDelegate?.showSearchView()
+        //connectorDelegate?.showSearchView()
     }
     
     func showAddRouteView() {
-        connectorDelegate?.showAddRouteView()
+      //  connectorDelegate?.showAddRouteView()
     }
     
     func showUserInfoView() {
-        connectorDelegate?.showUserInfoView(userData: prepareUserInfo())
+        //connectorDelegate?.showUserInfoView(userData: prepareUserInfo())
     }
     
     private func prepareUserInfo() -> GALUserInfo {

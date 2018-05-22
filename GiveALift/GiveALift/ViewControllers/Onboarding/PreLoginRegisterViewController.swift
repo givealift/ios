@@ -23,7 +23,7 @@ final class PreLoginRegisterViewController: UIViewController {
     @IBAction func loginTapped(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
         let vc : LoginViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        vc.connector = connector
+        //vc.connector = connector
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

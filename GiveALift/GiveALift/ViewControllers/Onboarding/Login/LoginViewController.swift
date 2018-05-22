@@ -8,28 +8,49 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: TextFieldViewController<LoginPresenter> {
 
+    //MARK:- IBOutlets
+    @IBOutlet weak var mailTextField: GALTextField!
+    @IBOutlet weak var passwordTextField: GALTextField!
+    @IBOutlet weak var registerButton: UIButton!
+    
+    //MARK:- VC's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setupTextFields()
+        setupRegisterButton()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK:- IBActions
+    @IBAction func registerTapped(_ sender: Any) {
+        
     }
-    */
-
+    
+    @IBAction func loginTapped(_ sender: Any) {
+        if let email = mailTextField.text, let password = passwordTextField.text, email != "", password != "" {
+            //MARK:- logowanie
+        } else {
+            //MARK:- wyświetlenie info o błędnych danych
+        }
+    }
+    
+    //MARK:- Main
+    
+    private func setupTextFields() {
+        mailTextField.tag = 1
+        passwordTextField.tag = 2
+        mailTextField.placeholder = presenter.mailPlaceholder
+        passwordTextField.placeholder = presenter.passwordPlaceholder
+        mailTextField.keyboardType = .emailAddress
+        passwordTextField.delegate = self
+        mailTextField.delegate = self
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    private func setupRegisterButton() {
+        registerButton.tintColor = UIColor.GALBlue
+    }
 }
+
+

@@ -10,4 +10,12 @@ import Foundation
 
 final class LoginPresenter: BasePresenter {
     
+    private weak var connector: OnboardingConnectorDelegate?
+    
+    let mailPlaceholder = "Twój email"
+    let passwordPlaceholder = "Hasło"
+    
+    init(connector: OnboardingConnectorDelegate) {
+        self.connector = connector
+    }
 }

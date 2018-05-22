@@ -29,9 +29,7 @@ final class FlowCoordinator {
     }
     
     private func presentPreLoginRegisterVC() {
-        connector?.showPreLoginView()
-        //MARK:- TOOD login view
-        //window.rootViewController = preLoginRegisterVC
+        connector?.startOnboardingConnector()
     }
     
     private func presentHomeVC() {
