@@ -32,16 +32,18 @@ class TextFieldViewController<T>: BaseViewController<T>, UITextFieldDelegate whe
     
     func hideErrorMessage() {
         self.errorViewYConstraint.constant = 0
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.4, delay: 1.4, options: .curveEaseOut, animations: {
             self.view.layoutSubviews()
-        }
+        })
     }
     
     func showError(with message: String) {
         errorView.setErrorMessage(message)
         self.errorViewYConstraint.constant = 50
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.4, animations: {
             self.view.layoutSubviews()
+        }) { (_) in
+            self.hideErrorMessage()
         }
     }
     
@@ -56,9 +58,5 @@ class TextFieldViewController<T>: BaseViewController<T>, UITextFieldDelegate whe
         let yConstraint = NSLayoutConstraint(item: errorView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0)
         errorViewYConstraint = yConstraint
         view.addConstraints([leading, trailing, height, yConstraint])
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        hideErrorMessage()
     }
 }

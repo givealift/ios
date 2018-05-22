@@ -10,7 +10,7 @@ import Foundation
 
 protocol OnboardingServiceDelegate: class {
     func onboardingService(error: APIError)
-    func onboardingService(user: GALUserLogin, result: GALUserInfo)
+    func onboardingService(user: GALUserLogin, userInfo: GALUserInfo)
 }
 
 final class OnboardingService {
@@ -60,7 +60,7 @@ final class OnboardingService {
                     decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
                     let userInfo = try decoder.decode(GALUserInfo.self, from: result)
                     DispatchQueue.main.async {
-                        self?.delegate?.onboardingService(user: user, result: userInfo)
+                        self?.delegate?.onboardingService(user: user, userInfo: userInfo)
                     }
                 } catch {
                     print(error)

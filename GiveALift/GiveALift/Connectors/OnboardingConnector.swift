@@ -9,7 +9,7 @@
 import UIKit
 
 protocol OnboardingConnectorDelegate: class {
-    
+    func showHomeView()
 }
 
 final class OnboardingConnector {
@@ -24,10 +24,13 @@ final class OnboardingConnector {
     private func showLoginView() {
         let presenter = LoginPresenter(connector: self)
         let view = LoginViewController(presenter: presenter)
+        presenter.view = view
         navigationController.pushViewController(view, animated: true)
     }
 }
 
 extension OnboardingConnector: OnboardingConnectorDelegate {
-    
+    func showHomeView() {
+        
+    }
 }

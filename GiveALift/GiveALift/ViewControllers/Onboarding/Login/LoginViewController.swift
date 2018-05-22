@@ -24,14 +24,14 @@ class LoginViewController: TextFieldViewController<LoginPresenter> {
     
     //MARK:- IBActions
     @IBAction func registerTapped(_ sender: Any) {
-        showError(with: "siusiak")
+        
     }
     
     @IBAction func loginTapped(_ sender: Any) {
         if let email = mailTextField.text, let password = passwordTextField.text, email != "", password != "" {
-            //MARK:- TODO logowanie
+            presenter.tryToLogIn(email: email, password: password)
         } else {
-            //MARK:- TODO wyświetlenie info o błędnych danych
+            showError(with: presenter.wrongData)
         }
     }
     
@@ -52,4 +52,7 @@ class LoginViewController: TextFieldViewController<LoginPresenter> {
     }
 }
 
+extension LoginViewController: LoginView {
+    
+}
 
