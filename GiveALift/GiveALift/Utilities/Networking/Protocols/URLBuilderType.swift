@@ -15,4 +15,5 @@ protocol URLBuilderType {
     func addRouteURL() -> URL
     func userInfoURL(id: Int) -> URL
     func userPublicInfoURL(id: Int) -> URL
+    func resere(routeID: Int) -> URL
 }

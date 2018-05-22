@@ -21,6 +21,8 @@ final class RouteOptionalDescriptionPresenter: AddRoutePresenter {
     }
     
     private func addRouteToServer() {
+        //let galUserPublicResponse = GalUserPublicResponse(userId: User.shared.userID)
+        //route.galUserPublicResponse = galUserPublicResponse
         route.ownerId = User.shared.userID
         APIManager.shared.addRoute(route: route)
     }

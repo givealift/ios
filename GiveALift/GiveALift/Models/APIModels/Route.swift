@@ -19,7 +19,7 @@ struct Route: Codable {
 }
 
 struct GalUserPublicResponse: Codable {
-    var ownerId: Int!
+    var userId: Int!
 }
 
 struct Location: Codable {

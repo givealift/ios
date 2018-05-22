@@ -9,6 +9,11 @@
 import Foundation
 
 final class URLBuilder: URLBuilderType {
+    func resere(routeID: Int) -> URL {
+        let urlString = mainURL + "/api/route/\(routeID)/passenger"
+        return URL(string: urlString)!
+    }
+    
     private let mainURL = "http://mysterious-lowlands-82501.herokuapp.com"
     
     func userInfoURL(id: Int) -> URL {
@@ -37,8 +42,9 @@ final class URLBuilder: URLBuilderType {
     }
     
     func searchRouteURL(from: Int, to: Int, date: String) -> URL {
-        let urlString = mainURL + "/api/route?from=\(from)&to=\(to)&date=\(date)"
+        let urlString = mainURL + "/api/route/search?from=\(from)&to=\(to)&date=\(date)"
         print(urlString)
         return URL(string: urlString)!
     }
+    
 }

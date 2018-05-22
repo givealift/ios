@@ -22,18 +22,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gRf-sx-PjK">
-                    <rect key="frame" x="50" y="233.5" width="275" height="200"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gRf-sx-PjK">
+                    <rect key="frame" x="50" y="40" width="275" height="80"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdN-fF-A7t" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="275" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="32.5"/>
                             <state key="normal" title="Dodaj przystanek"/>
                             <connections>
                                 <action selector="addIndirectionTapped:" destination="-1" eventType="touchUpInside" id="faI-AL-6vp"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gob-oD-T5j" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="100" width="275" height="100"/>
+                            <rect key="frame" x="0.0" y="47.5" width="275" height="32.5"/>
                             <state key="normal" title="Dalej"/>
                             <connections>
                                 <action selector="nextTapped:" destination="-1" eventType="touchUpInside" id="rOi-Zi-54B"/>
@@ -41,7 +41,7 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="bxc-qb-kT9"/>
+                        <constraint firstAttribute="height" constant="80" id="bxc-qb-kT9"/>
                     </constraints>
                 </stackView>
             </subviews>
@@ -50,7 +50,7 @@
                 <constraint firstItem="gRf-sx-PjK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="019-9Y-mzM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gRf-sx-PjK" secondAttribute="trailing" constant="50" id="Gn9-E1-9Lu"/>
                 <constraint firstItem="gRf-sx-PjK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="qQ1-iq-lGI"/>
-                <constraint firstItem="gRf-sx-PjK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="x8q-UG-Swi"/>
+                <constraint firstItem="gRf-sx-PjK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="sSN-3F-UAz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

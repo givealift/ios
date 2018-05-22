@@ -33,11 +33,13 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
     }
     
     @IBAction func reserveTapped(_ sender: Any) {
-        
+        APIManager.shared.reserve(route: presenter.route.routeInfo, userID: 2)
     }
     
     private func checkIfUserIsOwner() {
-        if User.shared.userID == presenter.route.routeInfo.galUserPublicResponse!.ownerId {
+        //MARK:- FAST
+        if User.shared.userID == presenter.route.routeInfo.galUserPublicResponse!.userId {
+         //if User.shared.userID == presenter.route.routeInfo.ownerId! {
             reserveButton.isHidden = true
             userStackView.isHidden = true
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edytuj", style: .plain, target: self, action: #selector(editTapped))

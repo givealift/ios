@@ -35,7 +35,6 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter>, UITex
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.cyan
         self.hideKeyboardWhenTappedAround()
         setupDatePicker()
         setupTimePicker(textField: timeTextField)

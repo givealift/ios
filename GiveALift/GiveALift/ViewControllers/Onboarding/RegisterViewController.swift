@@ -11,7 +11,7 @@ import UIKit
 final class RegisterViewController: UIViewController {
 
     //MARK:- Constants
-    private let cellsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), PhoneNumberCell(), GenderCell()]
+    private let cellsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), PhoneNumberCell()]
     
     //MARK:- IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -41,9 +41,9 @@ final class RegisterViewController: UIViewController {
     //MARK:- IBActions
     @IBAction func registerTapped(_ sender: Any) {
         let result = cellsData.filter{!$0.isValid()}
-        if result.count == 1 {
-            if let email = cellsData[2].value, let firstName = cellsData[0].value, let lastName = cellsData[1].value, let password = cellsData[4].value, let phoneNumber = cellsData[5].value, let gender = cellsData[6] as? GenderCell {
-                let registeRequest = RegisterRequest(address: "", birthYear: 1960, email: email, firstName: firstName, gender: gender.gender.rawValue, lastName: lastName, password: password, phone: phoneNumber, rate: 0)
+        if result.count == 0 {
+            if let email = cellsData[2].value, let firstName = cellsData[0].value, let lastName = cellsData[1].value, let password = cellsData[4].value, let phoneNumber = cellsData[5].value{
+                let registeRequest = RegisterRequest(address: "", birthYear: 1960, email: email, firstName: firstName, gender: "male", lastName: lastName, password: password, phone: phoneNumber, rate: 0)
                 APIManager.shared.register(request: registeRequest) { (result) in
                     switch result {
                     case .Error(error: let error):

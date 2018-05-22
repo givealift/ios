@@ -11,13 +11,13 @@ import UIKit
 class UserInfoViewController: BaseViewController<UserInfoPresenter> {
     @IBOutlet weak var stackView: UIStackView!
     
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var secondNameTextField: UITextField!
-    @IBOutlet weak var compatibilePasswordTextField: UITextField!
-    @IBOutlet weak var gender: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: GALTextField!
+    @IBOutlet weak var secondNameTextField: GALTextField!
+    @IBOutlet weak var compatibilePasswordTextField: GALTextField!
+    @IBOutlet weak var gender: GALTextField!
+    @IBOutlet weak var emailTextField: GALTextField!
+    @IBOutlet weak var passwordTextField: GALTextField!
+    @IBOutlet weak var phoneNumberTextField: GALTextField!
     
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet var textFields: [GALTextField]!
@@ -36,6 +36,7 @@ class UserInfoViewController: BaseViewController<UserInfoPresenter> {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
+        //MARK:- TODO naprawić ten śmietnik
         var validationRule: ValidatorRule {
             var rule = ValidatorRulePattern(pattern: .email)
             rule.set(errorMessage: "Podany emial jest niewłaciwy")
@@ -46,7 +47,22 @@ class UserInfoViewController: BaseViewController<UserInfoPresenter> {
             rule.set(errorMessage: "Podany numer jest nieporawny")
             return rule
         }
-        
+        let result  = emailTextField.text!.validated(with: validationRule)
+        let result1 = phoneNumberTextField.text!.validated(with: validationRule)
+        switch result  {
+        case .invalid(error: _):
+            return
+        case .valid:
+            print("valid")
+        }
+        switch result1  {
+        case .invalid(error: _):
+            return
+        case .valid:
+            print("valid")
+        }
+        let name = firstNameTextField.text != "" ? User.shared.firstName : firstNameTextField.text!
+        let lastName = secondNameTextField.text != "" ? User.shared.lastName : secondNameTextField.text!
     }
     
     @IBAction func cancleTapped(_ sender: Any) {

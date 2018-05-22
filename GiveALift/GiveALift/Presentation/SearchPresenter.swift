@@ -51,7 +51,9 @@ final class SearchPresenter: BasePresenter {
     }
     
     func checkProgress() {
-        if routes.count == cellRouteData.count {
+        //MARK:- FAST
+        //if cellRouteData.count == routes.count {
+        if  cellRouteData.count == routes.count {
             displayRoutesView()
         }
     }
@@ -61,7 +63,9 @@ final class SearchPresenter: BasePresenter {
     }
     
     func getUserInfo(route: Route) {
-        requestBuilder.GETRequest(withURL: urlBuilder.userPublicInfoURL(id: route.galUserPublicResponse!.ownerId), authToken: nil) { [weak self] (result) in
+        //MARK:- FAST
+        //requestBuilder.GETRequest(withURL: urlBuilder.userPublicInfoURL(id: route.galUserPublicResponse.ownerId), authToken: User.shared.token) { [weak self]
+        requestBuilder.GETRequest(withURL: urlBuilder.userPublicInfoURL(id: route.galUserPublicResponse!.userId), authToken: User.shared.token) { [weak self] (result) in
             switch result {
             case .Error(error: let error):
                 print(error)
