@@ -32,6 +32,10 @@ final class LoginPresenter: BasePresenter {
     func tryToLogIn(email: String, password: String) {
         onboardingService.login(email: email, password: password)
     }
+    
+    func showRegisterView() {
+        connector?.showRegisterView()
+    }
 }
 
 extension LoginPresenter: OnboardingServiceDelegate {
@@ -46,6 +50,7 @@ extension LoginPresenter: OnboardingServiceDelegate {
     
     func onboardingService(user: GALUserLogin, userInfo: GALUserInfo) {
         User.shared.logIn(user: user, userInfo: userInfo)
+        //MARK:- TODO show home view
     }
 }
 

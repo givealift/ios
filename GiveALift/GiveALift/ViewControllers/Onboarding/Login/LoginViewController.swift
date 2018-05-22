@@ -24,7 +24,7 @@ class LoginViewController: TextFieldViewController<LoginPresenter>, LoginView {
     
     //MARK:- IBActions
     @IBAction func registerTapped(_ sender: Any) {
-        
+        presenter.showRegisterView()
     }
     
     @IBAction func loginTapped(_ sender: Any) {
