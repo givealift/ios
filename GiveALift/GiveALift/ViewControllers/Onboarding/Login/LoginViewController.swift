@@ -24,19 +24,18 @@ class LoginViewController: TextFieldViewController<LoginPresenter> {
     
     //MARK:- IBActions
     @IBAction func registerTapped(_ sender: Any) {
-        
+        showError(with: "siusiak")
     }
     
     @IBAction func loginTapped(_ sender: Any) {
         if let email = mailTextField.text, let password = passwordTextField.text, email != "", password != "" {
-            //MARK:- logowanie
+            //MARK:- TODO logowanie
         } else {
-            //MARK:- wyświetlenie info o błędnych danych
+            //MARK:- TODO wyświetlenie info o błędnych danych
         }
     }
     
     //MARK:- Main
-    
     private func setupTextFields() {
         mailTextField.tag = 1
         passwordTextField.tag = 2
