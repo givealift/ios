@@ -25,6 +25,5 @@ final class PreLoginRegisterViewController: UIViewController {
         let vc : LoginViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         vc.connector = connector
         self.navigationController?.pushViewController(vc, animated: true)
-        //performSegue(withIdentifier: Segues.goToLogin, sender: nil)
     }
 }

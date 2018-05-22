@@ -52,6 +52,9 @@
 		C130E2DA20AB372500DC221C /* AddRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2D920AB372500DC221C /* AddRouteViewController.swift */; };
 		C130E2DD20AB73DD00DC221C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2DC20AB73DD00DC221C /* DateFormatter.swift */; };
 		C130E2DF20AB7AC800DC221C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2DE20AB7AC800DC221C /* Int.swift */; };
+		C15CF90220B46518005C1EF7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90120B46518005C1EF7 /* LoginPresenter.swift */; };
+		C15CF90620B46575005C1EF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90420B46575005C1EF7 /* LoginViewController.swift */; };
+		C15CF90720B46575005C1EF7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15CF90520B46575005C1EF7 /* LoginViewController.xib */; };
 		C1725B2A20A59E8800F64747 /* SearchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2920A59E8800F64747 /* SearchConnector.swift */; };
 		C1725B2C20A5A95F00F64747 /* AddRouteConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */; };
 		C1725B2E20A5AA8D00F64747 /* AddRoutePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */; };
@@ -176,6 +179,9 @@
 		C130E2D920AB372500DC221C /* AddRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteViewController.swift; sourceTree = "<group>"; };
 		C130E2DC20AB73DD00DC221C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		C130E2DE20AB7AC800DC221C /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		C15CF90120B46518005C1EF7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		C15CF90420B46575005C1EF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C15CF90520B46575005C1EF7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		C1725B2920A59E8800F64747 /* SearchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConnector.swift; sourceTree = "<group>"; };
 		C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteConnector.swift; sourceTree = "<group>"; };
 		C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutePresenter.swift; sourceTree = "<group>"; };
@@ -377,6 +383,23 @@
 			path = AddRoute;
 			sourceTree = "<group>";
 		};
+		C15CF90020B464F8005C1EF7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C15CF90120B46518005C1EF7 /* LoginPresenter.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C15CF90320B46562005C1EF7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C15CF90420B46575005C1EF7 /* LoginViewController.swift */,
+				C15CF90520B46575005C1EF7 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		C1725B2F20A5AAD700F64747 /* AddRoute */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +448,7 @@
 		C1813C16206964E00043DAF7 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				C15CF90320B46562005C1EF7 /* Login */,
 				C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */,
 				C1813C17206966780043DAF7 /* LoginViewController.swift */,
 				C1813C19206966A40043DAF7 /* RegisterViewController.swift */,
@@ -659,6 +683,7 @@
 			isa = PBXGroup;
 			children = (
 				C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */,
+				C15CF90020B464F8005C1EF7 /* Onboarding */,
 				C130E2DB20AB38D800DC221C /* AddRoute */,
 				C1CFBD82208655E800253375 /* HomePresenter.swift */,
 				C1CFBD972086828000253375 /* SearchPresenter.swift */,
@@ -813,6 +838,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C15CF90720B46575005C1EF7 /* LoginViewController.xib in Resources */,
 				C191F0FE2065657C008DD972 /* LaunchScreen.storyboard in Resources */,
 				C1CFBD8B20866EC100253375 /* Cities.json in Resources */,
 				C191F0FB2065657C008DD972 /* Assets.xcassets in Resources */,
@@ -935,6 +961,7 @@
 				C124DA3520A745A100391A71 /* IndirectionsPresenter.swift in Sources */,
 				C124DA3D20A75E5B00391A71 /* RouteOptionalDescriptionPresenter.swift in Sources */,
 				C1233D622083CE5300BD0A56 /* URLBuilderType.swift in Sources */,
+				C15CF90620B46575005C1EF7 /* LoginViewController.swift in Sources */,
 				C124DA5120A8958D00391A71 /* RegisterRequest.swift in Sources */,
 				C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */,
 				C124DA5920A8E80100391A71 /* GALBlueButton.swift in Sources */,
@@ -985,6 +1012,7 @@
 				C1813C18206966780043DAF7 /* LoginViewController.swift in Sources */,
 				C130E2B320A99C7F00DC221C /* UserInfoConnector.swift in Sources */,
 				C1233D5E2083CD1900BD0A56 /* APIManager.swift in Sources */,
+				C15CF90220B46518005C1EF7 /* LoginPresenter.swift in Sources */,
 				C130E2B520A99CF700DC221C /* UserInfoPresenter.swift in Sources */,
 				C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */,
 				C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */,
