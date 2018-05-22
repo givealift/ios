@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: TextFieldViewController<LoginPresenter> {
+class LoginViewController: TextFieldViewController<LoginPresenter>, LoginView {
 
     //MARK:- IBOutlets
     @IBOutlet weak var mailTextField: GALTextField!
@@ -35,6 +35,10 @@ class LoginViewController: TextFieldViewController<LoginPresenter> {
         }
     }
     
+    @IBAction func resetPasswordTapped(_ sender: Any) {
+        showResetPasswordAlert()
+    }
+    
     //MARK:- Main
     private func setupTextFields() {
         mailTextField.tag = 1
@@ -50,9 +54,15 @@ class LoginViewController: TextFieldViewController<LoginPresenter> {
     private func setupRegisterButton() {
         registerButton.tintColor = UIColor.GALBlue
     }
-}
-
-extension LoginViewController: LoginView {
     
+    private func showResetPasswordAlert() {
+        let alert = UIAlertController(title: "", message: presenter.resetPasswordMessage, preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            //MARK:- TODO wyświetlić "Na podany email wysłaliśmy reset hasła"
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 

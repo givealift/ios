@@ -10,6 +10,7 @@ import UIKit
 
 protocol OnboardingConnectorDelegate: class {
     func showHomeView()
+    func showRegisterView()
 }
 
 final class OnboardingConnector {
@@ -30,6 +31,10 @@ final class OnboardingConnector {
 }
 
 extension OnboardingConnector: OnboardingConnectorDelegate {
+    func showRegisterView() {
+        //MARK:- TODO pokazać register view
+    }
+    
     func showHomeView() {
         
     }

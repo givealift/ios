@@ -24,47 +24,74 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ain-BZ-idw">
-                    <rect key="frame" x="52" y="163.5" width="270" height="200"/>
+                    <rect key="frame" x="52" y="133.5" width="270" height="260"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mnM-py-Uzi" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="270" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="270" height="46.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" textContentType="email"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSw-iw-T8H" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="75" width="270" height="50"/>
+                            <rect key="frame" x="0.0" y="71.5" width="270" height="46"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                         </textField>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ohh-dL-nzt">
-                            <rect key="frame" x="0.0" y="150" width="270" height="50"/>
+                            <rect key="frame" x="0.0" y="142.5" width="270" height="46.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kfi-9K-J9W">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="46.5"/>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSE-Ji-TMA" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="270" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="270" height="46.5"/>
                                     <state key="normal" title="Zaloguj się"/>
                                     <connections>
                                         <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="3OI-UL-dIL"/>
                                     </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gp5-oO-jFG">
-                                    <rect key="frame" x="270" y="0.0" width="0.0" height="50"/>
+                                    <rect key="frame" x="270" y="0.0" width="0.0" height="46.5"/>
                                 </stackView>
                             </subviews>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="08Q-yg-UAM">
+                            <rect key="frame" x="0.0" y="214" width="270" height="46"/>
+                            <color key="tintColor" red="0.93725490199999995" green="0.16712412373502136" blue="0.25918956562085471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Nie pamiętasz hasła?">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </state>
+                            <connections>
+                                <action selector="resetPasswordTapped:" destination="-1" eventType="touchUpInside" id="qov-Tj-xuN"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="mqg-u4-Yi5"/>
+                        <constraint firstAttribute="height" constant="260" id="mqg-u4-Yi5"/>
                         <constraint firstAttribute="width" constant="270" id="pXJ-E2-tPu"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-e2-JRo">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-e2-JRo">
                     <rect key="frame" x="141.5" y="617" width="91" height="30"/>
-                    <state key="normal" title="Stwórz konto"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Stwórz konto">
+                                <attributes>
+                                    <font key="NSFont" metaFont="system" size="15"/>
+                                    <integer key="NSUnderline" value="1"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
                     <connections>
                         <action selector="registerTapped:" destination="-1" eventType="touchUpInside" id="LqQ-iF-C7d"/>
                     </connections>

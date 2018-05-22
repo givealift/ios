@@ -21,6 +21,7 @@ final class LoginPresenter: BasePresenter {
     let mailPlaceholder = "Twój email"
     let passwordPlaceholder = "Hasło"
     let wrongData = "Podane dane są niepoprawne"
+    let resetPasswordMessage = "Podaj swój e-mail aby zresetować hasło"
     
     init(connector: OnboardingConnectorDelegate) {
         super.init()
