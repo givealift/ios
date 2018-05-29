@@ -8,6 +8,21 @@
 
 import Foundation
 
+protocol RegisterView: class {
+    func showError(with message: String)
+}
+
 final class RegistrationPresenter: BasePresenter {
     
+    private weak var connector: OnboardingConnectorDelegate?
+    private let onboardingService = OnboardingService()
+    weak var view: RegisterView?
+    
+    let textFieldsData: [RegisterCellType] = [NameCell(), SurnameCell(), EmailCell(), PasswordCell(), CompatibilePasswordCell(), BirthdayCell(), PhoneNumberCell()]
+    
+    
+    init(connector: OnboardingConnectorDelegate) {
+        super.init()
+        self.connector = connector
+    }
 }

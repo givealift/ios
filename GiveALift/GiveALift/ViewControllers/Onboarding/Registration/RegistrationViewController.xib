@@ -19,7 +19,15 @@
                 <outlet property="nameTextField" destination="6b8-Zw-S87" id="CJB-P9-Fw7"/>
                 <outlet property="passwordTextField" destination="E2A-PG-U0A" id="bkX-Fj-1FY"/>
                 <outlet property="phoneTextField" destination="nzb-BR-JoG" id="fZq-Gb-Blr"/>
+                <outlet property="stackViewTopConstraint" destination="FXf-Qp-Vfr" id="zNi-mC-BBy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="textFields" destination="6b8-Zw-S87" collectionClass="NSMutableArray" id="3cx-8N-vz9"/>
+                <outletCollection property="textFields" destination="iOQ-8u-nDW" collectionClass="NSMutableArray" id="mjN-BX-uvr"/>
+                <outletCollection property="textFields" destination="Jn2-N1-zoy" collectionClass="NSMutableArray" id="gyt-Yn-Twx"/>
+                <outletCollection property="textFields" destination="E2A-PG-U0A" collectionClass="NSMutableArray" id="8sx-yr-fzq"/>
+                <outletCollection property="textFields" destination="WOw-VE-lGi" collectionClass="NSMutableArray" id="tI0-Nv-IQ9"/>
+                <outletCollection property="textFields" destination="TFH-8X-BFW" collectionClass="NSMutableArray" id="bn3-Aq-Bh7"/>
+                <outletCollection property="textFields" destination="nzb-BR-JoG" collectionClass="NSMutableArray" id="6Eu-dj-rpC"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -52,13 +60,13 @@
                             <rect key="frame" x="0.0" y="189.5" width="270" height="48"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WOw-VE-lGi" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="252.5" width="270" height="48"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFH-8X-BFW" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="315.5" width="270" height="48.5"/>

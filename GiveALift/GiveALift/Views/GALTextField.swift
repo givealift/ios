@@ -10,6 +10,8 @@ import UIKit
 
 class GALTextField: UITextField {
     
+    var rule: ValidatorRule?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setBottomLine(borderColor: .black)
@@ -30,5 +32,11 @@ class GALTextField: UITextField {
         borderLine.frame = CGRect(x: 0, y: textFieldHeight*0.85, width: Double(width), height: height)
         borderLine.backgroundColor = borderColor
         self.addSubview(borderLine)
+    }
+    
+    func isValid() -> Result {
+        guard let text = self.text else { return Result.invalid(error: "") }
+        guard let rule = self.rule else { return Result.valid }
+        return text.validated(with: rule)
     }
 }

@@ -417,6 +417,7 @@
 			children = (
 				C15CF91120BD5169005C1EF7 /* RegistrationViewController.swift */,
 				C15CF91220BD5169005C1EF7 /* RegistrationViewController.xib */,
+				C10B6D41206A4B790060AF1F /* RegisterCellType.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -474,7 +475,6 @@
 				C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */,
 				C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */,
 				C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */,
-				C10B6D41206A4B790060AF1F /* RegisterCellType.swift */,
 				C124DA4C20A8916500391A71 /* SegControllerTableViewCell.swift */,
 				C124DA4D20A8916500391A71 /* SegControllerTableViewCell.xib */,
 			);

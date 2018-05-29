@@ -15,6 +15,7 @@ class TextFieldViewController<T>: BaseViewController<T>, UITextFieldDelegate whe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         addErrorMessageView()
     }
     

@@ -32,7 +32,10 @@ final class OnboardingConnector {
 
 extension OnboardingConnector: OnboardingConnectorDelegate {
     func showRegisterView() {
-        //MARK:- TODO pokazać register view
+        let presenter = RegistrationPresenter(connector: self)
+        let view = RegistrationViewController(presenter: presenter)
+        presenter.view = view
+        navigationController.pushViewController(view, animated: true)
     }
     
     func showHomeView() {

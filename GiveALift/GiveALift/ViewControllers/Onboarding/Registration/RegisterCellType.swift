@@ -39,7 +39,7 @@ extension RegisterCellType {
 class EmailCell: RegisterCellType {
     var secure: Bool = false
     
-    var labelText: String = "Podaj emial"
+    var labelText: String = "Email"
     var validationRule: ValidatorRule {
         var rule = ValidatorRulePattern(pattern: .email)
         rule.set(errorMessage: "Podany emial jest niewłaciwy")
@@ -51,7 +51,7 @@ class EmailCell: RegisterCellType {
 
 class PasswordCell: RegisterCellType {
     var secure: Bool = true
-    var labelText: String = "Podaj hasło"
+    var labelText: String = "Hasło"
     var validationRule: ValidatorRule {
         var rule = ValidatorRuleLength(rule: .minimumLength, value: 8)
         rule.set(errorMessage: "Hasło musi zawierać co najmniej 8 znaków")
@@ -64,7 +64,7 @@ class PasswordCell: RegisterCellType {
 //MARK:- TODO validation rule do takich samych haseł
 class CompatibilePasswordCell: RegisterCellType {
     var secure: Bool = true
-    var labelText: String = "Powtórz hasło"
+    var labelText: String = "Potwierdź hasło"
     var validationRule: ValidatorRule {
         var rule = ValidatorRulePattern(dynamicString: { return self.passwordCell?.value ?? ""})
         rule.set(errorMessage: "Hasła muszą być zgodne")
@@ -77,7 +77,7 @@ class CompatibilePasswordCell: RegisterCellType {
 
 class NameCell: RegisterCellType {
     var secure: Bool = false
-    var labelText: String = "Podaj imię"
+    var labelText: String = "Imię"
     var validationRule: ValidatorRule {
         var rule = ValidatorRuleLength(rule: .maximumLength, value: 25)
         rule.set(errorMessage: "Podane imię jest zbyt długie")
@@ -89,7 +89,7 @@ class NameCell: RegisterCellType {
 
 class SurnameCell: RegisterCellType {
     var secure: Bool = false
-    var labelText: String = "Podaj nazwisko"
+    var labelText: String = "Nazwisko"
     var validationRule: ValidatorRule {
         var rule = ValidatorRuleLength(rule: .maximumLength, value: 25)
         rule.set(errorMessage: "Podane nazwisko jest zbyt długie")
@@ -101,10 +101,22 @@ class SurnameCell: RegisterCellType {
 
 class PhoneNumberCell: RegisterCellType {
     var secure: Bool = false
-    var labelText: String = "Podaj numer telefonu"
+    var labelText: String = "Numer telefonu"
     var validationRule: ValidatorRule {
         var rule = ValidatorRulePattern(pattern: .phoneNumber)
         rule.set(errorMessage: "Podany numer jest nieporawny")
+        return rule
+    }
+    var type: CellType = .textfield
+    var value: String? = nil
+}
+
+class BirthdayCell: RegisterCellType {
+    var secure: Bool = false
+    var labelText: String = "Data urodzenia"
+    var validationRule: ValidatorRule {
+        var rule = ValidatorRulePattern(pattern: .phoneNumber)
+        rule.set(errorMessage: "Data urodzenia źle ")
         return rule
     }
     var type: CellType = .textfield

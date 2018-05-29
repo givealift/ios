@@ -17,7 +17,7 @@ final class LoginPresenter: BasePresenter {
     private weak var connector: OnboardingConnectorDelegate?
     private let onboardingService = OnboardingService()
     weak var view: LoginView?
-    
+
     let mailPlaceholder = "Twój email"
     let passwordPlaceholder = "Hasło"
     let wrongData = "Podane dane są niepoprawne"
