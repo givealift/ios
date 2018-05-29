@@ -59,6 +59,9 @@
 		C15CF90B20B4763B005C1EF7 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90A20B4763B005C1EF7 /* TextFieldViewController.swift */; };
 		C15CF90D20B47810005C1EF7 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90C20B47810005C1EF7 /* ErrorMessage.swift */; };
 		C15CF90F20B4781D005C1EF7 /* ErrorMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15CF90E20B4781D005C1EF7 /* ErrorMessage.xib */; };
+		C15CF91320BD5169005C1EF7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF91120BD5169005C1EF7 /* RegistrationViewController.swift */; };
+		C15CF91420BD5169005C1EF7 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15CF91220BD5169005C1EF7 /* RegistrationViewController.xib */; };
+		C15CF91620BD51B3005C1EF7 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF91520BD51B3005C1EF7 /* RegistrationPresenter.swift */; };
 		C1725B2A20A59E8800F64747 /* SearchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2920A59E8800F64747 /* SearchConnector.swift */; };
 		C1725B2C20A5A95F00F64747 /* AddRouteConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */; };
 		C1725B2E20A5AA8D00F64747 /* AddRoutePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */; };
@@ -70,7 +73,6 @@
 		C1725B4320A5FAED00F64747 /* RouteInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B4220A5FAED00F64747 /* RouteInfoPresenter.swift */; };
 		C1725B4620A5FB6600F64747 /* RouteInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1725B4420A5FB6600F64747 /* RouteInfoViewController.swift */; };
 		C1725B4720A5FB6600F64747 /* RouteInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1725B4520A5FB6600F64747 /* RouteInfoViewController.xib */; };
-		C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C19206966A40043DAF7 /* RegisterViewController.swift */; };
 		C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */; };
 		C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1D20696A390043DAF7 /* UITableViewE.swift */; };
 		C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */; };
@@ -189,6 +191,9 @@
 		C15CF90A20B4763B005C1EF7 /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		C15CF90C20B47810005C1EF7 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		C15CF90E20B4781D005C1EF7 /* ErrorMessage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorMessage.xib; sourceTree = "<group>"; };
+		C15CF91120BD5169005C1EF7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		C15CF91220BD5169005C1EF7 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		C15CF91520BD51B3005C1EF7 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		C1725B2920A59E8800F64747 /* SearchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConnector.swift; sourceTree = "<group>"; };
 		C1725B2B20A5A95F00F64747 /* AddRouteConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteConnector.swift; sourceTree = "<group>"; };
 		C1725B2D20A5AA8D00F64747 /* AddRoutePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutePresenter.swift; sourceTree = "<group>"; };
@@ -200,7 +205,6 @@
 		C1725B4220A5FAED00F64747 /* RouteInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfoPresenter.swift; sourceTree = "<group>"; };
 		C1725B4420A5FB6600F64747 /* RouteInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfoViewController.swift; sourceTree = "<group>"; };
 		C1725B4520A5FB6600F64747 /* RouteInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteInfoViewController.xib; sourceTree = "<group>"; };
-		C1813C19206966A40043DAF7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellE.swift; sourceTree = "<group>"; };
 		C1813C1D20696A390043DAF7 /* UITableViewE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewE.swift; sourceTree = "<group>"; };
 		C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTextFiledTVC.swift; sourceTree = "<group>"; };
@@ -394,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				C15CF90120B46518005C1EF7 /* LoginPresenter.swift */,
+				C15CF91520BD51B3005C1EF7 /* RegistrationPresenter.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -405,6 +410,15 @@
 				C15CF90520B46575005C1EF7 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		C15CF91020BD5139005C1EF7 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				C15CF91120BD5169005C1EF7 /* RegistrationViewController.swift */,
+				C15CF91220BD5169005C1EF7 /* RegistrationViewController.xib */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		C1725B2F20A5AAD700F64747 /* AddRoute */ = {
@@ -455,9 +469,9 @@
 		C1813C16206964E00043DAF7 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				C15CF91020BD5139005C1EF7 /* Registration */,
 				C15CF90320B46562005C1EF7 /* Login */,
 				C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */,
-				C1813C19206966A40043DAF7 /* RegisterViewController.swift */,
 				C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */,
 				C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */,
 				C10B6D41206A4B790060AF1F /* RegisterCellType.swift */,
@@ -852,6 +866,7 @@
 				C1CFBD8B20866EC100253375 /* Cities.json in Resources */,
 				C191F0FB2065657C008DD972 /* Assets.xcassets in Resources */,
 				C130E2D820AB351800DC221C /* MainRouteViewController.xib in Resources */,
+				C15CF91420BD5169005C1EF7 /* RegistrationViewController.xib in Resources */,
 				C130E2BA20A99D8200DC221C /* UserInfoViewController.xib in Resources */,
 				C124DA4920A872DB00391A71 /* RouteDetailsViewController.xib in Resources */,
 				C191F0F92065657C008DD972 /* Main.storyboard in Resources */,
@@ -973,7 +988,6 @@
 				C1233D622083CE5300BD0A56 /* URLBuilderType.swift in Sources */,
 				C15CF90620B46575005C1EF7 /* LoginViewController.swift in Sources */,
 				C124DA5120A8958D00391A71 /* RegisterRequest.swift in Sources */,
-				C1813C1A206966A40043DAF7 /* RegisterViewController.swift in Sources */,
 				C124DA5920A8E80100391A71 /* GALBlueButton.swift in Sources */,
 				C1CFBD83208655E800253375 /* HomePresenter.swift in Sources */,
 				C1725B3E20A5C74500F64747 /* BaseConnector.swift in Sources */,
@@ -1008,6 +1022,8 @@
 				C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */,
 				C1725B2A20A59E8800F64747 /* SearchConnector.swift in Sources */,
 				C130E2CC20AAF9EE00DC221C /* EditRouteInfoViewController.swift in Sources */,
+				C15CF91620BD51B3005C1EF7 /* RegistrationPresenter.swift in Sources */,
+				C15CF91320BD5169005C1EF7 /* RegistrationViewController.swift in Sources */,
 				C1CFBD982086828000253375 /* SearchPresenter.swift in Sources */,
 				C130E2B920A99D8200DC221C /* UserInfoViewController.swift in Sources */,
 				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,
