@@ -10,6 +10,7 @@ import UIKit
 
 protocol RootConnectorDelegate: class {
     func startOnboardingConnector()
+    func endOnboardingConnector()
     func showHomeView()
 }
 
@@ -40,7 +41,14 @@ final class RootConnector {
 
 extension RootConnector: RootConnectorDelegate {
     func startOnboardingConnector() {
-        self.onboardingConnector = OnboardingConnector(navigationController: self.navigationController)
+        let onboardingConnector = OnboardingConnector(navigationController: self.navigationController)
+        onboardingConnector.rootConnector = self
+        self.onboardingConnector = onboardingConnector
+    }
+    
+    func endOnboardingConnector() {
+        self.onboardingConnector = nil
+        showHomeView()
     }
     
     func showUserInfoView(userData: GALUserInfo) {

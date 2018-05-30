@@ -26,8 +26,6 @@
 		C124DA4820A872DB00391A71 /* RouteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124DA4620A872DB00391A71 /* RouteDetailsViewController.swift */; };
 		C124DA4920A872DB00391A71 /* RouteDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C124DA4720A872DB00391A71 /* RouteDetailsViewController.xib */; };
 		C124DA4B20A872F900391A71 /* RouteDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124DA4A20A872F900391A71 /* RouteDetailsPresenter.swift */; };
-		C124DA4E20A8916500391A71 /* SegControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124DA4C20A8916500391A71 /* SegControllerTableViewCell.swift */; };
-		C124DA4F20A8916600391A71 /* SegControllerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C124DA4D20A8916500391A71 /* SegControllerTableViewCell.xib */; };
 		C124DA5120A8958D00391A71 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124DA5020A8958D00391A71 /* RegisterRequest.swift */; };
 		C124DA5320A8E08F00391A71 /* UIColorE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124DA5220A8E08F00391A71 /* UIColorE.swift */; };
 		C124DA5520A8E5E900391A71 /* GALRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124DA5420A8E5E900391A71 /* GALRoundButton.swift */; };
@@ -75,8 +73,6 @@
 		C1725B4720A5FB6600F64747 /* RouteInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1725B4520A5FB6600F64747 /* RouteInfoViewController.xib */; };
 		C1813C1C20696A190043DAF7 /* UITableViewCellE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */; };
 		C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1D20696A390043DAF7 /* UITableViewE.swift */; };
-		C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */; };
-		C1813C2220696AAE0043DAF7 /* ValidatorTextFiledTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */; };
 		C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F0F32065657C008DD972 /* AppDelegate.swift */; };
 		C191F0F92065657C008DD972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F0F72065657C008DD972 /* Main.storyboard */; };
 		C191F0FB2065657C008DD972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C191F0FA2065657C008DD972 /* Assets.xcassets */; };
@@ -84,7 +80,6 @@
 		C191F1092065657D008DD972 /* GiveALiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1082065657D008DD972 /* GiveALiftTests.swift */; };
 		C191F1142065657D008DD972 /* GiveALiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1132065657D008DD972 /* GiveALiftUITests.swift */; };
 		C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191F13020656C1E008DD972 /* GiveALift.xcdatamodeld */; };
-		C191F13E20657BB0008DD972 /* PreLoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */; };
 		C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F13F20657E00008DD972 /* Onboarding.storyboard */; };
 		C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F14220657F13008DD972 /* FlowCoordinator.swift */; };
 		C191F1452065806E008DD972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1442065806E008DD972 /* Constants.swift */; };
@@ -158,8 +153,6 @@
 		C124DA4620A872DB00391A71 /* RouteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailsViewController.swift; sourceTree = "<group>"; };
 		C124DA4720A872DB00391A71 /* RouteDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteDetailsViewController.xib; sourceTree = "<group>"; };
 		C124DA4A20A872F900391A71 /* RouteDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailsPresenter.swift; sourceTree = "<group>"; };
-		C124DA4C20A8916500391A71 /* SegControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegControllerTableViewCell.swift; sourceTree = "<group>"; };
-		C124DA4D20A8916500391A71 /* SegControllerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegControllerTableViewCell.xib; sourceTree = "<group>"; };
 		C124DA5020A8958D00391A71 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		C124DA5220A8E08F00391A71 /* UIColorE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorE.swift; sourceTree = "<group>"; };
 		C124DA5420A8E5E900391A71 /* GALRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALRoundButton.swift; sourceTree = "<group>"; };
@@ -207,8 +200,6 @@
 		C1725B4520A5FB6600F64747 /* RouteInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteInfoViewController.xib; sourceTree = "<group>"; };
 		C1813C1B20696A190043DAF7 /* UITableViewCellE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellE.swift; sourceTree = "<group>"; };
 		C1813C1D20696A390043DAF7 /* UITableViewE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewE.swift; sourceTree = "<group>"; };
-		C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTextFiledTVC.swift; sourceTree = "<group>"; };
-		C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidatorTextFiledTVC.xib; sourceTree = "<group>"; };
 		C191F0F02065657C008DD972 /* GiveALift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiveALift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C191F0F32065657C008DD972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C191F0F82065657C008DD972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -222,7 +213,6 @@
 		C191F1132065657D008DD972 /* GiveALiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveALiftUITests.swift; sourceTree = "<group>"; };
 		C191F1152065657D008DD972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C191F13120656C1E008DD972 /* GiveALift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GiveALift.xcdatamodel; sourceTree = "<group>"; };
-		C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginRegisterViewController.swift; sourceTree = "<group>"; };
 		C191F13F20657E00008DD972 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		C191F14220657F13008DD972 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		C191F1442065806E008DD972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -472,11 +462,6 @@
 			children = (
 				C15CF91020BD5139005C1EF7 /* Registration */,
 				C15CF90320B46562005C1EF7 /* Login */,
-				C191F13D20657BB0008DD972 /* PreLoginRegisterViewController.swift */,
-				C1813C1F20696AAE0043DAF7 /* ValidatorTextFiledTVC.swift */,
-				C1813C2020696AAE0043DAF7 /* ValidatorTextFiledTVC.xib */,
-				C124DA4C20A8916500391A71 /* SegControllerTableViewCell.swift */,
-				C124DA4D20A8916500391A71 /* SegControllerTableViewCell.xib */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -873,10 +858,8 @@
 				C130E2CD20AAF9EE00DC221C /* EditRouteInfoViewController.xib in Resources */,
 				C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */,
 				C1725B3C20A5BFF300F64747 /* RouteTimeViewController.xib in Resources */,
-				C124DA4F20A8916600391A71 /* SegControllerTableViewCell.xib in Resources */,
 				C1725B4720A5FB6600F64747 /* RouteInfoViewController.xib in Resources */,
 				C1CFBD9F2086AC4A00253375 /* RoutesViewController.xib in Resources */,
-				C1813C2220696AAE0043DAF7 /* ValidatorTextFiledTVC.xib in Resources */,
 				C1CFBD962086826100253375 /* SearchViewController.xib in Resources */,
 				C124DA3920A7468E00391A71 /* IndirectionsViewController.xib in Resources */,
 				C1CFBD8920865D6200253375 /* HomeViewController.xib in Resources */,
@@ -997,7 +980,6 @@
 				C130E2C420AA099100DC221C /* CellRouteData.swift in Sources */,
 				C1CFBD8820865D6200253375 /* HomeViewController.swift in Sources */,
 				C124DA4B20A872F900391A71 /* RouteDetailsPresenter.swift in Sources */,
-				C124DA4E20A8916500391A71 /* SegControllerTableViewCell.swift in Sources */,
 				C130E2BE20A9A89500DC221C /* GALUserInfo.swift in Sources */,
 				C1CFBDA12086AC6500253375 /* RoutesPresenter.swift in Sources */,
 				C1CFBD812086528B00253375 /* BaseViewController.swift in Sources */,
@@ -1043,12 +1025,10 @@
 				C130E2B520A99CF700DC221C /* UserInfoPresenter.swift in Sources */,
 				C15CF90D20B47810005C1EF7 /* ErrorMessage.swift in Sources */,
 				C1813C1E20696A390043DAF7 /* UITableViewE.swift in Sources */,
-				C1813C2120696AAE0043DAF7 /* ValidatorTextFiledTVC.swift in Sources */,
 				C1725B4020A5C79500F64747 /* RootConnector.swift in Sources */,
 				C1725B4620A5FB6600F64747 /* RouteInfoViewController.swift in Sources */,
 				C1233D672083E26800BD0A56 /* GALUserResponse.swift in Sources */,
 				C1725B2C20A5A95F00F64747 /* AddRouteConnector.swift in Sources */,
-				C191F13E20657BB0008DD972 /* PreLoginRegisterViewController.swift in Sources */,
 				C191F0F42065657C008DD972 /* AppDelegate.swift in Sources */,
 				C1D910E32080B2F800AD0AC4 /* RequestBuilderType.swift in Sources */,
 				C1CFBD702085F48900253375 /* GALRegisterResponse.swift in Sources */,

@@ -26,7 +26,7 @@ final class LoginPresenter: BasePresenter {
     init(connector: OnboardingConnectorDelegate) {
         super.init()
         self.connector = connector
-        onboardingService.delegate = self
+        onboardingService.loginDelegate = self
     }
     
     func tryToLogIn(email: String, password: String) {
@@ -38,7 +38,7 @@ final class LoginPresenter: BasePresenter {
     }
 }
 
-extension LoginPresenter: OnboardingServiceDelegate {
+extension LoginPresenter: OnboardingServiceLoginDelegate {
     func onboardingService(error: APIError) {
         switch error {
         case .unexpectedError:
@@ -50,7 +50,7 @@ extension LoginPresenter: OnboardingServiceDelegate {
     
     func onboardingService(user: GALUserLogin, userInfo: GALUserInfo) {
         User.shared.logIn(user: user, userInfo: userInfo)
-        //MARK:- TODO show home view
+        connector?.showHomeView()
     }
 }
 

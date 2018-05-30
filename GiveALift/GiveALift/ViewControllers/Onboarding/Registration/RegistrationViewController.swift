@@ -41,7 +41,10 @@ final class RegistrationViewController: TextFieldViewController<RegistrationPres
             textFields[i].tag = i
             textFields[i].delegate = self
             textFields[i].placeholder = presenter.textFieldsData[i].labelText
+            textFields[i].rule = presenter.textFieldsData[i].validationRule
         }
+        phoneTextField.keyboardType = .phonePad
+        mailTextField.keyboardType = .emailAddress
     }
     
     private func setupDatePicker() {
@@ -61,7 +64,22 @@ final class RegistrationViewController: TextFieldViewController<RegistrationPres
     
     //MARK:- IBActions
     @IBAction func registerTapped(_ sender: Any) {
+        for textField in textFields {
+            let result = textField.isValid()
+            switch result {
+            case .invalid(error: let error):
+                showError(with: error)
+                return
+            case .valid:
+                print("ok")
+            }
+        }
+        if !(passwordTextField.text! == compatibilePasswordTextField.text!) {
+            showError(with: "Hasła muszą być zgodne")
+            return
+        }
         
+        presenter.register(name: nameTextField.text!, lastname: lastNameTextField.text!, mail: mailTextField.text!, password: passwordTextField.text!, brithday: datePicker.date, phone: phoneTextField.text!)
     }
     
     @objc func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -72,6 +90,7 @@ final class RegistrationViewController: TextFieldViewController<RegistrationPres
             }
         }
     }
+
     
     override func dismissKeyboard() {
         view.endEditing(true)

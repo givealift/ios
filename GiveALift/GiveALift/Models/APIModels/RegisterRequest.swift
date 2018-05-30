@@ -10,7 +10,7 @@ import Foundation
 
 struct RegisterRequest: Codable {
     let address: String
-    let birthYear: Int
+    let birthYear: Date
     let email, firstName, gender, lastName: String
     let password, phone: String
     let rate: Int?

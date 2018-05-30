@@ -8,8 +8,15 @@
 
 import Foundation
 
-protocol OnboardingServiceDelegate: class {
+protocol OnboardingServiceErrorDelegate: class {
     func onboardingService(error: APIError)
+}
+
+protocol OnboardingServiceRegisterDelegate: class, OnboardingServiceErrorDelegate {
+    func onboardingService(status: Bool)
+}
+
+protocol OnboardingServiceLoginDelegate: class, OnboardingServiceErrorDelegate {
     func onboardingService(user: GALUserLogin, userInfo: GALUserInfo)
 }
 
@@ -17,7 +24,8 @@ final class OnboardingService {
     
     fileprivate let requestBuilder: RequestBuilderType
     fileprivate let urlBuilder: URLBuilderType
-    weak var delegate: OnboardingServiceDelegate?
+    weak var loginDelegate: OnboardingServiceLoginDelegate?
+    weak var registerDelegate: OnboardingServiceRegisterDelegate?
     
     // MARK: Initializers
     
@@ -40,7 +48,7 @@ final class OnboardingService {
                 }
             case .Error(error: let error):
                 DispatchQueue.main.async {
-                    self?.delegate?.onboardingService(error: error)
+                    self?.loginDelegate?.onboardingService(error: error)
                 }
             }
         }
@@ -51,7 +59,7 @@ final class OnboardingService {
             switch result {
             case .Error(error: let error):
                 DispatchQueue.main.async {
-                    self?.delegate?.onboardingService(error: error)
+                    self?.loginDelegate?.onboardingService(error: error)
                 }
             case .Success(result: let result):
                 do  {
@@ -60,11 +68,28 @@ final class OnboardingService {
                     decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
                     let userInfo = try decoder.decode(GALUserInfo.self, from: result)
                     DispatchQueue.main.async {
-                        self?.delegate?.onboardingService(user: user, userInfo: userInfo)
+                        self?.loginDelegate?.onboardingService(user: user, userInfo: userInfo)
                     }
                 } catch {
                     print(error)
                     fatalError("Decoding  failed")
+                }
+            }
+        }
+    }
+    
+    func register(request: RegisterRequest) {
+        print("tak wygląda request")
+        print(request)
+        requestBuilder.POSTRequest(withURL: urlBuilder.registerURL(), withData: request, authToken: nil) { [weak self] (result) in
+            switch result {
+            case .Error(error: let error):
+                DispatchQueue.main.async {
+                    self?.registerDelegate?.onboardingService(error: error)
+                }
+            case .Success(result: let result):
+                DispatchQueue.main.async {
+                    self?.registerDelegate?.onboardingService(status: true)
                 }
             }
         }

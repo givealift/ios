@@ -69,6 +69,7 @@ final class RequestBuilder: RequestBuilderType {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = httpMethod
         let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .formatted(DateFormatter.iso8601Full)
         do {
             let jsonData = try encoder.encode(parameters)
             request.httpBody = jsonData

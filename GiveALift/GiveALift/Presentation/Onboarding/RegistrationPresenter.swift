@@ -24,5 +24,32 @@ final class RegistrationPresenter: BasePresenter {
     init(connector: OnboardingConnectorDelegate) {
         super.init()
         self.connector = connector
+        onboardingService.registerDelegate = self
+        setObserverForPasswordCell()
+    }
+    
+    func register(name: String, lastname: String, mail: String, password: String, brithday: Date, phone: String) {
+        onboardingService.register(request: RegisterRequest(address: "", birthYear: brithday, email: mail, firstName: name, gender: "", lastName: lastname, password: password, phone: phone, rate: nil))
+    }
+    
+    func showLoginView() {
+        connector?.goBackToLoginView()
+    }
+    
+    private func setObserverForPasswordCell() {
+        let passwordCell = textFieldsData[3] as! PasswordCell
+        let compatibileCell = textFieldsData[4] as! CompatibilePasswordCell
+        compatibileCell.passwordCell = passwordCell
+    }
+}
+
+extension RegistrationPresenter: OnboardingServiceRegisterDelegate {
+    func onboardingService(status: Bool) {
+        //MARK:- TODO pokazać ze rejestracja udana
+        showLoginView()
+    }
+    
+    func onboardingService(error: APIError) {
+        view?.showError(with: error.description)
     }
 }

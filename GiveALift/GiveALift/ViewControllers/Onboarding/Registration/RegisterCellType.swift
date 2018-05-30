@@ -42,7 +42,7 @@ class EmailCell: RegisterCellType {
     var labelText: String = "Email"
     var validationRule: ValidatorRule {
         var rule = ValidatorRulePattern(pattern: .email)
-        rule.set(errorMessage: "Podany emial jest niewłaciwy")
+        rule.set(errorMessage: "Podany emial jest niewłaściwy")
         return rule
     }
     var type: CellType = .textfield
@@ -66,8 +66,8 @@ class CompatibilePasswordCell: RegisterCellType {
     var secure: Bool = true
     var labelText: String = "Potwierdź hasło"
     var validationRule: ValidatorRule {
-        var rule = ValidatorRulePattern(dynamicString: { return self.passwordCell?.value ?? ""})
-        rule.set(errorMessage: "Hasła muszą być zgodne")
+        var rule = ValidatorRuleLength(rule: .minimumLength, value: 8)
+        rule.set(errorMessage: "Hasło musi zawierać co najmniej 8 znaków")
         return rule
     }
     var passwordCell: PasswordCell?
@@ -115,8 +115,8 @@ class BirthdayCell: RegisterCellType {
     var secure: Bool = false
     var labelText: String = "Data urodzenia"
     var validationRule: ValidatorRule {
-        var rule = ValidatorRulePattern(pattern: .phoneNumber)
-        rule.set(errorMessage: "Data urodzenia źle ")
+        var rule = ValidatorRuleLength(rule: .minimumLength, value: 5)
+        rule.set(errorMessage: "Podana data jest niepoprawna")
         return rule
     }
     var type: CellType = .textfield

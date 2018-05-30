@@ -11,11 +11,13 @@ import UIKit
 protocol OnboardingConnectorDelegate: class {
     func showHomeView()
     func showRegisterView()
+    func goBackToLoginView()
 }
 
 final class OnboardingConnector {
     
     private let navigationController: UINavigationController
+    weak var rootConnector: RootConnectorDelegate?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -31,6 +33,10 @@ final class OnboardingConnector {
 }
 
 extension OnboardingConnector: OnboardingConnectorDelegate {
+    func goBackToLoginView() {
+        navigationController.popViewController(animated: true)
+    }
+    
     func showRegisterView() {
         let presenter = RegistrationPresenter(connector: self)
         let view = RegistrationViewController(presenter: presenter)
@@ -39,6 +45,6 @@ extension OnboardingConnector: OnboardingConnectorDelegate {
     }
     
     func showHomeView() {
-        
+        rootConnector?.endOnboardingConnector()
     }
 }
