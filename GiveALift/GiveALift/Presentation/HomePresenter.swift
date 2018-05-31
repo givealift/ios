@@ -8,20 +8,37 @@
 
 import UIKit
 
+protocol HomeView: class {
+    func showError(with message: String)
+}
+
 final class HomePresenter: BasePresenter {
     
     private weak var connector: SearchConnectorDelegate?
+    private let routesService = RoutesService()
+    private var from: Int!
+    private var to: Int!
+    weak var view: HomeView?
+    
     
     let fromPlaceholder = "Wyruszam z..."
     let toPlaceholder = "Jadę do..."
     let datePlaceholder = "Kiedy?"
     
     init(connector: SearchConnectorDelegate) {
+        super.init()
         self.connector = connector
+        setDelegate()
+    }
+    
+    private func setDelegate() {
+        routesService.searchDelegate = self
     }
     
     func showRoutesView(from: Int, to: Int, date: String) {
-        //connectorDelegate?.showSearchView()
+        self.from = from
+        self.to = to
+        routesService.findRoutes(from: from, to: to, date: date)
     }
     
     func showAddRouteView() {
@@ -34,5 +51,15 @@ final class HomePresenter: BasePresenter {
     
     private func prepareUserInfo() -> GALUserInfo {
         return GALUserInfo(address: "", birthYear: Date(), email: User.shared.email!, firstName: User.shared.firstName!, lastName: User.shared.lastName!, gender: "male", phone: User.shared.phoneNumber!, rate: 0)
+    }
+}
+
+extension HomePresenter: SearchRouteService {
+    func foundRoutes(_ routes: [Route]) {
+        connector?.showRoutesView(routes: routes, fromCityID: from, toCityID: to)
+    }
+    
+    func serviceError(_ error: APIError) {
+        view?.showError(with: error.description)
     }
 }

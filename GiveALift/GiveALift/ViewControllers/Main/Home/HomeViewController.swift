@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: TextFieldViewController<HomePresenter> {
+class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
 
     //MARK:- IBOutlets
     @IBOutlet weak var dateTextField: GALTextField!
@@ -36,9 +36,9 @@ class HomeViewController: TextFieldViewController<HomePresenter> {
     //MARK:- IBActions
     @IBAction func searchTapped(_ sender: Any) {
         if let to = toTextField.selectedCityId(), let from = fromTextField.selectedCityId(), let dateString = dateTextField.text, dateString != "" {
-//            presenter.findRoutesFor(from: from, to: to, date: dateString)
+            presenter.showRoutesView(from: from, to: to, date: dateString)
         } else {
-//            showError(with: <#T##String#>)
+//            showError(with: )
         }
     }
     

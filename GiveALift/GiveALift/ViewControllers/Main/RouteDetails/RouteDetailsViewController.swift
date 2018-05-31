@@ -38,7 +38,7 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
     
     private func checkIfUserIsOwner() {
         //MARK:- FAST
-        if User.shared.userID == presenter.route.routeInfo.galUserPublicResponse!.userId {
+        if User.shared.userID == presenter.route.routeInfo.galUserPublicResponse!.userID {
          //if User.shared.userID == presenter.route.routeInfo.ownerId! {
             reserveButton.isHidden = true
             userStackView.isHidden = true

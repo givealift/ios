@@ -50,6 +50,7 @@
 		C130E2DA20AB372500DC221C /* AddRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2D920AB372500DC221C /* AddRouteViewController.swift */; };
 		C130E2DD20AB73DD00DC221C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2DC20AB73DD00DC221C /* DateFormatter.swift */; };
 		C130E2DF20AB7AC800DC221C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2DE20AB7AC800DC221C /* Int.swift */; };
+		C1538D1320BFF2E700B54E02 /* RoutesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D1220BFF2E700B54E02 /* RoutesService.swift */; };
 		C15CF90220B46518005C1EF7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90120B46518005C1EF7 /* LoginPresenter.swift */; };
 		C15CF90620B46575005C1EF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90420B46575005C1EF7 /* LoginViewController.swift */; };
 		C15CF90720B46575005C1EF7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15CF90520B46575005C1EF7 /* LoginViewController.xib */; };
@@ -94,9 +95,6 @@
 		C1CFBD8920865D6200253375 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD8720865D6200253375 /* HomeViewController.xib */; };
 		C1CFBD8B20866EC100253375 /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD8A20866EC100253375 /* Cities.json */; };
 		C1CFBD8D2086728E00253375 /* SugestiveTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD8C2086728E00253375 /* SugestiveTextField.swift */; };
-		C1CFBD952086826100253375 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD932086826100253375 /* SearchViewController.swift */; };
-		C1CFBD962086826100253375 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD942086826100253375 /* SearchViewController.xib */; };
-		C1CFBD982086828000253375 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD972086828000253375 /* SearchPresenter.swift */; };
 		C1CFBD9A2086A78700253375 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD992086A78700253375 /* Route.swift */; };
 		C1CFBD9E2086AC4A00253375 /* RoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD9C2086AC4A00253375 /* RoutesViewController.swift */; };
 		C1CFBD9F2086AC4A00253375 /* RoutesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFBD9D2086AC4A00253375 /* RoutesViewController.xib */; };
@@ -177,6 +175,7 @@
 		C130E2D920AB372500DC221C /* AddRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteViewController.swift; sourceTree = "<group>"; };
 		C130E2DC20AB73DD00DC221C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		C130E2DE20AB7AC800DC221C /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		C1538D1220BFF2E700B54E02 /* RoutesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesService.swift; sourceTree = "<group>"; };
 		C15CF90120B46518005C1EF7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C15CF90420B46575005C1EF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C15CF90520B46575005C1EF7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -227,9 +226,6 @@
 		C1CFBD8720865D6200253375 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		C1CFBD8A20866EC100253375 /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
 		C1CFBD8C2086728E00253375 /* SugestiveTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugestiveTextField.swift; sourceTree = "<group>"; };
-		C1CFBD932086826100253375 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = GiveALift/ViewControllers/Main/Search/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
-		C1CFBD942086826100253375 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchViewController.xib; path = GiveALift/ViewControllers/Main/Search/SearchViewController.xib; sourceTree = SOURCE_ROOT; };
-		C1CFBD972086828000253375 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		C1CFBD992086A78700253375 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		C1CFBD9C2086AC4A00253375 /* RoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesViewController.swift; sourceTree = "<group>"; };
 		C1CFBD9D2086AC4A00253375 /* RoutesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutesViewController.xib; sourceTree = "<group>"; };
@@ -451,7 +447,6 @@
 				C124DA4520A8729B00391A71 /* RouteDetails */,
 				C1725B2F20A5AAD700F64747 /* AddRoute */,
 				C1CFBD9B2086AC3100253375 /* Routes */,
-				C1CFBD922086824500253375 /* Search */,
 				C1CFBD7C208651C700253375 /* Home */,
 			);
 			path = Main;
@@ -545,6 +540,7 @@
 			children = (
 				C1BEA46F206A45F600EE0B4B /* Validator.swift */,
 				C130E2BB20A9A0B700DC221C /* OnboardingService.swift */,
+				C1538D1220BFF2E700B54E02 /* RoutesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -666,16 +662,6 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
-		C1CFBD922086824500253375 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				C1CFBD932086826100253375 /* SearchViewController.swift */,
-				C1CFBD942086826100253375 /* SearchViewController.xib */,
-			);
-			name = Search;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		C1CFBD9B2086AC3100253375 /* Routes */ = {
 			isa = PBXGroup;
 			children = (
@@ -694,7 +680,6 @@
 				C15CF90020B464F8005C1EF7 /* Onboarding */,
 				C130E2DB20AB38D800DC221C /* AddRoute */,
 				C1CFBD82208655E800253375 /* HomePresenter.swift */,
-				C1CFBD972086828000253375 /* SearchPresenter.swift */,
 				C1CFBDA02086AC6500253375 /* RoutesPresenter.swift */,
 				C124DA4A20A872F900391A71 /* RouteDetailsPresenter.swift */,
 				C130E2B420A99CF700DC221C /* UserInfoPresenter.swift */,
@@ -860,7 +845,6 @@
 				C1725B3C20A5BFF300F64747 /* RouteTimeViewController.xib in Resources */,
 				C1725B4720A5FB6600F64747 /* RouteInfoViewController.xib in Resources */,
 				C1CFBD9F2086AC4A00253375 /* RoutesViewController.xib in Resources */,
-				C1CFBD962086826100253375 /* SearchViewController.xib in Resources */,
 				C124DA3920A7468E00391A71 /* IndirectionsViewController.xib in Resources */,
 				C1CFBD8920865D6200253375 /* HomeViewController.xib in Resources */,
 				C15CF90F20B4781D005C1EF7 /* ErrorMessage.xib in Resources */,
@@ -996,9 +980,9 @@
 				C1CFBD9E2086AC4A00253375 /* RoutesViewController.swift in Sources */,
 				C130E2CF20AB331000DC221C /* MainRoutePresenter.swift in Sources */,
 				C1CFBD7B20864D3600253375 /* User.swift in Sources */,
+				C1538D1320BFF2E700B54E02 /* RoutesService.swift in Sources */,
 				C15CF90920B467FE005C1EF7 /* OnboardingConnector.swift in Sources */,
 				C1E1663D2065825100BC36BE /* UIViewControllerE.swift in Sources */,
-				C1CFBD952086826100253375 /* SearchViewController.swift in Sources */,
 				C130E2C620AA2AB800DC221C /* StringE.swift in Sources */,
 				C124DA3820A7468E00391A71 /* IndirectionsViewController.swift in Sources */,
 				C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */,
@@ -1006,7 +990,6 @@
 				C130E2CC20AAF9EE00DC221C /* EditRouteInfoViewController.swift in Sources */,
 				C15CF91620BD51B3005C1EF7 /* RegistrationPresenter.swift in Sources */,
 				C15CF91320BD5169005C1EF7 /* RegistrationViewController.swift in Sources */,
-				C1CFBD982086828000253375 /* SearchPresenter.swift in Sources */,
 				C130E2B920A99D8200DC221C /* UserInfoViewController.swift in Sources */,
 				C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */,
 				C1233D602083CDFF00BD0A56 /* APIManagerType.swift in Sources */,
