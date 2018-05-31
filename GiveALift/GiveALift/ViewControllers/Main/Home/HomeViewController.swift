@@ -8,20 +8,70 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController<HomePresenter> {
+class HomeViewController: TextFieldViewController<HomePresenter> {
 
+    //MARK:- IBOutlets
+    @IBOutlet weak var dateTextField: GALTextField!
+    @IBOutlet weak var toTextField: SugestiveTextField!
+    @IBOutlet weak var fromTextField: SugestiveTextField!
+    
+    //MARK:- Variables
+    private lazy var APIDateFormatter: DateFormatter = {
+        $0.dateFormat = "yyyy-MM-dd"
+        return $0
+    }(DateFormatter())
+    
+    //MARK:- Constants
+    private let datePicker = UIDatePicker()
+    
+    //MARK:- VC's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUserInfoButton()
         setBackgroundImage()
+        setupTextFields()
+        createDatePicker()
     }
 
+    //MARK:- IBActions
     @IBAction func searchTapped(_ sender: Any) {
-        presenter.showSearchView()
+        if let to = toTextField.selectedCityId(), let from = fromTextField.selectedCityId(), let dateString = dateTextField.text, dateString != "" {
+//            presenter.findRoutesFor(from: from, to: to, date: dateString)
+        } else {
+//            showError(with: <#T##String#>)
+        }
     }
     
     @IBAction func addTapped(_ sender: Any) {
         presenter.showAddRouteView()
+    }
+    
+    //MARK:- Main
+    private func setupTextFields() {
+        fromTextField.placeholder = presenter.fromPlaceholder
+        toTextField.placeholder = presenter.toPlaceholder
+        dateTextField.placeholder = presenter.datePlaceholder
+        fromTextField.tag = 0
+        toTextField.tag = 1
+        dateTextField.tag = 2
+        fromTextField.delegate = self
+        toTextField.delegate = self
+        dateTextField.delegate = self
+    }
+    
+    private func createDatePicker() {
+        datePicker.datePickerMode = .date
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneButton], animated: false)
+        dateTextField.inputAccessoryView = toolbar
+        dateTextField.inputView = datePicker
+    }
+    
+    @objc private func donePressed() {
+        dateTextField.text = "\(APIDateFormatter.string(from: datePicker.date))"
+        self.view.endEditing(true)
     }
     
     private func setBackgroundImage() {

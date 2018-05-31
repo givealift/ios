@@ -33,6 +33,6 @@ final class FlowCoordinator {
     }
     
     private func presentHomeVC() {
-        connector?.showHomeView()
+        connector?.startSearchConnector()
     }
 }

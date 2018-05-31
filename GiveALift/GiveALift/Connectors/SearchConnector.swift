@@ -23,12 +23,12 @@ final class SearchConnector {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        showSearchView()
+        showHomeView()
     }
     
-    private func showSearchView() {
-        let presenter = SearchPresenter(connector: self)
-        let view = SearchViewController(presenter: presenter)
+    private func showHomeView() {
+        let presenter = HomePresenter(connector: self)
+        let view = HomeViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
     }
 }

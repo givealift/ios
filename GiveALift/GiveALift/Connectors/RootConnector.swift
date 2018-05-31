@@ -11,7 +11,7 @@ import UIKit
 protocol RootConnectorDelegate: class {
     func startOnboardingConnector()
     func endOnboardingConnector()
-    func showHomeView()
+    func startSearchConnector()
 }
 
 final class RootConnector {
@@ -40,6 +40,10 @@ final class RootConnector {
 }
 
 extension RootConnector: RootConnectorDelegate {
+    func startSearchConnector() {
+        self.searchConnector = SearchConnector(navigationController: self.navigationController)
+    }
+    
     func startOnboardingConnector() {
         let onboardingConnector = OnboardingConnector(navigationController: self.navigationController)
         onboardingConnector.rootConnector = self
@@ -48,25 +52,12 @@ extension RootConnector: RootConnectorDelegate {
     
     func endOnboardingConnector() {
         self.onboardingConnector = nil
-        showHomeView()
+        startSearchConnector()
     }
     
     func showUserInfoView(userData: GALUserInfo) {
         self.userInfoConnector = UserInfoConnector(navigationController: self.navigationController)
         userInfoConnector?.showUserInfoView(userData: userData, editModeEnabled: true)
-    }
-    
-    func showPreLoginView() {
-        let mainStoryboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
-        let vc : PreLoginRegisterViewController = mainStoryboard.instantiateViewController(withIdentifier: "PreLoginRegisterViewController") as! PreLoginRegisterViewController
-        vc.connector = self
-        navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func showHomeView() {
-        let presenter = HomePresenter(connectorDelegate: self)
-        let homeVC = HomeViewController(presenter: presenter)
-        navigationController.pushViewController(homeVC, animated: true)
     }
     
     func showAddRouteView() {
