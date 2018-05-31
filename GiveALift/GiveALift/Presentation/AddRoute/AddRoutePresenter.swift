@@ -8,9 +8,11 @@
 
 import Foundation
 
-class AddRoutePresenter: BasePresenter {
+class AddRoutePresenter: BasePresenter, AddRouteService {
+    
     
     weak var connector: AddRouteConnectorDelegate?
+    private var routesService = RoutesService()
     var route: Route
     var isUpdating: Bool
     
@@ -18,5 +20,25 @@ class AddRoutePresenter: BasePresenter {
         self.connector = connector
         self.route = route
         self.isUpdating = isUpdating
+        super.init()
+        routesService.addDelegate = self
+    }
+    
+    func uploadToServer() {
+        routesService.uploadRoute(route: route)
+    }
+    
+    func update() {
+        
+    }
+    
+    func updateSuccess() {
+        print("udało się")
+    }
+    
+    func serviceError(_ error: APIError) {
+        
     }
 }
+
+

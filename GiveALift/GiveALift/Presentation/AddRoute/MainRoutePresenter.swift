@@ -10,10 +10,10 @@ import Foundation
 
 final class MainRoutePresenter: AddRoutePresenter {
     
-    let fromTextFieldPlaceholder = "Wprowadź miasto startowe"
-    let fromLocationPlaceholder = "Podaj miejsce spotkania"
-    let toTextFieldPlaceholder = "Wproawdź miasto docelowe"
-    let toLocationPlaceholder = "Podaj miejsce docelowe"
+    let fromTextFieldPlaceholder = "Miasto startowe"
+    let fromLocationPlaceholder = "Miejsce odjazdu"
+    let toTextFieldPlaceholder = "Miasto końcowe"
+    let toLocationPlaceholder = "Miejsce przyjazdu"
     
     func showIndirectionView(fromCityId: Int, fromLocation: String, toCityId: Int, toLocation: String) {
         if isUpdating {

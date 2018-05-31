@@ -23,40 +23,45 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ddc-uP-exW">
-                    <rect key="frame" x="50" y="40" width="275" height="200"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ddc-uP-exW">
+                    <rect key="frame" x="72.5" y="35" width="230" height="130"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6D5-mT-mbY" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="275" height="53.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="230" height="57.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nLe-RQ-OZU" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="73.5" width="275" height="53"/>
+                            <rect key="frame" x="0.0" y="72.5" width="230" height="57.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7i-K7-9UX" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="146.5" width="275" height="53.5"/>
-                            <state key="normal" title="Dalej"/>
-                            <connections>
-                                <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="rWQ-Ow-W5O"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="74b-MF-SK3"/>
+                        <constraint firstAttribute="height" constant="130" id="74b-MF-SK3"/>
+                        <constraint firstAttribute="width" constant="230" id="MA8-gn-7iS"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7i-K7-9UX" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
+                    <rect key="frame" x="87.5" y="185" width="200" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="0xW-ic-slD"/>
+                        <constraint firstAttribute="height" constant="45" id="e0U-uf-8ol"/>
+                    </constraints>
+                    <state key="normal" title="Dalej"/>
+                    <connections>
+                        <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="rWQ-Ow-W5O"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Ddc-uP-exW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="0KQ-gj-3IM"/>
+                <constraint firstItem="F7i-K7-9UX" firstAttribute="top" secondItem="Ddc-uP-exW" secondAttribute="bottom" constant="20" id="3KC-Th-HUa"/>
                 <constraint firstItem="Ddc-uP-exW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Bhq-gd-LBJ"/>
-                <constraint firstItem="Ddc-uP-exW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="WgS-aU-Quw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ddc-uP-exW" secondAttribute="trailing" constant="50" id="k0D-Me-Uee"/>
+                <constraint firstItem="F7i-K7-9UX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VdI-4G-Csa"/>
+                <constraint firstItem="Ddc-uP-exW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="WgS-aU-Quw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

@@ -22,21 +22,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dit-Rp-Xei">
-                    <rect key="frame" x="50" y="234" width="275" height="200"/>
+                    <rect key="frame" x="72.5" y="35" width="230" height="200"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="230" id="Bmd-xA-MjF"/>
                         <constraint firstAttribute="height" constant="200" id="PtY-6X-oM0"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQy-MB-C85" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
-                    <rect key="frame" x="157.5" y="419" width="60" height="30"/>
+                    <rect key="frame" x="87.5" y="255" width="200" height="45"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="ZsN-K5-TcZ"/>
-                        <constraint firstAttribute="width" constant="60" id="paq-af-Zn2"/>
+                        <constraint firstAttribute="height" constant="45" id="ZsN-K5-TcZ"/>
+                        <constraint firstAttribute="width" constant="200" id="paq-af-Zn2"/>
                     </constraints>
-                    <state key="normal" title="Zakończ"/>
+                    <state key="normal" title="Dodaj przejazd"/>
                     <connections>
                         <action selector="finishTapped:" destination="-1" eventType="touchUpInside" id="SJZ-Dc-E3x"/>
                     </connections>
@@ -44,12 +45,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Dit-Rp-Xei" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="8Io-qR-bA3"/>
-                <constraint firstItem="YQy-MB-C85" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="399" id="EhL-wV-f3X"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dit-Rp-Xei" secondAttribute="trailing" constant="50" id="GYK-Ho-mSx"/>
-                <constraint firstItem="YQy-MB-C85" firstAttribute="centerX" secondItem="Dit-Rp-Xei" secondAttribute="centerX" id="O8B-PJ-ylT"/>
+                <constraint firstItem="Dit-Rp-Xei" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="C8T-3O-yIX"/>
+                <constraint firstItem="YQy-MB-C85" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="D3v-18-XJB"/>
+                <constraint firstItem="YQy-MB-C85" firstAttribute="top" secondItem="Dit-Rp-Xei" secondAttribute="bottom" constant="20" id="MoQ-C8-AKt"/>
                 <constraint firstItem="Dit-Rp-Xei" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Uex-pt-SFC"/>
-                <constraint firstItem="Dit-Rp-Xei" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="f7m-xP-hpc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

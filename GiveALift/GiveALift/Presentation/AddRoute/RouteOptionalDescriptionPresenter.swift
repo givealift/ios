@@ -10,20 +10,14 @@ import Foundation
 
 final class RouteOptionalDescriptionPresenter: AddRoutePresenter {
     
+    let textViewPlaceholder = "Dodatkowo możesz zamieścić jakieś ważne infromacje np. 'nie przeworzę psów', 'Proszę o punktualnośc', lecz nie jest to wymagane"
+    
     func showHomeView(description: String?) {
         updateModel(description: description)
-        addRouteToServer()
-        connector?.showHomeView()
+        uploadToServer()
     }
     
     private func updateModel(description: String?) {
         route.description = description
-    }
-    
-    private func addRouteToServer() {
-        //let galUserPublicResponse = GalUserPublicResponse(userId: User.shared.userID)
-        //route.galUserPublicResponse = galUserPublicResponse
-        route.ownerId = User.shared.userID
-        APIManager.shared.addRoute(route: route)
     }
 }

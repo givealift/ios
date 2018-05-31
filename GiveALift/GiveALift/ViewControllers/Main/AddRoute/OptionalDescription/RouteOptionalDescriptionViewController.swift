@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RouteOptionalDescriptionViewController: AddRouteViewController<RouteOptionalDescriptionPresenter> {
+class RouteOptionalDescriptionViewController: AddRouteViewController<RouteOptionalDescriptionPresenter>, UITextViewDelegate {
 
     //MARK:- IBOutlets
     @IBOutlet weak var textView: UITextView!
@@ -16,11 +16,34 @@ class RouteOptionalDescriptionViewController: AddRouteViewController<RouteOption
     //MARK:- VC's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.gray
+        setupTextView()
     }
     
     //MARK:- IBActions
     @IBAction func finishTapped(_ sender: Any) {
         presenter.showHomeView(description: nil)
+    }
+    
+    //MARK:- Main
+    private func setupTextView() {
+        textView.delegate = self
+        textView.text = presenter.textViewPlaceholder
+        textView.textColor = UIColor.lightGray
+        textView.layer.borderColor = UIColor.darkGray.cgColor
+        textView.layer.borderWidth = 3.0
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = presenter.textViewPlaceholder
+            textView.textColor = UIColor.lightGray
+        }
     }
 }

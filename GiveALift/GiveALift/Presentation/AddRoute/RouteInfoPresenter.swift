@@ -11,8 +11,8 @@ import Foundation
 final class RouteInfoPresenter: AddRoutePresenter {
     
     //MARK:- Constants
-    let pricePlaceholder = "Wpisz cenę przejazdu"
-    let numberOfSeatsPlaceholder = "Wpisz ilość wolnych miejsc"
+    let pricePlaceholder = "Cena przejazdu"
+    let numberOfSeatsPlaceholder = "Ilość wolnych miejsc"
     
     func showRouteOptionalDescriptionView(price: Int, numberOfSeats: Int) {
         updateModel(price: price, numberOfSeats: numberOfSeats)

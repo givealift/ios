@@ -16,11 +16,16 @@ protocol SearchRouteService: RouteServiceError {
     func foundRoutes(_ routes: [Route])
 }
 
+protocol AddRouteService: RouteServiceError {
+    func updateSuccess()
+}
+
 final class RoutesService {
     
     fileprivate let requestBuilder: RequestBuilderType
     fileprivate let urlBuilder: URLBuilderType
     weak var searchDelegate: SearchRouteService?
+    weak var addDelegate: AddRouteService?
     
     // MARK: Initializers
     init(urlBuilder: URLBuilderType = URLBuilder(), requestBuilder: RequestBuilderType = RequestBuilder()) {
@@ -39,6 +44,25 @@ final class RoutesService {
                 self?.handleResponse(data: result)
             }
         }
+    }
+    
+    func uploadRoute(route: Route) {
+        requestBuilder.POSTRequest(withURL: urlBuilder.addRouteURL(), withData: route, authToken: User.shared.token!) { [weak self] (result) in
+            switch result {
+            case .Error(error: let error):
+                DispatchQueue.main.async {
+                    self?.addDelegate?.serviceError(error)
+                }
+            case .Success(result: let _):
+                DispatchQueue.main.async {
+                    self?.addDelegate?.updateSuccess()
+                }
+            }
+        }
+    }
+    
+    func updateRoute(route: Route) {
+        //MARK:- TODO update
     }
     
     private func handleResponse(data: Data) {
