@@ -43,6 +43,7 @@ final class RoutesService {
     
     private func handleResponse(data: Data) {
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
         do {
             let routes = try decoder.decode([Route].self, from: data)
             DispatchQueue.main.async {

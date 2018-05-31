@@ -38,7 +38,7 @@ class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
         if let to = toTextField.selectedCityId(), let from = fromTextField.selectedCityId(), let dateString = dateTextField.text, dateString != "" {
             presenter.showRoutesView(from: from, to: to, date: dateString)
         } else {
-//            showError(with: )
+            showError(with: presenter.emptyData)
         }
     }
     

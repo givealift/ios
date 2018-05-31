@@ -20,10 +20,10 @@ final class HomePresenter: BasePresenter {
     private var to: Int!
     weak var view: HomeView?
     
-    
     let fromPlaceholder = "Wyruszam z..."
     let toPlaceholder = "Jadę do..."
     let datePlaceholder = "Kiedy?"
+    let emptyData = "Wpisz poprawne dane"
     
     init(connector: SearchConnectorDelegate) {
         super.init()

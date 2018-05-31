@@ -51,6 +51,7 @@
 		C130E2DD20AB73DD00DC221C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2DC20AB73DD00DC221C /* DateFormatter.swift */; };
 		C130E2DF20AB7AC800DC221C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2DE20AB7AC800DC221C /* Int.swift */; };
 		C1538D1320BFF2E700B54E02 /* RoutesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D1220BFF2E700B54E02 /* RoutesService.swift */; };
+		C1538D1720C006D800B54E02 /* GALUserPublicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D1620C006D800B54E02 /* GALUserPublicResponse.swift */; };
 		C15CF90220B46518005C1EF7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90120B46518005C1EF7 /* LoginPresenter.swift */; };
 		C15CF90620B46575005C1EF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90420B46575005C1EF7 /* LoginViewController.swift */; };
 		C15CF90720B46575005C1EF7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15CF90520B46575005C1EF7 /* LoginViewController.xib */; };
@@ -176,6 +177,7 @@
 		C130E2DC20AB73DD00DC221C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		C130E2DE20AB7AC800DC221C /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		C1538D1220BFF2E700B54E02 /* RoutesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesService.swift; sourceTree = "<group>"; };
+		C1538D1620C006D800B54E02 /* GALUserPublicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALUserPublicResponse.swift; sourceTree = "<group>"; };
 		C15CF90120B46518005C1EF7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C15CF90420B46575005C1EF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C15CF90520B46575005C1EF7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				C124DA4320A841D300391A71 /* GALUserLogin.swift */,
 				C124DA5020A8958D00391A71 /* RegisterRequest.swift */,
 				C130E2BD20A9A89500DC221C /* GALUserInfo.swift */,
+				C1538D1620C006D800B54E02 /* GALUserPublicResponse.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -378,6 +381,14 @@
 				C124DA3C20A75E5B00391A71 /* RouteOptionalDescriptionPresenter.swift */,
 			);
 			path = AddRoute;
+			sourceTree = "<group>";
+		};
+		C1538D1420BFFDCF00B54E02 /* SearchRoutes */ = {
+			isa = PBXGroup;
+			children = (
+				C1CFBD82208655E800253375 /* HomePresenter.swift */,
+			);
+			path = SearchRoutes;
 			sourceTree = "<group>";
 		};
 		C15CF90020B464F8005C1EF7 /* Onboarding */ = {
@@ -676,10 +687,10 @@
 		C1D910D82080AC3C00AD0AC4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C1538D1420BFFDCF00B54E02 /* SearchRoutes */,
 				C1D910D92080AC5300AD0AC4 /* BasePresenter.swift */,
 				C15CF90020B464F8005C1EF7 /* Onboarding */,
 				C130E2DB20AB38D800DC221C /* AddRoute */,
-				C1CFBD82208655E800253375 /* HomePresenter.swift */,
 				C1CFBDA02086AC6500253375 /* RoutesPresenter.swift */,
 				C124DA4A20A872F900391A71 /* RouteDetailsPresenter.swift */,
 				C130E2B420A99CF700DC221C /* UserInfoPresenter.swift */,
@@ -988,6 +999,7 @@
 				C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */,
 				C1725B2A20A59E8800F64747 /* SearchConnector.swift in Sources */,
 				C130E2CC20AAF9EE00DC221C /* EditRouteInfoViewController.swift in Sources */,
+				C1538D1720C006D800B54E02 /* GALUserPublicResponse.swift in Sources */,
 				C15CF91620BD51B3005C1EF7 /* RegistrationPresenter.swift in Sources */,
 				C15CF91320BD5169005C1EF7 /* RegistrationViewController.swift in Sources */,
 				C130E2B920A99D8200DC221C /* UserInfoViewController.swift in Sources */,

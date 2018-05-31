@@ -33,12 +33,12 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
     }
     
     @IBAction func reserveTapped(_ sender: Any) {
-        APIManager.shared.reserve(route: presenter.route.routeInfo, userID: 2)
+        //APIManager.shared.reserve(route: presenter.route.routeInfo, userID: 2)
     }
     
     private func checkIfUserIsOwner() {
         //MARK:- FAST
-        if User.shared.userID == presenter.route.routeInfo.galUserPublicResponse!.userID {
+        if User.shared.userID == presenter.route.galUserPublicResponse!.userID {
          //if User.shared.userID == presenter.route.routeInfo.ownerId! {
             reserveButton.isHidden = true
             userStackView.isHidden = true
@@ -51,15 +51,15 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
     }
     
     private func setupViewData() {
-        numberOfSeats.text = String(describing: presenter.route.routeInfo.numberOfSeats - presenter.route.routeInfo.numberOfOccupiedSeats)
-        price.text = String(describing: presenter.route.routeInfo.price)
-        dateLabel.text = presenter.route.routeInfo.from.date
-        fromLabel.text = presenter.route.routeInfo.from.city.name
-        toLabel.text = presenter.route.routeInfo.to.city.name
-        fromHourLable.text = presenter.route.routeInfo.from.date.extractHourString()
-        toHourLabel.text = presenter.route.routeInfo.to.date.extractHourString()
-        userLabel.text = presenter.route.userInfo.firstName
-        presenter.route.routeInfo.stops.forEach({addIndirectLabelsIfNeeded(location: $0)})
+        numberOfSeats.text = String(describing: presenter.route.numberOfSeats - presenter.route.numberOfOccupiedSeats)
+        price.text = String(describing: presenter.route.price)
+        dateLabel.text = presenter.route.from.date
+        fromLabel.text = presenter.route.from.city.name
+        toLabel.text = presenter.route.to.city.name
+        fromHourLable.text = presenter.route.from.date.extractHourString()
+        toHourLabel.text = presenter.route.to.date.extractHourString()
+        userLabel.text = presenter.route.galUserPublicResponse!.firstName
+        presenter.route.stops.forEach({addIndirectLabelsIfNeeded(location: $0)})
     }
     
     private func addIndirectLabelsIfNeeded(location: Location) {

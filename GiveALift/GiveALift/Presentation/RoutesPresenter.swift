@@ -22,7 +22,7 @@ final class RoutesPresenter: BasePresenter {
         self.toCityID = toCityID
     }
     
-    func showRouteDetailsView(route: CellRouteData) {
+    func showRouteDetailsView(route: Route) {
         connector?.showRouteDetailsView(route: route)
     }
 }

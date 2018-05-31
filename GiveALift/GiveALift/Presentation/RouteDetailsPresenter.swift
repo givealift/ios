@@ -11,18 +11,18 @@ import Foundation
 final class RouteDetailsPresenter: BasePresenter {
     
     private weak var connector: SearchConnectorDelegate?
-    let route: CellRouteData
+    let route: Route
     
-    init(connector: SearchConnectorDelegate, route: CellRouteData) {
+    init(connector: SearchConnectorDelegate, route: Route) {
         self.connector = connector
         self.route = route
     }
     
     func showUserInfoView() {
-        connector?.showUserInfoView(userData: route.userInfo)
+        connector?.showUserInfoView(userData: route.galUserPublicResponse!.toGALUserInfo())
     }
     
     func showEditRouteInfo() {
-        connector?.showEditRouteInfoView(route: route.routeInfo)
+        //connector?.showEditRouteInfoView(route: route.routeInfo)
     }
 }

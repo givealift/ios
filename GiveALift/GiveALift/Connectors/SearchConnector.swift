@@ -10,7 +10,7 @@ import UIKit
 
 protocol SearchConnectorDelegate: class {
     func showRoutesView(routes: [Route], fromCityID: Int, toCityID: Int)
-    func showRouteDetailsView(route: CellRouteData)
+    func showRouteDetailsView(route: Route)
     func showUserInfoView(userData: GALUserInfo)
     func showEditRouteInfoView(route: Route)
     var  addRouteConnector: AddRouteConnectorDelegate? { get set }
@@ -48,7 +48,7 @@ extension SearchConnector: SearchConnectorDelegate {
         navigationController.pushViewController(view, animated: true)
     }
     
-    func showRouteDetailsView(route: CellRouteData) {
+    func showRouteDetailsView(route: Route) {
         let presenter = RouteDetailsPresenter(connector: self, route: route)
         let view = RouteDetailsViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)

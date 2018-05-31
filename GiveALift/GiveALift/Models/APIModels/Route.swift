@@ -18,19 +18,6 @@ struct Route: Codable {
     var galUserPublicResponse: GalUserPublicResponse?
 }
 
-struct GalUserPublicResponse: Codable {
-    let userID: Int
-    let firstName, lastName, email, phone: String
-    let gender: String
-    let rate: Int
-    let birthYear: String
-    
-    enum CodingKeys: String, CodingKey {
-        case userID = "userId"
-        case firstName, lastName, email, phone, gender, rate, birthYear
-    }
-}
-
 struct Location: Codable {
     var city: City!
     var placeOfMeeting: String!
