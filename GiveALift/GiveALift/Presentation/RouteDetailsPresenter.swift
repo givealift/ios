@@ -19,7 +19,7 @@ final class RouteDetailsPresenter: BasePresenter {
     }
     
     func showUserInfoView() {
-        connector?.showUserInfoView(userData: route.galUserPublicResponse!.toGALUserInfo())
+       // connector?.showUserInfoView(userData: route.galUserPublicResponse!.toGALUserInfo())
     }
     
     func showEditRouteInfo() {

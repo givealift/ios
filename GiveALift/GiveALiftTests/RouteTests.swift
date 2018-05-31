@@ -1,15 +1,14 @@
 //
-//  GiveALiftTests.swift
+//  RouteTests.swift
 //  GiveALiftTests
 //
-//  Created by Marcin Włoczko on 23.03.2018.
+//  Created by Marcin Włoczko on 31.05.2018.
 //  Copyright © 2018 Marcin Włoczko. All rights reserved.
 //
 
 import XCTest
-@testable import GiveALift
 
-class GiveALiftTests: XCTestCase {
+class RouteTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -25,12 +24,4 @@ class GiveALiftTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

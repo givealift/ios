@@ -10,6 +10,8 @@ import Foundation
 
 final class RouteOptionalDescriptionPresenter: AddRoutePresenter {
     
+    //MARK:- TODO Ominąć ten krok NIE ZAPOMNIES O USER ID
+    
     let textViewPlaceholder = "Dodatkowo możesz zamieścić jakieś ważne infromacje np. 'nie przeworzę psów', 'Proszę o punktualnośc', lecz nie jest to wymagane"
     
     func showHomeView(description: String?) {
@@ -19,5 +21,6 @@ final class RouteOptionalDescriptionPresenter: AddRoutePresenter {
     
     private func updateModel(description: String?) {
         route.description = description
+        route.ownerId = User.shared.userID!
     }
 }

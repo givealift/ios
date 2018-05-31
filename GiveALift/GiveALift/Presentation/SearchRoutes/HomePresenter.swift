@@ -42,11 +42,12 @@ final class HomePresenter: BasePresenter {
     }
     
     func showAddRouteView() {
-      connector?.showAddRouteView()
+      connector?.startAddRouteConnector()
     }
     
     func showUserInfoView() {
-        //connectorDelegate?.showUserInfoView(userData: prepareUserInfo())
+        let user = GALUserInfo(address: "", birthYear: User.shared.birthDay, email: User.shared.email, firstName: User.shared.firstName, lastName: User.shared.lastName, gender: User.shared.gender, phone: User.shared.phoneNumber, rate: User.shared.rate)
+        connector?.startUserInfoConnector(userInfo: user, editModeEnabled: true)
     }
     
     private func prepareUserInfo() -> GALUserInfo {

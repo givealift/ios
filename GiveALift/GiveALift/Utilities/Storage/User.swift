@@ -33,6 +33,12 @@ final class User {
     var email: String? {
         return storage.getEmail()
     }
+    var rate: Int? {
+        return storage.getRate()
+    }
+    var birthDay: Date? {
+        return storage.getBirthDay()
+    }
     
     private let storage = LocalStorageManager(userDefaults: UserDefaults.standard)
     
@@ -42,10 +48,12 @@ final class User {
         print(user.userID)
         storage.setUserID(user.userID)
         storage.setEmail(userInfo.email!)
-        storage.setPhoneNumber(userInfo.phone)
+        storage.setPhoneNumber(userInfo.phone!)
         storage.setUserLastName(userInfo.lastName!)
         storage.setUserFirstName(userInfo.firstName!)
         storage.setGender("male")
+        storage.setRate(userInfo.rate!)
+        storage.setBirthday(userInfo.birthYear!)
         isLogIn = true
     }
     

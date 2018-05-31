@@ -16,11 +16,13 @@ protocol AddRouteConnectorDelegate: class {
     func showHomeView()
     func showMainRouteView(route: Route, isUpdating: Bool)
     func showPreviuosView()
+    weak var searchConnector: SearchConnectorDelegate? { get set }
 }
 
 final class AddRouteConnector {
     
     private unowned let navigationController: UINavigationController
+    weak var searchConnector: SearchConnectorDelegate?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -39,7 +41,7 @@ extension AddRouteConnector: AddRouteConnectorDelegate {
     }
     
     func showHomeView() {
-        navigationController.popToRootViewController(animated: true)
+        searchConnector?.endAddRouteConnector()
     }
     
     func showRouteOptionalDescriptionView(route: Route, isUpdating: Bool) {

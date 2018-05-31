@@ -10,11 +10,13 @@ import UIKit
 
 protocol UserInfoConnectorDelegate: class {
     func showUserInfoView(userData: GALUserInfo ,editModeEnabled: Bool)
+    var searchConnector: SearchConnectorDelegate? { get set }
 }
 
 final class UserInfoConnector {
     
     private unowned let navigationController: UINavigationController
+    weak var searchConnector: SearchConnectorDelegate?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -23,6 +25,7 @@ final class UserInfoConnector {
 
 
 extension UserInfoConnector: UserInfoConnectorDelegate {
+    
     func showUserInfoView(userData: GALUserInfo ,editModeEnabled: Bool) {
         let presenter = UserInfoPresenter(connector: self,userData: userData ,editModeEnabled: editModeEnabled)
         let view = UserInfoViewController(presenter: presenter)

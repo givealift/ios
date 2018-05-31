@@ -33,11 +33,11 @@ class AddRoutePresenter: BasePresenter, AddRouteService {
     }
     
     func updateSuccess() {
-        print("udało się")
+        connector?.showHomeView()
     }
     
     func serviceError(_ error: APIError) {
-        
+        print(error)
     }
 }
 

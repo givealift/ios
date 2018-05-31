@@ -13,6 +13,6 @@ struct GALUserInfo: Codable {
     let birthYear: Date?
     let email, firstName, lastName: String?
     let gender: String?
-    let phone: String
+    let phone: String?
     let rate: Int?
 }

@@ -8,9 +8,12 @@
 
 import UIKit
 
-class UserInfoViewController: BaseViewController<UserInfoPresenter> {
-    @IBOutlet weak var stackView: UIStackView!
+class UserInfoViewController: TextFieldViewController<UserInfoPresenter> {
     
+    //MARK:- IBOutlets
+    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var birthdayTextField: GALTextField!
     @IBOutlet weak var firstNameTextField: GALTextField!
     @IBOutlet weak var secondNameTextField: GALTextField!
     @IBOutlet weak var compatibilePasswordTextField: GALTextField!
@@ -18,19 +21,25 @@ class UserInfoViewController: BaseViewController<UserInfoPresenter> {
     @IBOutlet weak var emailTextField: GALTextField!
     @IBOutlet weak var passwordTextField: GALTextField!
     @IBOutlet weak var phoneNumberTextField: GALTextField!
-    
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet var textFields: [GALTextField]!
     @IBOutlet var regularButtons: [UIButton]!
     @IBOutlet var editButtons: [UIButton]!
     
+    //MARK:- Variables
+    private lazy var dateFormatter: DateFormatter = {
+        $0.dateFormat = "yyyy-MM-dd"
+        return $0
+    }(DateFormatter())
+    
+    //MARK:- VC's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
         setupTextFields()
         editButton.isHidden = !presenter.editModeEnabled
     }
 
+    //MARK:- IBActions
     @IBAction func dissmisTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -77,14 +86,17 @@ class UserInfoViewController: BaseViewController<UserInfoPresenter> {
         emailTextField.placeholder = presenter.userData.email
         phoneNumberTextField.placeholder = presenter.userData.phone
         gender.placeholder = presenter.userData.gender
+        birthdayTextField.placeholder = dateFormatter.string(from: presenter.userData.birthYear!)
     }
     
+    //MARK:- Main
     private func editState(_ value: Bool) {
         regularButtons.forEach({ $0.isHidden = value })
         editButtons.forEach({ $0.isHidden = !value })
         textFields.forEach({
             $0.isUserInteractionEnabled = value
             $0.text = nil
+            $0.delegate = self
         })
     }
     
@@ -94,5 +106,25 @@ class UserInfoViewController: BaseViewController<UserInfoPresenter> {
         emailTextField.text = presenter.userData.email
         phoneNumberTextField.text = presenter.userData.phone
         gender.text = presenter.userData.gender
+        birthdayTextField.text = dateFormatter.string(from: presenter.userData.birthYear!)
+    }
+    
+    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+        print(textField.frame.origin.y )
+        print((UIScreen.main.bounds.height / 2))
+        if textField.frame.origin.y + 160.0 > (UIScreen.main.bounds.height / 2) {
+            logoTopConstraint.constant = -(textField.frame.origin.y - 100.0)
+            UIView.animate(withDuration: 0.25) {
+                self.view.layoutSubviews()
+            }
+        }
+    }
+    
+    override func dismissKeyboard() {
+        view.endEditing(true)
+        logoTopConstraint.constant = 50
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutSubviews()
+        }
     }
 }

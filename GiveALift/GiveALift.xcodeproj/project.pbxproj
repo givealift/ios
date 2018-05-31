@@ -52,6 +52,8 @@
 		C130E2DF20AB7AC800DC221C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2DE20AB7AC800DC221C /* Int.swift */; };
 		C1538D1320BFF2E700B54E02 /* RoutesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D1220BFF2E700B54E02 /* RoutesService.swift */; };
 		C1538D1720C006D800B54E02 /* GALUserPublicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D1620C006D800B54E02 /* GALUserPublicResponse.swift */; };
+		C1538D3620C0628F00B54E02 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D3520C0628F00B54E02 /* RouteTests.swift */; };
+		C1538D3820C062B700B54E02 /* OnboardingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D3720C062B700B54E02 /* OnboardingServiceTests.swift */; };
 		C15CF90220B46518005C1EF7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90120B46518005C1EF7 /* LoginPresenter.swift */; };
 		C15CF90620B46575005C1EF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90420B46575005C1EF7 /* LoginViewController.swift */; };
 		C15CF90720B46575005C1EF7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15CF90520B46575005C1EF7 /* LoginViewController.xib */; };
@@ -79,7 +81,6 @@
 		C191F0F92065657C008DD972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F0F72065657C008DD972 /* Main.storyboard */; };
 		C191F0FB2065657C008DD972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C191F0FA2065657C008DD972 /* Assets.xcassets */; };
 		C191F0FE2065657C008DD972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F0FC2065657C008DD972 /* LaunchScreen.storyboard */; };
-		C191F1092065657D008DD972 /* GiveALiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1082065657D008DD972 /* GiveALiftTests.swift */; };
 		C191F1142065657D008DD972 /* GiveALiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1132065657D008DD972 /* GiveALiftUITests.swift */; };
 		C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191F13020656C1E008DD972 /* GiveALift.xcdatamodeld */; };
 		C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F13F20657E00008DD972 /* Onboarding.storyboard */; };
@@ -178,6 +179,9 @@
 		C130E2DE20AB7AC800DC221C /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		C1538D1220BFF2E700B54E02 /* RoutesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesService.swift; sourceTree = "<group>"; };
 		C1538D1620C006D800B54E02 /* GALUserPublicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALUserPublicResponse.swift; sourceTree = "<group>"; };
+		C1538D3420C0628F00B54E02 /* GiveALiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GiveALiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		C1538D3520C0628F00B54E02 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
+		C1538D3720C062B700B54E02 /* OnboardingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingServiceTests.swift; sourceTree = "<group>"; };
 		C15CF90120B46518005C1EF7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C15CF90420B46575005C1EF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C15CF90520B46575005C1EF7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -208,7 +212,6 @@
 		C191F0FD2065657C008DD972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C191F0FF2065657C008DD972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C191F1042065657D008DD972 /* GiveALiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiveALiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C191F1082065657D008DD972 /* GiveALiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveALiftTests.swift; sourceTree = "<group>"; };
 		C191F10A2065657D008DD972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C191F10F2065657D008DD972 /* GiveALiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiveALiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C191F1132065657D008DD972 /* GiveALiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveALiftUITests.swift; sourceTree = "<group>"; };
@@ -516,8 +519,10 @@
 		C191F1072065657D008DD972 /* GiveALiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				C191F1082065657D008DD972 /* GiveALiftTests.swift */,
 				C191F10A2065657D008DD972 /* Info.plist */,
+				C1538D3520C0628F00B54E02 /* RouteTests.swift */,
+				C1538D3420C0628F00B54E02 /* GiveALiftTests-Bridging-Header.h */,
+				C1538D3720C062B700B54E02 /* OnboardingServiceTests.swift */,
 			);
 			path = GiveALiftTests;
 			sourceTree = "<group>";
@@ -807,6 +812,7 @@
 					};
 					C191F1032065657D008DD972 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C191F0EF2065657C008DD972;
 					};
@@ -1043,7 +1049,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C191F1092065657D008DD972 /* GiveALiftTests.swift in Sources */,
+				C1538D3820C062B700B54E02 /* OnboardingServiceTests.swift in Sources */,
+				C1538D3620C0628F00B54E02 /* RouteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1239,12 +1246,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YY346RZE89;
 				INFOPLIST_FILE = GiveALiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = marcin.GiveALiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GiveALiftTests/GiveALiftTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GiveALift.app/GiveALift";
@@ -1257,12 +1267,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YY346RZE89;
 				INFOPLIST_FILE = GiveALiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = marcin.GiveALiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GiveALiftTests/GiveALiftTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GiveALift.app/GiveALift";

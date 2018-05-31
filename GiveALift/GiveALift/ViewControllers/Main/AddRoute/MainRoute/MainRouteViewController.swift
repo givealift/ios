@@ -41,13 +41,12 @@ class MainRouteViewController: AddRouteViewController<MainRoutePresenter> {
     //MARK:- Main
     
     private func classicWay() {
-//        if let fromCityId = fromTextField.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text, from != "", to != "" {
-//
-//            presenter.showIndirectionView(fromCityId: fromCityId, fromLocation: from, toCityId: toCityId, toLocation: to)
-//        } else {
-//            showError(with: "Wpisz poprawne dane")
-//        }
-         presenter.showIndirectionView(fromCityId: 1 , fromLocation: "", toCityId: 3, toLocation: "to")
+        if let fromCityId = fromTextField.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text, from != "", to != "" {
+
+            presenter.showIndirectionView(fromCityId: fromCityId, fromLocation: from, toCityId: toCityId, toLocation: to)
+        } else {
+            showError(with: "Wpisz poprawne dane")
+        }
     }
     
     private func updateData() {

@@ -29,7 +29,7 @@ final class RegistrationPresenter: BasePresenter {
     }
     
     func register(name: String, lastname: String, mail: String, password: String, brithday: Date, phone: String) {
-        onboardingService.register(request: RegisterRequest(address: "", birthYear: brithday, email: mail, firstName: name, gender: "", lastName: lastname, password: password, phone: phone, rate: nil))
+        onboardingService.register(request: RegisterRequest(address: "", birthYear: brithday, email: mail, firstName: name, gender: "", lastName: lastname, password: password, phone: phone, rate: 0))
     }
     
     func showLoginView() {

@@ -23,7 +23,7 @@ final class RouteTimePresenter: AddRoutePresenter {
         route.from.date = departureDate + " " + departureTime
         route.to.date = departureDate + " " + finishTime
         for i in 0 ..< indirectDates.count {
-            route.stops[i].date = departureDate + indirectDates[i]
+            route.stops[i].date = departureDate + " " + indirectDates[i]
         }
     }
 }

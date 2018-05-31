@@ -12,7 +12,7 @@ struct GalUserPublicResponse: Codable {
     let userID: Int
     let firstName, lastName, email, phone: String
     let gender: String
-    let rate: Int
+    let rate: Int?
     let birthYear: Date
     
     enum CodingKeys: String, CodingKey {

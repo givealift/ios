@@ -19,6 +19,8 @@ final class LocalStorageManager: LocalStorage {
         static let phoneNumber = "phoneNumber"
         static let gender = "gender"
         static let email = "email"
+        static let rate = "rate"
+        static let birthDay = "birthDay"
     }
     
     init(userDefaults: UserDefaults) {
@@ -79,6 +81,22 @@ final class LocalStorageManager: LocalStorage {
     
     func getEmail() -> String? {
         return userDefaults.value(forKey: LocalStorageKeys.email) as? String
+    }
+    
+    func setRate(_ value: Int) {
+        userDefaults.set(value, forKey: LocalStorageKeys.rate)
+    }
+    
+    func getRate() -> Int? {
+        return userDefaults.value(forKey: LocalStorageKeys.rate) as? Int
+    }
+    
+    func setBirthday(_ value: Date) {
+        userDefaults.set(value, forKey: LocalStorageKeys.birthDay)
+    }
+    
+    func getBirthDay() -> Date? {
+        return userDefaults.value(forKey: LocalStorageKeys.birthDay) as? Date
     }
     
     func removeAllData() {

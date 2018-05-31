@@ -11,16 +11,18 @@ import UIKit
 protocol SearchConnectorDelegate: class {
     func showRoutesView(routes: [Route], fromCityID: Int, toCityID: Int)
     func showRouteDetailsView(route: Route)
-    func showUserInfoView(userData: GALUserInfo)
-    func showEditRouteInfoView(route: Route)
-    func showAddRouteView()
+    func startAddRouteConnector()
+    func endAddRouteConnector()
+    func startUserInfoConnector(userInfo: GALUserInfo, editModeEnabled: Bool)
     var  addRouteConnector: AddRouteConnectorDelegate? { get set }
+    var userInfoConnector: UserInfoConnectorDelegate? { get set }
 }
 
 final class SearchConnector {
     
     private unowned let navigationController: UINavigationController
     var addRouteConnector: AddRouteConnectorDelegate?
+    var userInfoConnector: UserInfoConnectorDelegate?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -36,16 +38,21 @@ final class SearchConnector {
 }
 
 extension SearchConnector: SearchConnectorDelegate {
-    func showAddRouteView() {
-        self.addRouteConnector = AddRouteConnector(navigationController: self.navigationController)
-        addRouteConnector?.showMainRouteView(route: Route(), isUpdating: false)
+    func startUserInfoConnector(userInfo: GALUserInfo, editModeEnabled: Bool) {
+        self.userInfoConnector = UserInfoConnector(navigationController: self.navigationController)
+        userInfoConnector?.searchConnector = self
+        userInfoConnector?.showUserInfoView(userData: userInfo, editModeEnabled: editModeEnabled)
     }
     
-    func showEditRouteInfoView(route: Route) {
-        let presenter = EditRouteInfoPresenter(connector: self, route: route)
-        let view = EditRouteInfoViewController(presenter: presenter)
+    func endAddRouteConnector() {
+        addRouteConnector = nil
+        showHomeView()
+    }
+    
+    func startAddRouteConnector() {
         self.addRouteConnector = AddRouteConnector(navigationController: self.navigationController)
-        navigationController.pushViewController(view, animated: true)
+        addRouteConnector?.searchConnector = self
+        addRouteConnector?.showMainRouteView(route: Route(), isUpdating: false)
     }
     
     func showRoutesView(routes: [Route], fromCityID: Int, toCityID: Int) {
@@ -58,10 +65,5 @@ extension SearchConnector: SearchConnectorDelegate {
         let presenter = RouteDetailsPresenter(connector: self, route: route)
         let view = RouteDetailsViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)
-    }
-    
-    func showUserInfoView(userData: GALUserInfo) {
-        let connector = UserInfoConnector(navigationController: self.navigationController)
-        connector.showUserInfoView(userData: userData, editModeEnabled: false)
     }
 }

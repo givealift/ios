@@ -21,12 +21,14 @@ class TextFieldViewController<T>: BaseViewController<T>, UITextFieldDelegate whe
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTag = textField.tag + 1
-        let nextResponder = textField.superview?.viewWithTag(nextTag) as UIResponder!
+        let nextResponder = textField.superview?.viewWithTag(nextTag) as UIResponder?
         
         if nextResponder != nil {
             nextResponder?.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
+            //MARK:- jakby klawiatura dziciała to tutaj
+            dismissKeyboard()
         }
         return false
     }
