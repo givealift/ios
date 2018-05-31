@@ -16,12 +16,22 @@ class MainRouteViewController: AddRouteViewController<MainRoutePresenter> {
     @IBOutlet weak var fromLocationTextField: GALTextField!
     @IBOutlet weak var toTextField: SugestiveTextField!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
     
     //MARK:- VC's life cycle
+    
     override func viewDidLoad() {
-        self.hideKeyboardWhenTappedAround()
+        super.viewDidLoad()
         presenter.isUpdating ? setPlaceholderWithOldValues() : setDefaultPlaceholder()
         presenter.isUpdating ? nextButton.setTitle("Gotowe",for: .normal) : nextButton.setTitle("Dalej",for: .normal)
+        setupTextFields()
+    }
+    
+    fileprivate func setupTextFields() {
+        fromTextField.delegate = self
+        toLocationTextField.delegate = self
+        toTextField.delegate = self
+        fromLocationTextField.delegate = self
     }
     
     @IBAction func nextTapped(_ sender: Any) {
@@ -31,12 +41,13 @@ class MainRouteViewController: AddRouteViewController<MainRoutePresenter> {
     //MARK:- Main
     
     private func classicWay() {
-        if let fromCityId = fromTextField.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text, from != "", to != "" {
-            
-            presenter.showIndirectionView(fromCityId: fromCityId, fromLocation: from, toCityId: toCityId, toLocation: to)
-        } else {
-            //MARK:- TODO info o niepodanych danych
-        }
+//        if let fromCityId = fromTextField.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text, from != "", to != "" {
+//
+//            presenter.showIndirectionView(fromCityId: fromCityId, fromLocation: from, toCityId: toCityId, toLocation: to)
+//        } else {
+//            showError(with: "Wpisz poprawne dane")
+//        }
+         presenter.showIndirectionView(fromCityId: 1 , fromLocation: "", toCityId: 3, toLocation: "to")
     }
     
     private func updateData() {
@@ -47,7 +58,7 @@ class MainRouteViewController: AddRouteViewController<MainRoutePresenter> {
         if let fromCityID = fromText, let toCityID = toText, let fromLocation = from, let toLocation = to {
             presenter.showIndirectionView(fromCityId: fromCityID, fromLocation: fromLocation, toCityId: toCityID, toLocation: toLocation)
         } else {
-            //MARK:- TODO wyświetlić błąd
+            showError(with: "Wpisz poprawne dane")
         }
     }
     
@@ -64,5 +75,4 @@ class MainRouteViewController: AddRouteViewController<MainRoutePresenter> {
         toLocationTextField.placeholder = presenter.route.to.placeOfMeeting
         fromLocationTextField.placeholder = presenter.route.from.placeOfMeeting
     }
-
 }

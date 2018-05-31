@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RouteInfoViewController: AddRouteViewController<RouteInfoPresenter>, UITextFieldDelegate {
+class RouteInfoViewController: AddRouteViewController<RouteInfoPresenter> {
 
     //MARK:- IBOutlets
     

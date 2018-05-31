@@ -42,7 +42,7 @@ final class HomePresenter: BasePresenter {
     }
     
     func showAddRouteView() {
-      //  connectorDelegate?.showAddRouteView()
+      connector?.showAddRouteView()
     }
     
     func showUserInfoView() {

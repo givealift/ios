@@ -8,5 +8,9 @@
 
 import UIKit
 
-class AddRouteViewController<Presenter>: BaseViewController<Presenter> where Presenter : AddRoutePresenter {
+class AddRouteViewController<Presenter>: TextFieldViewController<Presenter> where Presenter : AddRoutePresenter {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

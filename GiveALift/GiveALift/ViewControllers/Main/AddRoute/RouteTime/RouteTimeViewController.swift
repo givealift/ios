@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RouteTimeViewController: AddRouteViewController<RouteTimePresenter>, UITextFieldDelegate {
+class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
 
     //MARK:- IBOutlets
     @IBOutlet weak var stackView: UIStackView!

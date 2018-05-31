@@ -13,6 +13,7 @@ protocol SearchConnectorDelegate: class {
     func showRouteDetailsView(route: Route)
     func showUserInfoView(userData: GALUserInfo)
     func showEditRouteInfoView(route: Route)
+    func showAddRouteView()
     var  addRouteConnector: AddRouteConnectorDelegate? { get set }
 }
 
@@ -35,6 +36,11 @@ final class SearchConnector {
 }
 
 extension SearchConnector: SearchConnectorDelegate {
+    func showAddRouteView() {
+        self.addRouteConnector = AddRouteConnector(navigationController: self.navigationController)
+        addRouteConnector?.showMainRouteView(route: Route(), isUpdating: false)
+    }
+    
     func showEditRouteInfoView(route: Route) {
         let presenter = EditRouteInfoPresenter(connector: self, route: route)
         let view = EditRouteInfoViewController(presenter: presenter)

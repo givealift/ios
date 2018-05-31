@@ -23,17 +23,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gRf-sx-PjK">
-                    <rect key="frame" x="50" y="40" width="275" height="80"/>
+                    <rect key="frame" x="72.5" y="35" width="230" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="230" id="HjR-PS-r5z"/>
+                        <constraint firstAttribute="height" id="bxc-qb-kT9"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lSg-OQ-6tc">
+                    <rect key="frame" x="87" y="55" width="200" height="100"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdN-fF-A7t" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="275" height="32.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
                             <state key="normal" title="Dodaj przystanek"/>
                             <connections>
                                 <action selector="addIndirectionTapped:" destination="-1" eventType="touchUpInside" id="faI-AL-6vp"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gob-oD-T5j" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="47.5" width="275" height="32.5"/>
+                            <rect key="frame" x="0.0" y="55" width="200" height="45"/>
                             <state key="normal" title="Dalej"/>
                             <connections>
                                 <action selector="nextTapped:" destination="-1" eventType="touchUpInside" id="rOi-Zi-54B"/>
@@ -41,16 +48,17 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="bxc-qb-kT9"/>
+                        <constraint firstAttribute="height" constant="100" id="kIo-Jg-r79"/>
+                        <constraint firstAttribute="width" constant="200" id="oRH-8d-wqE"/>
                     </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="gRf-sx-PjK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="019-9Y-mzM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gRf-sx-PjK" secondAttribute="trailing" constant="50" id="Gn9-E1-9Lu"/>
-                <constraint firstItem="gRf-sx-PjK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="qQ1-iq-lGI"/>
-                <constraint firstItem="gRf-sx-PjK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="sSN-3F-UAz"/>
+                <constraint firstItem="lSg-OQ-6tc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LIk-eR-1EQ"/>
+                <constraint firstItem="lSg-OQ-6tc" firstAttribute="top" secondItem="gRf-sx-PjK" secondAttribute="bottom" constant="20" id="MdV-4v-5YG"/>
+                <constraint firstItem="gRf-sx-PjK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="sSN-3F-UAz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

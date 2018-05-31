@@ -14,7 +14,13 @@ class IndirectionsViewController: AddRouteViewController<IndirectionsPresenter> 
     
     private var indirectCitiesTextfield: [SugestiveTextField] = []
     private var indirextCitiesLocations: [UITextField] = []
-    
+    private var tagValue = 10
+    private var currentTag: Int {
+        get {
+            tagValue -= 1
+            return (tagValue)
+        }
+    }
     
     //MARK:- IBOutlets
 
@@ -52,7 +58,7 @@ class IndirectionsViewController: AddRouteViewController<IndirectionsPresenter> 
         if indirects.count == indirectCitiesTextfield.count && indirects.count == indirextCitiesLocations.count {
             presenter.showEditRouteInfo(indirects: indirects)
         } else {
-            //MARK:- TODO info o źle podanych danych
+            showError(with: "Wpisz poprawne dane")
         }
     }
     
@@ -76,15 +82,17 @@ class IndirectionsViewController: AddRouteViewController<IndirectionsPresenter> 
     }
     
     private func addTextFields(placeholder: String, locationPlaceholder: String) {
-        let sugestivetextField = SugestiveTextField(frame: CGRect(x: 0, y: 0, width: stackView.frame.width, height: 40))
-        sugestivetextField.backgroundColor = UIColor.white
+        let sugestivetextField = SugestiveTextField(frame: CGRect(x: 0, y: 0, width: stackView.frame.width, height: 50))
         sugestivetextField.placeholder = placeholder
-        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: stackView.frame.width, height: 40))
-        textField.backgroundColor = UIColor.white
+        sugestivetextField.delegate = self
+        sugestivetextField.tag = currentTag
+        let textField = GALTextField(frame: CGRect(x: 0, y: 0, width: stackView.frame.width, height: 50))
         textField.placeholder = locationPlaceholder
-        stackView.insertArrangedSubview(sugestivetextField, at: stackView.subviews.count - 2)
-        stackView.insertArrangedSubview(textField, at: stackView.subviews.count - 2)
-        stackViewHeightConstraint.constant += 40
+        textField.tag = currentTag
+        textField.delegate = self
+        stackView.insertArrangedSubview(sugestivetextField, at: 0)
+        stackView.insertArrangedSubview(textField, at: 0)
+        stackViewHeightConstraint.constant += 130
         view.layoutSubviews()
         indirectCitiesTextfield.append(sugestivetextField)
         indirextCitiesLocations.append(textField)
