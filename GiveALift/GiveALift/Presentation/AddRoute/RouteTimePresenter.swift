@@ -10,9 +10,9 @@ import Foundation
 
 final class RouteTimePresenter: AddRoutePresenter {
     
-    let datePlaceholder = "Wybierz datę odjazdu"
-    let timePlaceholder = "Wybierz godzinę odjazdu"
-    let finishPlaceholder = "Wybierz godzinę przyjazdu"
+    let datePlaceholder = "Data odjazdu"
+    let timePlaceholder = " godzina odjazdu"
+    let finishPlaceholder = " godzina przyjazdu"
     
     func showRouteInfoView(departureDate: String, departureTime: String, finishTime: String ,indirectDates: [String]) {
         updateModel(departureDate: departureDate, departureTime: departureTime, finishTime: finishTime, indirectDates: indirectDates)

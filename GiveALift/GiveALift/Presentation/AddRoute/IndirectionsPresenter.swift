@@ -24,15 +24,15 @@ final class IndirectionsPresenter: AddRoutePresenter {
     }
     
     private func updateModel(indirectCitys: [Int], indirectLocations: [String]) {
-        if indirectCitys.count == 0 { route.stops = [] }
+        route.stops = []
         for i in 0..<indirectCitys.count {
-            var route = Route()
             var routeLocation = Location()
             routeLocation.city = City()
             routeLocation.city.cityID = indirectCitys[i]
             routeLocation.placeOfMeeting = indirectLocations[i]
             route.stops?.append(routeLocation)
         }
+        
     }
     
     private func updateOldModel(indirects: [Indirect]) {

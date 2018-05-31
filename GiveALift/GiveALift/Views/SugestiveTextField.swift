@@ -18,6 +18,7 @@ final class SugestiveTextField: SearchTextField {
         self.cities = loadCities()
         self.filterStrings(cities.map({$0.name!}))
         setBottomLine(borderColor: .black)
+        setupFont()
         
     }
     
@@ -26,6 +27,7 @@ final class SugestiveTextField: SearchTextField {
         self.cities = loadCities()
         self.filterStrings(cities.map({$0.name!}))
         setBottomLine(borderColor: .black)
+        setupFont()
     }
     
     func selectedCityId() -> Int? {
@@ -69,5 +71,9 @@ final class SugestiveTextField: SearchTextField {
     
     override func textFieldDidBeginEditing() {
         setupBlackTextfield(withText: nil)
+    }
+    
+    private func setupFont() {
+        self.font = UIFont.systemFont(ofSize: 14)
     }
 }

@@ -16,12 +16,22 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var stackViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var finishTime: UITextField!
+    @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
     
     //MARK:- Constants
     private let datePicker = UIDatePicker()
     private let timePicker = UIDatePicker()
     
     //MARK:- Variables
+    private var tagValue = 1
+    private var currentTag: Int {
+        get {
+            tagValue += 1
+            finishTime.tag = tagValue + 1
+            return tagValue
+        }
+        set {}
+    }
     private var selectedTextField: UITextField?
     private var indirectionsTextField = [UITextField]()
     private lazy var dateFormatter: DateFormatter = {
@@ -35,7 +45,6 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
         setupDatePicker()
         setupTimePicker(textField: timeTextField)
         setupTimePicker(textField: finishTime)
@@ -51,7 +60,7 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
         if let date = dateTextField.text, date != "", let time = timeTextField.text, time != "", indirectDates.count == indirectionsTextField.count, let finishTime = finishTime.text, finishTime != "" {
             presenter.showRouteInfoView(departureDate: date, departureTime: time, finishTime: finishTime, indirectDates: indirectDates)
         } else {
-            //MARK:- TODO wyśietlić błąd
+            showError(with: "Wpisz poprawne dane")
         }
     }
     
@@ -59,17 +68,17 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
     
     private func addTextFieldsIfNeeded() {
         guard let stops = presenter.route.stops else { return }
-        for _ in stops {
-            addInditectionTextfield()
-            stackViewHeightConstraint.constant += 30
+        for stop in stops {
+            addInditectionTextfield(placeholder: stop.city.cityID.name() + " godzina przyjazdu")
+            stackViewHeightConstraint.constant += 65
         }
         self.view.layoutSubviews()
     }
     
     private func setupTextFields() {
         dateTextField.placeholder = presenter.datePlaceholder
-        timeTextField.placeholder = presenter.timePlaceholder
-        finishTime.placeholder = presenter.finishPlaceholder
+        timeTextField.placeholder = presenter.route.from.city.cityID.name() + presenter.timePlaceholder
+        finishTime.placeholder = presenter.route.to.city.cityID.name() + presenter.finishPlaceholder
         dateTextField.delegate = self
         timeTextField.delegate = self
         finishTime.delegate = self
@@ -95,31 +104,57 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
         textField.inputView = timePicker
     }
     
-    private func addInditectionTextfield() {
-        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    private func addInditectionTextfield(placeholder: String) {
+        let textField = GALTextField(frame: CGRect(x: 0, y: 0, width: stackView.frame.width, height: 50))
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(timePickerDoneTapped))
         toolbar.setItems([doneButton], animated: false)
         indirectionsTextField.append(textField)
-        textField.backgroundColor = UIColor.white
+        textField.tag = currentTag
         textField.delegate = self
         textField.inputView = timePicker
         textField.inputAccessoryView = toolbar
+        textField.placeholder = placeholder
         stackView.insertArrangedSubview(textField, at: stackView.subviews.count - 1)
     }
     
     @objc private func datePickerDoneTapped() {
         dateTextField.text = "\(dateFormatter.string(from: datePicker.date))"
-        timeTextField.becomeFirstResponder()
+        goToNextResponder(textField: dateTextField)
     }
     
     @objc private func timePickerDoneTapped() {
         selectedTextField?.text = "\(timeFormatter.string(from: timePicker.date))"
-        self.view.endEditing(true)
+        goToNextResponder(textField: selectedTextField!)
     }
     
     @objc func textFieldDidBeginEditing(_ textField: UITextField) {
         selectedTextField = textField
+        if textField.frame.origin.y + 80.0 > (UIScreen.main.bounds.height / 2) {
+            stackViewTopConstraint.constant = -(textField.frame.origin.y - 180.0)
+            UIView.animate(withDuration: 0.25) {
+                self.view.layoutSubviews()
+            }
+        }
+    }
+    
+    private func goToNextResponder(textField: UITextField) {
+        let nextTag = textField.tag + 1
+        let nextResponder = textField.superview?.viewWithTag(nextTag) as UIResponder?
+        if nextResponder != nil {
+            nextResponder?.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+            dismissKeyboard()
+        }
+    }
+    
+    override func dismissKeyboard() {
+        view.endEditing(true)
+        stackViewTopConstraint.constant = 15
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutSubviews()
+        }
     }
 }

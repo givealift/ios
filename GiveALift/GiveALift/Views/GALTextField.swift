@@ -15,11 +15,13 @@ class GALTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setBottomLine(borderColor: .black)
+        setupFont()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setBottomLine(borderColor: .black)
+        setupFont()
     }
     
     func setBottomLine(borderColor: UIColor) {
@@ -38,5 +40,9 @@ class GALTextField: UITextField {
         guard let text = self.text, text != "" else { return Result.invalid(error: "Wszystkie pola muszą zostać uzupełnione") }
         guard let rule = self.rule else { return Result.valid }
         return text.validated(with: rule)
+    }
+    
+    private func setupFont() {
+        self.font = UIFont.systemFont(ofSize: 14)
     }
 }

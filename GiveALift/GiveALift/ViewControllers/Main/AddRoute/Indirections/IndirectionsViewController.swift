@@ -37,7 +37,6 @@ class IndirectionsViewController: AddRouteViewController<IndirectionsPresenter> 
     
     
     //MARK:- IBActions
-
     @IBAction func addIndirectionTapped(_ sender: Any) {
         addTextFields(placeholder: presenter.indirectTextFieldPlaceHolder, locationPlaceholder: presenter.indirectLocationPlaceholder)
     }
@@ -73,7 +72,7 @@ class IndirectionsViewController: AddRouteViewController<IndirectionsPresenter> 
         if indirectLocations.count == indirextCitiesLocations.count && indirectCitys.count == indirectCitiesTextfield.count {
             presenter.showRouteTimeView(indirectCitys: indirectCitys, indirectLocations: indirectLocations)
         } else {
-            //MARK:- TODO wyświetlić błąd
+             showError(with: "Wpisz poprawne dane")
         }
     }
     
@@ -85,13 +84,13 @@ class IndirectionsViewController: AddRouteViewController<IndirectionsPresenter> 
         let sugestivetextField = SugestiveTextField(frame: CGRect(x: 0, y: 0, width: stackView.frame.width, height: 50))
         sugestivetextField.placeholder = placeholder
         sugestivetextField.delegate = self
-        sugestivetextField.tag = currentTag
         let textField = GALTextField(frame: CGRect(x: 0, y: 0, width: stackView.frame.width, height: 50))
         textField.placeholder = locationPlaceholder
-        textField.tag = currentTag
         textField.delegate = self
-        stackView.insertArrangedSubview(sugestivetextField, at: 0)
-        stackView.insertArrangedSubview(textField, at: 0)
+        textField.tag = currentTag
+        sugestivetextField.tag = currentTag
+        stackView.insertArrangedSubview(textField, at: 2*indirectCitiesTextfield.count )
+        stackView.insertArrangedSubview(sugestivetextField, at: 2*indirectCitiesTextfield.count)
         stackViewHeightConstraint.constant += 130
         view.layoutSubviews()
         indirectCitiesTextfield.append(sugestivetextField)
