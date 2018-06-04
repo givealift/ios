@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="dateTextField" destination="Ahh-UO-5Yc" id="Hdp-ba-Al1"/>
                 <outlet property="fromTextField" destination="RKJ-FJ-fhv" id="Q4c-Wq-ACC"/>
+                <outlet property="sideMenu" destination="FHZ-Sv-Thf" id="oS6-pk-Phh"/>
+                <outlet property="sideMenuLeadingConstraint" destination="Tzl-xf-7ft" id="75L-8v-Yfv"/>
                 <outlet property="toTextField" destination="3W6-DE-1f6" id="fqx-KJ-EBV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -80,14 +82,24 @@
                         <constraint firstAttribute="height" constant="195" id="nkg-eC-ccB"/>
                     </constraints>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHZ-Sv-Thf" customClass="GALSideMenu" customModule="GiveALift" customModuleProvider="target">
+                    <rect key="frame" x="-170" y="0.0" width="170" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="zJ4-jN-eYO"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="cvv-NI-AZ0" firstAttribute="trailing" secondItem="dZK-kZ-rr5" secondAttribute="trailing" constant="15" id="DYO-yy-40i"/>
                 <constraint firstItem="s1z-AD-n1o" firstAttribute="top" secondItem="dZK-kZ-rr5" secondAttribute="bottom" constant="40" id="Hr1-mI-WM7"/>
                 <constraint firstItem="s1z-AD-n1o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MHY-nU-xvX"/>
+                <constraint firstItem="FHZ-Sv-Thf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N7a-c6-uTs"/>
                 <constraint firstItem="cvv-NI-AZ0" firstAttribute="bottom" secondItem="dZK-kZ-rr5" secondAttribute="bottom" constant="20" id="Twh-1x-ezu"/>
                 <constraint firstItem="dZK-kZ-rr5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="TxO-xW-tlO"/>
+                <constraint firstItem="FHZ-Sv-Thf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-170" id="Tzl-xf-7ft"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FHZ-Sv-Thf" secondAttribute="bottom" id="UXk-Kw-IIm"/>
                 <constraint firstItem="dZK-kZ-rr5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Uee-Nf-5D3"/>
                 <constraint firstItem="cvv-NI-AZ0" firstAttribute="top" secondItem="dZK-kZ-rr5" secondAttribute="top" constant="-10" id="ZxF-g7-4Jd"/>
                 <constraint firstItem="cvv-NI-AZ0" firstAttribute="leading" secondItem="dZK-kZ-rr5" secondAttribute="leading" constant="-15" id="alD-Bp-Pyj"/>

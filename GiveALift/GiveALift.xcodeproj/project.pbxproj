@@ -87,6 +87,8 @@
 		C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F13F20657E00008DD972 /* Onboarding.storyboard */; };
 		C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F14220657F13008DD972 /* FlowCoordinator.swift */; };
 		C191F1452065806E008DD972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1442065806E008DD972 /* Constants.swift */; };
+		C1AE3E0320C5D24600CB8176 /* GALSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE3E0220C5D24600CB8176 /* GALSideMenu.swift */; };
+		C1AE3E0520C5D27B00CB8176 /* GALSideMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1AE3E0420C5D27B00CB8176 /* GALSideMenu.xib */; };
 		C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BEA46F206A45F600EE0B4B /* Validator.swift */; };
 		C1CFBD702085F48900253375 /* GALRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD6F2085F48900253375 /* GALRegisterResponse.swift */; };
 		C1CFBD7720864B1B00253375 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7620864B1B00253375 /* LocalStorage.swift */; };
@@ -222,6 +224,8 @@
 		C191F13F20657E00008DD972 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		C191F14220657F13008DD972 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		C191F1442065806E008DD972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C1AE3E0220C5D24600CB8176 /* GALSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALSideMenu.swift; sourceTree = "<group>"; };
+		C1AE3E0420C5D27B00CB8176 /* GALSideMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GALSideMenu.xib; sourceTree = "<group>"; };
 		C1BEA46F206A45F600EE0B4B /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = Validator/Validator.swift; sourceTree = "<group>"; };
 		C1CFBD6F2085F48900253375 /* GALRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALRegisterResponse.swift; sourceTree = "<group>"; };
 		C1CFBD7620864B1B00253375 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
@@ -549,6 +553,8 @@
 				C130E2C120A9C2D700DC221C /* GALStackView.swift */,
 				C15CF90C20B47810005C1EF7 /* ErrorMessage.swift */,
 				C15CF90E20B4781D005C1EF7 /* ErrorMessage.xib */,
+				C1AE3E0220C5D24600CB8176 /* GALSideMenu.swift */,
+				C1AE3E0420C5D27B00CB8176 /* GALSideMenu.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -853,6 +859,7 @@
 			files = (
 				C15CF90720B46575005C1EF7 /* LoginViewController.xib in Resources */,
 				C191F0FE2065657C008DD972 /* LaunchScreen.storyboard in Resources */,
+				C1AE3E0520C5D27B00CB8176 /* GALSideMenu.xib in Resources */,
 				C1CFBD8B20866EC100253375 /* Cities.json in Resources */,
 				C191F0FB2065657C008DD972 /* Assets.xcassets in Resources */,
 				C130E2D820AB351800DC221C /* MainRouteViewController.xib in Resources */,
@@ -1023,6 +1030,7 @@
 				C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */,
 				C15CF90B20B4763B005C1EF7 /* TextFieldViewController.swift in Sources */,
 				C130E2C020A9BC2200DC221C /* GALTextField.swift in Sources */,
+				C1AE3E0320C5D24600CB8176 /* GALSideMenu.swift in Sources */,
 				C124DA4420A841D300391A71 /* GALUserLogin.swift in Sources */,
 				C130E2B320A99C7F00DC221C /* UserInfoConnector.swift in Sources */,
 				C1233D5E2083CD1900BD0A56 /* APIManager.swift in Sources */,

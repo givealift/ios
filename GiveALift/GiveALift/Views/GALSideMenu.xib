@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GALSideMenu" customModule="GiveALift" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="IBI-M2-Xjn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tv2-1q-Zlb">
+                    <rect key="frame" x="15" y="35" width="345" height="617"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es0-nU-ODv">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="192.5"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="profileTapped:" destination="-1" eventType="touchUpInside" id="5mv-ho-Mwl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8l-f7-TRz">
+                            <rect key="frame" x="0.0" y="212.5" width="345" height="192"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="yourRoutesTapped:" destination="-1" eventType="touchUpInside" id="hYh-56-eSV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BQ-AE-XY9">
+                            <rect key="frame" x="0.0" y="424.5" width="345" height="192.5"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="subscribedRoutesTapped:" destination="-1" eventType="touchUpInside" id="gmX-NL-qfB"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Tv2-1q-Zlb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="3f5-Ju-4Zl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Tv2-1q-Zlb" secondAttribute="bottom" constant="15" id="auI-n7-ddU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tv2-1q-Zlb" secondAttribute="trailing" constant="15" id="crl-k7-M7F"/>
+                <constraint firstItem="Tv2-1q-Zlb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="mkC-Ka-vue"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

@@ -14,12 +14,22 @@ class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
     @IBOutlet weak var dateTextField: GALTextField!
     @IBOutlet weak var toTextField: SugestiveTextField!
     @IBOutlet weak var fromTextField: SugestiveTextField!
+    @IBOutlet weak var sideMenu: GALSideMenu!
+    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
     
     //MARK:- Variables
     private lazy var APIDateFormatter: DateFormatter = {
         $0.dateFormat = "yyyy-MM-dd"
         return $0
     }(DateFormatter())
+    private var isSideMenuHidden: Bool = true {
+        didSet {
+            self.sideMenuLeadingConstraint.constant = isSideMenuHidden ? -sideMenu.frame.size.width : 0
+            UIView.animate(withDuration: 0.25) {
+                self.view.layoutSubviews()
+            }
+        }
+    }
     
     //MARK:- Constants
     private let datePicker = UIDatePicker()
@@ -92,6 +102,7 @@ class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
     }
     
     @objc private func userInfoTapped() {
-        presenter.showUserInfoView()
+        //presenter.showUserInfoView()
+        isSideMenuHidden = !isSideMenuHidden 
     }
 }
