@@ -34,6 +34,7 @@ class TextFieldViewController<T>: BaseViewController<T>, UITextFieldDelegate whe
     }
     
     func hideErrorMessage() {
+        errorView.isHidden = false
         self.errorViewYConstraint.constant = 0
         UIView.animate(withDuration: 0.4, delay: 1.4, options: .curveEaseOut, animations: {
             self.view.layoutSubviews()
@@ -61,5 +62,6 @@ class TextFieldViewController<T>: BaseViewController<T>, UITextFieldDelegate whe
         let yConstraint = NSLayoutConstraint(item: errorView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0)
         errorViewYConstraint = yConstraint
         view.addConstraints([leading, trailing, height, yConstraint])
+        errorView.isHidden = true
     }
 }

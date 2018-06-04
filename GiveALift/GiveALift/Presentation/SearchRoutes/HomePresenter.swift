@@ -28,10 +28,10 @@ final class HomePresenter: BasePresenter {
     init(connector: SearchConnectorDelegate) {
         super.init()
         self.connector = connector
-        setDelegate()
+        setDelegates()
     }
     
-    private func setDelegate() {
+    private func setDelegates() {
         routesService.searchDelegate = self
     }
     
@@ -48,6 +48,14 @@ final class HomePresenter: BasePresenter {
     func showUserInfoView() {
         let user = GALUserInfo(address: "", birthYear: User.shared.birthDay, email: User.shared.email, firstName: User.shared.firstName, lastName: User.shared.lastName, gender: User.shared.gender, phone: User.shared.phoneNumber, rate: User.shared.rate, password: "hasełko")
         connector?.startUserInfoConnector(userInfo: user, editModeEnabled: true)
+    }
+    
+    func showUserRoutesView() {
+        
+    }
+    
+    func logOut() {
+        
     }
     
     private func prepareUserInfo() -> GALUserInfo {

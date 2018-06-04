@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol SideMenuDelegate: class {
+    func profileTapped()
+    func userRoutesTapped()
+    func logOutTapped()
+}
+
 final class GALSideMenu: UIView {
     
     @IBOutlet var contentView: UIView!
+    weak var delegate: SideMenuDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,10 +38,14 @@ final class GALSideMenu: UIView {
     }
 
     @IBAction func profileTapped(_ sender: Any) {
+        delegate?.profileTapped()
     }
 
-    @IBAction func subscribedRoutesTapped(_ sender: Any) {
+    @IBAction func logOutTapped(_ sender: Any) {
+        delegate?.logOutTapped()
     }
+    
     @IBAction func yourRoutesTapped(_ sender: Any) {
+        delegate?.userRoutesTapped()
     }
 }

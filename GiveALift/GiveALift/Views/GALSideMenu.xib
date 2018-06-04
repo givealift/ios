@@ -24,24 +24,28 @@
                     <rect key="frame" x="15" y="35" width="345" height="617"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es0-nU-ODv">
-                            <rect key="frame" x="0.0" y="0.0" width="345" height="192.5"/>
-                            <state key="normal" title="Button"/>
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="139.5"/>
+                            <state key="normal" title="Profil"/>
                             <connections>
                                 <action selector="profileTapped:" destination="-1" eventType="touchUpInside" id="5mv-ho-Mwl"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8l-f7-TRz">
-                            <rect key="frame" x="0.0" y="212.5" width="345" height="192"/>
-                            <state key="normal" title="Button"/>
+                            <rect key="frame" x="0.0" y="159.5" width="345" height="139"/>
+                            <state key="normal" title="Moje przejazdy"/>
                             <connections>
                                 <action selector="yourRoutesTapped:" destination="-1" eventType="touchUpInside" id="hYh-56-eSV"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BQ-AE-XY9">
-                            <rect key="frame" x="0.0" y="424.5" width="345" height="192.5"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFV-nG-nM6">
+                            <rect key="frame" x="0.0" y="318.5" width="345" height="139.5"/>
                             <state key="normal" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BQ-AE-XY9">
+                            <rect key="frame" x="0.0" y="478" width="345" height="139"/>
+                            <state key="normal" title="Wyloguj"/>
                             <connections>
-                                <action selector="subscribedRoutesTapped:" destination="-1" eventType="touchUpInside" id="gmX-NL-qfB"/>
+                                <action selector="logOutTapped:" destination="-1" eventType="touchUpInside" id="LjM-Cu-4FX"/>
                             </connections>
                         </button>
                     </subviews>

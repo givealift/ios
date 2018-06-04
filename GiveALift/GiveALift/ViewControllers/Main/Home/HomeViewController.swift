@@ -40,6 +40,7 @@ class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
         setupUserInfoButton()
         setBackgroundImage()
         setupTextFields()
+        setDelegates()
         createDatePicker()
     }
 
@@ -57,6 +58,13 @@ class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
     }
     
     //MARK:- Main
+    private func setDelegates() {
+        sideMenu.delegate = self
+        fromTextField.delegate = self
+        toTextField.delegate = self
+        dateTextField.delegate = self
+    }
+    
     private func setupTextFields() {
         fromTextField.placeholder = presenter.fromPlaceholder
         toTextField.placeholder = presenter.toPlaceholder
@@ -64,9 +72,6 @@ class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
         fromTextField.tag = 0
         toTextField.tag = 1
         dateTextField.tag = 2
-        fromTextField.delegate = self
-        toTextField.delegate = self
-        dateTextField.delegate = self
     }
     
     private func createDatePicker() {
@@ -102,7 +107,24 @@ class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
     }
     
     @objc private func userInfoTapped() {
-        //presenter.showUserInfoView()
         isSideMenuHidden = !isSideMenuHidden 
+    }
+}
+
+
+extension HomeViewController: SideMenuDelegate {
+    func profileTapped() {
+        isSideMenuHidden = !isSideMenuHidden
+        presenter.showUserInfoView()
+    }
+    
+    func userRoutesTapped() {
+        isSideMenuHidden = !isSideMenuHidden
+        presenter.showUserRoutesView()
+    }
+    
+    func logOutTapped() {
+        isSideMenuHidden = !isSideMenuHidden
+        presenter.logOut()
     }
 }
