@@ -29,6 +29,7 @@ extension UserInfoConnector: UserInfoConnectorDelegate {
     func showUserInfoView(userData: GALUserInfo ,editModeEnabled: Bool) {
         let presenter = UserInfoPresenter(connector: self,userData: userData ,editModeEnabled: editModeEnabled)
         let view = UserInfoViewController(presenter: presenter)
+        presenter.view = view
         navigationController.present(view, animated: true, completion: nil)
     }
 }

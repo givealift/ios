@@ -21,7 +21,7 @@ struct GalUserPublicResponse: Codable {
     }
     
     func toGALUserInfo() -> GALUserInfo {
-        return GALUserInfo(address: "", birthYear: self.birthYear, email: self.email, firstName: self.firstName, lastName: self.lastName, gender: self.gender, phone: self.phone, rate: self.rate)
+        return GALUserInfo(address: "", birthYear: self.birthYear, email: self.email, firstName: self.firstName, lastName: self.lastName, gender: self.gender, phone: self.phone, rate: self.rate, password: "hasełko")
     }
 }
 

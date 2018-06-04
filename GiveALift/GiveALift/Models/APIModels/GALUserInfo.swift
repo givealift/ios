@@ -15,4 +15,5 @@ struct GALUserInfo: Codable {
     let gender: String?
     let phone: String?
     let rate: Int?
+    let password: String?
 }

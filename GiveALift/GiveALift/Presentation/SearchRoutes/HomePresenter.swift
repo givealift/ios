@@ -46,12 +46,12 @@ final class HomePresenter: BasePresenter {
     }
     
     func showUserInfoView() {
-        let user = GALUserInfo(address: "", birthYear: User.shared.birthDay, email: User.shared.email, firstName: User.shared.firstName, lastName: User.shared.lastName, gender: User.shared.gender, phone: User.shared.phoneNumber, rate: User.shared.rate)
+        let user = GALUserInfo(address: "", birthYear: User.shared.birthDay, email: User.shared.email, firstName: User.shared.firstName, lastName: User.shared.lastName, gender: User.shared.gender, phone: User.shared.phoneNumber, rate: User.shared.rate, password: "hasełko")
         connector?.startUserInfoConnector(userInfo: user, editModeEnabled: true)
     }
     
     private func prepareUserInfo() -> GALUserInfo {
-        return GALUserInfo(address: "", birthYear: Date(), email: User.shared.email!, firstName: User.shared.firstName!, lastName: User.shared.lastName!, gender: "male", phone: User.shared.phoneNumber!, rate: 0)
+        return GALUserInfo(address: "", birthYear: Date(), email: User.shared.email!, firstName: User.shared.firstName!, lastName: User.shared.lastName!, gender: "male", phone: User.shared.phoneNumber!, rate: 0, password: "hasełko")
     }
 }
 

@@ -54,6 +54,7 @@
 		C1538D1720C006D800B54E02 /* GALUserPublicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D1620C006D800B54E02 /* GALUserPublicResponse.swift */; };
 		C1538D3620C0628F00B54E02 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D3520C0628F00B54E02 /* RouteTests.swift */; };
 		C1538D3820C062B700B54E02 /* OnboardingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D3720C062B700B54E02 /* OnboardingServiceTests.swift */; };
+		C1538D3A20C0916B00B54E02 /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D3920C0916B00B54E02 /* UserInfoService.swift */; };
 		C15CF90220B46518005C1EF7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90120B46518005C1EF7 /* LoginPresenter.swift */; };
 		C15CF90620B46575005C1EF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15CF90420B46575005C1EF7 /* LoginViewController.swift */; };
 		C15CF90720B46575005C1EF7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15CF90520B46575005C1EF7 /* LoginViewController.xib */; };
@@ -182,6 +183,7 @@
 		C1538D3420C0628F00B54E02 /* GiveALiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GiveALiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C1538D3520C0628F00B54E02 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
 		C1538D3720C062B700B54E02 /* OnboardingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingServiceTests.swift; sourceTree = "<group>"; };
+		C1538D3920C0916B00B54E02 /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
 		C15CF90120B46518005C1EF7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C15CF90420B46575005C1EF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C15CF90520B46575005C1EF7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 				C1BEA46F206A45F600EE0B4B /* Validator.swift */,
 				C130E2BB20A9A0B700DC221C /* OnboardingService.swift */,
 				C1538D1220BFF2E700B54E02 /* RoutesService.swift */,
+				C1538D3920C0916B00B54E02 /* UserInfoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -975,6 +978,7 @@
 				C124DA5920A8E80100391A71 /* GALBlueButton.swift in Sources */,
 				C1CFBD83208655E800253375 /* HomePresenter.swift in Sources */,
 				C1725B3E20A5C74500F64747 /* BaseConnector.swift in Sources */,
+				C1538D3A20C0916B00B54E02 /* UserInfoService.swift in Sources */,
 				C1D910E52080B33F00AD0AC4 /* Result.swift in Sources */,
 				C124DA5520A8E5E900391A71 /* GALRoundButton.swift in Sources */,
 				C1725B3720A5BF9F00F64747 /* RouteTimePresenter.swift in Sources */,

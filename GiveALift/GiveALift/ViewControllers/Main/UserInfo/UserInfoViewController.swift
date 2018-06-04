@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserInfoViewController: TextFieldViewController<UserInfoPresenter> {
+class UserInfoViewController: TextFieldViewController<UserInfoPresenter>, UserInfoView {
     
     //MARK:- IBOutlets
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
@@ -16,27 +16,26 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter> {
     @IBOutlet weak var birthdayTextField: GALTextField!
     @IBOutlet weak var firstNameTextField: GALTextField!
     @IBOutlet weak var secondNameTextField: GALTextField!
-    @IBOutlet weak var compatibilePasswordTextField: GALTextField!
-    @IBOutlet weak var gender: GALTextField!
     @IBOutlet weak var emailTextField: GALTextField!
-    @IBOutlet weak var passwordTextField: GALTextField!
     @IBOutlet weak var phoneNumberTextField: GALTextField!
     @IBOutlet weak var editButton: UIButton!
-    @IBOutlet var textFields: [GALTextField]!
     @IBOutlet var regularButtons: [UIButton]!
     @IBOutlet var editButtons: [UIButton]!
+    @IBOutlet var textFields: [GALTextField]!
     
     //MARK:- Variables
     private lazy var dateFormatter: DateFormatter = {
         $0.dateFormat = "yyyy-MM-dd"
         return $0
     }(DateFormatter())
+    let datePicker = UIDatePicker()
     
     //MARK:- VC's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFields()
         editButton.isHidden = !presenter.editModeEnabled
+        setupDatePicker()
     }
 
     //MARK:- IBActions
@@ -45,33 +44,22 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter> {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        //MARK:- TODO naprawić ten śmietnik
-        var validationRule: ValidatorRule {
-            var rule = ValidatorRulePattern(pattern: .email)
-            rule.set(errorMessage: "Podany emial jest niewłaciwy")
-            return rule
+        for i in 0 ..< textFields.count {
+            let result = textFields[i].isValid()
+            switch result {
+            case .invalid(error: let error):
+                if textFields[i].text == "" {
+                    presenter.textFieldData[i].value = textFields[i].placeholder
+                } else {
+                    showError(with: error)
+                    return
+                }
+            case .valid:
+                presenter.textFieldData[i].value = textFields[i].text!
+            }
         }
-        var validationRule1: ValidatorRule {
-            var rule = ValidatorRulePattern(pattern: .phoneNumber)
-            rule.set(errorMessage: "Podany numer jest nieporawny")
-            return rule
-        }
-        let result  = emailTextField.text!.validated(with: validationRule)
-        let result1 = phoneNumberTextField.text!.validated(with: validationRule)
-        switch result  {
-        case .invalid(error: _):
-            return
-        case .valid:
-            print("valid")
-        }
-        switch result1  {
-        case .invalid(error: _):
-            return
-        case .valid:
-            print("valid")
-        }
-        let name = firstNameTextField.text != "" ? User.shared.firstName : firstNameTextField.text!
-        let lastName = secondNameTextField.text != "" ? User.shared.lastName : secondNameTextField.text!
+        editState(false)
+        presenter.updateUserInfo()
     }
     
     @IBAction func cancleTapped(_ sender: Any) {
@@ -85,7 +73,6 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter> {
         secondNameTextField.placeholder = presenter.userData.lastName
         emailTextField.placeholder = presenter.userData.email
         phoneNumberTextField.placeholder = presenter.userData.phone
-        gender.placeholder = presenter.userData.gender
         birthdayTextField.placeholder = dateFormatter.string(from: presenter.userData.birthYear!)
     }
     
@@ -93,11 +80,14 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter> {
     private func editState(_ value: Bool) {
         regularButtons.forEach({ $0.isHidden = value })
         editButtons.forEach({ $0.isHidden = !value })
-        textFields.forEach({
-            $0.isUserInteractionEnabled = value
-            $0.text = nil
-            $0.delegate = self
-        })
+        for i in 0 ..< textFields.count {
+            print(textFields[i])
+            textFields[i].isUserInteractionEnabled = value
+            textFields[i].text = nil
+            textFields[i].delegate = self
+            textFields[i].rule = presenter.textFieldData[i].validationRule
+        }
+
     }
     
     private func setupTextFields() {
@@ -105,7 +95,6 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter> {
         secondNameTextField.text = presenter.userData.lastName
         emailTextField.text = presenter.userData.email
         phoneNumberTextField.text = presenter.userData.phone
-        gender.text = presenter.userData.gender
         birthdayTextField.text = dateFormatter.string(from: presenter.userData.birthYear!)
     }
     
@@ -113,7 +102,7 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter> {
         print(textField.frame.origin.y )
         print((UIScreen.main.bounds.height / 2))
         if textField.frame.origin.y + 160.0 > (UIScreen.main.bounds.height / 2) {
-            logoTopConstraint.constant = -(textField.frame.origin.y - 100.0)
+            logoTopConstraint.constant = -(textField.frame.origin.y - 80.0)
             UIView.animate(withDuration: 0.25) {
                 self.view.layoutSubviews()
             }
@@ -126,5 +115,20 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter> {
         UIView.animate(withDuration: 0.25) {
             self.view.layoutSubviews()
         }
+    }
+    
+    private func setupDatePicker() {
+        datePicker.datePickerMode = .date
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(datePickerDoneTapped))
+        toolbar.setItems([doneButton], animated: false)
+        birthdayTextField.inputAccessoryView = toolbar
+        birthdayTextField.inputView = datePicker
+    }
+    
+    @objc private func datePickerDoneTapped() {
+        birthdayTextField.text = "\(dateFormatter.string(from: datePicker.date))"
+        phoneNumberTextField.becomeFirstResponder()
     }
 }

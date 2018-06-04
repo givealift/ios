@@ -10,8 +10,23 @@ import Foundation
 
 final class RequestBuilder: RequestBuilderType {
     
+    public enum Method: String {
+        case GET = "GET"
+        case PUT = "PUT"
+        case POST = "POST"
+    }
+    
+    func PUTRequest<T>(withURL url: URL, withData body: T, authToken: String?, completion: @escaping (APIResult<Data>) -> ()) where T : Encodable {
+        let (request, session) = configuration(forURL: url, parameters: body, httpMethod: Method.PUT.rawValue, authToken: authToken)
+        print(request.httpBody)
+        startDataTask(for: session, with: request) { (result) in
+            completion(result)
+        }
+    }
+    
+    
     func GETRequest(withURL url: URL, authToken: String?, completion: @escaping (APIResult<Data>) -> ()) {
-        let (request, session) = configuration(forURL: url, parameters: nil, httpMethod: "GET", authToken: authToken)
+        let (request, session) = configuration(forURL: url, parameters: nil, httpMethod: Method.GET.rawValue, authToken: authToken)
         print(request)
         startDataTask(for: session, with: request) { (result) in
             completion(result)
@@ -19,7 +34,7 @@ final class RequestBuilder: RequestBuilderType {
     }
     
     func POSTRequest(withURL url: URL, withData body: [String : Any]?, authToken: String?, completion: @escaping APIResultBlock<Data>) {
-        let (request, session) = configuration(forURL: url, parameters: body, httpMethod: "POST", authToken: authToken)
+        let (request, session) = configuration(forURL: url, parameters: body, httpMethod: Method.POST.rawValue, authToken: authToken)
         print(request)
         startDataTask(for: session, with: request) { (result) in
             completion(result)
@@ -27,7 +42,7 @@ final class RequestBuilder: RequestBuilderType {
     }
     
     func POSTRequest<T: Encodable>(withURL url: URL, withData body: T, authToken: String?, completion: @escaping APIResultBlock<Data>) {
-        let (request, session) = configuration(forURL: url, parameters: body, httpMethod: "POST", authToken: authToken)
+        let (request, session) = configuration(forURL: url, parameters: body, httpMethod: Method.POST.rawValue, authToken: authToken)
         print(request.httpBody)
         startDataTask(for: session, with: request) { (result) in
             completion(result)
@@ -36,6 +51,7 @@ final class RequestBuilder: RequestBuilderType {
     
     private func startDataTask(for session: URLSession, with request: URLRequest, completion: @escaping APIResultBlock<Data>) {
         session.dataTask(with: request) { (data, response, error) in
+            
             if let _ = error {
                 completion(APIResult.Error(error: APIError.unexpectedError))
                 return
