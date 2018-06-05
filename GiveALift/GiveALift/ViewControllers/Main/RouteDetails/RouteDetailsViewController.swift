@@ -71,7 +71,6 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         routesStackView.insertArrangedSubview(stackView, at: 1)
-        //view.layoutSubviews()
     }
     
     private func addObserverToStackView() {

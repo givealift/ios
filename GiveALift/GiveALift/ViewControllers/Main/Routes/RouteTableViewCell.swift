@@ -10,9 +10,6 @@ import UIKit
 
 class RouteTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var userProfileImage: UIImageView!
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var rate: UILabel!
     @IBOutlet weak var from: UILabel!
     @IBOutlet weak var fromHour: UILabel!
     @IBOutlet weak var to: UILabel!
@@ -28,17 +25,16 @@ class RouteTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupCellDesign()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+    
     func setupCell(route: Route, fromCityID: Int?, toCityID: Int?) {
-//        userName.text = route.galUserPublicResponse!.firstName
-//        rate.text = "Ocena: \(String(describing: route.galUserPublicResponse!.rate)).0/5.0"
         fromHour.text = "\(route.from.date.extractHourString())"
-        userProfileImage.image = #imageLiteral(resourceName: "logo-2")
         toHour.text = "\(route.to.date.extractHourString())"
         price.text = String(describing: route.price!) + " zł"
         numberOfSeats.text = "Miejsca: " +  String(describing: route.numberOfSeats - route.numberOfOccupiedSeats)
@@ -46,6 +42,17 @@ class RouteTableViewCell: UITableViewCell {
         to.text = route.to.city.cityID.name()
         guard let fromCityID = fromCityID, let toCityID = toCityID else { return }
         checkIfStopIsMainRoute(route: route, fromCityID: fromCityID, toCityID: toCityID)
+    }
+    
+    func setupCellDesign() {
+        price.textColor = UIColor.GALBlue
+        from.font = UIFont.boldSystemFont(ofSize: 17.0)
+        to.font = UIFont.boldSystemFont(ofSize: 17.0)
+        fromHour.font = UIFont.boldSystemFont(ofSize: 17.0)
+        toHour.font = UIFont.boldSystemFont(ofSize: 17.0)
+        price.font = UIFont.boldSystemFont(ofSize: 25.0)
+        numberOfSeats.textColor = UIColor.GALBlue
+        numberOfSeats.font = UIFont.boldSystemFont(ofSize: 16.0)
     }
     
     private func checkIfStopIsMainRoute(route: Route, fromCityID: Int, toCityID: Int) {
