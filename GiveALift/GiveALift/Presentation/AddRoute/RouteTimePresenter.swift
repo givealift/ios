@@ -19,11 +19,26 @@ final class RouteTimePresenter: AddRoutePresenter {
         connector?.showRouteInfoView(route: route, isUpdating: false)
     }
     
+    func showEditRouteInfoView(departureDate: String, departureTime: String, finishTime: String ,indirectDates: [String?]) {
+        updateModel(departureDate: departureDate, departureTime: departureTime, finishTime: finishTime ,indirectDates: indirectDates)
+        connector?.showPreviuosView()
+    }
+    
     private func updateModel(departureDate: String, departureTime: String,finishTime: String ,indirectDates: [String]) {
         route.from.date = departureDate + " " + departureTime
         route.to.date = departureDate + " " + finishTime
         for i in 0 ..< indirectDates.count {
             route.stops[i].date = departureDate + " " + indirectDates[i]
+        }
+    }
+    
+    private func updateModel(departureDate: String, departureTime: String,finishTime: String ,indirectDates: [String?]) {
+        route.from.date = departureDate + " " + departureTime
+        route.to.date = departureDate + " " + finishTime
+        for i in 0 ..< indirectDates.count {
+            if let date = indirectDates[i] {
+                route.stops[i].date = departureDate + " " + date
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
     @IBOutlet weak var toLocationLabel: UILabel!
     @IBOutlet weak var fromLocationLabel: UILabel!
     @IBOutlet weak var routeImagesStackView: UIStackView!
-    @IBOutlet weak var routesStackView: UIStackView!
+    //@IBOutlet weak var routesStackView: UIStackView!
     @IBOutlet weak var fromHourLabel: UILabel!
     @IBOutlet weak var fromCityLabel: UILabel!
     @IBOutlet weak var toCityHour: UILabel!
@@ -73,8 +73,8 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
         stackView.spacing = 15.0
-        routesStackView.insertArrangedSubview(stackView, at: 1)
-        addIndirectImages()
+        //routesStackView.insertArrangedSubview(stackView, at: 1)
+        //addIndirectImages()
     }
     
     private func createIndirectLabel(with text: String) -> UILabel {

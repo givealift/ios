@@ -103,7 +103,7 @@ class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
     
     //MARK:- Main
     private func setupUserInfoButton() {
-        self.navigationItem.setLeftBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "background1").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(userInfoTapped)), animated: true)
+        self.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger").withRenderingMode(.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(userInfoTapped)), animated: true)
     }
     
     @objc private func userInfoTapped() {

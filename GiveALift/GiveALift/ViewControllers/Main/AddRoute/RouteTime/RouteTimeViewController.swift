@@ -56,6 +56,12 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
     //MARK:- IBActions
     
     @IBAction func nextTapped(_ sender: Any) {
+        presenter.isUpdating ? updateData() : classicWay()
+    }
+    
+    //MARK:- Main
+    
+    private func classicWay() {
         let indirectDates = indirectionsTextField.filter({!(($0.text == nil)||($0.text == ""))}).map({$0.text!})
         if let date = dateTextField.text, date != "", let time = timeTextField.text, time != "", indirectDates.count == indirectionsTextField.count, let finishTime = finishTime.text, finishTime != "" {
             presenter.showRouteInfoView(departureDate: date, departureTime: time, finishTime: finishTime, indirectDates: indirectDates)
@@ -64,7 +70,21 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
         }
     }
     
-    //MARK:- Main
+    private func updateData() {
+        var indirectDates: [String] = []
+        for i in 0 ..< indirectionsTextField.count {
+            if let date = indirectionsTextField[i].text, date != "" {
+                indirectDates.append(date)
+            } else {
+                indirectDates.append(indirectionsTextField[i].placeholder!)
+            }
+        }
+        if let date = dateTextField.text, date != "", let time = timeTextField.text, time != "", indirectDates.count == indirectionsTextField.count, let finishTime = finishTime.text, finishTime != "" {
+            presenter.showRouteInfoView(departureDate: date, departureTime: time, finishTime: finishTime, indirectDates: indirectDates)
+        } else {
+            showError(with: "Wpisz poprawne dane")
+        }
+    }
     
     private func addTextFieldsIfNeeded() {
         guard let stops = presenter.route.stops else { return }

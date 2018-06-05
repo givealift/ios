@@ -16,6 +16,7 @@ protocol AddRouteConnectorDelegate: class {
     func showHomeView()
     func showMainRouteView(route: Route, isUpdating: Bool)
     func showPreviuosView()
+    func showEditRouteInfo(route: Route)
     weak var searchConnector: SearchConnectorDelegate? { get set }
 }
 
@@ -30,6 +31,12 @@ final class AddRouteConnector {
 }
 
 extension AddRouteConnector: AddRouteConnectorDelegate {
+    func showEditRouteInfo(route: Route) {
+        let presenter = EditRouteInfoPresenter(connector: self, route: route, isUpdating: true)
+        let view = EditRouteInfoViewController(presenter: presenter)
+        navigationController.pushViewController(view, animated: true)
+    }
+    
     func showPreviuosView() {
         navigationController.popViewController(animated: true)
     }

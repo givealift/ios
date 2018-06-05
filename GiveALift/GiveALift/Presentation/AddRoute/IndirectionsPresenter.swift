@@ -38,7 +38,13 @@ final class IndirectionsPresenter: AddRoutePresenter {
     }
     
     private func updateOldModel(indirects: [Indirect]) {
-        route.stops = indirects.map({ $0.toLocation() })
+        for i in 0 ..< indirects.count {
+            if route.stops[i].city.cityID == indirects[i].cityID {
+                
+            } else {
+                route.stops[i] = indirects[i].toLocation()
+            }
+        }
     }
 }
 

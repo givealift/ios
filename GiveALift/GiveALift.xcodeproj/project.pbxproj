@@ -388,6 +388,7 @@
 				C1725B3620A5BF9F00F64747 /* RouteTimePresenter.swift */,
 				C1725B4220A5FAED00F64747 /* RouteInfoPresenter.swift */,
 				C124DA3C20A75E5B00391A71 /* RouteOptionalDescriptionPresenter.swift */,
+				C130E2C720AAF8E100DC221C /* EditRouteInfoPresenter.swift */,
 			);
 			path = AddRoute;
 			sourceTree = "<group>";
@@ -708,7 +709,6 @@
 				C1CFBDA02086AC6500253375 /* RoutesPresenter.swift */,
 				C124DA4A20A872F900391A71 /* RouteDetailsPresenter.swift */,
 				C130E2B420A99CF700DC221C /* UserInfoPresenter.swift */,
-				C130E2C720AAF8E100DC221C /* EditRouteInfoPresenter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";

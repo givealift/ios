@@ -13,7 +13,11 @@ class AddRoutePresenter: BasePresenter, AddRouteService {
     
     weak var connector: AddRouteConnectorDelegate?
     private var routesService = RoutesService()
-    var route: Route
+    var route: Route {
+        didSet {
+            print(route)
+        }
+    }
     var isUpdating: Bool
     
     init(connector: AddRouteConnectorDelegate, route: Route, isUpdating: Bool) {
@@ -28,8 +32,8 @@ class AddRoutePresenter: BasePresenter, AddRouteService {
         routesService.uploadRoute(route: route)
     }
     
-    func update() {
-        
+    func updateToServer() {
+        routesService.updateRoute(route)
     }
     
     func updateSuccess() {

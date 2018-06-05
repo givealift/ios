@@ -30,6 +30,6 @@ final class RouteDetailsPresenter: BasePresenter {
     }
     
     func showEditRouteInfo() {
-        //connector?.showEditRouteInfoView(route: route.routeInfo)
+        connector?.showEditRouteView(route: route)
     }
 }
