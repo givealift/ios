@@ -10,6 +10,7 @@ import UIKit
 
 class RouteTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var dotsStackVIew: UIStackView!
     @IBOutlet weak var from: UILabel!
     @IBOutlet weak var fromHour: UILabel!
     @IBOutlet weak var to: UILabel!
@@ -52,6 +53,10 @@ class RouteTableViewCell: UITableViewCell {
         toHour.font = UIFont.boldSystemFont(ofSize: 17.0)
         price.font = UIFont.boldSystemFont(ofSize: 25.0)
         numberOfSeats.textColor = UIColor.GALBlue
+        fromIndirectCity.textColor = UIColor.GALBlue
+        fromIndirectHour.textColor = UIColor.GALBlue
+        toIndirectHour.textColor = UIColor.GALBlue
+        toIndirectCity.textColor = UIColor.GALBlue
         numberOfSeats.font = UIFont.boldSystemFont(ofSize: 16.0)
     }
     
@@ -61,12 +66,23 @@ class RouteTableViewCell: UITableViewCell {
             fromIndirectStackView.isHidden = false
             fromIndirectCity.text = stop?.city.cityID.name()
             fromIndirectHour.text = stop?.date.extractHourString()
+            addIndirect()
         }
         if route.to.city.cityID != toCityID {
             let stop = route.stops.first(where: {$0.city.cityID == toCityID})
             toIndirectStackView.isHidden = false
             toIndirectCity.text = stop?.city.cityID.name()
             toIndirectHour.text = stop?.date.extractHourString()
+            addIndirect()
         }
+    }
+    
+    private func addIndirect() {
+        let dotView = UIImageView(image: #imageLiteral(resourceName: "simpleDot"))
+        dotView.contentMode = .scaleAspectFit
+        let lineView = UIImageView(image: #imageLiteral(resourceName: "Line"))
+        lineView.contentMode = .scaleAspectFit
+        dotsStackVIew.insertArrangedSubview(dotView, at: 2)
+        dotsStackVIew.insertArrangedSubview(lineView, at: 3)
     }
 }

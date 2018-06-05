@@ -10,24 +10,27 @@ import UIKit
 
 class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
 
-    @IBOutlet weak var routesStackViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var toLocationLabel: UILabel!
+    @IBOutlet weak var fromLocationLabel: UILabel!
+    @IBOutlet weak var routeImagesStackView: UIStackView!
     @IBOutlet weak var routesStackView: UIStackView!
+    @IBOutlet weak var fromHourLabel: UILabel!
+    @IBOutlet weak var fromCityLabel: UILabel!
+    @IBOutlet weak var toCityHour: UILabel!
     @IBOutlet weak var numberOfSeats: UILabel!
+    @IBOutlet weak var toCityLabel: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var fromLabel: UILabel!
-    @IBOutlet weak var fromHourLable: UILabel!
-    @IBOutlet weak var toLabel: UILabel!
-    @IBOutlet weak var toHourLabel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var userStackView: UIStackView!
     @IBOutlet weak var reserveButton: GALPinkButton!
+    @IBOutlet weak var routesStackViewHeightConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkIfUserIsOwner()
+        presenter.isUserOwner ? setupForOwner() : setupOwnerInfo()
         setupViewData()
         addObserverToStackView()
     }
@@ -36,42 +39,61 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
         //APIManager.shared.reserve(route: presenter.route.routeInfo, userID: 2)
     }
     
-    private func checkIfUserIsOwner() {
-        //MARK:- FAST
-        if User.shared.userID == presenter.route.galUserPublicResponse!.userID {
-         //if User.shared.userID == presenter.route.routeInfo.ownerId! {
-            reserveButton.isHidden = true
-            userStackView.isHidden = true
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edytuj", style: .plain, target: self, action: #selector(editTapped))
-        }
+    private func setupForOwner() {
+        reserveButton.isHidden = true
+        userStackView.isHidden = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edytuj", style: .plain, target: self, action: #selector(editTapped))
     }
     
     @objc private func editTapped() {
         presenter.showEditRouteInfo()
     }
     
+    private func setupOwnerInfo() {        
+        userLabel.text = presenter.route.galUserPublicResponse!.firstName
+    }
+    
     private func setupViewData() {
         numberOfSeats.text = String(describing: presenter.route.numberOfSeats - presenter.route.numberOfOccupiedSeats)
         price.text = String(describing: presenter.route.price)
         dateLabel.text = presenter.route.from.date
-        fromLabel.text = presenter.route.from.city.name
-        toLabel.text = presenter.route.to.city.name
-        fromHourLable.text = presenter.route.from.date.extractHourString()
-        toHourLabel.text = presenter.route.to.date.extractHourString()
-        userLabel.text = presenter.route.galUserPublicResponse!.firstName
-        presenter.route.stops.forEach({addIndirectLabelsIfNeeded(location: $0)})
+        fromCityLabel.text = presenter.route.from.city.cityID.name()
+        toCityLabel.text = presenter.route.to.city.cityID.name()
+        fromHourLabel.text = presenter.route.from.date.extractHourString()
+        toCityHour.text = presenter.route.to.date.extractHourString()
+        fromLocationLabel.text = presenter.route.from.placeOfMeeting
+        toLocationLabel.text = presenter.route.to.placeOfMeeting
+        presenter.route.stops.forEach({addIndirect(with: $0)})
     }
     
-    private func addIndirectLabelsIfNeeded(location: Location) {
-        let cityLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        cityLabel.text = location.city.cityID.name()
-        let hourLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        hourLabel.text = location.date.extractHourString()
-        let stackView = UIStackView(arrangedSubviews: [cityLabel, hourLabel])
+    private func addIndirect(with location: Location) {
+        let cityLabel = createIndirectLabel(with: location.city.cityID.name())
+        let hourLabel = createIndirectLabel(with: location.date.extractHourString())
+        let stackView = UIStackView(arrangedSubviews: [hourLabel, cityLabel])
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 15.0
         routesStackView.insertArrangedSubview(stackView, at: 1)
+        addIndirectImages()
     }
+    
+    private func createIndirectLabel(with text: String) -> UILabel {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        label.text = text
+        label.textColor = UIColor.GALBlue
+        label.font = UIFont.boldSystemFont(ofSize: 17.0)
+        return label
+    }
+    
+    private func addIndirectImages() {
+        let dotView = UIImageView(image: #imageLiteral(resourceName: "simpleDot"))
+        dotView.contentMode = .scaleAspectFit
+        let lineView = UIImageView(image: #imageLiteral(resourceName: "Line"))
+        lineView.contentMode = .scaleAspectFit
+        routeImagesStackView.insertArrangedSubview(dotView, at: 2)
+        routeImagesStackView.insertArrangedSubview(lineView, at: 3)
+    }
+    
     
     private func addObserverToStackView() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(userInfoTapped))

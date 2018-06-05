@@ -51,5 +51,14 @@ class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDele
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.showRouteDetailsView(route: presenter.routes[indexPath.section])
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //MARK:- TODO sprawdzenie czy stop jest startem albo docelowym
+        if presenter.routes[indexPath.section].stops.count == 1 {
+            return 190
+        } else {
+            return 150
+        }
+    }
 
 }

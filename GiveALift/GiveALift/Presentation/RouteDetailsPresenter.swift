@@ -12,6 +12,13 @@ final class RouteDetailsPresenter: BasePresenter {
     
     private weak var connector: SearchConnectorDelegate?
     let route: Route
+    var isUserOwner: Bool {
+        if let galUserResponse = route.galUserPublicResponse {
+            return galUserResponse.userID == User.shared.userID!
+        } else {
+            return route.ownerId! == User.shared.userID!
+        }
+    }
     
     init(connector: SearchConnectorDelegate, route: Route) {
         self.connector = connector
