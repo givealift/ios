@@ -18,7 +18,7 @@ final class UserInfoPresenter: BasePresenter, UserInfoUpdateService {
     private weak var connector: UserInfoConnectorDelegate?
     private var userInfoService = UserInfoUpdate()
     let editModeEnabled: Bool
-    let userData: GALUserInfo
+    var userData: GALUserInfo
     weak var view: UserInfoView?
     
     private lazy var dateFormatter: DateFormatter = {
@@ -40,6 +40,7 @@ final class UserInfoPresenter: BasePresenter, UserInfoUpdateService {
         let dateText = textFieldData[3] as! BirthdayCell
         let date = dateFormatter.date(from: dateText.value!)
         let user = GALUserInfo(address: nil, birthYear: date, email: textFieldData[2].value!, firstName: textFieldData[0].value!, lastName: textFieldData[1].value!, gender: nil, phone: textFieldData[4].value!, rate: nil, password: nil)
+        userData = user
         userInfoService.updateUserInfo(user, userID: User.shared.userID!)
     }
     

@@ -1,16 +1,37 @@
 PODS:
+  - HanekeSwift (0.10.1)
   - SearchTextField (1.2.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - HanekeSwift (from `https://github.com/Haneke/HanekeSwift`, branch `feature/swift-3`)
   - SearchTextField
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - SearchTextField
 
-SPEC CHECKSUMS:
-  SearchTextField: a5bb7e4c33affadb115afdbe8100d84ef10a8024
+EXTERNAL SOURCES:
+  HanekeSwift:
+    :branch: feature/swift-3
+    :git: https://github.com/Haneke/HanekeSwift
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
-PODFILE CHECKSUM: dfaccb7878e870eeb292d352bf10571a891f7c38
+CHECKOUT OPTIONS:
+  HanekeSwift:
+    :commit: 2f6d87f1f725d204d85cb34492e8c399cd5a200f
+    :git: https://github.com/Haneke/HanekeSwift
+  SVProgressHUD:
+    :commit: 7f676d51905ede045ca5dcaf82d4ba0d9f96addf
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+SPEC CHECKSUMS:
+  HanekeSwift: 4113367892828e7700d24a384027de6ebc79aad1
+  SearchTextField: a5bb7e4c33affadb115afdbe8100d84ef10a8024
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 623e6e58f1b2a575cc05293ef9ef237a4b91ce21
 
 COCOAPODS: 1.5.0

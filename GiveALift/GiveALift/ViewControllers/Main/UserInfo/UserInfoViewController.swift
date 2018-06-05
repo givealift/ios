@@ -78,7 +78,8 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter>, UserIn
     
     //MARK:- Main
     func updateSuccess() {
-        
+        setupTextFields()
+        editState(false)
     }
     
     private func editState(_ value: Bool) {

@@ -7,6 +7,8 @@ target 'GiveALift' do
 
   # Pods for GiveALift
 	pod "SearchTextField"
+	pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift', :branch => 'feature/swift-3’
+	pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 
   target 'GiveALiftTests' do
     inherit! :search_paths
