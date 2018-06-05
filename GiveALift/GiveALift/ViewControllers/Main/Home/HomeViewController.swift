@@ -103,11 +103,21 @@ class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
     
     //MARK:- Main
     private func setupUserInfoButton() {
-        self.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger").withRenderingMode(.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(userInfoTapped)), animated: true)
+        self.navigationItem.setLeftBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger").withRenderingMode(.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(userInfoTapped)), animated: true)
     }
     
     @objc private func userInfoTapped() {
         isSideMenuHidden = !isSideMenuHidden 
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let first = touches.first {
+            if first.view?.frame.size.width == sideMenu.frame.size.width {
+                
+            } else {
+                isSideMenuHidden = true
+            }
+        }
     }
 }
 

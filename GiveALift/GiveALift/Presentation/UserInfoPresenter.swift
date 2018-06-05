@@ -10,6 +10,7 @@ import Foundation
 
 protocol UserInfoView: class {
     func showError(with message: String)
+    func updateSuccess()
 }
 
 final class UserInfoPresenter: BasePresenter, UserInfoUpdateService {
@@ -43,8 +44,7 @@ final class UserInfoPresenter: BasePresenter, UserInfoUpdateService {
     }
     
     func updateSuccess() {
-        //MARK:- TODO wyśietlić powodzenie operacji
-        
+        view?.updateSuccess()
     }
     
     func serviceError(error: APIError) {

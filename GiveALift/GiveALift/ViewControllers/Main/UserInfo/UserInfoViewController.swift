@@ -77,6 +77,10 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter>, UserIn
     }
     
     //MARK:- Main
+    func updateSuccess() {
+        
+    }
+    
     private func editState(_ value: Bool) {
         regularButtons.forEach({ $0.isHidden = value })
         editButtons.forEach({ $0.isHidden = !value })
