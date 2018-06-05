@@ -12,6 +12,7 @@ protocol RootConnectorDelegate: class {
     func startOnboardingConnector()
     func endOnboardingConnector()
     func startSearchConnector()
+    func endSearchConnector()
 }
 
 final class RootConnector {
@@ -40,8 +41,14 @@ final class RootConnector {
 }
 
 extension RootConnector: RootConnectorDelegate {
+    func endSearchConnector() {
+        self.searchConnector = nil
+        startOnboardingConnector()
+    }
+    
     func startSearchConnector() {
         self.searchConnector = SearchConnector(navigationController: self.navigationController)
+        searchConnector?.rootConnector = self
     }
     
     func startOnboardingConnector() {

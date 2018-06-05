@@ -12,10 +12,10 @@ final class RoutesPresenter: BasePresenter {
     
     private weak var connector: SearchConnectorDelegate?
     let routes: [Route]
-    let fromCityID: Int
-    let toCityID: Int
+    let fromCityID: Int?
+    let toCityID: Int?
     
-    init(connector: SearchConnectorDelegate, routes: [Route], fromCityID: Int, toCityID: Int) {
+    init(connector: SearchConnectorDelegate, routes: [Route], fromCityID: Int?, toCityID: Int?) {
         self.routes = routes
         self.connector = connector
         self.fromCityID = fromCityID

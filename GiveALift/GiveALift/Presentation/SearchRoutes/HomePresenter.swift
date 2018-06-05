@@ -16,8 +16,8 @@ final class HomePresenter: BasePresenter {
     
     private weak var connector: SearchConnectorDelegate?
     private let routesService = RoutesService()
-    private var from: Int!
-    private var to: Int!
+    private var from: Int?
+    private var to: Int?
     weak var view: HomeView?
     
     let fromPlaceholder = "Wyruszam z..."
@@ -51,11 +51,12 @@ final class HomePresenter: BasePresenter {
     }
     
     func showUserRoutesView() {
-        
+        routesService.findUserRoutes()
     }
     
     func logOut() {
-        
+        User.shared.logOut()
+        connector?.startOnboardingConnector()
     }
     
     private func prepareUserInfo() -> GALUserInfo {

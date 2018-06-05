@@ -9,13 +9,15 @@
 import UIKit
 
 protocol SearchConnectorDelegate: class {
-    func showRoutesView(routes: [Route], fromCityID: Int, toCityID: Int)
+    func showRoutesView(routes: [Route], fromCityID: Int?, toCityID: Int?)
     func showRouteDetailsView(route: Route)
     func startAddRouteConnector()
     func endAddRouteConnector()
+    func startOnboardingConnector()
     func startUserInfoConnector(userInfo: GALUserInfo, editModeEnabled: Bool)
     var  addRouteConnector: AddRouteConnectorDelegate? { get set }
     var userInfoConnector: UserInfoConnectorDelegate? { get set }
+    var rootConnector: RootConnectorDelegate? { get set }
 }
 
 final class SearchConnector {
@@ -23,6 +25,7 @@ final class SearchConnector {
     private unowned let navigationController: UINavigationController
     var addRouteConnector: AddRouteConnectorDelegate?
     var userInfoConnector: UserInfoConnectorDelegate?
+    var rootConnector: RootConnectorDelegate?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -38,6 +41,10 @@ final class SearchConnector {
 }
 
 extension SearchConnector: SearchConnectorDelegate {
+    func startOnboardingConnector() {
+        rootConnector?.endSearchConnector()
+    }
+    
     func startUserInfoConnector(userInfo: GALUserInfo, editModeEnabled: Bool) {
         self.userInfoConnector = UserInfoConnector(navigationController: self.navigationController)
         userInfoConnector?.searchConnector = self
@@ -55,7 +62,7 @@ extension SearchConnector: SearchConnectorDelegate {
         addRouteConnector?.showMainRouteView(route: Route(), isUpdating: false)
     }
     
-    func showRoutesView(routes: [Route], fromCityID: Int, toCityID: Int) {
+    func showRoutesView(routes: [Route], fromCityID: Int?, toCityID: Int?) {
         let presenter = RoutesPresenter(connector: self, routes: routes, fromCityID: fromCityID, toCityID: toCityID)
         let view = RoutesViewController(presenter: presenter)
         navigationController.pushViewController(view, animated: true)

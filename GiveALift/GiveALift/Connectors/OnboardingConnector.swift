@@ -29,6 +29,7 @@ final class OnboardingConnector {
         let view = LoginViewController(presenter: presenter)
         presenter.view = view
         navigationController.pushViewController(view, animated: true)
+        navigationController.viewControllers = [view]
     }
 }
 

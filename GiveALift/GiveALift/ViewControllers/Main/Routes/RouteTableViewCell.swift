@@ -34,26 +34,27 @@ class RouteTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupCell(route: Route, fromCityID: Int, toCityID: Int) {
-        userName.text = route.galUserPublicResponse!.firstName
-        rate.text = "Ocena: \(String(describing: route.galUserPublicResponse!.rate)).0/5.0"
+    func setupCell(route: Route, fromCityID: Int?, toCityID: Int?) {
+//        userName.text = route.galUserPublicResponse!.firstName
+//        rate.text = "Ocena: \(String(describing: route.galUserPublicResponse!.rate)).0/5.0"
         fromHour.text = "\(route.from.date.extractHourString())"
         userProfileImage.image = #imageLiteral(resourceName: "logo-2")
         toHour.text = "\(route.to.date.extractHourString())"
         price.text = String(describing: route.price!) + " zł"
         numberOfSeats.text = "Miejsca: " +  String(describing: route.numberOfSeats - route.numberOfOccupiedSeats)
+        from.text = route.from.city.cityID.name()
+        to.text = route.to.city.cityID.name()
+        guard let fromCityID = fromCityID, let toCityID = toCityID else { return }
         checkIfStopIsMainRoute(route: route, fromCityID: fromCityID, toCityID: toCityID)
     }
     
     private func checkIfStopIsMainRoute(route: Route, fromCityID: Int, toCityID: Int) {
-        from.text = route.from.city.cityID.name()
         if route.from.city.cityID != fromCityID {
             let stop = route.stops.first(where: {$0.city.cityID == fromCityID})
             fromIndirectStackView.isHidden = false
             fromIndirectCity.text = stop?.city.cityID.name()
             fromIndirectHour.text = stop?.date.extractHourString()
         }
-        to.text = route.to.city.cityID.name()
         if route.to.city.cityID != toCityID {
             let stop = route.stops.first(where: {$0.city.cityID == toCityID})
             toIndirectStackView.isHidden = false

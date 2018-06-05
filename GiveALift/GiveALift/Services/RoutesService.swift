@@ -33,6 +33,19 @@ final class RoutesService {
         self.requestBuilder = requestBuilder
     }
     
+    func findUserRoutes() {
+        requestBuilder.GETRequest(withURL: urlBuilder.userRoutes(userID: User.shared.userID!), authToken: User.shared.token!) { [weak self] (result) in
+            switch result {
+            case .Error(error: let error):
+                DispatchQueue.main.async {
+                    self?.searchDelegate?.serviceError(error)
+                }
+            case .Success(result: let data):
+                self?.handleResponse(data: data)
+            }
+        }
+    }
+    
     func findRoutes(from: Int, to: Int, date: String) {
         requestBuilder.GETRequest(withURL: urlBuilder.searchRouteURL(from: from, to: to, date: date), authToken: nil) { [weak self] (result) in
             switch result {
