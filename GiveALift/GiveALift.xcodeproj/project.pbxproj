@@ -90,6 +90,7 @@
 		C1AE3E0320C5D24600CB8176 /* GALSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AE3E0220C5D24600CB8176 /* GALSideMenu.swift */; };
 		C1AE3E0520C5D27B00CB8176 /* GALSideMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1AE3E0420C5D27B00CB8176 /* GALSideMenu.xib */; };
 		C1BEA470206A45F600EE0B4B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BEA46F206A45F600EE0B4B /* Validator.swift */; };
+		C1CC2E8720C736CC0085FC72 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CC2E8620C736CC0085FC72 /* ImageProvider.swift */; };
 		C1CFBD702085F48900253375 /* GALRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD6F2085F48900253375 /* GALRegisterResponse.swift */; };
 		C1CFBD7720864B1B00253375 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7620864B1B00253375 /* LocalStorage.swift */; };
 		C1CFBD7920864BF000253375 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CFBD7820864BF000253375 /* LocalStorageManager.swift */; };
@@ -227,6 +228,7 @@
 		C1AE3E0220C5D24600CB8176 /* GALSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALSideMenu.swift; sourceTree = "<group>"; };
 		C1AE3E0420C5D27B00CB8176 /* GALSideMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GALSideMenu.xib; sourceTree = "<group>"; };
 		C1BEA46F206A45F600EE0B4B /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = Validator/Validator.swift; sourceTree = "<group>"; };
+		C1CC2E8620C736CC0085FC72 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		C1CFBD6F2085F48900253375 /* GALRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALRegisterResponse.swift; sourceTree = "<group>"; };
 		C1CFBD7620864B1B00253375 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		C1CFBD7820864BF000253375 /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
@@ -567,6 +569,7 @@
 				C130E2BB20A9A0B700DC221C /* OnboardingService.swift */,
 				C1538D1220BFF2E700B54E02 /* RoutesService.swift */,
 				C1538D3920C0916B00B54E02 /* UserInfoService.swift */,
+				C1CC2E8620C736CC0085FC72 /* ImageProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -986,6 +989,7 @@
 				C1233D622083CE5300BD0A56 /* URLBuilderType.swift in Sources */,
 				C15CF90620B46575005C1EF7 /* LoginViewController.swift in Sources */,
 				C124DA5120A8958D00391A71 /* RegisterRequest.swift in Sources */,
+				C1CC2E8720C736CC0085FC72 /* ImageProvider.swift in Sources */,
 				C124DA5920A8E80100391A71 /* GALBlueButton.swift in Sources */,
 				C1CFBD83208655E800253375 /* HomePresenter.swift in Sources */,
 				C1725B3E20A5C74500F64747 /* BaseConnector.swift in Sources */,

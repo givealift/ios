@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class UserInfoViewController: TextFieldViewController<UserInfoPresenter>, UserInfoView {
     
@@ -78,8 +79,11 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter>, UserIn
     
     //MARK:- Main
     func updateSuccess() {
-        setupTextFields()
         editState(false)
+        setupTextFields()
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setMinimumDismissTimeInterval(1.0)
+        SVProgressHUD.showSuccess(withStatus: "Powodzenie")
     }
     
     private func editState(_ value: Bool) {

@@ -36,11 +36,19 @@ final class UserInfoPresenter: BasePresenter, UserInfoUpdateService {
         userInfoService.updateDelegate = self
     }
     
+    private func downloadUserImage() {
+        //ImageProvider.ge
+    }
+    
     func updateUserInfo() {
         let dateText = textFieldData[3] as! BirthdayCell
         let date = dateFormatter.date(from: dateText.value!)
         let user = GALUserInfo(address: nil, birthYear: date, email: textFieldData[2].value!, firstName: textFieldData[0].value!, lastName: textFieldData[1].value!, gender: nil, phone: textFieldData[4].value!, rate: nil, password: nil)
         userData = user
+        let userid = User.shared.userID
+        let token = User.shared.token
+        User.shared.logOut()
+        User.shared.logIn(user: GALUserLogin(userID: userid!, token: token!), userInfo: user)
         userInfoService.updateUserInfo(user, userID: User.shared.userID!)
     }
     
