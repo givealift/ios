@@ -20,4 +20,6 @@ protocol URLBuilderType {
     func userRoutes(userID: Int) -> URL
     func updateRoute(routeID: Int) -> URL
     func userPhotoURL(userID: Int) -> URL
+    func resignURL(routeID: Int, userID: Int) -> URL
+    func userReservedRoutes(userID: Int) -> URL
 }

@@ -47,7 +47,7 @@ final class HomePresenter: BasePresenter {
     
     func showUserInfoView() {
         let user = GALUserInfo(address: "", birthYear: User.shared.birthDay, email: User.shared.email, firstName: User.shared.firstName, lastName: User.shared.lastName, gender: User.shared.gender, phone: User.shared.phoneNumber, rate: User.shared.rate, password: "hasełko")
-        connector?.startUserInfoConnector(userInfo: user, editModeEnabled: true)
+        connector?.startUserInfoConnector(userInfo: user, editModeEnabled: true, userID: User.shared.userID!)
     }
     
     func showUserRoutesView() {

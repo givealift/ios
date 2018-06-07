@@ -36,9 +36,9 @@ class GALTextField: UITextField {
         self.addSubview(borderLine)
     }
     
-    func isValid() -> Result {
-        guard let text = self.text, text != "" else { return Result.invalid(error: "Wszystkie pola muszą zostać uzupełnione") }
-        guard let rule = self.rule else { return Result.valid }
+    func isValid() -> ValidationResult {
+        guard let text = self.text, text != "" else { return ValidationResult.invalid(error: "Wszystkie pola muszą zostać uzupełnione") }
+        guard let rule = self.rule else { return ValidationResult.valid }
         return text.validated(with: rule)
     }
     

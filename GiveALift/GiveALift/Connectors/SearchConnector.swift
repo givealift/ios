@@ -14,7 +14,7 @@ protocol SearchConnectorDelegate: class {
     func startAddRouteConnector()
     func endAddRouteConnector()
     func startOnboardingConnector()
-    func startUserInfoConnector(userInfo: GALUserInfo, editModeEnabled: Bool)
+    func startUserInfoConnector(userInfo: GALUserInfo, editModeEnabled: Bool, userID: Int)
     func showEditRouteView(route: Route)
     var  addRouteConnector: AddRouteConnectorDelegate? { get set }
     var userInfoConnector: UserInfoConnectorDelegate? { get set }
@@ -52,10 +52,10 @@ extension SearchConnector: SearchConnectorDelegate {
         rootConnector?.endSearchConnector()
     }
     
-    func startUserInfoConnector(userInfo: GALUserInfo, editModeEnabled: Bool) {
+    func startUserInfoConnector(userInfo: GALUserInfo, editModeEnabled: Bool, userID: Int) {
         self.userInfoConnector = UserInfoConnector(navigationController: self.navigationController)
         userInfoConnector?.searchConnector = self
-        userInfoConnector?.showUserInfoView(userData: userInfo, editModeEnabled: editModeEnabled)
+        userInfoConnector?.showUserInfoView(userData: userInfo, editModeEnabled: editModeEnabled, userID: userID)
     }
     
     func endAddRouteConnector() {
@@ -78,6 +78,7 @@ extension SearchConnector: SearchConnectorDelegate {
     func showRouteDetailsView(route: Route) {
         let presenter = RouteDetailsPresenter(connector: self, route: route)
         let view = RouteDetailsViewController(presenter: presenter)
+        presenter.view = view
         navigationController.pushViewController(view, animated: true)
     }
 }

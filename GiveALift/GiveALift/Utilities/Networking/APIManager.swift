@@ -9,18 +9,6 @@
 import UIKit
 
 final class APIManager: APIManagerType {
-    func reserve(route: Route, userID: Int) {
-        let urlBuilder = URLBuilder()
-        requestBuilder.POSTRequest(withURL: urlBuilder.resere(routeID: route.routeId), withData: ["passengerId":User.shared.userID!], authToken: User.shared.token) { (result) in
-            switch result {
-            case .Success(result: _):
-                print("działa")
-            case .Error(error: _):
-                print("Error")
-            }
-        }
-    }
-    
     
     static let shared: APIManagerType = APIManager()
     fileprivate let requestBuilder: RequestBuilderType

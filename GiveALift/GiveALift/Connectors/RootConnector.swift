@@ -61,14 +61,4 @@ extension RootConnector: RootConnectorDelegate {
         self.onboardingConnector = nil
         startSearchConnector()
     }
-    
-    func showUserInfoView(userData: GALUserInfo) {
-        self.userInfoConnector = UserInfoConnector(navigationController: self.navigationController)
-        userInfoConnector?.showUserInfoView(userData: userData, editModeEnabled: true)
-    }
-    
-    func showAddRouteView() {
-        self.addRouteConnector = AddRouteConnector(navigationController: self.navigationController)
-        addRouteConnector?.showMainRouteView(route: Route(), isUpdating: false)
-    }
 }

@@ -9,11 +9,20 @@
 import Foundation
 
 final class RequestBuilder: RequestBuilderType {
-    
+
     public enum Method: String {
         case GET = "GET"
         case PUT = "PUT"
         case POST = "POST"
+        case DELETE = "DELETE"
+    }
+    
+    func DELETEReqeust(withURL url: URL, authToken: String?, completion: @escaping (APIResult<Data>) -> ()) {
+        let (request, session) = configuration(forURL: url, parameters: nil, httpMethod: Method.DELETE.rawValue, authToken: authToken)
+        print(request)
+        startDataTask(for: session, with: request) { (result) in
+            completion(result)
+        }
     }
     
     func PUTRequest<T>(withURL url: URL, withData body: T, authToken: String?, completion: @escaping (APIResult<Data>) -> ()) where T : Encodable {

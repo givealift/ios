@@ -9,7 +9,7 @@
 import UIKit
 
 protocol UserInfoConnectorDelegate: class {
-    func showUserInfoView(userData: GALUserInfo ,editModeEnabled: Bool)
+    func showUserInfoView(userData: GALUserInfo ,editModeEnabled: Bool, userID: Int)
     var searchConnector: SearchConnectorDelegate? { get set }
 }
 
@@ -26,8 +26,8 @@ final class UserInfoConnector {
 
 extension UserInfoConnector: UserInfoConnectorDelegate {
     
-    func showUserInfoView(userData: GALUserInfo ,editModeEnabled: Bool) {
-        let presenter = UserInfoPresenter(connector: self,userData: userData ,editModeEnabled: editModeEnabled)
+    func showUserInfoView(userData: GALUserInfo ,editModeEnabled: Bool, userID: Int) {
+        let presenter = UserInfoPresenter(connector: self,userData: userData ,editModeEnabled: editModeEnabled, userID: userID)
         let view = UserInfoViewController(presenter: presenter)
         presenter.view = view
         navigationController.present(view, animated: true, completion: nil)

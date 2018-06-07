@@ -12,6 +12,21 @@ final class URLBuilder: URLBuilderType {
     
     private let mainURL = "http://mysterious-lowlands-82501.herokuapp.com"
     
+    func userReservedRoutes(userID: Int) -> URL {
+        let urlString = mainURL + "/api/route/rides/\(userID)"
+        return URL(string: urlString)!
+    }
+    
+    func resignURL(routeID: Int, userID: Int) -> URL {
+        let urlString = mainURL + "/api/route/\(routeID)/passenger/\(userID)"
+        return URL(string: urlString)!
+    }
+    
+    func userPhotoURL(userID: Int) -> URL {
+        let urlString = mainURL + "/api/user/photo/\(userID)"
+        return URL(string: urlString)!
+    }
+    
     func updateRoute(routeID: Int) -> URL {
         let urlString = mainURL + "/api/route/\(routeID)"
         return URL(string: urlString)!

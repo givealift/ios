@@ -16,6 +16,7 @@ struct Route: Codable {
     var description: String?
     var ownerId: Int?
     var galUserPublicResponse: GalUserPublicResponse?
+    var passengers: [Int]?
 }
 
 struct Location: Codable {

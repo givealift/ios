@@ -22,7 +22,7 @@ import Foundation
  }
  */
 
-enum Result {
+enum ValidationResult {
     case invalid(error: String)
     case valid
 }
@@ -60,7 +60,7 @@ enum Pattern: String {
 
 protocol ValidatorRule {
     var errorMessage: String { get set }
-    func check(string: String) -> Result
+    func check(string: String) -> ValidationResult
 }
 
 extension ValidatorRule {
@@ -81,13 +81,13 @@ final class ValidatorRuleLength: ValidatorRule {
         errorMessage = rule.errorMessage
     }
     
-    func check(string: String) -> Result {
-        var result: Result
+    func check(string: String) -> ValidationResult {
+        var result: ValidationResult
         switch self.rule {
         case .maximumLength:
-            result = string.characters.count > self.value ? Result.invalid(error: errorMessage) : Result.valid
+            result = string.characters.count > self.value ? ValidationResult.invalid(error: errorMessage) : ValidationResult.valid
         case .minimumLength:
-            result = string.characters.count < self.value ? Result.invalid(error: errorMessage) : Result.valid
+            result = string.characters.count < self.value ? ValidationResult.invalid(error: errorMessage) : ValidationResult.valid
         }
         return result
     }
@@ -111,24 +111,24 @@ final class ValidatorRulePattern: ValidatorRule {
         self.dynamicString = dynamicString
     }
     
-    func check(string: String) -> Result {
+    func check(string: String) -> ValidationResult {
         if let dynamicString = dynamicString {
-            return string == dynamicString() ? Result.valid : Result.invalid(error: errorMessage)
+            return string == dynamicString() ? ValidationResult.valid : ValidationResult.invalid(error: errorMessage)
         }
         let pattern = self.pattern.rawValue
         let test = NSPredicate(format:"SELF MATCHES %@", pattern)
-        return test.evaluate(with: string) ? Result.valid : Result.invalid(error: errorMessage)
+        return test.evaluate(with: string) ? ValidationResult.valid : ValidationResult.invalid(error: errorMessage)
     }
 }
 
 extension String {
     
-    func validated(with rule: ValidatorRule) -> Result {
+    func validated(with rule: ValidatorRule) -> ValidationResult {
         return rule.check(string: self)
     }
     
-    func validated(with rules: [ValidatorRule]) -> [Result] {
-        var results = [Result]()
+    func validated(with rules: [ValidatorRule]) -> [ValidationResult] {
+        var results = [ValidationResult]()
         for rule in rules {
             results.append(rule.check(string: self))
         }

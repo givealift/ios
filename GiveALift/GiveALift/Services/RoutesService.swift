@@ -33,6 +33,36 @@ final class RoutesService {
         self.requestBuilder = requestBuilder
     }
     
+    func resign(userID: Int, routeID: Int) {
+        requestBuilder.DELETEReqeust(withURL: urlBuilder.resignURL(routeID: routeID, userID: userID), authToken: User.shared.token) { [weak self] (result) in
+            switch result {
+            case .Success(result: _):
+                DispatchQueue.main.async {
+                    self?.addDelegate?.updateSuccess()
+                }
+            case .Error(error: let error):
+                DispatchQueue.main.async {
+                    self?.addDelegate?.serviceError(error)
+                }
+            }
+        }
+    }
+    
+    func reserve(userID: Int, routeID: Int) {
+        requestBuilder.POSTRequest(withURL: urlBuilder.resere(routeID: routeID), withData: ["passengerId":userID], authToken: User.shared.token) {  [weak self] (result) in
+            switch result {
+            case .Success(result: _):
+                DispatchQueue.main.async {
+                    self?.addDelegate?.updateSuccess()
+                }
+            case .Error(error: let error):
+                DispatchQueue.main.async {
+                    self?.addDelegate?.serviceError(error)
+                }
+            }
+        }
+    }
+    
     func updateRoute(_ route: Route) {
         requestBuilder.POSTRequest(withURL: urlBuilder.updateRoute(routeID: route.routeId), withData: route, authToken: User.shared.token!) { [weak self] (result) in
             switch result {

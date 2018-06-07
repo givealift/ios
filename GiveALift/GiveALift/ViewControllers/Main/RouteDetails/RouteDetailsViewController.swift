@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SVProgressHUD
 
-class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
+class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>, RouteDetailView {
 
     @IBOutlet weak var toLocationLabel: UILabel!
     @IBOutlet weak var fromLocationLabel: UILabel!
@@ -24,29 +25,53 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var userStackView: UIStackView!
-    @IBOutlet weak var reserveButton: GALPinkButton!
+    @IBOutlet weak var reserveOrResignButton: GALPinkButton!
     @IBOutlet weak var routesStackViewHeightConstraint: NSLayoutConstraint!
     
-    
+    //MARK:- VC's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.isUserOwner ? setupForOwner() : setupOwnerInfo()
+        presenter.isSubscribed ? setupResignButton() : setupReserveButton()
+        if (presenter.route.numberOfSeats == presenter.route.numberOfOccupiedSeats) {
+            reserveOrResignButton.isHidden = presenter.isSubscribed ? false : true
+        }
         setupViewData()
         addObserverToStackView()
+        setupImageView()
     }
     
-    @IBAction func reserveTapped(_ sender: Any) {
-        //APIManager.shared.reserve(route: presenter.route.routeInfo, userID: 2)
+    //MARK:- IBActions
+    @IBAction func reserveOrResignTapped(_ sender: Any) {
+        presenter.reserveOrResign()
     }
     
+    //MARK:- Main
     private func setupForOwner() {
-        reserveButton.isHidden = true
+        reserveOrResignButton.isHidden = true
         userStackView.isHidden = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edytuj", style: .plain, target: self, action: #selector(editTapped))
     }
     
     @objc private func editTapped() {
         presenter.showEditRouteInfo()
+    }
+    
+    private func setupResignButton() {
+        reserveOrResignButton.setTitle("Zrezygnuj", for: .normal)
+    }
+    
+    private func setupReserveButton() {
+        reserveOrResignButton.setTitle("Zarezerwuj", for: .normal)
+    }
+    
+    
+    func success(with message: String) {
+        numberOfSeats.text = String(describing: presenter.route.numberOfSeats - presenter.route.numberOfOccupiedSeats)
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setMinimumDismissTimeInterval(1.0)
+        SVProgressHUD.showSuccess(withStatus: message)
+        presenter.isSubscribed ? setupReserveButton() : setupResignButton()
     }
     
     private func setupOwnerInfo() {        
@@ -94,6 +119,17 @@ class RouteDetailsViewController: BaseViewController<RouteDetailsPresenter> {
         routeImagesStackView.insertArrangedSubview(lineView, at: 3)
     }
     
+    func updateUserImage(_ image: UIImage) {
+        userImage.image = image
+    }
+    
+    private func setupImageView() {
+        userImage.layer.cornerRadius = userImage.frame.size.height / 2
+        userImage.clipsToBounds = true
+        userImage.layer.borderWidth = 1.5
+        userImage.layer.borderColor = UIColor.GALBlue.cgColor
+        
+    }
     
     private func addObserverToStackView() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(userInfoTapped))

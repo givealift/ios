@@ -11,7 +11,7 @@ import Foundation
 struct GalUserPublicResponse: Codable {
     let userID: Int
     let firstName, lastName, email, phone: String
-    let gender: String
+    let gender: String?
     let rate: Int?
     let birthYear: Date
     

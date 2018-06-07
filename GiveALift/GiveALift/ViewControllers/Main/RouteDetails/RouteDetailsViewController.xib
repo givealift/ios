@@ -20,7 +20,7 @@
                 <outlet property="fromLocationLabel" destination="Nfr-M5-Whg" id="EAy-Cs-qMr"/>
                 <outlet property="numberOfSeats" destination="mE8-35-O6j" id="A1X-AZ-ANv"/>
                 <outlet property="price" destination="CxN-dG-gGo" id="x2n-He-Uzp"/>
-                <outlet property="reserveButton" destination="wOF-kJ-uVn" id="JHb-0I-ida"/>
+                <outlet property="reserveOrResignButton" destination="wOF-kJ-uVn" id="o2h-kN-tmq"/>
                 <outlet property="routeImagesStackView" destination="zgk-DP-JZy" id="uFo-q9-bEh"/>
                 <outlet property="routesStackViewHeightConstraint" destination="1Nd-Uz-L6b" id="fWB-qQ-POv"/>
                 <outlet property="toCityHour" destination="QYa-rD-vwK" id="JUu-9m-KrV"/>
@@ -187,16 +187,21 @@
                         <constraint firstAttribute="height" constant="50" id="DMk-2x-cKH"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-kJ-uVn" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
-                    <rect key="frame" x="15" y="490" width="290" height="50"/>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmJ-8g-Hb3">
+                    <rect key="frame" x="20" y="485" width="280" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-kJ-uVn" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                            <state key="normal" title="Zarezerwuj"/>
+                            <connections>
+                                <action selector="reserveOrResignTapped:" destination="-1" eventType="touchUpInside" id="Kwu-Ri-oN7"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="LhW-G7-RM1"/>
+                        <constraint firstAttribute="height" constant="50" id="2nS-CO-mNz"/>
                     </constraints>
-                    <state key="normal" title="Zarezerwuj"/>
-                    <connections>
-                        <action selector="reserveTapped:" destination="-1" eventType="touchUpInside" id="4A2-GE-QCB"/>
-                    </connections>
-                </button>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -208,14 +213,14 @@
                 <constraint firstItem="u99-Xf-Nnx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="C2P-Fg-AMP"/>
                 <constraint firstItem="bLx-Bj-yPA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="DTw-vR-05U"/>
                 <constraint firstItem="zHn-Nk-fxw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="DrH-Xe-dJl"/>
-                <constraint firstItem="wOF-kJ-uVn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="K3U-Nc-brA"/>
+                <constraint firstItem="SmJ-8g-Hb3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Imb-gB-tBv"/>
                 <constraint firstItem="bLx-Bj-yPA" firstAttribute="top" secondItem="Zdq-u4-W39" secondAttribute="bottom" constant="10" id="Sic-iq-jfF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wOF-kJ-uVn" secondAttribute="trailing" constant="15" id="TB6-VV-BXF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EFi-BW-rCM" secondAttribute="trailing" constant="15" id="Tcb-Pv-Gvv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SmJ-8g-Hb3" secondAttribute="trailing" constant="20" id="YLm-VP-tyJ"/>
+                <constraint firstItem="SmJ-8g-Hb3" firstAttribute="top" secondItem="u99-Xf-Nnx" secondAttribute="bottom" constant="10" id="ZfB-si-cQy"/>
                 <constraint firstItem="u99-Xf-Nnx" firstAttribute="top" secondItem="zHn-Nk-fxw" secondAttribute="bottom" constant="15" id="d26-LY-JDy"/>
                 <constraint firstItem="EFi-BW-rCM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="f9w-nm-BhB"/>
                 <constraint firstItem="EFi-BW-rCM" firstAttribute="top" secondItem="bLx-Bj-yPA" secondAttribute="bottom" constant="10" id="lJK-ks-dni"/>
-                <constraint firstItem="wOF-kJ-uVn" firstAttribute="top" secondItem="u99-Xf-Nnx" secondAttribute="bottom" constant="15" id="mZj-Ct-RP8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zHn-Nk-fxw" secondAttribute="trailing" constant="15" id="q5H-lD-PUQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bLx-Bj-yPA" secondAttribute="trailing" constant="10" id="xlk-rw-CbD"/>
             </constraints>

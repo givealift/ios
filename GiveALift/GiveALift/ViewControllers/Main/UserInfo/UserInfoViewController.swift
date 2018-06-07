@@ -13,6 +13,7 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter>, UserIn
     
     //MARK:- IBOutlets
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var birthdayTextField: GALTextField!
     @IBOutlet weak var firstNameTextField: GALTextField!
@@ -37,6 +38,7 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter>, UserIn
         setupTextFields()
         editButton.isHidden = !presenter.editModeEnabled
         setupDatePicker()
+        setupImageView()
     }
 
     //MARK:- IBActions
@@ -134,6 +136,19 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter>, UserIn
         toolbar.setItems([doneButton], animated: false)
         birthdayTextField.inputAccessoryView = toolbar
         birthdayTextField.inputView = datePicker
+    }
+    
+    private func setupImageView() {
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.height / 2
+        profileImageView.clipsToBounds = true
+        profileImageView.layer.borderWidth = 3.0
+        profileImageView.layer.borderColor = UIColor.GALBlue.cgColor
+        
+    }
+    
+    func updateUserImage(_ image: UIImage) {
+        profileImageView.image = image
+        self.view.layoutSubviews()
     }
     
     @objc private func datePickerDoneTapped() {
