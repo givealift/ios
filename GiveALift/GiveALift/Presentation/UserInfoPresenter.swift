@@ -67,7 +67,7 @@ final class UserInfoPresenter: BasePresenter, UserInfoUpdateService {
         view?.updateSuccess()
     }
     
-    func serviceError(error: APIError) {
+    func serviceError(_ error: APIError) {
         view?.showError(with: error.description)
     }
 }

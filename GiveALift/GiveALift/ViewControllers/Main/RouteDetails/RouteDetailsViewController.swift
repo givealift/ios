@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 
 class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>, RouteDetailView {
-
+    
     @IBOutlet weak var toLocationLabel: UILabel!
     @IBOutlet weak var fromLocationLabel: UILabel!
     @IBOutlet weak var routesStackView: UIStackView!
@@ -21,23 +21,23 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
     @IBOutlet weak var toCityLabel: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var usersStackView: UIStackView!
     @IBOutlet weak var userStackView: UIStackView!
     @IBOutlet weak var reserveOrResignButton: GALPinkButton!
+    @IBOutlet weak var usersStackViewHeightConstaraint: NSLayoutConstraint!
     @IBOutlet weak var routesStackViewHeightConstraint: NSLayoutConstraint!
     
     //MARK:- VC's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.isUserOwner ? setupForOwner() : setupOwnerInfo()
+        //MARK:- TODO sprawdzić
+        //presenter.isUserOwner ? setupForOwner() : setupOwnerInfo()
         presenter.isSubscribed ? setupResignButton() : setupReserveButton()
         if (presenter.route.numberOfSeats == presenter.route.numberOfOccupiedSeats) {
             reserveOrResignButton.isHidden = presenter.isSubscribed ? false : true
         }
         setupViewData()
         addObserverToStackView()
-        setupImageView()
     }
     
     //MARK:- IBActions
@@ -73,10 +73,6 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
         presenter.isSubscribed ? setupReserveButton() : setupResignButton()
     }
     
-    private func setupOwnerInfo() {        
-        userLabel.text = presenter.route.galUserPublicResponse!.firstName
-    }
-    
     private func setupViewData() {
         numberOfSeats.text = String(describing: presenter.route.numberOfSeats - presenter.route.numberOfOccupiedSeats)
         price.text = String(describing: presenter.route.price!) + " zł"
@@ -92,7 +88,7 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
     
     private func addIndirect(with location: Location) {
         let cityLabel = createIndirectLabel(with: location.city.cityID.name(), fontSize: 17.0, bold: true)
-        let locationLabel = createIndirectLabel(with: location.placeOfMeeting, fontSize: 13.0, bold: false)
+        let locationLabel = createIndirectLabel(with: "   " + location.placeOfMeeting, fontSize: 13.0, bold: false)
         let hourLabel = createIndirectLabel(with: location.date.extractHourString(), fontSize: 14.0, bold: false)
         let dotView = UIImageView(image: #imageLiteral(resourceName: "simpleDot"))
         dotView.contentMode = .scaleAspectFit
@@ -124,7 +120,7 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
         let stackView = UIStackView(arrangedSubviews: [label, imageView])
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
-        stackView.spacing = 10.0
+        stackView.spacing = 15.0
         return stackView
     }
     
@@ -136,16 +132,32 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
         return label
     }
     
-    func updateUserImage(_ image: UIImage) {
-        userImage.image = image
+    func addUser(_ user: RouteUser) {
+        let imageView = createImageView(with: user.image)
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let userStackView = createUserStackView(with: [label, imageView])
+        usersStackView.addArrangedSubview(userStackView)
+        usersStackViewHeightConstaraint.constant += 40
+        UIView.animate(withDuration: 0) {
+            self.view.layoutSubviews()
+        }
     }
     
-    private func setupImageView() {
-        userImage.layer.cornerRadius = userImage.frame.size.height / 2
-        userImage.clipsToBounds = true
-        userImage.layer.borderWidth = 1.5
-        userImage.layer.borderColor = UIColor.GALBlue.cgColor
-        
+    private func createImageView(with image: UIImage) -> UIImageView {
+        let imageView = UIImageView(image: image)
+        //MARK:- TODO wykminić jak ten rozmiar
+        //imageView.layer.cornerRadius = userImage.frame.size.height / 2
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 1.5
+        imageView.layer.borderColor = UIColor.GALBlue.cgColor
+        return imageView
+    }
+    
+    private func createUserStackView(with views: [UIView]) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: views)
+        stackView.axis = .horizontal
+        stackView.spacing = 10.0
+        return stackView
     }
     
     private func addObserverToStackView() {

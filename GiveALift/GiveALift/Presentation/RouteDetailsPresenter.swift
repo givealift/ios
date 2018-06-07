@@ -9,15 +9,23 @@
 import UIKit
 
 protocol RouteDetailView: class {
-    func updateUserImage(_ image: UIImage)
+    func addUser(_ user: RouteUser)
     func showError(with message: String)
     func success(with message: String)
 }
 
-final class RouteDetailsPresenter: BasePresenter, AddRouteService {
+struct RouteUser {
+    let userID: Int
+    let user: GALUserInfo
+    let image: UIImage
+}
+
+final class RouteDetailsPresenter: BasePresenter, AddRouteService, GetUserInfoService {
     
     private weak var connector: SearchConnectorDelegate?
     private let routeService = RoutesService()
+    private let userInfoService = UserInfoUpdate()
+    var users = [Int]()
     var route: Route
     lazy var isSubscribed: Bool = {
         return isUserOwner ? false : route.passengers!.contains(User.shared.userID!)
@@ -36,18 +44,9 @@ final class RouteDetailsPresenter: BasePresenter, AddRouteService {
         self.route = route
         super.init()
         routeService.addDelegate = self
-        isUserOwner ? nil : downloadUserProfileImage(userID: route.galUserPublicResponse!.userID)
-    }
-    
-    private func downloadUserProfileImage(userID: Int) {
-        let urlBuilder = URLBuilder()
-        ImageProvider.getImage(urlBuilder.userPhotoURL(userID: userID)) { [weak self] (image) in
-            if let image = image {
-                DispatchQueue.main.async {
-                    self?.view?.updateUserImage(image)
-                }
-            }
-        }
+        userInfoService.getDelegate = self
+        isUserOwner ? getUsersInfo(usersID: route.passengers!) : downloadUserProfileImage(user: route.galUserPublicResponse!.toGALUserInfo(), userID: route.galUserPublicResponse!.userID)
+        
     }
     
     func updateSuccess() {
@@ -60,6 +59,10 @@ final class RouteDetailsPresenter: BasePresenter, AddRouteService {
     
     func serviceError(_ error: APIError) {
         view?.showError(with: error.description)
+    }
+    
+    func userInfo(_ user: GALUserInfo, userID: Int) {
+        downloadUserProfileImage(user: user, userID: userID)
     }
     
     func reserveOrResign() {
@@ -76,5 +79,22 @@ final class RouteDetailsPresenter: BasePresenter, AddRouteService {
     
     func showEditRouteInfo() {
         connector?.showEditRouteView(route: route)
+    }
+    
+    //MARK:- Privates
+    
+    private func downloadUserProfileImage(user: GALUserInfo, userID: Int) {
+        let urlBuilder = URLBuilder()
+        ImageProvider.getImage(urlBuilder.userPhotoURL(userID: userID)) { [weak self] (image) in
+            if let image = image {
+                DispatchQueue.main.async {
+                    self?.view?.addUser(RouteUser(userID: userID, user: user, image: image))
+                }
+            }
+        }
+    }
+    
+    private func getUsersInfo(usersID: [Int]) {
+        usersID.forEach({ userInfoService.getUserInfo(userID: $0) })
     }
 }
