@@ -36,7 +36,7 @@ final class RouteDetailsPresenter: BasePresenter, AddRouteService {
         self.route = route
         super.init()
         routeService.addDelegate = self
-        downloadUserProfileImage(userID: route.galUserPublicResponse!.userID)
+        isUserOwner ? nil : downloadUserProfileImage(userID: route.galUserPublicResponse!.userID)
     }
     
     private func downloadUserProfileImage(userID: Int) {

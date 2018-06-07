@@ -20,4 +20,10 @@ extension String {
         let firstSentence = self[endOfSentence...]
         return String(firstSentence)
     }
+    
+    func extractDateString() -> String {
+        let endOfSentence = self.index(of: " ")!
+        let firstSentence = self[...endOfSentence]
+        return String(firstSentence)
+    }
 }
