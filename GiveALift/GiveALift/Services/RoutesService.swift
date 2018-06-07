@@ -63,6 +63,19 @@ final class RoutesService {
         }
     }
     
+    func reservedRoutes(userID: Int) {
+        requestBuilder.GETRequest(withURL: urlBuilder.userReservedRoutes(userID: userID), authToken: User.shared.token) { [weak self] (result) in
+            switch result {
+            case .Error(error: let error):
+                DispatchQueue.main.async {
+                    self?.searchDelegate?.serviceError(error)
+                }
+            case .Success(result: let data):
+                self?.handleResponse(data: data)
+            }
+        }
+    }
+    
     func updateRoute(_ route: Route) {
         requestBuilder.POSTRequest(withURL: urlBuilder.updateRoute(routeID: route.routeId), withData: route, authToken: User.shared.token!) { [weak self] (result) in
             switch result {

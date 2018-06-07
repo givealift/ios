@@ -35,6 +35,10 @@ final class HomePresenter: BasePresenter {
         routesService.searchDelegate = self
     }
     
+    func showReservedRoutesView() {
+        routesService.reservedRoutes(userID: User.shared.userID!)
+    }
+    
     func showRoutesView(from: Int, to: Int, date: String) {
         self.from = from
         self.to = to

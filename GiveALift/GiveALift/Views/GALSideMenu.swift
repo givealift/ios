@@ -11,6 +11,7 @@ import UIKit
 protocol SideMenuDelegate: class {
     func profileTapped()
     func userRoutesTapped()
+    func reservedRoutesTapped()
     func logOutTapped()
 }
 
@@ -47,5 +48,9 @@ final class GALSideMenu: UIView {
     
     @IBAction func yourRoutesTapped(_ sender: Any) {
         delegate?.userRoutesTapped()
+    }
+    
+    @IBAction func reservedRoutesTapped(_ sender: Any) {
+        delegate?.reservedRoutesTapped()
     }
 }

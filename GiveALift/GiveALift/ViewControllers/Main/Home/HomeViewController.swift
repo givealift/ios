@@ -123,6 +123,11 @@ class HomeViewController: TextFieldViewController<HomePresenter>, HomeView {
 
 
 extension HomeViewController: SideMenuDelegate {
+    func reservedRoutesTapped() {
+        isSideMenuHidden = !isSideMenuHidden
+        presenter.showReservedRoutesView()
+    }
+    
     func profileTapped() {
         isSideMenuHidden = !isSideMenuHidden
         presenter.showUserInfoView()

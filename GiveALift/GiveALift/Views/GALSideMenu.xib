@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tv2-1q-Zlb">
-                    <rect key="frame" x="15" y="35" width="345" height="130"/>
+                    <rect key="frame" x="15" y="35" width="345" height="180"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QhV-iV-fLQ">
                             <rect key="frame" x="0.0" y="0.0" width="66" height="30"/>
@@ -42,15 +42,15 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8bF-Im-g21">
-                            <rect key="frame" x="0.0" y="50" width="139" height="30"/>
+                            <rect key="frame" x="0.0" y="50" width="160" height="30"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="FLE-8A-0i3">
                                     <rect key="frame" x="0.0" y="0.0" width="18" height="30"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8l-f7-TRz">
-                                    <rect key="frame" x="28" y="0.0" width="111" height="30"/>
+                                    <rect key="frame" x="28" y="0.0" width="132" height="30"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="Moje przejazdy">
+                                    <state key="normal" title="Dodane przejazdy">
                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
@@ -59,8 +59,26 @@
                                 </button>
                             </subviews>
                         </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C7N-nC-xG8">
+                            <rect key="frame" x="0.0" y="100" width="145" height="30"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sit" translatesAutoresizingMaskIntoConstraints="NO" id="scH-K2-uG5">
+                                    <rect key="frame" x="0.0" y="0.0" width="16" height="30"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xh0-7G-bFg">
+                                    <rect key="frame" x="26" y="0.0" width="119" height="30"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Twoje przejazdy">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="reservedRoutesTapped:" destination="-1" eventType="touchUpInside" id="qpa-pD-4CR"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TB1-65-FTW">
-                            <rect key="frame" x="0.0" y="100" width="88" height="30"/>
+                            <rect key="frame" x="0.0" y="150" width="88" height="30"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logOut" translatesAutoresizingMaskIntoConstraints="NO" id="g5x-S4-PCi">
                                     <rect key="frame" x="0.0" y="0.0" width="18" height="30"/>
@@ -96,5 +114,6 @@
         <image name="car" width="18" height="16"/>
         <image name="logOut" width="18" height="18"/>
         <image name="profile" width="16" height="16"/>
+        <image name="sit" width="16" height="20"/>
     </resources>
 </document>
