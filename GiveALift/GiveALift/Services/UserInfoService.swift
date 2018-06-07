@@ -39,6 +39,7 @@ final class UserInfoUpdate {
             case .Success(result: let result):
                 do  {
                     let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
                     let galUserInfo = try decoder.decode(GALUserInfo.self, from: result)
                     DispatchQueue.main.async {
                         self?.getDelegate?.userInfo(galUserInfo, userID: userID)

@@ -17,7 +17,7 @@ protocol RouteDetailView: class {
 struct RouteUser {
     let userID: Int
     let user: GALUserInfo
-    let image: UIImage
+    let image: UIImage?
 }
 
 final class RouteDetailsPresenter: BasePresenter, AddRouteService, GetUserInfoService {
@@ -89,6 +89,10 @@ final class RouteDetailsPresenter: BasePresenter, AddRouteService, GetUserInfoSe
             if let image = image {
                 DispatchQueue.main.async {
                     self?.view?.addUser(RouteUser(userID: userID, user: user, image: image))
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self?.view?.addUser(RouteUser(userID: userID, user: user, image: nil))
                 }
             }
         }

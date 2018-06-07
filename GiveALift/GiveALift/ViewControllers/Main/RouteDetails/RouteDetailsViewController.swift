@@ -133,9 +133,10 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
     }
     
     func addUser(_ user: RouteUser) {
-        let imageView = createImageView(with: user.image)
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        let userStackView = createUserStackView(with: [label, imageView])
+        let image = user.image != nil ? user.image! : #imageLiteral(resourceName: "logo-2")
+        let imageView = createImageView(with: image)
+        let label = createUserLabel(user: user.user)
+        let userStackView = createUserStackView(with: [imageView, label])
         usersStackView.addArrangedSubview(userStackView)
         usersStackViewHeightConstaraint.constant += 40
         UIView.animate(withDuration: 0) {
@@ -145,6 +146,7 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
     
     private func createImageView(with image: UIImage) -> UIImageView {
         let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFit
         //MARK:- TODO wykminić jak ten rozmiar
         //imageView.layer.cornerRadius = userImage.frame.size.height / 2
         imageView.clipsToBounds = true
@@ -156,8 +158,15 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
     private func createUserStackView(with views: [UIView]) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: views)
         stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
         stackView.spacing = 10.0
         return stackView
+    }
+    
+    private func createUserLabel(user: GALUserInfo) -> UILabel {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        label.text = user.firstName!
+        return label
     }
     
     private func addObserverToStackView() {
