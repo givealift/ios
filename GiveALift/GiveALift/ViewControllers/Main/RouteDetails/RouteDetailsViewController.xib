@@ -129,7 +129,7 @@
                             <viewLayoutGuide key="safeArea" id="IFC-Dz-2Vb"/>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EFi-BW-rCM">
-                            <rect key="frame" x="5" y="205" width="310" height="50"/>
+                            <rect key="frame" x="5" y="210" width="310" height="50"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IR2-hI-OQU">
                                     <rect key="frame" x="0.0" y="0.0" width="152.5" height="50"/>
@@ -173,17 +173,17 @@
                                 <constraint firstAttribute="height" constant="50" id="C61-9U-35D"/>
                             </constraints>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="u99-Xf-Nnx">
-                            <rect key="frame" x="5" y="260" width="310" height="30"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="u99-Xf-Nnx">
+                            <rect key="frame" x="5" y="270" width="310" height="0.0"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="DMk-2x-cKH"/>
+                                <constraint firstAttribute="height" id="DMk-2x-cKH"/>
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmJ-8g-Hb3">
-                            <rect key="frame" x="0.0" y="295" width="320" height="50"/>
+                            <rect key="frame" x="60" y="280" width="200" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-kJ-uVn" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
                                     <state key="normal" title="Zarezerwuj"/>
                                     <connections>
                                         <action selector="reserveOrResignTapped:" destination="-1" eventType="touchUpInside" id="Kwu-Ri-oN7"/>
@@ -192,6 +192,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="2nS-CO-mNz"/>
+                                <constraint firstAttribute="width" constant="200" id="7dS-cn-lCD"/>
                             </constraints>
                         </stackView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-1f-7zV">
@@ -208,14 +209,13 @@
                         <constraint firstAttribute="trailing" secondItem="Zdq-u4-W39" secondAttribute="trailing" id="ISn-7o-Bbr"/>
                         <constraint firstItem="EFi-BW-rCM" firstAttribute="centerX" secondItem="Z0Z-x7-ZOS" secondAttribute="centerX" id="T81-Lc-Yye"/>
                         <constraint firstItem="u99-Xf-Nnx" firstAttribute="centerX" secondItem="Z0Z-x7-ZOS" secondAttribute="centerX" id="ZVW-bQ-kUX"/>
-                        <constraint firstItem="SmJ-8g-Hb3" firstAttribute="top" secondItem="u99-Xf-Nnx" secondAttribute="bottom" constant="5" id="Zi5-EV-Zts"/>
+                        <constraint firstItem="SmJ-8g-Hb3" firstAttribute="top" secondItem="u99-Xf-Nnx" secondAttribute="bottom" constant="10" id="Zi5-EV-Zts"/>
                         <constraint firstItem="Zdq-u4-W39" firstAttribute="top" secondItem="Z0Z-x7-ZOS" secondAttribute="top" constant="5" id="aNb-B7-utw"/>
                         <constraint firstItem="bLx-Bj-yPA" firstAttribute="centerX" secondItem="Z0Z-x7-ZOS" secondAttribute="centerX" id="aSC-uJ-42J"/>
                         <constraint firstItem="YMc-1f-7zV" firstAttribute="top" secondItem="9fM-zC-dPM" secondAttribute="top" id="cWe-B6-ogK"/>
-                        <constraint firstItem="u99-Xf-Nnx" firstAttribute="top" secondItem="EFi-BW-rCM" secondAttribute="bottom" constant="5" id="kqp-zX-pWN"/>
-                        <constraint firstItem="EFi-BW-rCM" firstAttribute="top" secondItem="bLx-Bj-yPA" secondAttribute="bottom" constant="5" id="qDb-bq-Dzz"/>
+                        <constraint firstItem="u99-Xf-Nnx" firstAttribute="top" secondItem="EFi-BW-rCM" secondAttribute="bottom" constant="10" id="kqp-zX-pWN"/>
+                        <constraint firstItem="EFi-BW-rCM" firstAttribute="top" secondItem="bLx-Bj-yPA" secondAttribute="bottom" constant="10" id="qDb-bq-Dzz"/>
                         <constraint firstItem="YMc-1f-7zV" firstAttribute="centerX" secondItem="9fM-zC-dPM" secondAttribute="centerX" id="rJg-ot-cf0"/>
-                        <constraint firstItem="SmJ-8g-Hb3" firstAttribute="width" secondItem="Z0Z-x7-ZOS" secondAttribute="width" id="sTW-uB-Nqb"/>
                         <constraint firstItem="EFi-BW-rCM" firstAttribute="width" secondItem="Z0Z-x7-ZOS" secondAttribute="width" constant="-10" id="vu4-u0-2Qa"/>
                         <constraint firstItem="bLx-Bj-yPA" firstAttribute="top" secondItem="Zdq-u4-W39" secondAttribute="bottom" constant="5" id="wQu-JD-TXd"/>
                         <constraint firstAttribute="bottom" secondItem="Zdq-u4-W39" secondAttribute="bottom" constant="473" id="x1U-fl-oFU"/>

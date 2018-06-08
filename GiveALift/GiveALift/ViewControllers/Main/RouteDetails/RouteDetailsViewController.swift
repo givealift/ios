@@ -137,6 +137,7 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
         let imageView = createImageView(with: image)
         let label = createUserLabel(user: user.user)
         let userStackView = createUserStackView(with: [imageView, label])
+        setupConstraintForImage(imageView, stackView: userStackView)
         usersStackView.addArrangedSubview(userStackView)
         usersStackViewHeightConstaraint.constant += 40
         UIView.animate(withDuration: 0) {
@@ -144,11 +145,17 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
         }
     }
     
+    private func setupConstraintForImage(_ image: UIImageView, stackView: UIStackView) {
+        let height = NSLayoutConstraint(item: image, attribute: .height, relatedBy: .equal, toItem: stackView, attribute: .height, multiplier: 1, constant: 0)
+        let aspectRatio = NSLayoutConstraint(item: image, attribute: .width, relatedBy: .equal, toItem: image, attribute: .height, multiplier: 1, constant: 0)
+        stackView.addConstraints([height, aspectRatio])
+    }
+    
     private func createImageView(with image: UIImage) -> UIImageView {
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         //MARK:- TODO wykminić jak ten rozmiar
-        //imageView.layer.cornerRadius = userImage.frame.size.height / 2
+        imageView.layer.cornerRadius = 20.0
         imageView.clipsToBounds = true
         imageView.layer.borderWidth = 1.5
         imageView.layer.borderColor = UIColor.GALBlue.cgColor
@@ -158,7 +165,7 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
     private func createUserStackView(with views: [UIView]) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: views)
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.spacing = 10.0
         return stackView
     }
