@@ -34,15 +34,15 @@ final class UserInfoUpdate {
     }
     
     func getUserInfo(userID: Int) {
-        requestBuilder.GETRequest(withURL: urlBuilder.userInfoURL(id: userID), authToken: User.shared.token) { [weak self] (result) in
+        requestBuilder.GETRequest(withURL: urlBuilder.userPublicInfoURL(id: userID), authToken: User.shared.token) { [weak self] (result) in
             switch result {
             case .Success(result: let result):
                 do  {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
-                    let galUserInfo = try decoder.decode(GALUserInfo.self, from: result)
+                    let galUserInfo = try decoder.decode(GalUserPublicResponse.self, from: result)
                     DispatchQueue.main.async {
-                        self?.getDelegate?.userInfo(galUserInfo, userID: userID)
+                        self?.getDelegate?.userInfo(galUserInfo.toGALUserInfo(), userID: userID)
                     }
                 } catch {
                     print(error)

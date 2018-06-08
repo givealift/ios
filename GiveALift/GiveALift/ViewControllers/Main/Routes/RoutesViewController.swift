@@ -50,6 +50,7 @@ class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDele
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.showRouteDetailsView(route: presenter.routes[indexPath.section])
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

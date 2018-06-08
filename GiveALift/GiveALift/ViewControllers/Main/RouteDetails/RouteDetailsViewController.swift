@@ -11,6 +11,7 @@ import SVProgressHUD
 
 class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>, RouteDetailView {
     
+    @IBOutlet weak var usersLabel: UILabel!
     @IBOutlet weak var toLocationLabel: UILabel!
     @IBOutlet weak var fromLocationLabel: UILabel!
     @IBOutlet weak var routesStackView: UIStackView!
@@ -31,13 +32,13 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
     override func viewDidLoad() {
         super.viewDidLoad()
         //MARK:- TODO sprawdzić
-        //presenter.isUserOwner ? setupForOwner() : setupOwnerInfo()
+        presenter.isUserOwner ? setupForOwner() : nil
         presenter.isSubscribed ? setupResignButton() : setupReserveButton()
         if (presenter.route.numberOfSeats == presenter.route.numberOfOccupiedSeats) {
             reserveOrResignButton.isHidden = presenter.isSubscribed ? false : true
         }
+        usersLabel.text = presenter.isUserOwner ? "Pasażerowie:" : "Kierowca:"
         setupViewData()
-        addObserverToStackView()
     }
     
     //MARK:- IBActions
@@ -48,7 +49,6 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
     //MARK:- Main
     private func setupForOwner() {
         reserveOrResignButton.isHidden = true
-        userStackView.isHidden = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edytuj", style: .plain, target: self, action: #selector(editTapped))
     }
     
@@ -132,15 +132,21 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
         return label
     }
     
-    func addUser(_ user: RouteUser) {
+    func addUser(_ user: RouteUser, with tag: Int) {
         let image = user.image != nil ? user.image! : #imageLiteral(resourceName: "logo-2")
         let imageView = createImageView(with: image)
         let label = createUserLabel(user: user.user)
         let userStackView = createUserStackView(with: [imageView, label])
+        userStackView.tag = tag
+        addObserverToStackView(userStackView)
         setupConstraintForImage(imageView, stackView: userStackView)
         usersStackView.addArrangedSubview(userStackView)
-        usersStackViewHeightConstaraint.constant += 40
-        UIView.animate(withDuration: 0) {
+        if usersStackViewHeightConstaraint.constant == 0 {
+            usersStackViewHeightConstaraint.constant = 40
+        } else {
+            usersStackViewHeightConstaraint.constant += 50
+        }
+        UIView.animate(withDuration: 0.0) {
             self.view.layoutSubviews()
         }
     }
@@ -155,7 +161,7 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         //MARK:- TODO wykminić jak ten rozmiar
-        imageView.layer.cornerRadius = 20.0
+        imageView.layer.cornerRadius = 15.0
         imageView.clipsToBounds = true
         imageView.layer.borderWidth = 1.5
         imageView.layer.borderColor = UIColor.GALBlue.cgColor
@@ -176,13 +182,14 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
         return label
     }
     
-    private func addObserverToStackView() {
+    private func addObserverToStackView(_ stackView: UIStackView) {
         let tap = UITapGestureRecognizer(target: self, action: #selector(userInfoTapped))
-        userStackView.addGestureRecognizer(tap)
-        userStackView.isUserInteractionEnabled = true
+        stackView.addGestureRecognizer(tap)
+        stackView.isUserInteractionEnabled = true
     }
     
-    @objc private func userInfoTapped() {
-        presenter.showUserInfoView()
+    @objc private func userInfoTapped(gesture: UITapGestureRecognizer) {
+        guard let view = gesture.view else { return }
+        presenter.showUserInfoView(index: view.tag)
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RouteDetailView: class {
-    func addUser(_ user: RouteUser)
+    func addUser(_ user: RouteUser, with tag: Int)
     func showError(with message: String)
     func success(with message: String)
 }
@@ -25,7 +25,7 @@ final class RouteDetailsPresenter: BasePresenter, AddRouteService, GetUserInfoSe
     private weak var connector: SearchConnectorDelegate?
     private let routeService = RoutesService()
     private let userInfoService = UserInfoUpdate()
-    var users = [Int]()
+    var users = [RouteUser]()
     var route: Route
     lazy var isSubscribed: Bool = {
         return isUserOwner ? false : route.passengers!.contains(User.shared.userID!)
@@ -42,6 +42,7 @@ final class RouteDetailsPresenter: BasePresenter, AddRouteService, GetUserInfoSe
     init(connector: SearchConnectorDelegate, route: Route) {
         self.connector = connector
         self.route = route
+        print(route)
         super.init()
         routeService.addDelegate = self
         userInfoService.getDelegate = self
@@ -73,8 +74,8 @@ final class RouteDetailsPresenter: BasePresenter, AddRouteService, GetUserInfoSe
         }
     }
     
-    func showUserInfoView() {
-        connector?.startUserInfoConnector(userInfo: route.galUserPublicResponse!.toGALUserInfo(), editModeEnabled: false, userID: route.galUserPublicResponse!.userID)
+    func showUserInfoView(index: Int) {
+        connector?.startUserInfoConnector(userInfo: users[index].user, editModeEnabled: false, userID: users[index].userID)
     }
     
     func showEditRouteInfo() {
@@ -86,13 +87,18 @@ final class RouteDetailsPresenter: BasePresenter, AddRouteService, GetUserInfoSe
     private func downloadUserProfileImage(user: GALUserInfo, userID: Int) {
         let urlBuilder = URLBuilder()
         ImageProvider.getImage(urlBuilder.userPhotoURL(userID: userID)) { [weak self] (image) in
+            guard let `self` = self else { return }
             if let image = image {
                 DispatchQueue.main.async {
-                    self?.view?.addUser(RouteUser(userID: userID, user: user, image: image))
+                    let user = RouteUser(userID: userID, user: user, image: image)
+                    self.users.append(user)
+                    self.view?.addUser(user, with: self.users.count - 1)
                 }
             } else {
                 DispatchQueue.main.async {
-                    self?.view?.addUser(RouteUser(userID: userID, user: user, image: nil))
+                    let user = RouteUser(userID: userID, user: user, image: image)
+                    self.users.append(user)
+                    self.view?.addUser(user, with: self.users.count - 1)
                 }
             }
         }
