@@ -24,6 +24,8 @@ class IndirectionsViewController: AddRouteViewController<IndirectionsPresenter> 
     
     //MARK:- IBOutlets
 
+    @IBOutlet weak var buttonsStackViewHeightConstrint: NSLayoutConstraint!
+    @IBOutlet weak var deleteIndirect: UIButton!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackViewHeightConstraint: NSLayoutConstraint!
     
@@ -38,11 +40,41 @@ class IndirectionsViewController: AddRouteViewController<IndirectionsPresenter> 
     
     //MARK:- IBActions
     @IBAction func addIndirectionTapped(_ sender: Any) {
+        if indirectCitiesTextfield.count <= 3 {
         addTextFields(placeholder: presenter.indirectTextFieldPlaceHolder, locationPlaceholder: presenter.indirectLocationPlaceholder)
+        if indirectCitiesTextfield.count != 0 {
+            deleteIndirect.isHidden = false
+            buttonsStackViewHeightConstrint.constant = 150
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutSubviews()
+            }
+        }
+        } else {
+            showError(with: "Możesz dodać maksymalnie 3 przystanki")
+        }
+    }
+    
+    @IBAction func deleteTapped(_ sender: Any) {
+        deleteIndirectFromView()
+        if indirectCitiesTextfield.count == 0 {
+            deleteIndirect.isHidden = true
+            buttonsStackViewHeightConstrint.constant = 100
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutSubviews()
+            }
+        }
     }
     
     @IBAction func nextTapped(_ sender: Any) {
         presenter.isUpdating ? updateData() : classicWay()
+    }
+    
+    private func deleteIndirectFromView() {
+        let index = indirectCitiesTextfield.count - 1
+        stackView.removeArrangedSubview(indirectCitiesTextfield[index])
+        stackView.removeArrangedSubview(indirextCitiesLocations[index])
+        indirectCitiesTextfield.remove(at: index)
+        indirextCitiesLocations.remove(at: index)
     }
     
     private func updateData() {

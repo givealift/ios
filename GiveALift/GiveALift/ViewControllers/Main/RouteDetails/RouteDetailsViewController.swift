@@ -11,6 +11,10 @@ import SVProgressHUD
 
 class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>, RouteDetailView {
     
+    @IBOutlet weak var lastDotImage: UIImageView!
+    @IBOutlet weak var firstDotImage: UIImageView!
+    @IBOutlet weak var descriptionStackView: UIStackView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var usersLabel: UILabel!
     @IBOutlet weak var toLocationLabel: UILabel!
     @IBOutlet weak var fromLocationLabel: UILabel!
@@ -83,7 +87,14 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
         toCityHour.text = presenter.route.to.date.extractHourString()
         fromLocationLabel.text = "   " + presenter.route.from.placeOfMeeting
         toLocationLabel.text = "   " + presenter.route.to.placeOfMeeting
+        setupDescriptionView()
         presenter.route.stops.forEach({addIndirect(with: $0)})
+    }
+    
+    private func setupDescriptionView() {
+        guard let description = presenter.route.description else { return }
+        descriptionStackView.isHidden = false
+        descriptionLabel.text = description
     }
     
     private func addIndirect(with location: Location) {

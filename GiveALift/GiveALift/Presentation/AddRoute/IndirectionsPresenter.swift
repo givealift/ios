@@ -22,6 +22,7 @@ final class IndirectionsPresenter: AddRoutePresenter {
     
     func showRouteTimeView(indirectCitys: [Int], indirectLocations: [String]) {
         updateModel(indirectCitys: indirectCitys, indirectLocations: indirectLocations)
+        print(route)
         connector?.showRouteTimeView(route: route, isUpdating: false)
     }
     

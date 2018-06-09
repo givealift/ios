@@ -41,6 +41,7 @@ final class LoginPresenter: BasePresenter {
 
 extension LoginPresenter: OnboardingServiceLoginDelegate {
     func onboardingService(error: APIError) {
+        SVProgressHUD.dismiss()
         switch error {
         case .unexpectedError:
             view?.showError(with: error.description)

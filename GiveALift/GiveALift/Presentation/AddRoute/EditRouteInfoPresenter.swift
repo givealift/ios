@@ -29,4 +29,9 @@ final class EditRouteInfoPresenter: AddRoutePresenter {
     func showOptionalDescriotionView() {
         connector?.showRouteOptionalDescriptionView(route: route, isUpdating: true)
     }
+    
+    func deleteRoute() {
+        //MARK:- TODO usunięcie ze stronki
+        connector?.showHomeView()
+    }
 }

@@ -14,13 +14,9 @@ class EditRouteInfoViewController: BaseViewController<EditRouteInfoPresenter> {
         super.viewDidLoad()
         setupSaveButton()
     }
-
-    @IBAction func indirectsTapped(_ sender: Any) {
-        presenter.showIndirectsView()
-    }
     
     @IBAction func dateTapped(_ sender: Any) {
-        
+        presenter.showRouteTimeView()
     }
     
     @IBAction func detalisTapped(_ sender: Any) {
@@ -28,11 +24,11 @@ class EditRouteInfoViewController: BaseViewController<EditRouteInfoPresenter> {
     }
     
     @IBAction func descriptionTapped(_ sender: Any) {
-        
+        presenter.showOptionalDescriotionView()
     }
     
     @IBAction func deleteTapped(_ sender: Any) {
-        
+        presenter.deleteRoute()
     }
     
     @IBAction func mainRouteTapped(_ sender: Any) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class RouteOptionalDescriptionViewController: AddRouteViewController<RouteOptionalDescriptionPresenter>, UITextViewDelegate {
 
@@ -21,7 +22,7 @@ class RouteOptionalDescriptionViewController: AddRouteViewController<RouteOption
     
     //MARK:- IBActions
     @IBAction func finishTapped(_ sender: Any) {
-        presenter.showHomeView(description: nil)
+        presenter.showHomeView(description: textView.text)
     }
     
     //MARK:- Main

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SVProgressHUD
 
 class AddRoutePresenter: BasePresenter, AddRouteService {
     
@@ -29,6 +30,7 @@ class AddRoutePresenter: BasePresenter, AddRouteService {
     }
     
     func uploadToServer() {
+        SVProgressHUD.show()
         routesService.uploadRoute(route: route)
     }
     
@@ -37,10 +39,16 @@ class AddRoutePresenter: BasePresenter, AddRouteService {
     }
     
     func updateSuccess() {
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setMinimumDismissTimeInterval(1.0)
+        SVProgressHUD.showSuccess(withStatus: "Powodzenie")
         connector?.showHomeView()
     }
     
     func serviceError(_ error: APIError) {
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setMinimumDismissTimeInterval(1.0)
+        SVProgressHUD.showError(withStatus: "Niepowodzenie")
         print(error)
     }
 }
