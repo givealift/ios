@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="GiveALift" customModuleProvider="target">
+            <connections>
+                <outlet property="mailTextField" destination="mnM-py-Uzi" id="5iC-wk-QWx"/>
+                <outlet property="passwordTextField" destination="nSw-iw-T8H" id="hmv-16-LfS"/>
+                <outlet property="registerButton" destination="MiC-e2-JRo" id="c98-4L-nNl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ain-BZ-idw">
+                    <rect key="frame" x="52" y="133.5" width="270" height="260"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mnM-py-Uzi" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="270" height="46.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" textContentType="email"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSw-iw-T8H" customClass="GALTextField" customModule="GiveALift" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="71.5" width="270" height="46"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                        </textField>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ohh-dL-nzt">
+                            <rect key="frame" x="0.0" y="142.5" width="270" height="46.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kfi-9K-J9W">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="46.5"/>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSE-Ji-TMA" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="270" height="46.5"/>
+                                    <state key="normal" title="Zaloguj się"/>
+                                    <connections>
+                                        <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="3OI-UL-dIL"/>
+                                    </connections>
+                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gp5-oO-jFG">
+                                    <rect key="frame" x="270" y="0.0" width="0.0" height="46.5"/>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="08Q-yg-UAM">
+                            <rect key="frame" x="0.0" y="214" width="270" height="46"/>
+                            <color key="tintColor" red="0.93725490199999995" green="0.16712412373502136" blue="0.25918956562085471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Nie pamiętasz hasła?">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </state>
+                            <connections>
+                                <action selector="resetPasswordTapped:" destination="-1" eventType="touchUpInside" id="qov-Tj-xuN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="260" id="mqg-u4-Yi5"/>
+                        <constraint firstAttribute="width" constant="270" id="pXJ-E2-tPu"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MiC-e2-JRo">
+                    <rect key="frame" x="141.5" y="617" width="91" height="30"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Stwórz konto">
+                                <attributes>
+                                    <font key="NSFont" metaFont="system" size="15"/>
+                                    <integer key="NSUnderline" value="1"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="registerTapped:" destination="-1" eventType="touchUpInside" id="LqQ-iF-C7d"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ain-BZ-idw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Cqz-3I-FW5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MiC-e2-JRo" secondAttribute="bottom" constant="20" id="Hh4-LI-8t8"/>
+                <constraint firstItem="MiC-e2-JRo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jQ2-m3-Opx"/>
+                <constraint firstItem="Ain-BZ-idw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-70" id="yuz-SM-KhL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

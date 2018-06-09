@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'GiveALift' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for GiveALift
+	pod "SearchTextField"
+	pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift', :branch => 'feature/swift-3’
+	pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
+
+  target 'GiveALiftTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'GiveALiftUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
