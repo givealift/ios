@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Route: Codable {
+class Route: Codable {
     var routeId: Int!
     var from, to: Location!
     var stops: [Location]!

@@ -42,7 +42,6 @@ class MainRouteViewController: AddRouteViewController<MainRoutePresenter> {
     
     private func classicWay() {
         if let fromCityId = fromTextField.selectedCityId(), let toCityId = toTextField.selectedCityId(), let from = fromLocationTextField.text, let to = toLocationTextField.text, from != "", to != "" {
-
             presenter.showIndirectionView(fromCityId: fromCityId, fromLocation: from, toCityId: toCityId, toLocation: to)
         } else {
             showError(with: "Wpisz poprawne dane")

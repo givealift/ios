@@ -77,7 +77,7 @@ final class RoutesService {
     }
     
     func updateRoute(_ route: Route) {
-        requestBuilder.POSTRequest(withURL: urlBuilder.updateRoute(routeID: route.routeId), withData: route, authToken: User.shared.token!) { [weak self] (result) in
+        requestBuilder.PUTRequest(withURL: urlBuilder.updateRoute(routeID: route.routeId), withData: route, authToken: User.shared.token!) { [weak self] (result) in
             switch result {
             case .Error(error: let error):
                 DispatchQueue.main.async {

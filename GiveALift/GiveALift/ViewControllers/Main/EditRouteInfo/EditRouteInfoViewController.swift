@@ -12,7 +12,7 @@ class EditRouteInfoViewController: BaseViewController<EditRouteInfoPresenter> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupSaveButton()
     }
 
     @IBAction func indirectsTapped(_ sender: Any) {
@@ -37,5 +37,13 @@ class EditRouteInfoViewController: BaseViewController<EditRouteInfoPresenter> {
     
     @IBAction func mainRouteTapped(_ sender: Any) {
         presenter.showMainRouteView()
+    }
+    
+    private func setupSaveButton() {
+         self.navigationItem.setRightBarButton(UIBarButtonItem(title: "Zapisz", style: .plain, target: self, action: #selector(saveTapped)), animated: true)
+    }
+    
+    @objc func saveTapped() {
+        presenter.updateToServer()
     }
 }
