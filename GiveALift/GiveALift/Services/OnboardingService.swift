@@ -12,11 +12,11 @@ protocol OnboardingServiceErrorDelegate: class {
     func onboardingService(error: APIError)
 }
 
-protocol OnboardingServiceRegisterDelegate: class, OnboardingServiceErrorDelegate {
+protocol OnboardingServiceRegisterDelegate: OnboardingServiceErrorDelegate {
     func onboardingService(status: Bool)
 }
 
-protocol OnboardingServiceLoginDelegate: class, OnboardingServiceErrorDelegate {
+protocol OnboardingServiceLoginDelegate: OnboardingServiceErrorDelegate {
     func onboardingService(user: GALUserLogin, userInfo: GALUserInfo)
 }
 

@@ -21,10 +21,11 @@ class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDele
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(RouteTableViewCell.self)
+        tableView.register(LabelTableViewCell.self)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return presenter.routes.count
+        return presenter.routes.count == 0 ? 1 : presenter.routes.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -42,19 +43,31 @@ class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: RouteTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.setupCell(route: presenter.routes[indexPath.section], fromCityID: presenter.fromCityID, toCityID: presenter.toCityID)
-        cell.layer.cornerRadius = 20.0 
-        return cell
+        if presenter.routes.count == 0 {
+            let cell: LabelTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setup(with: "Nie znaleźliśmy żadnych przejazdów")
+            cell.layer.cornerRadius = 20.0
+            return cell
+        } else {
+            let cell: RouteTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setupCell(route: presenter.routes[indexPath.section], fromCityID: presenter.fromCityID, toCityID: presenter.toCityID)
+            cell.layer.cornerRadius = 20.0
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.showRouteDetailsView(route: presenter.routes[indexPath.section])
+        if presenter.routes.count != 0 {
+            presenter.showRouteDetailsView(route: presenter.routes[indexPath.section])
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //MARK:- TODO sprawdzenie czy stop jest startem albo docelowym
+        if presenter.routes.count == 0 {
+            return 70
+        }
         if presenter.routes[indexPath.section].stops.count == 1 {
             return 190
         } else {

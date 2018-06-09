@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class LoginViewController: TextFieldViewController<LoginPresenter>, LoginView {
 
@@ -29,6 +30,8 @@ class LoginViewController: TextFieldViewController<LoginPresenter>, LoginView {
     
     @IBAction func loginTapped(_ sender: Any) {
         if let email = mailTextField.text, let password = passwordTextField.text, email != "", password != "" {
+            SVProgressHUD.setDefaultMaskType(.black)
+            SVProgressHUD.show()
             presenter.tryToLogIn(email: email, password: password)
         } else {
             showError(with: presenter.wrongData)

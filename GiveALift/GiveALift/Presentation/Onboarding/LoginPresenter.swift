@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SVProgressHUD
 
 protocol LoginView: class {
     func showError(with message: String)
@@ -50,6 +51,7 @@ extension LoginPresenter: OnboardingServiceLoginDelegate {
     
     func onboardingService(user: GALUserLogin, userInfo: GALUserInfo) {
         User.shared.logIn(user: user, userInfo: userInfo)
+        SVProgressHUD.dismiss()
         connector?.showHomeView()
     }
 }
