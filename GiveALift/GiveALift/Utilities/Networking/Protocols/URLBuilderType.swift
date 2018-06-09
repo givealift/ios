@@ -22,4 +22,5 @@ protocol URLBuilderType {
     func userPhotoURL(userID: Int) -> URL
     func resignURL(routeID: Int, userID: Int) -> URL
     func userReservedRoutes(userID: Int) -> URL
+    func passwordReset(email: String) -> URL
 }

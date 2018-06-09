@@ -28,6 +28,11 @@ final class LoginPresenter: BasePresenter {
         super.init()
         self.connector = connector
         onboardingService.loginDelegate = self
+        onboardingService.passwordResetDelegate = self
+    }
+    
+    func resetPassword(email: String) {
+        onboardingService.resetPassword(email: email)
     }
     
     func tryToLogIn(email: String, password: String) {
@@ -39,7 +44,11 @@ final class LoginPresenter: BasePresenter {
     }
 }
 
-extension LoginPresenter: OnboardingServiceLoginDelegate {
+extension LoginPresenter: OnboardingServiceLoginDelegate, PasswordResetDelegate {
+    func passwordResetSuccess() {
+        //MARK:- TODO info że udało się
+    }
+    
     func onboardingService(error: APIError) {
         SVProgressHUD.dismiss()
         switch error {

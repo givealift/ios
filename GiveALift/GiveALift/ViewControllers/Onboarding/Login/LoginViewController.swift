@@ -63,7 +63,9 @@ class LoginViewController: TextFieldViewController<LoginPresenter>, LoginView {
         alert.addTextField(configurationHandler: nil)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
-            //MARK:- TODO wyświetlić "Na podany email wysłaliśmy reset hasła"
+            guard let tField = textField else { return }
+            guard let text = tField.text else { return }
+            self.presenter.resetPassword(email: text)
         }))
         self.present(alert, animated: true, completion: nil)
     }

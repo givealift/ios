@@ -20,12 +20,17 @@ protocol OnboardingServiceLoginDelegate: OnboardingServiceErrorDelegate {
     func onboardingService(user: GALUserLogin, userInfo: GALUserInfo)
 }
 
+protocol PasswordResetDelegate: OnboardingServiceErrorDelegate {
+    func passwordResetSuccess()
+}
+
 final class OnboardingService {
     
     fileprivate let requestBuilder: RequestBuilderType
     fileprivate let urlBuilder: URLBuilderType
     weak var loginDelegate: OnboardingServiceLoginDelegate?
     weak var registerDelegate: OnboardingServiceRegisterDelegate?
+    weak var passwordResetDelegate: PasswordResetDelegate?
     
     // MARK: Initializers
     
@@ -90,6 +95,21 @@ final class OnboardingService {
             case .Success(result: let result):
                 DispatchQueue.main.async {
                     self?.registerDelegate?.onboardingService(status: true)
+                }
+            }
+        }
+    }
+    
+    func resetPassword(email: String) {
+        requestBuilder.POSTRequest(withURL: urlBuilder.passwordReset(email: email), withData: nil, authToken: User.shared.token) { [weak self] (result) in
+            switch result {
+            case .Error(error: let error):
+                DispatchQueue.main.async {
+                    self?.passwordResetDelegate?.onboardingService(error: error)
+                }
+            case .Success(result: let result):
+                DispatchQueue.main.async {
+                    self?.passwordResetDelegate?.passwordResetSuccess()
                 }
             }
         }
