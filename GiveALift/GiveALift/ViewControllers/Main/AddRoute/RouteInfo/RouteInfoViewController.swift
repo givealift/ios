@@ -43,7 +43,7 @@ class RouteInfoViewController: AddRouteViewController<RouteInfoPresenter> {
         if let price = priceText, let numberOfSeats = numberOfSeatsText {
             presenter.showEditRouteInfoView(price: price, numberOfSeats: numberOfSeats)
         } else {
-            //MARK:- TODO info błąd
+            showError(with: "Podane dane są niepoprawne")
         }
     }
     
@@ -51,14 +51,13 @@ class RouteInfoViewController: AddRouteViewController<RouteInfoPresenter> {
         if let price = priceTextField.text, let numberOfSeats = numberOfSeatsTextField.text, price != "", numberOfSeats != "" {
             presenter.showRouteOptionalDescriptionView(price: Int(price)! , numberOfSeats: Int(numberOfSeats)!)
         } else {
-            //MARK:- TODO error
-            print("podaj dane")
+            showError(with: "Podane dane są niepoprawne")
         }
     }
     
     private func setupPlaceholderWithOldValues() {
-        priceTextField.placeholder = String(describing: presenter.route.price)
-        numberOfSeatsTextField.placeholder = String(describing: presenter.route.numberOfSeats)
+        priceTextField.placeholder = String(describing: presenter.route.price!)
+        numberOfSeatsTextField.placeholder = String(describing: presenter.route.numberOfSeats!)
     }
     
     private func setupDefaultPlaceholder() {

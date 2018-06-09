@@ -11,6 +11,7 @@ import UIKit
 class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
 
     //MARK:- IBOutlets
+    @IBOutlet weak var nextButton: GALBlueButton!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
@@ -50,6 +51,7 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
         setupTimePicker(textField: finishTime)
         setupTextFields()
         addTextFieldsIfNeeded()
+        presenter.isUpdating ? nextButton.setTitle("Gotowe",for: .normal) : nextButton.setTitle("Dalej",for: .normal)
     }
 
     
@@ -76,11 +78,14 @@ class RouteTimeViewController: AddRouteViewController<RouteTimePresenter> {
             if let date = indirectionsTextField[i].text, date != "" {
                 indirectDates.append(date)
             } else {
-                indirectDates.append(indirectionsTextField[i].placeholder!)
+                indirectDates.append(presenter.route.stops[i].date)
             }
         }
-        if let date = dateTextField.text, date != "", let time = timeTextField.text, time != "", indirectDates.count == indirectionsTextField.count, let finishTime = finishTime.text, finishTime != "" {
-            presenter.showRouteInfoView(departureDate: date, departureTime: time, finishTime: finishTime, indirectDates: indirectDates)
+        let date = dateTextField.text != "" ? dateTextField.text! : nil
+        let time = timeTextField.text != "" ? timeTextField.text! : nil
+        let finishTimet = finishTime.text != "" ? finishTime.text! : nil
+        if indirectDates.count == indirectionsTextField.count {
+            presenter.showEditRouteInfoView(departureDate: date, departureTime: time, finishTime: finishTimet, indirectDates: indirectDates)
         } else {
             showError(with: "Wpisz poprawne dane")
         }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SVProgressHUD
 
 protocol RegisterView: class {
     func showError(with message: String)
@@ -45,7 +46,9 @@ final class RegistrationPresenter: BasePresenter {
 
 extension RegistrationPresenter: OnboardingServiceRegisterDelegate {
     func onboardingService(status: Bool) {
-        //MARK:- TODO pokazać ze rejestracja udana
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setMinimumDismissTimeInterval(1.0)
+        SVProgressHUD.showSuccess(withStatus: "Powodzenie")
         showLoginView()
     }
     

@@ -20,6 +20,15 @@ final class RouteOptionalDescriptionPresenter: AddRoutePresenter {
         }
         uploadToServer()
     }
+    
+    func showPreviousView(description: String?) {
+        if let desc = description {
+            updateModel(description: desc)
+        } else {
+            updateModel(description: route.description)
+        }
+        connector?.showPreviuosView()
+    }
      
     private func updateModel(description: String?) {
         route.description = description

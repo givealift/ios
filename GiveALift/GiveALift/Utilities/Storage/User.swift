@@ -53,7 +53,7 @@ final class User {
         storage.setUserFirstName(userInfo.firstName!)
         storage.setGender("male")
         //storage.setRate(userInfo.rate!)
-        storage.setBirthday(userInfo.birthYear!)
+        storage.setBirthday(userInfo.birthDate!)
         isLogIn = true
     }
     

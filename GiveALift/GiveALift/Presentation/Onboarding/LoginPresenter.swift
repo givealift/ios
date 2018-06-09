@@ -46,7 +46,7 @@ final class LoginPresenter: BasePresenter {
 
 extension LoginPresenter: OnboardingServiceLoginDelegate, PasswordResetDelegate {
     func passwordResetSuccess() {
-        //MARK:- TODO info że udało się
+        UIAlertController.showAlert(withMessage: "Na podany email został wysłany link do zrestowania hasła")
     }
     
     func onboardingService(error: APIError) {

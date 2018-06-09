@@ -10,7 +10,7 @@ import Foundation
 
 struct GALUserInfo: Codable {
     let address: String?
-    let birthYear: Date?
+    let birthDate: Date?
     let email, firstName, lastName: String?
     let gender: String?
     let phone: String?

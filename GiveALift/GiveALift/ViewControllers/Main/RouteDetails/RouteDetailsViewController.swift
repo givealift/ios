@@ -35,7 +35,7 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
     //MARK:- VC's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //MARK:- TODO sprawdzić
+        
         presenter.isUserOwner ? setupForOwner() : nil
         presenter.isSubscribed ? setupResignButton() : setupReserveButton()
         if (presenter.route.numberOfSeats == presenter.route.numberOfOccupiedSeats) {

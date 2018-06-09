@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteOptionalDescriptionViewController" customModule="GiveALift" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="YQy-MB-C85" id="hEX-Ji-NB8"/>
+                <outlet property="readyButton" destination="OEf-ab-Xxo" id="Srb-h2-CKu"/>
                 <outlet property="textView" destination="Dit-Rp-Xei" id="Rmd-rl-qOh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,24 +33,36 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQy-MB-C85" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
-                    <rect key="frame" x="87.5" y="255" width="200" height="45"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GVI-Kq-A14">
+                    <rect key="frame" x="87.5" y="250" width="200" height="45"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQy-MB-C85" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="45"/>
+                            <state key="normal" title="Dodaj przejazd"/>
+                            <connections>
+                                <action selector="finishTapped:" destination="-1" eventType="touchUpInside" id="SJZ-Dc-E3x"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEf-ab-Xxo" customClass="GALBlueButton" customModule="GiveALift" customModuleProvider="target">
+                            <rect key="frame" x="100" y="0.0" width="100" height="45"/>
+                            <state key="normal" title="Gotowe"/>
+                            <connections>
+                                <action selector="readyTapped:" destination="-1" eventType="touchUpInside" id="p6d-dl-fJy"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="45" id="ZsN-K5-TcZ"/>
-                        <constraint firstAttribute="width" constant="200" id="paq-af-Zn2"/>
+                        <constraint firstAttribute="width" constant="200" id="7AC-p8-h4A"/>
+                        <constraint firstAttribute="height" constant="45" id="bZD-jj-2z4"/>
                     </constraints>
-                    <state key="normal" title="Dodaj przejazd"/>
-                    <connections>
-                        <action selector="finishTapped:" destination="-1" eventType="touchUpInside" id="SJZ-Dc-E3x"/>
-                    </connections>
-                </button>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Dit-Rp-Xei" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="C8T-3O-yIX"/>
-                <constraint firstItem="YQy-MB-C85" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="D3v-18-XJB"/>
-                <constraint firstItem="YQy-MB-C85" firstAttribute="top" secondItem="Dit-Rp-Xei" secondAttribute="bottom" constant="20" id="MoQ-C8-AKt"/>
+                <constraint firstItem="GVI-Kq-A14" firstAttribute="top" secondItem="Dit-Rp-Xei" secondAttribute="bottom" constant="15" id="GSg-pP-Y3S"/>
                 <constraint firstItem="Dit-Rp-Xei" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Uex-pt-SFC"/>
+                <constraint firstItem="GVI-Kq-A14" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vAF-yb-zEB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

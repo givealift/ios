@@ -29,6 +29,9 @@ class UserTests: XCTestCase {
         XCTAssertNotEqual(userInfo.email, User.shared.email)
         XCTAssertNotEqual(userInfo.birthYear, User.shared.birthDay)
         XCTAssertNotEqual(userID.userID, User.shared.userID)
+        XCTAssertNil(User.shared.email)
+        XCTAssertNil(User.shared.birthDay)
+        XCTAssertNil(User.shared.userID)
     }
     
 }

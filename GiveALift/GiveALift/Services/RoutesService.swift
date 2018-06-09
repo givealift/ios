@@ -33,6 +33,21 @@ final class RoutesService {
         self.requestBuilder = requestBuilder
     }
     
+    func deleteRoute(_ routeID: Int) {
+        requestBuilder.DELETEReqeust(withURL: urlBuilder.deleteRoute(routeID: routeID), authToken: User.shared.token) { [weak self] (result) in
+            switch result {
+            case .Success(result: _):
+                DispatchQueue.main.async {
+                    self?.addDelegate?.updateSuccess()
+                }
+            case .Error(error: let error):
+                DispatchQueue.main.async {
+                    self?.addDelegate?.serviceError(error)
+                }
+            }
+        }
+    }
+    
     func resign(userID: Int, routeID: Int) {
         requestBuilder.DELETEReqeust(withURL: urlBuilder.resignURL(routeID: routeID, userID: userID), authToken: User.shared.token) { [weak self] (result) in
             switch result {
@@ -77,7 +92,7 @@ final class RoutesService {
     }
     
     func updateRoute(_ route: Route) {
-        requestBuilder.PUTRequest(withURL: urlBuilder.updateRoute(routeID: route.routeId), withData: route, authToken: User.shared.token!) { [weak self] (result) in
+        requestBuilder.PATCHREquest(withURL: urlBuilder.updateRoute(routeID: route.routeId), withData: route, authToken: User.shared.token!) { [weak self] (result) in
             switch result {
             case .Error(error: let error):
                 DispatchQueue.main.async {
@@ -130,10 +145,6 @@ final class RoutesService {
                 }
             }
         }
-    }
-    
-    func updateRoute(route: Route) {
-        //MARK:- TODO update
     }
     
     private func handleResponse(data: Data) {

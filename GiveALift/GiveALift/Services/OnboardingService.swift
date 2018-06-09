@@ -101,7 +101,7 @@ final class OnboardingService {
     }
     
     func resetPassword(email: String) {
-        requestBuilder.POSTRequest(withURL: urlBuilder.passwordReset(email: email), withData: nil, authToken: User.shared.token) { [weak self] (result) in
+        requestBuilder.POSTRequest(withURL: urlBuilder.passwordReset(email: email), withData: ["email":email], authToken: User.shared.token) { [weak self] (result) in
             switch result {
             case .Error(error: let error):
                 DispatchQueue.main.async {

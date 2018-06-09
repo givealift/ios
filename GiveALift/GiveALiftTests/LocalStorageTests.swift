@@ -47,4 +47,9 @@ class LocalStorageTests: XCTestCase {
         XCTAssertEqual(birth, localStorage.getBirthDay())
     }
     
+    func testUserID() {
+        let userID = 13
+        localStorage.setUserID(userID)
+        XCTAssertEqual(userID, localStorage.getUserID())
+    }
 }

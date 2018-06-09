@@ -14,4 +14,5 @@ protocol RequestBuilderType {
     func POSTRequest<T: Encodable>(withURL url: URL, withData body: T, authToken: String?, completion: @escaping APIResultBlock<Data>)
     func PUTRequest<T: Encodable>(withURL url: URL, withData body: T, authToken: String?, completion: @escaping APIResultBlock<Data>)
     func DELETEReqeust(withURL url: URL, authToken: String?, completion: @escaping APIResultBlock<Data>)
+    func PATCHREquest<T: Encodable>(withURL url: URL, withData body: T, authToken: String?, completion: @escaping APIResultBlock<Data>)
 }

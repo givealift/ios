@@ -9,12 +9,22 @@
 import Foundation
 
 final class RequestBuilder: RequestBuilderType {
+    
 
     public enum Method: String {
         case GET = "GET"
         case PUT = "PUT"
         case POST = "POST"
         case DELETE = "DELETE"
+        case PATCH = "PATCH"
+    }
+    
+    func PATCHREquest<T>(withURL url: URL, withData body: T, authToken: String?, completion: @escaping (APIResult<Data>) -> ()) where T : Encodable {
+        let (request, session) = configuration(forURL: url, parameters: body, httpMethod: Method.PATCH.rawValue, authToken: authToken)
+        print(request.httpBody)
+        startDataTask(for: session, with: request) { (result) in
+            completion(result)
+        }
     }
     
     func DELETEReqeust(withURL url: URL, authToken: String?, completion: @escaping (APIResult<Data>) -> ()) {
