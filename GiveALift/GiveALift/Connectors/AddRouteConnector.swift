@@ -17,7 +17,7 @@ protocol AddRouteConnectorDelegate: class {
     func showMainRouteView(route: Route, isUpdating: Bool)
     func showPreviuosView()
     func showEditRouteInfo(route: Route)
-    weak var searchConnector: SearchConnectorDelegate? { get set }
+    var searchConnector: SearchConnectorDelegate? { get set }
 }
 
 final class AddRouteConnector {

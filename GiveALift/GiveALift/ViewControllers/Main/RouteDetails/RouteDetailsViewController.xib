@@ -180,8 +180,8 @@
                                 <constraint firstAttribute="height" id="DMk-2x-cKH"/>
                             </constraints>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SmJ-8g-Hb3">
-                            <rect key="frame" x="50" y="419" width="200" height="50"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmJ-8g-Hb3">
+                            <rect key="frame" x="60" y="325" width="200" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-kJ-uVn" customClass="GALPinkButton" customModule="GiveALift" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>

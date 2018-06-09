@@ -160,8 +160,7 @@ class RouteDetailsViewController: TextFieldViewController<RouteDetailsPresenter>
     private func createImageView(with image: UIImage) -> UIImageView {
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
-        //MARK:- TODO wykminić jak ten rozmiar
-        imageView.layer.cornerRadius = 15.0
+        imageView.layer.cornerRadius = 20.0
         imageView.clipsToBounds = true
         imageView.layer.borderWidth = 1.5
         imageView.layer.borderColor = UIColor.GALBlue.cgColor
