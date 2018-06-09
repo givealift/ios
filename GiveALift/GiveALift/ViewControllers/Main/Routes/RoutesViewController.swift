@@ -64,7 +64,7 @@ class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //MARK:- TODO sprawdzenie czy stop jest startem albo docelowym
+
         if presenter.routes.count == 0 {
             return 70
         }

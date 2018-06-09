@@ -10,8 +10,6 @@ import Foundation
 
 final class IndirectionsPresenter: AddRoutePresenter {
     
-    //MARK:- TODO usuwanie przystanków i ograniczenie ich liczby, przesuwanie też
-    
     let indirectTextFieldPlaceHolder = "Wprowadź miasto pośrednie"
     let indirectLocationPlaceholder = "Wprowadź miejsce odbioru"
     

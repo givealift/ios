@@ -76,7 +76,7 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter>, UserIn
         secondNameTextField.placeholder = presenter.userData.lastName
         emailTextField.placeholder = presenter.userData.email
         phoneNumberTextField.placeholder = presenter.userData.phone
-        birthdayTextField.placeholder = dateFormatter.string(from: presenter.userData.birthYear!)
+        birthdayTextField.placeholder = dateFormatter.string(from: presenter.userData.birthDate!)
     }
     
     //MARK:- Main
@@ -106,7 +106,7 @@ class UserInfoViewController: TextFieldViewController<UserInfoPresenter>, UserIn
         secondNameTextField.text = presenter.userData.lastName
         emailTextField.text = presenter.userData.email
         phoneNumberTextField.text = presenter.userData.phone
-        birthdayTextField.text = dateFormatter.string(from: presenter.userData.birthYear!)
+        birthdayTextField.text = dateFormatter.string(from: presenter.userData.birthDate!)
     }
     
     @objc func textFieldDidBeginEditing(_ textField: UITextField) {

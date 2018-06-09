@@ -61,7 +61,7 @@ class PasswordCell: RegisterCellType {
     var value: String? = nil
 }
 
-//MARK:- TODO validation rule do takich samych haseł
+
 class CompatibilePasswordCell: RegisterCellType {
     var secure: Bool = true
     var labelText: String = "Potwierdź hasło"

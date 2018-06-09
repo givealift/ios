@@ -12,6 +12,7 @@ class IndirectionsViewController: AddRouteViewController<IndirectionsPresenter> 
     
     //MARK:- Variables
     
+    @IBOutlet weak var nextButton: GALBlueButton!
     private var indirectCitiesTextfield: [SugestiveTextField] = []
     private var indirextCitiesLocations: [UITextField] = []
     private var tagValue = 10
