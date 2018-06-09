@@ -72,9 +72,13 @@ class IndirectionsViewController: AddRouteViewController<IndirectionsPresenter> 
     private func deleteIndirectFromView() {
         let index = indirectCitiesTextfield.count - 1
         stackView.removeArrangedSubview(indirectCitiesTextfield[index])
+        indirectCitiesTextfield[index].removeFromSuperview()
         stackView.removeArrangedSubview(indirextCitiesLocations[index])
+        indirextCitiesLocations[index].removeFromSuperview()
         indirectCitiesTextfield.remove(at: index)
         indirextCitiesLocations.remove(at: index)
+        stackViewHeightConstraint.constant -= 130
+        view.layoutSubviews()
     }
     
     private func updateData() {

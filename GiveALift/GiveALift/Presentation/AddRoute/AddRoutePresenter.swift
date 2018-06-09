@@ -49,7 +49,7 @@ class AddRoutePresenter: BasePresenter, AddRouteService {
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.setMinimumDismissTimeInterval(1.0)
         SVProgressHUD.showError(withStatus: "Niepowodzenie")
-        print(error)
+        connector?.showHomeView()
     }
 }
 
