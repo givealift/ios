@@ -17,7 +17,8 @@ struct GalUserPublicResponse: Codable {
     
     enum CodingKeys: String, CodingKey {
         case userID = "userId"
-        case firstName, lastName, email, phone, gender, rate, birthYear
+        case birthYear = "birthDate"
+        case firstName, lastName, email, phone, gender, rate
     }
     
     func toGALUserInfo() -> GALUserInfo {

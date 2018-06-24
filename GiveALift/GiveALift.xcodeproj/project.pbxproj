@@ -50,6 +50,7 @@
 		C130E2DA20AB372500DC221C /* AddRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2D920AB372500DC221C /* AddRouteViewController.swift */; };
 		C130E2DD20AB73DD00DC221C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2DC20AB73DD00DC221C /* DateFormatter.swift */; };
 		C130E2DF20AB7AC800DC221C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130E2DE20AB7AC800DC221C /* Int.swift */; };
+		C14A7B3920DFDF9A0036217B /* profile.PNG in Resources */ = {isa = PBXBuildFile; fileRef = C14A7B3820DFDF990036217B /* profile.PNG */; };
 		C1538D1320BFF2E700B54E02 /* RoutesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D1220BFF2E700B54E02 /* RoutesService.swift */; };
 		C1538D1720C006D800B54E02 /* GALUserPublicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D1620C006D800B54E02 /* GALUserPublicResponse.swift */; };
 		C1538D3A20C0916B00B54E02 /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1538D3920C0916B00B54E02 /* UserInfoService.swift */; };
@@ -183,6 +184,7 @@
 		C130E2D920AB372500DC221C /* AddRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRouteViewController.swift; sourceTree = "<group>"; };
 		C130E2DC20AB73DD00DC221C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		C130E2DE20AB7AC800DC221C /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		C14A7B3820DFDF990036217B /* profile.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.PNG; sourceTree = "<group>"; };
 		C1538D1220BFF2E700B54E02 /* RoutesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesService.swift; sourceTree = "<group>"; };
 		C1538D1620C006D800B54E02 /* GALUserPublicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALUserPublicResponse.swift; sourceTree = "<group>"; };
 		C1538D3420C0628F00B54E02 /* GiveALiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GiveALiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -397,6 +399,14 @@
 				C130E2C720AAF8E100DC221C /* EditRouteInfoPresenter.swift */,
 			);
 			path = AddRoute;
+			sourceTree = "<group>";
+		};
+		C14A7B3A20DFDFA60036217B /* GitHubReadMe */ = {
+			isa = PBXGroup;
+			children = (
+				C14A7B3820DFDF990036217B /* profile.PNG */,
+			);
+			path = GitHubReadMe;
 			sourceTree = "<group>";
 		};
 		C1538D1420BFFDCF00B54E02 /* SearchRoutes */ = {
@@ -634,6 +644,7 @@
 		C191F128206568FB008DD972 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C14A7B3A20DFDFA60036217B /* GitHubReadMe */,
 				C1CFBD8A20866EC100253375 /* Cities.json */,
 				C191F0FA2065657C008DD972 /* Assets.xcassets */,
 			);
@@ -878,6 +889,7 @@
 				C124DA4920A872DB00391A71 /* RouteDetailsViewController.xib in Resources */,
 				C191F0F92065657C008DD972 /* Main.storyboard in Resources */,
 				C130E2CD20AAF9EE00DC221C /* EditRouteInfoViewController.xib in Resources */,
+				C14A7B3920DFDF9A0036217B /* profile.PNG in Resources */,
 				C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */,
 				C1725B3C20A5BFF300F64747 /* RouteTimeViewController.xib in Resources */,
 				C1725B4720A5FB6600F64747 /* RouteInfoViewController.xib in Resources */,

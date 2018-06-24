@@ -69,13 +69,16 @@ class RoutesViewController: BaseViewController<RoutesPresenter>, UITableViewDele
             return 70
         }
         if checkIfIsIndirect(route: presenter.routes[indexPath.section], fromCityID: presenter.fromCityID, toCityID: presenter.toCityID) {
-            return 150
-        } else {
             return 190
+        } else {
+            return 150
         }
     }
     
     private func checkIfIsIndirect(route: Route, fromCityID: Int?, toCityID: Int?) -> Bool {
+        if fromCityID == nil {
+            return false
+        }
         if route.from.city.cityID != fromCityID {
             return true
         }
