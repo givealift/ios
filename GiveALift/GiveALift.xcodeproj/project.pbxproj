@@ -83,7 +83,6 @@
 		C191F0FE2065657C008DD972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F0FC2065657C008DD972 /* LaunchScreen.storyboard */; };
 		C191F1142065657D008DD972 /* GiveALiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1132065657D008DD972 /* GiveALiftUITests.swift */; };
 		C191F13220656C1E008DD972 /* GiveALift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C191F13020656C1E008DD972 /* GiveALift.xcdatamodeld */; };
-		C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C191F13F20657E00008DD972 /* Onboarding.storyboard */; };
 		C191F14320657F13008DD972 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F14220657F13008DD972 /* FlowCoordinator.swift */; };
 		C191F1452065806E008DD972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C191F1442065806E008DD972 /* Constants.swift */; };
 		C195D07620CBBC620033650B /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C195D07420CBBC620033650B /* LabelTableViewCell.swift */; };
@@ -224,7 +223,6 @@
 		C191F1132065657D008DD972 /* GiveALiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveALiftUITests.swift; sourceTree = "<group>"; };
 		C191F1152065657D008DD972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C191F13120656C1E008DD972 /* GiveALift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GiveALift.xcdatamodel; sourceTree = "<group>"; };
-		C191F13F20657E00008DD972 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		C191F14220657F13008DD972 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		C191F1442065806E008DD972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C195D07420CBBC620033650B /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
@@ -635,7 +633,6 @@
 			isa = PBXGroup;
 			children = (
 				C191F0F72065657C008DD972 /* Main.storyboard */,
-				C191F13F20657E00008DD972 /* Onboarding.storyboard */,
 				C191F0FC2065657C008DD972 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -890,7 +887,6 @@
 				C191F0F92065657C008DD972 /* Main.storyboard in Resources */,
 				C130E2CD20AAF9EE00DC221C /* EditRouteInfoViewController.xib in Resources */,
 				C14A7B3920DFDF9A0036217B /* profile.PNG in Resources */,
-				C191F14020657E00008DD972 /* Onboarding.storyboard in Resources */,
 				C1725B3C20A5BFF300F64747 /* RouteTimeViewController.xib in Resources */,
 				C1725B4720A5FB6600F64747 /* RouteInfoViewController.xib in Resources */,
 				C1CFBD9F2086AC4A00253375 /* RoutesViewController.xib in Resources */,
