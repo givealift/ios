@@ -1,5 +1,12 @@
-Aplikacja do przejazdów międzymiastowych. Pozwala na dodawanie, wyszukiwanie oraz edycję przejazdów. Każdy użytkownik posaida konto, które także może edytować. Posiada system rezerwacji przejazdów oraz podgląd osób zapisanych do naszego przejazdu w przypadku gdy to mu jesteśmy kierowcą. Biblioteki wykorzystane do budowy aplikacji (Haneke, SVProgressHUD, SearchTextField) są darmowe lub licencji pozwalającej na darmowe i nieograniczone kopiowanie i rozpowszechnianie.
+# Give a Lift
 
-Konfiguracja:
-Do uruchomienia aplikacji wymagany jest komputer z systemem macOS, Xcode oraz CocaPods. Wymagane jest także bezpłatne konto developerskie.
-Zaczynamy od zaintalowania zewnętrznych bibliotek, poprzez wejście do folderu z plikiem Podfile i uruchomienie komendy 'pod install'. Uruchamiamy 'GiveALift.xcworkspace', przypisujemy swoje konto do projektu i buildujemy projekt. 
+Give a Lift is a university project application for intercity rides realising similar functionality to BlaBlaCar.
+[Here is a full project documentation(PL)](https://docs.google.com/document/d/1JA4Gld2u4ekGjXb0YpPNPrfXqvSDB-bh5qQCoZDnNF0/edit?usp=sharing)
+
+## About
+
+- Register and login,
+- Add a ride,
+- Sign up for a ride,
+- Manage rides you created and signed up for,
+- Edit profile info.
